@@ -10,7 +10,7 @@ interface CardProps
    tagIDs: number[];
 }
 
-export default function Card ( { coverURL, title, description, tagIDs }: CardProps )
+const Card = ( { coverURL, title, description, tagIDs }: CardProps ) =>
 {
    const [tagList, setTaglist] = useState( [
       {
@@ -106,3 +106,5 @@ export default function Card ( { coverURL, title, description, tagIDs }: CardPro
       </div>
    )
 }
+
+export default Card

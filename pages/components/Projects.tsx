@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import Card from './Card'
 import Image from 'next/image'
 
-export default function projects ()
+const Projects = () =>
 {
 
    const mernStack = [4, 10, 1, 3]
@@ -143,3 +143,5 @@ export default function projects ()
       </div>
    )
 }
+
+export default Projects
