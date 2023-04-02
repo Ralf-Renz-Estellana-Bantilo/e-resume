@@ -203,31 +203,8 @@ export default function projects ()
             <div className='flex flex-wrap justify-evenly gap-5 py-3 px-3'>
                {projects.map( ( { coverURL, title, description, tagIDs } ) =>
                {
-                  // return <Card coverURL={coverURL} title={title} description={description} tagIDs={tagIDs} key={title} />
-                  return <div className='flex flex-col w-[48%] h-auto neumorphism-2 rounded-xl overflow-hidden' key={title} >
-                     <div className='w-full h-44 overflow-clip bg-gray-400'>
-                        <Image
-                           className="object-cover h-full"
-                           src={require( `@/public/Images/${coverURL}.jpg` ).default}
-                           alt={title}
-                        />
-                     </div>
-                     <div className="flex flex-col gap-2 p-2">
-                        <div className='flex flex-col justify-center'>
-                           <h3 className='text-lg font-semibold text-dark-blue-secondary text-center py-2'>{title}</h3>
-                           <p className='text-dark-blue-secondary text-xs text-justify font-medium'>{description}</p>
-                        </div>
-                        <Divider className='m-0'></Divider>
-                        <div>
-                           <Space size={[0, tagIDs.length]} wrap>
-                              {tagIDs.map( ( tagID, i ) =>
-                              {
-                                 return <Tag className='rounded-full' color={findTagByID( tagID ).color} key={i}>{findTagByID( tagID ).label}</Tag>
-                              } )}
-                           </Space>
-                        </div>
-                     </div>
-                  </div>
+                  return <Card coverURL={coverURL} title={title} description={description} tagIDs={tagIDs} key={title} />
+
                } )}
             </div>
          </div>

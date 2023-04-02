@@ -7,7 +7,7 @@ interface CardProps
    coverURL: string;
    title: string;
    description: string;
-   tagIDs: Array<Number>;
+   tagIDs: number[];
 }
 
 
