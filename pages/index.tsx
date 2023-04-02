@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import profileIMG from '../public/Images/Ralf Renz Bantilo.png'
+import profileIMG from '@/assets/Images/Ralf Renz Bantilo.png'
 import { Button, Tabs, Spin, TabsProps, Divider } from 'antd'
 import { DownloadOutlined } from '@ant-design/icons/lib/icons'
 import Personal from './components/Personal'

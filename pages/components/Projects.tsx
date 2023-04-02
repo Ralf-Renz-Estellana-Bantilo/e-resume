@@ -6,7 +6,6 @@ import Card from './Card'
 const Projects = () =>
 {
 
-   const mernStack = [4, 10, 1, 3]
 
    const [services, setServices] = useState( [
       {
@@ -40,57 +39,6 @@ const Projects = () =>
             'Design Tools',
             'Photo Manipulation',
          ],
-      },
-   ] )
-
-   const [projects, setProjects] = useState( [
-      {
-         coverURL: 'cover1',
-         title: 'Expenses Tracker Program',
-         description: 'Lorem dolor sit amet, pariatur.',
-         tagIDs: [...mernStack, 2, 5, 9],
-      },
-      {
-         coverURL: 'cover2',
-         title: 'Payroll System',
-         description: 'Lorem dolor sit amet, consectet eu fugiat nulla pariatur.',
-         tagIDs: [...mernStack, 2, 5, 9],
-      },
-      {
-         coverURL: 'cover3',
-         title: 'Applicant Tracking & Onboarding System',
-         description: 'Lorem dolor pariatur incididunt ut lab eu fugiat nulla pariatur.',
-         tagIDs: [2, 4, 6, 7, 9, 11],
-      },
-      {
-         coverURL: 'cover3',
-         title: 'GWA Calculator Program',
-         description: 'Lorem dolor pariatur incididunt ut fugiat nulla pariatur.',
-         tagIDs: [1, 2, 8],
-      },
-      {
-         coverURL: 'cover4',
-         title: 'Job Search System',
-         description: 'Lorem dolor sit amet, consectet ullamcorper adip sit amet.',
-         tagIDs: [...mernStack, 2, 8],
-      },
-      {
-         coverURL: 'cover5',
-         title: 'Basketball Statistics Program',
-         description: 'Lorem dolor sit amet, nulla pariatur.',
-         tagIDs: [12, 4, 8],
-      },
-      {
-         coverURL: 'cover5',
-         title: 'Test Simulator Program',
-         description: 'Lorem dolor sit amet, nulla pariatur.',
-         tagIDs: [12, 4, 8],
-      },
-      {
-         coverURL: 'cover5',
-         title: 'Random Student Picker Program',
-         description: 'Lorem dolor sit amet, nulla pariatur.',
-         tagIDs: [12, 4, 8],
       },
    ] )
 
