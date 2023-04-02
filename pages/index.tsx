@@ -188,8 +188,10 @@ export default function Home ()
 
   const handleDownload = () =>
   {
+
+    const host = `${window.location.href}`.includes( 'localhost' ) ? 'http://localhost:3000' : 'https://ralf-bantilo-e-resume.vercel.app'
     const element = document.createElement( "a" );
-    const fileUrl = `${window.location.href}/Documents/Resume.pdf`;
+    const fileUrl = `${host}/Documents/Resume.pdf`;
     element.href = fileUrl;
     element.download = "Ralf Renz Bantilo - Junior Programmer Resume";
     document.body.appendChild( element );
