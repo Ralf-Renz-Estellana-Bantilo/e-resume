@@ -1,5 +1,5 @@
 import { CheckOutlined } from '@ant-design/icons'
-import { Divider, Space, Tag } from 'antd'
+import { Divider } from 'antd'
 import React, { useState } from 'react'
 import Card from './Card'
 import Image from 'next/image'
@@ -8,6 +8,41 @@ export default function projects ()
 {
 
    const mernStack = [4, 10, 1, 3]
+
+   const [services, setServices] = useState( [
+      {
+         category: 'FRONTEND',
+         items: [
+            'DOM Manipulation',
+            'Reusable Components',
+            'Dynamic User Interface',
+         ],
+      },
+      {
+         category: 'BACKEND',
+         items: [
+            'Dynamic RESTful APIs',
+            'Database Views',
+            'Data Consistency',
+         ],
+      },
+      {
+         category: 'FULLSTACK',
+         items: [
+            'Unit Test',
+            'Code Review',
+            'System Maintenance',
+         ],
+      },
+      {
+         category: 'DESIGN',
+         items: [
+            'UI/UX Design',
+            'Design Tools',
+            'Photo Manipulation',
+         ],
+      },
+   ] )
 
    const [projects, setProjects] = useState( [
       {
@@ -59,109 +94,6 @@ export default function projects ()
          tagIDs: [12, 4, 8],
       },
    ] )
-
-   const [services, setServices] = useState( [
-      {
-         category: 'FRONTEND',
-         items: [
-            'DOM Manipulation',
-            'Reusable Components',
-            'Dynamic User Interface',
-         ],
-      },
-      {
-         category: 'BACKEND',
-         items: [
-            'Dynamic RESTful APIs',
-            'Database Views',
-            'Data Consistency',
-         ],
-      },
-      {
-         category: 'FULLSTACK',
-         items: [
-            'Unit Test',
-            'Code Review',
-            'System Maintenance',
-         ],
-      },
-      {
-         category: 'DESIGN',
-         items: [
-            'UI/UX Design',
-            'Design Tools',
-            'Photo Manipulation',
-         ],
-      },
-   ] )
-
-   const [tagList, setTaglist] = useState( [
-      {
-         ID: 1,
-         label: 'React JS',
-         color: 'cyan',
-      },
-      {
-         ID: 2,
-         label: 'JavaScript',
-         color: 'yellow',
-      },
-      {
-         ID: 3,
-         label: 'Node JS',
-         color: 'green',
-      },
-      {
-         ID: 4,
-         label: 'MySQL',
-         color: 'orange',
-      },
-      {
-         ID: 5,
-         label: 'TailwindCSS',
-         color: 'blue',
-      },
-      {
-         ID: 6,
-         label: 'Vue JS',
-         color: 'lime',
-      },
-      {
-         ID: 7,
-         label: 'Vuetify',
-         color: 'geekblue',
-      },
-      {
-         ID: 8,
-         label: 'Photoshop',
-         color: 'geekblue',
-      },
-      {
-         ID: 9,
-         label: 'Figma',
-         color: 'orange',
-      },
-      {
-         ID: 10,
-         label: 'Express JS',
-         color: 'yellow',
-      },
-      {
-         ID: 11,
-         label: 'PHP',
-         color: 'orange',
-      },
-      {
-         ID: 12,
-         label: 'Java',
-         color: 'volcano',
-      },
-   ] )
-
-   const findTagByID = ( tagID: Number ) =>
-   {
-      return tagList.filter( ( list ) => list.ID == tagID )[0]
-   }
 
    return (
       <div className="flex flex-col gap-8 py-3 px-7">
