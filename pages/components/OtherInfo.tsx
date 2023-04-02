@@ -1,6 +1,8 @@
 import { Checkbox, Divider, Slider } from 'antd'
-import { CheckboxValueType } from 'antd/es/checkbox/Group';
 import React from 'react'
+import { Quicksand } from 'next/font/google'
+
+const quicksand = Quicksand( { subsets: ['latin'] } )
 
 const OtherInfo = () =>
 {
@@ -24,7 +26,7 @@ const OtherInfo = () =>
                      <h3 className='font-semibold text-base text-dark-blue-secondary'>Experience Level</h3>
                   </Divider>
                   <div className='px-3'>
-                     <Checkbox.Group className="w-full" options={experienceLevelOptions} value={['Junior Level']} />
+                     <Checkbox.Group className={`${quicksand.className} w-full`} options={experienceLevelOptions} value={['Junior Level']} />
                   </div>
                </div>
                <div className="flex flex-col gap-2">
@@ -33,7 +35,7 @@ const OtherInfo = () =>
                      <h3 className='font-semibold text-base text-dark-blue-secondary'>Job Type</h3>
                   </Divider>
                   <div className='px-3'>
-                     <Checkbox.Group className="w-full" options={jobTypeOptions} value={['Full-time']} />
+                     <Checkbox.Group className={`${quicksand.className} w-full`} options={jobTypeOptions} value={['Full-time']} />
                   </div>
                </div>
                <div className="flex flex-col gap-2">
@@ -42,7 +44,7 @@ const OtherInfo = () =>
                      <h3 className='font-semibold text-base text-dark-blue-secondary'>Work Setup</h3>
                   </Divider>
                   <div className='px-3'>
-                     <Checkbox.Group className="w-full" options={workSetupOptions} value={workSetupOptions} />
+                     <Checkbox.Group className={`${quicksand.className} w-full`} options={workSetupOptions} value={workSetupOptions} />
                   </div>
                </div>
                <div className="flex flex-col gap-2">
@@ -51,8 +53,8 @@ const OtherInfo = () =>
                      <h3 className='font-semibold text-base text-dark-blue-secondary'>Title</h3>
                   </Divider>
                   <div className='px-3 space-y-3'>
-                     <Checkbox.Group className="w-full" options={jobTitleOptions1} value={jobTitleOptions1} />
-                     <Checkbox.Group className="w-full" options={jobTitleOptions2} value={jobTitleOptions2} />
+                     <Checkbox.Group className={`${quicksand.className} w-full`} options={jobTitleOptions1} value={jobTitleOptions1} />
+                     <Checkbox.Group className={`${quicksand.className} w-full`} options={jobTitleOptions2} value={jobTitleOptions2} />
                   </div>
                </div>
                <div className="flex flex-col gap-2">
@@ -77,7 +79,7 @@ const OtherInfo = () =>
                      <h3 className='font-semibold text-base text-dark-blue-secondary'>Salary Range</h3>
                   </Divider>
                   <div className='flex flex-col px-3'>
-                     <Slider tooltip={{ formatter: null }} range={{ draggableTrack: true }} value={[90, 140]} min={50} max={200} />
+                     <Slider tooltip={{ formatter: null }} range={{ draggableTrack: true }} value={[90, 160]} min={50} max={200} />
                      <div className="flex justify-between items-center">
                         <p>Min: 50k</p>
                         <p>Max: 200k</p>

@@ -1,5 +1,8 @@
 import { Divider, Timeline } from 'antd'
 import React from 'react'
+import { Quicksand } from 'next/font/google'
+
+const quicksand = Quicksand( { subsets: ['latin'] } )
 
 const Personal = () =>
 {
@@ -19,6 +22,7 @@ const Personal = () =>
                <Divider className='m-0'></Divider>
             </div>
             <Timeline
+               className={quicksand.className}
                items={[
                   {
                      children: (
@@ -130,6 +134,7 @@ const Personal = () =>
                <Divider className='m-0'></Divider>
             </div>
             <Timeline
+               className={quicksand.className}
                items={[
                   {
                      children: (

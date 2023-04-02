@@ -5,8 +5,6 @@ import Card from './Card'
 
 const Projects = () =>
 {
-
-
    const [services, setServices] = useState( [
       {
          category: 'FRONTEND',

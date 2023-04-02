@@ -8,6 +8,9 @@ import Personal from './components/Personal'
 import Projects from './components/Projects'
 import StickyBox from 'react-sticky-box'
 import OtherInfo from './components/OtherInfo'
+import { Quicksand } from 'next/font/google'
+
+const quicksand = Quicksand( { subsets: ['latin'] } )
 
 export default function Home ()
 {
@@ -212,7 +215,7 @@ export default function Home ()
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`bg-background-primary relative flex min-h-screen max-lg:flex max-lg:flex-col`}>
+      <main className={`${quicksand.className} bg-background-primary relative flex min-h-screen max-lg:flex max-lg:flex-col`}>
 
         {/* LEFT PANEL */}
         <div className='flex flex-col justify-between py-3 px-5 gradient-background max-lg:min-h-[100vh] max-lg:justify-evenly max-lg:gap-3' style={{ flex: 2 }}>
@@ -271,7 +274,7 @@ export default function Home ()
             </div>
           </div>
           <div className="flex">
-            <Button type="primary" shape="round" icon={<DownloadOutlined className='relative bottom-1' />} style={{ flex: 1 }} size='large' onClick={handleDownload}>
+            <Button type="primary" shape="round" icon={<DownloadOutlined className={`${quicksand.className} relative bottom-1`} />} style={{ flex: 1 }} size='large' onClick={handleDownload}>
               Download Resume
             </Button>
           </div>
@@ -288,6 +291,7 @@ export default function Home ()
             : <Tabs
               defaultActiveKey="1"
               centered
+              className={quicksand.className}
               renderTabBar={renderTabBar}
               items={panels}
             />}

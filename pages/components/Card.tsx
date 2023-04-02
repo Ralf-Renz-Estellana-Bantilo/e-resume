@@ -11,13 +11,13 @@ const Card = () =>
       {
          coverURL: 'cover1',
          title: 'E-Resume',
-         description: 'A software application designed to help me showcase my work and achievements in a professional manner online.',
+         description: 'A personal website designed to help me showcase my work and achievements in a professional manner online.',
          tagIDs: [1, 13, 5, 14, 9],
       },
       {
          coverURL: 'cover2',
          title: 'Expenses Tracker Program',
-         description: 'A software application designed to help me keep track of my expenses and manage my finances effectively.',
+         description: 'A personal application designed to help me keep track of my expenses and manage my finances effectively.',
          tagIDs: [...mernStack, 2, 5, 9],
       },
       {
