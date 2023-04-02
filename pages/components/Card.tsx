@@ -83,11 +83,11 @@ const Card = ( { coverURL, title, description, tagIDs }: CardProps ) =>
    return (
       <div className='flex flex-col w-[48%] h-auto neumorphism-2 rounded-xl overflow-hidden'>
          <div className='w-full h-44 overflow-clip'>
-            {/* <Image
+            <Image
                className="object-cover h-full"
-               src={require( `@/public/Images/${coverURL}` ).default}
+               src={require( `@/public/Images/${coverURL}.jpg` )}
                alt={title}
-            /> */}
+            />
          </div>
          <div className="flex flex-col gap-2 p-2">
             <div className='flex flex-col justify-center'>
