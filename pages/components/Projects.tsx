@@ -1,7 +1,8 @@
 import { CheckOutlined } from '@ant-design/icons'
-import { Divider } from 'antd'
+import { Divider, Space, Tag } from 'antd'
 import React, { useState } from 'react'
 import Card from './Card'
+import Image from 'next/image'
 
 export default function projects ()
 {
@@ -94,6 +95,74 @@ export default function projects ()
       },
    ] )
 
+   const [tagList, setTaglist] = useState( [
+      {
+         ID: 1,
+         label: 'React JS',
+         color: 'cyan',
+      },
+      {
+         ID: 2,
+         label: 'JavaScript',
+         color: 'yellow',
+      },
+      {
+         ID: 3,
+         label: 'Node JS',
+         color: 'green',
+      },
+      {
+         ID: 4,
+         label: 'MySQL',
+         color: 'orange',
+      },
+      {
+         ID: 5,
+         label: 'TailwindCSS',
+         color: 'blue',
+      },
+      {
+         ID: 6,
+         label: 'Vue JS',
+         color: 'lime',
+      },
+      {
+         ID: 7,
+         label: 'Vuetify',
+         color: 'geekblue',
+      },
+      {
+         ID: 8,
+         label: 'Photoshop',
+         color: 'geekblue',
+      },
+      {
+         ID: 9,
+         label: 'Figma',
+         color: 'orange',
+      },
+      {
+         ID: 10,
+         label: 'Express JS',
+         color: 'yellow',
+      },
+      {
+         ID: 11,
+         label: 'PHP',
+         color: 'orange',
+      },
+      {
+         ID: 12,
+         label: 'Java',
+         color: 'volcano',
+      },
+   ] )
+
+   const findTagByID = ( tagID: Number ) =>
+   {
+      return tagList.filter( ( list ) => list.ID == tagID )[0]
+   }
+
    return (
       <div className="flex flex-col gap-8 py-3 px-7">
          <div className="flex flex-col px-5 neumorphism-1 rounded-lg">
@@ -134,7 +203,31 @@ export default function projects ()
             <div className='flex flex-wrap justify-evenly gap-5 py-3 px-3'>
                {projects.map( ( { coverURL, title, description, tagIDs } ) =>
                {
-                  return <Card coverURL={coverURL} title={title} description={description} tagIDs={tagIDs} key={title} />
+                  // return <Card coverURL={coverURL} title={title} description={description} tagIDs={tagIDs} key={title} />
+                  return <div className='flex flex-col w-[48%] h-auto neumorphism-2 rounded-xl overflow-hidden' key={title} >
+                     <div className='w-full h-44 overflow-clip bg-gray-400'>
+                        <Image
+                           className="object-cover h-full"
+                           src={require( `@/public/Images/${coverURL}.jpg` ).default}
+                           alt={title}
+                        />
+                     </div>
+                     <div className="flex flex-col gap-2 p-2">
+                        <div className='flex flex-col justify-center'>
+                           <h3 className='text-lg font-semibold text-dark-blue-secondary text-center py-2'>{title}</h3>
+                           <p className='text-dark-blue-secondary text-xs text-justify font-medium'>{description}</p>
+                        </div>
+                        <Divider className='m-0'></Divider>
+                        <div>
+                           <Space size={[0, tagIDs.length]} wrap>
+                              {tagIDs.map( ( tagID, i ) =>
+                              {
+                                 return <Tag className='rounded-full' color={findTagByID( tagID ).color} key={i}>{findTagByID( tagID ).label}</Tag>
+                              } )}
+                           </Space>
+                        </div>
+                     </div>
+                  </div>
                } )}
             </div>
          </div>
