@@ -10,50 +10,56 @@ const Card = () =>
    const [projects, setProjects] = useState( [
       {
          coverURL: 'cover1',
-         title: 'Expenses Tracker Program',
-         description: 'Lorem dolor sit amet, pariatur.',
-         tagIDs: [...mernStack, 2, 5, 9],
+         title: 'E-Resume',
+         description: 'A software application designed to help me showcase my work and achievements in a professional manner online.',
+         tagIDs: [1, 13, 5, 14, 9],
       },
       {
          coverURL: 'cover2',
-         title: 'Payroll System',
-         description: 'Lorem dolor sit amet, consectet eu fugiat nulla pariatur.',
+         title: 'Expenses Tracker Program',
+         description: 'A software application designed to help me keep track of my expenses and manage my finances effectively.',
          tagIDs: [...mernStack, 2, 5, 9],
       },
       {
          coverURL: 'cover3',
-         title: 'Applicant Tracking & Onboarding System',
-         description: 'Lorem dolor pariatur incididunt ut lab eu fugiat nulla pariatur.',
-         tagIDs: [2, 4, 6, 7, 9, 11],
-      },
-      {
-         coverURL: 'cover3',
-         title: 'GWA Calculator Program',
-         description: 'Lorem dolor pariatur incididunt ut fugiat nulla pariatur.',
-         tagIDs: [1, 2, 8],
+         title: 'Payroll System',
+         description: 'A software application designed to automate the process of calculating and managing employee salaries and wages.',
+         tagIDs: [...mernStack, 2, 5, 9],
       },
       {
          coverURL: 'cover4',
+         title: 'Applicant Tracking & Onboarding System',
+         description: ' A software application designed to manage the recruitment process and streamline the onboarding of new hires.',
+         tagIDs: [2, 4, 6, 7, 11, 9],
+      },
+      {
+         coverURL: 'cover5',
+         title: 'GWA Calculator Program',
+         description: `A software application designed to calculate a student's average grade based on the grades received in individual courses.`,
+         tagIDs: [1, 2, 8],
+      },
+      {
+         coverURL: 'cover6',
          title: 'Job Search System',
-         description: 'Lorem dolor sit amet, consectet ullamcorper adip sit amet.',
+         description: 'A software application designed to help job seekers search and apply for job opportunities online.',
          tagIDs: [...mernStack, 2, 8],
       },
       {
-         coverURL: 'cover5',
+         coverURL: 'cover7',
          title: 'Basketball Statistics Program',
-         description: 'Lorem dolor sit amet, nulla pariatur.',
+         description: 'A software application designed to track and analyze player and team performance in basketball games.',
          tagIDs: [12, 4, 8],
       },
       {
-         coverURL: 'cover5',
+         coverURL: 'cover8',
          title: 'Test Simulator Program',
-         description: 'Lorem dolor sit amet, nulla pariatur.',
+         description: 'A software application designed to simulate and provide practice for various types of tests, such as standardized tests or certification exams.',
          tagIDs: [12, 4, 8],
       },
       {
-         coverURL: 'cover5',
+         coverURL: 'cover9',
          title: 'Random Student Picker Program',
-         description: 'Lorem dolor sit amet, nulla pariatur.',
+         description: ' A software application designed to randomly select students from a list or group for classroom participation or other activities.',
          tagIDs: [12, 4, 8],
       },
    ] )
@@ -118,6 +124,16 @@ const Card = () =>
          label: 'Java',
          color: 'volcano',
       },
+      {
+         ID: 13,
+         label: 'Next JS',
+         color: 'magenta',
+      },
+      {
+         ID: 14,
+         label: 'TypeScript',
+         color: 'geekblue',
+      },
    ] )
 
    const findTagByID = ( tagID: Number ) =>
@@ -129,7 +145,7 @@ const Card = () =>
       <>
          {projects.map( ( { coverURL, title, description, tagIDs }, i ) =>
          {
-            return <div className='flex flex-col w-[48%] h-auto neumorphism-2 rounded-xl overflow-hidden' key={i}>
+            return <div className='flex flex-col w-[48%] h-auto neumorphism-2 rounded-xl overflow-hidden max-sm:w-full max-md:w-[75%] max-lg:w-[48%] max-xl:w-[70%]' key={i}>
                <div className='w-full h-44 overflow-clip bg-gray-400'>
                   <Image
                      className="object-cover h-full"

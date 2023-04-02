@@ -52,7 +52,7 @@ const Projects = () =>
             <div className="flex flex-wrap justify-evenly p-3 pb-6 gap-5">
                {services.map( ( service, i ) =>
                {
-                  return <div className="flex flex-col h-auto neumorphism-2 rounded-lg bg-background-primary w-[48%]" key={i}>
+                  return <div className="flex flex-col h-auto neumorphism-2 rounded-lg bg-background-primary w-[48%] max-sm:w-full max-md:w-[75%] max-lg:w-[48%]" key={i}>
                      <div className="flex flex-col">
                         <h3 className='font-semibold text-center p-2 text-base text-dark-blue-secondary'>{service.category}</h3>
                         <Divider className='m-0'></Divider>

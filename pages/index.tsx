@@ -55,7 +55,7 @@ export default function Home ()
       icon: 'nextjs',
       description: 'Next JS',
       category: 'Frontend',
-      proficiency: 'Proficient',
+      proficiency: 'Intermediate',
     },
     {
       icon: 'typescript',
@@ -73,25 +73,25 @@ export default function Home ()
       icon: 'tailwindcss',
       description: 'TailwindCSS',
       category: 'Frontend',
-      proficiency: 'Proficient',
+      proficiency: 'Intermediate',
     },
     {
       icon: 'vuetify',
       description: 'Vuetify',
       category: 'Frontend',
-      proficiency: 'Proficient',
+      proficiency: 'Intermediate',
     },
     {
       icon: 'nodejs',
       description: 'Node JS (Express)',
       category: 'Backend',
-      proficiency: 'Proficient',
+      proficiency: 'Intermediate',
     },
     {
       icon: 'java',
       description: 'Java',
       category: 'Desktop App',
-      proficiency: 'Proficient',
+      proficiency: 'Intermediate',
     },
     {
       icon: 'mysql',
@@ -103,7 +103,7 @@ export default function Home ()
       icon: 'photoshop',
       description: 'Adobe Photoshop',
       category: 'Design',
-      proficiency: 'Proficient',
+      proficiency: 'Intermediate',
     },
     {
       icon: 'figma',
@@ -212,11 +212,11 @@ export default function Home ()
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`bg-background-primary flex min-h-screen`}>
+      <main className={`bg-background-primary relative flex min-h-screen max-lg:flex max-lg:flex-col`}>
 
         {/* LEFT PANEL */}
-        <div className='flex flex-col justify-between py-3 px-5 gradient-background' style={{ flex: 2 }}>
-          <div className="flex flex-col gap-3">
+        <div className='flex flex-col justify-between py-3 px-5 gradient-background max-lg:min-h-[100vh] max-lg:justify-evenly max-lg:gap-3' style={{ flex: 2 }}>
+          <div className="flex flex-col gap-3 ">
             <div className="flex flex-col items-center gap-2">
               <div className="flex items-center justify-center">
                 <div className="w-40 h-40 bg-gray-300 border-2 border-dark-blue-secondary rounded-full">
@@ -278,7 +278,7 @@ export default function Home ()
         </div>
 
         {/* CONTENT PANEL */}
-        <div className='h-screen overflow-y-scroll' style={{ flex: 5 }}>
+        <div className='h-screen overflow-y-scroll max-lg:min-h-[100vh] max-lg:relative' style={{ flex: 5 }}>
           {loader ? <>
             <div className='h-screen flex items-center justify-center'>
               <Spin size="large" />
@@ -295,12 +295,12 @@ export default function Home ()
         </div>
 
         {/* RIGHT PANEL */}
-        <div className='gradient-background py-3 px-5 h-screen' style={{ flex: 1.8 }}>
+        <div className='gradient-background py-3 px-5 h-screen max-lg:min-h-[100vh]' style={{ flex: 1.8 }}>
           <div className="flex flex-col rounded-lg border-2 border-gray-600 text-background-primary">
             <div className="flex justify-center border-2 border-transparent border-b-gray-600 p-2">
               <h4 className='text-center'>Technical Skills</h4>
             </div>
-            <div className="flex flex-col p-2 gap-2 max-h-[87vh] overflow-auto mr-1">
+            <div className="flex flex-col p-2 gap-2 max-h-[89vh] overflow-auto mr-1 max-lg:max-h-full">
               {skills.map( ( skill, i ) =>
               {
                 return <div className="flex items-center gap-2 p-1" key={i}>
