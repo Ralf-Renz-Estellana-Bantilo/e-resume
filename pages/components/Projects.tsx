@@ -134,7 +134,7 @@ export default function projects ()
             <div className='flex flex-wrap justify-evenly gap-5 py-3 px-3'>
                {projects.map( ( { coverURL, title, description, tagIDs }, index ) =>
                {
-                  return <Card coverURL={coverURL} title={title} description={description} tagIDs={tagIDs} key={index} />
+                  return <Card coverURL={coverURL} title={title} description={description} tagIDs={tagIDs} key={title} />
                } )}
             </div>
          </div>
