@@ -12,7 +12,6 @@ import { ClockCircleOutlined, DownloadOutlined, FacebookFilled, GithubFilled, Me
 import Personal from './components/Personal'
 import Projects from './components/Projects'
 import StickyBox from 'react-sticky-box'
-import myResume from '../public/Images/Ralf Renz Bantilo.png'
 import OtherInfo from './components/OtherInfo'
 
 export default function Home ()
@@ -229,7 +228,8 @@ export default function Home ()
                   <Image
                     className="object-cover w-full h-full mx-auto rounded-full"
                     src={profileIMG}
-                    alt=""
+                    alt="Ralf Renz Bantilo"
+                    priority
                   />
                 </div>
               </div>

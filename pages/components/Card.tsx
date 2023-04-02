@@ -1,7 +1,6 @@
 import { Divider, Space, Tag } from 'antd'
 import Image from 'next/image'
 import React, { useState } from 'react'
-import profileIMG from '../../public/Images/Ralf Renz Bantilo.png'
 
 interface CardProps
 {
@@ -86,8 +85,8 @@ const Card = ( { coverURL, title, description, tagIDs }: CardProps ) =>
          <div className='w-full h-44 overflow-clip'>
             <Image
                className="object-cover h-full"
-               src={require( `../../public/Images/${coverURL}` ).default}
-               alt=""
+               src={require( `@/public/Images/${coverURL}` ).default}
+               alt={title}
             />
          </div>
          <div className="flex flex-col gap-2 p-2">
@@ -98,9 +97,9 @@ const Card = ( { coverURL, title, description, tagIDs }: CardProps ) =>
             <Divider className='m-0'></Divider>
             <div>
                <Space size={[0, tagIDs.length]} wrap>
-                  {tagIDs.map( ( tagID ) =>
+                  {tagIDs.map( ( tagID, i ) =>
                   {
-                     return <Tag className='rounded-full' color={findTagByID( tagID ).color}>{findTagByID( tagID ).label}</Tag>
+                     return <Tag className='rounded-full' color={findTagByID( tagID ).color} key={i}>{findTagByID( tagID ).label}</Tag>
                   } )}
                </Space>
             </div>
