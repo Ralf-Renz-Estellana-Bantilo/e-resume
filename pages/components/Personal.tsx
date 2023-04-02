@@ -1,6 +1,5 @@
-import { ClockCircleOutlined, InfoCircleOutlined, SmileOutlined } from '@ant-design/icons'
 import { Divider, Timeline } from 'antd'
-import React, { useState } from 'react'
+import React from 'react'
 
 const Personal = () =>
 {

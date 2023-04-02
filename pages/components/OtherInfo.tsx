@@ -7,7 +7,8 @@ const OtherInfo = () =>
    const experienceLevelOptions = ['Entry-Level', 'Junior Level', 'Mid-Senior Level', 'Manager'];
    const jobTypeOptions = ['Full-time', 'Part-time', 'Contract', 'Temporary'];
    const workSetupOptions = ['On-site', 'Remote', 'Hybrid'];
-   const jobTitleOptions = ['Junior Software Engineer', 'Frontend Software Engineer', 'Fullstack Developer'];
+   const jobTitleOptions1 = ['Junior Software Engineer', 'Frontend Software Engineer', 'Fullstack Developer (React/Node)'];
+   const jobTitleOptions2 = ['React Developer', ' Junior Programmer', 'Web Developer'];
 
 
    return (
@@ -49,8 +50,9 @@ const OtherInfo = () =>
 
                      <h3 className='font-semibold text-base text-dark-blue-secondary'>Title</h3>
                   </Divider>
-                  <div className='px-3'>
-                     <Checkbox.Group className="w-full" options={jobTitleOptions} value={jobTitleOptions} />
+                  <div className='px-3 space-y-3'>
+                     <Checkbox.Group className="w-full" options={jobTitleOptions1} value={jobTitleOptions1} />
+                     <Checkbox.Group className="w-full" options={jobTitleOptions2} value={jobTitleOptions2} />
                   </div>
                </div>
                <div className="flex flex-col gap-2">
@@ -75,7 +77,7 @@ const OtherInfo = () =>
                      <h3 className='font-semibold text-base text-dark-blue-secondary'>Salary Range</h3>
                   </Divider>
                   <div className='flex flex-col px-3'>
-                     <Slider tooltip={{ formatter: null }} range={{ draggableTrack: true }} value={[80, 140]} min={50} max={200} />
+                     <Slider tooltip={{ formatter: null }} range={{ draggableTrack: true }} value={[90, 140]} min={50} max={200} />
                      <div className="flex justify-between items-center">
                         <p>Min: 50k</p>
                         <p>Max: 200k</p>

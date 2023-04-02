@@ -1,14 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Quicksand } from 'next/font/google'
-const quicksand = Quicksand( { subsets: ['latin'], variable: '--font-quicksand', } )
-
-import { BeakerIcon } from '@heroicons/react/24/solid'
 import { useEffect, useState } from 'react'
 import profileIMG from '../public/Images/Ralf Renz Bantilo.png'
-import { MailFilled, PhoneFilled, LinkedinFilled, HomeFilled } from '@ant-design/icons';
-import { Button, Anchor, Tabs, Timeline, Space, Spin, TabsProps, Divider } from 'antd'
-import { ClockCircleOutlined, DownloadOutlined, FacebookFilled, GithubFilled, MessageFilled } from '@ant-design/icons/lib/icons'
+import { Button, Tabs, Spin, TabsProps, Divider } from 'antd'
+import { DownloadOutlined } from '@ant-design/icons/lib/icons'
 import Personal from './components/Personal'
 import Projects from './components/Projects'
 import StickyBox from 'react-sticky-box'
@@ -245,7 +240,7 @@ export default function Home ()
               {
                 return <Button type="primary" shape="circle" key={i} icon={<Image
                   className="object-cover w-full rounded-full relative bottom-[6px]"
-                  src={require( `@/public/Icons/${link.icon}.png` ).default}
+                  src={require( `@/assets/Icons/${link.icon}.png` ).default}
                   alt="image"
                   width={50}
                   onClick={() => visitPage( link.path )}
@@ -265,7 +260,7 @@ export default function Home ()
 
                     <div className="w-8 h-8 rounded-full flex items-center justify-center"><Image
                       className="object-cover w-full h-full mx-auto rounded-full"
-                      src={require( `@/public/Icons/${info.icon}.png` ).default}
+                      src={require( `@/assets/Icons/${info.icon}.png` ).default}
                       alt="image"
                       width={50}
                     /></div>
@@ -312,7 +307,7 @@ export default function Home ()
                   <div className="w-8 h-8 rounded-full">
                     <Image
                       className="object-cover w-full h-full mx-auto rounded-full"
-                      src={require( `@/public/Icons/${skill.icon}.png` ).default}
+                      src={require( `@/assets/Icons/${skill.icon}.png` ).default}
                       alt="image"
                     />
                   </div>

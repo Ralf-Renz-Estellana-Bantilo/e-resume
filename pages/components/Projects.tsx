@@ -2,7 +2,6 @@ import { CheckOutlined } from '@ant-design/icons'
 import { Divider } from 'antd'
 import React, { useState } from 'react'
 import Card from './Card'
-import Image from 'next/image'
 
 const Projects = () =>
 {
@@ -133,11 +132,13 @@ const Projects = () =>
             </div>
 
             <div className='flex flex-wrap justify-evenly gap-5 py-3 px-3'>
-               {projects.map( ( { coverURL, title, description, tagIDs } ) =>
+               {/* {projects.map( ( { coverURL, title, description, tagIDs } ) =>
                {
                   return <Card coverURL={coverURL} title={title} description={description} tagIDs={tagIDs} key={title} />
 
-               } )}
+               } )} */}
+
+               <Card />
             </div>
          </div>
       </div>
