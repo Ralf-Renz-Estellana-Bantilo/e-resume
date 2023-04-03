@@ -73,7 +73,7 @@ const OtherInfo = () =>
                      </div>
                   </div>
                </div>
-               <div className="flex flex-col gap-2">
+               {/* <div className="flex flex-col gap-2">
                   <Divider className='m-0' orientation="center">
 
                      <h3 className='font-semibold text-base text-dark-blue-secondary'>Salary Range</h3>
@@ -85,7 +85,7 @@ const OtherInfo = () =>
                         <p>Max: 200k</p>
                      </div>
                   </div>
-               </div>
+               </div> */}
             </div>
          </div>
       </div>

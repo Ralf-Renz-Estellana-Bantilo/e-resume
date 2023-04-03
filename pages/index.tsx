@@ -186,7 +186,7 @@ export default function Home ()
     window.open( newLink, "_blank" );
   }
 
-  const handleDownload = () =>
+  const handleDownload = (): void =>
   {
     const host = `${window.location.href}`.includes( 'localhost' ) ? 'http://localhost:3000' : 'https://ralf-bantilo-e-resume.vercel.app'
     const element = document.createElement( "a" );
