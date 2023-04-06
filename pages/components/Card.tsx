@@ -1,6 +1,16 @@
 import { Carousel, Divider, Space, Tag } from 'antd'
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+// import required modules
+import { Pagination, Autoplay } from "swiper";
 
 const contentStyle: React.CSSProperties = {
    height: '100%',
@@ -144,6 +154,33 @@ const Card = () =>
       },
    ] )
 
+   const [screenSize, setScreenSize] = useState( {
+      width: window.innerWidth,
+      height: window.innerHeight
+   } );
+
+   const MOBILE = 600
+
+   useEffect( () =>
+   {
+      const handleResize = () =>
+      {
+         setScreenSize( {
+            width: window.innerWidth,
+            height: window.innerHeight
+         } );
+      };
+
+      window.addEventListener( 'resize', handleResize );
+
+      return () =>
+      {
+         window.removeEventListener( 'resize', handleResize );
+      };
+   }, [] );
+
+   const { width } = screenSize;
+
    const findTagByID = ( tagID: Number ) =>
    {
       return tagList.filter( ( list ) => list.ID == tagID )[0]
@@ -151,7 +188,7 @@ const Card = () =>
 
    return (
       <>
-         {projects.map( ( { coverURL, title, description, tagIDs }, i ) =>
+         {width > MOBILE ? <>{projects.map( ( { coverURL, title, description, tagIDs }, i ) =>
          {
             return <div className='flex flex-col w-[48%] h-auto neumorphism-2 rounded-xl overflow-hidden max-sm:w-full max-md:w-[75%] max-lg:w-[48%] max-xl:w-[70%]' key={i}>
                <div className='w-full h-44 overflow-clip bg-gray-400'>
@@ -199,7 +236,75 @@ const Card = () =>
                   </div>
                </div>
             </div>
-         } )}
+         } )}</> : <>
+            <Swiper
+               slidesPerView={1}
+               centeredSlides={true}
+               autoplay={{
+                  delay: 250000,
+                  disableOnInteraction: false,
+               }}
+               pagination={{
+                  clickable: true,
+               }}
+               modules={[Pagination, Autoplay]}
+               className="mySwiper bg-background-primary"
+            >
+
+               {projects.map( ( { coverURL, title, description, tagIDs }, i ) =>
+               {
+                  return <SwiperSlide className='p-4 pb-8 '>
+                     <div className='flex flex-col w-[48%] h-full neumorphism-2 rounded-xl overflow-hidden max-sm:w-full max-md:w-[75%] max-lg:w-[48%] max-xl:w-[70%]' key={i}>
+                        <div className='w-full h-44 overflow-clip bg-gray-400'>
+
+                           <Carousel autoplay effect='fade'>
+                              <Image
+                                 className="object-cover h-44"
+                                 src={require( `@/assets/Images/${coverURL}1.jpg` ).default}
+                                 alt={title}
+                              />
+                              {/* <h3 style={contentStyle}>1</h3> */}
+                              {/* <h3 style={contentStyle}>2</h3> */}
+                              <Image
+                                 className="object-cover h-44"
+                                 src={require( `@/assets/Images/${coverURL}2.jpg` ).default}
+                                 alt={title}
+                              />
+                              {/* <h3 style={contentStyle}>3</h3> */}
+                              <Image
+                                 className="object-cover h-44"
+                                 src={require( `@/assets/Images/${coverURL}3.jpg` ).default}
+                                 alt={title}
+                              />
+                              {/* <h3 style={contentStyle}>4</h3> */}
+                              <Image
+                                 className="object-cover h-44"
+                                 src={require( `@/assets/Images/${coverURL}4.jpg` ).default}
+                                 alt={title}
+                              />
+                           </Carousel>
+                        </div>
+                        <div className="flex flex-col gap-2 p-2">
+                           <div className='flex flex-col justify-center'>
+                              <h3 className='text-lg font-semibold text-dark-blue-secondary text-center py-2'>{title}</h3>
+                              <p className='text-dark-blue-secondary text-xs text-justify font-medium'>{description}</p>
+                           </div>
+                           <Divider className='m-0'></Divider>
+                           <div>
+                              <Space size={[0, tagIDs.length]} wrap>
+                                 {tagIDs.map( ( tagID, i ) =>
+                                 {
+                                    return <Tag className='rounded-full' color={findTagByID( tagID ).color} key={i}>{findTagByID( tagID ).label}</Tag>
+                                 } )}
+                              </Space>
+                           </div>
+                        </div>
+                     </div>
+                  </SwiperSlide>
+               } )}
+
+            </Swiper></>}
+
       </>
    )
 }

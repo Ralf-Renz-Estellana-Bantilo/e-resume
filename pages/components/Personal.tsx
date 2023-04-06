@@ -8,15 +8,15 @@ const Personal = () =>
 {
 
    return (
-      <div className='flex flex-col gap-8 py-3 px-7'>
-         <div className="flex flex-col px-5 neumorphism-1 rounded-lg">
+      <div className='flex flex-col gap-8 p-7 pt-3 max-md:px-4'>
+         <div className="flex flex-col px-5 neumorphism-1 rounded-lg max-md:px-3">
             <div className="flex flex-col py-2 gap-2">
                <h2 className='font-bold text-lg text-dark-blue-secondary'>ABOUT</h2>
                <Divider className='m-0'></Divider>
             </div>
             <div className='pb-6 text-dark-blue-secondary font-medium'>I am a  <b>skilled software programmer </b> with proficiency in <b>multiple programming languages</b> , databases, and development tools. I am a <b>strong team player</b> with effective communication skills, committed to maintaining <b> high software quality standards </b> . I am also a <b>quick learner</b> and <b>passionate</b>  about developing <b>innovative solutions</b> .</div>
          </div>
-         <div className="flex flex-col px-5 gap-2 neumorphism-1 rounded-lg">
+         <div className="flex flex-col px-5 gap-2 neumorphism-1 rounded-lg max-md:px-3">
             <div className="flex flex-col py-2 gap-2">
                <h2 className='font-bold text-lg text-dark-blue-secondary'>EXPERIENCE</h2>
                <Divider className='m-0'></Divider>
@@ -128,7 +128,7 @@ const Personal = () =>
                ]}
             />
          </div>
-         <div className="flex flex-col px-5 gap-2 neumorphism-1 rounded-lg">
+         <div className="flex flex-col px-5 gap-2 neumorphism-1 rounded-lg max-md:px-3">
             <div className="flex flex-col py-2 gap-2">
                <h2 className='font-bold text-lg'>EDUCATION</h2>
                <Divider className='m-0'></Divider>

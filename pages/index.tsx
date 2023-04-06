@@ -160,7 +160,6 @@ export default function Home ()
 
   const [loader, setToggleLoader] = useState( !false )
 
-
   const renderTabBar: TabsProps['renderTabBar'] = ( props, DefaultTabBar ) => (
     <StickyBox
       offsetTop={0}
@@ -173,6 +172,8 @@ export default function Home ()
         {...props}
         style={{
           background: '#E7F1F3',
+          position: 'sticky',
+          top: '0px',
         }}
       />
     </StickyBox>
@@ -219,7 +220,7 @@ export default function Home ()
       <main className={`${quicksand.className} bg-background-primary relative flex min-h-screen max-lg:flex max-lg:flex-col`}>
 
         {/* LEFT PANEL */}
-        <div className='flex flex-col justify-between py-3 px-5 gradient-background max-lg:min-h-[100vh] max-lg:justify-evenly max-lg:gap-3' style={{ flex: 2 }}>
+        <div className='flex flex-col justify-between py-5 px-4 gradient-background max-lg:min-h-[100vh] max-lg:justify-evenly max-lg:gap-3' style={{ flex: 2 }}>
           <div className="flex flex-col gap-3 ">
             <div className="flex flex-col items-center gap-2">
               <div className="flex items-center justify-center">
@@ -282,7 +283,7 @@ export default function Home ()
         </div>
 
         {/* CONTENT PANEL */}
-        <div className='h-screen overflow-y-scroll max-lg:min-h-[100vh] max-lg:relative' style={{ flex: 5 }}>
+        <div className='h-screen overflow-y-scroll max-lg:min-h-[100%] max-lg:relative' style={{ flex: 5 }}>
           {loader ? <>
             <div className='h-screen flex items-center justify-center'>
               <Spin size="large" />
@@ -290,8 +291,10 @@ export default function Home ()
 
           </>
             : <Tabs
+              style={{ position: 'sticky', top: '100px', zIndex: 11 }}
               defaultActiveKey="1"
               centered
+              animated={{ inkBar: true }}
               className={quicksand.className}
               renderTabBar={renderTabBar}
               items={panels}
@@ -300,7 +303,7 @@ export default function Home ()
         </div>
 
         {/* RIGHT PANEL */}
-        <div className='gradient-background py-3 px-5 h-screen max-lg:min-h-[100vh]' style={{ flex: 1.8 }}>
+        <div className='gradient-background py-5 px-4 h-screen max-lg:min-h-[100vh]' style={{ flex: 1.8 }}>
           <div className="flex flex-col rounded-lg border-2 border-gray-600 text-background-primary">
             <div className="flex justify-center border-2 border-transparent border-b-gray-600 p-2">
               <h4 className='text-center'>Technical Skills</h4>
