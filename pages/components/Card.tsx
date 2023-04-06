@@ -241,7 +241,7 @@ const Card = () =>
                slidesPerView={1}
                centeredSlides={true}
                autoplay={{
-                  delay: 250000,
+                  delay: 5000,
                   disableOnInteraction: false,
                }}
                pagination={{
@@ -253,7 +253,7 @@ const Card = () =>
 
                {projects.map( ( { coverURL, title, description, tagIDs }, i ) =>
                {
-                  return <SwiperSlide className='p-4 pb-8 '>
+                  return <SwiperSlide className='p-4 pb-8' key={i}>
                      <div className='flex flex-col w-[48%] h-full neumorphism-2 rounded-xl overflow-hidden max-sm:w-full max-md:w-[75%] max-lg:w-[48%] max-xl:w-[70%]' key={i}>
                         <div className='w-full h-44 overflow-clip bg-gray-400'>
 
@@ -263,20 +263,16 @@ const Card = () =>
                                  src={require( `@/assets/Images/${coverURL}1.jpg` ).default}
                                  alt={title}
                               />
-                              {/* <h3 style={contentStyle}>1</h3> */}
-                              {/* <h3 style={contentStyle}>2</h3> */}
                               <Image
                                  className="object-cover h-44"
                                  src={require( `@/assets/Images/${coverURL}2.jpg` ).default}
                                  alt={title}
                               />
-                              {/* <h3 style={contentStyle}>3</h3> */}
                               <Image
                                  className="object-cover h-44"
                                  src={require( `@/assets/Images/${coverURL}3.jpg` ).default}
                                  alt={title}
                               />
-                              {/* <h3 style={contentStyle}>4</h3> */}
                               <Image
                                  className="object-cover h-44"
                                  src={require( `@/assets/Images/${coverURL}4.jpg` ).default}

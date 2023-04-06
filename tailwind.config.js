@@ -6,14 +6,14 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
  
     // Or if using `src` directory:
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./views/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
         'dark-blue-primary': '#212B33',
         'dark-blue-secondary': '#25333F',
-        'primary': '#00aeff',
+        'primary': '#1677ff',
         'background-primary': '#E7F1F3',
         'background-secondary': '#CBDDE0',
       },

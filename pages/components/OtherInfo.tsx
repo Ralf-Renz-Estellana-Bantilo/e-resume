@@ -83,7 +83,7 @@ const OtherInfo = () =>
                         <h3 className='font-semibold text-base text-dark-blue-secondary'>Work Setup</h3>
                      </Divider>
                      <div className='px-3'>
-                        <Checkbox.Group className={`${quicksand.className} w-full`} options={workSetupOptions} value={workSetupOptions} />
+                        <Checkbox.Group className={`${quicksand.className} w-full`} options={workSetupOptions} value={['Remote']} />
                      </div>
                   </div>
                   <div className="flex flex-col gap-2">
@@ -96,7 +96,7 @@ const OtherInfo = () =>
                         <Checkbox.Group className={`${quicksand.className} w-full`} options={jobTitleOptions2} value={jobTitleOptions2} />
                      </div>
                   </div>
-                  <div className="flex flex-col gap-2">
+                  {/* <div className="flex flex-col gap-2">
                      <Divider className='m-0' orientation="center">
 
                         <h3 className='font-semibold text-base text-dark-blue-secondary'>Availability (Phone call)</h3>
@@ -111,7 +111,7 @@ const OtherInfo = () =>
                            <span className='font-semibold'>8am - 8pm</span>
                         </div>
                      </div>
-                  </div>
+                  </div> */}
                </> : <>
                   <div className="flex flex-col gap-2">
                      <Divider className='m-0' orientation="center">
@@ -159,7 +159,7 @@ const OtherInfo = () =>
                         } )}
                      </div>
                   </div>
-                  <div className="flex flex-col gap-2">
+                  {/* <div className="flex flex-col gap-2">
                      <Divider className='m-0' orientation="center">
 
                         <h3 className='font-semibold text-base text-dark-blue-secondary'>Availability (Phone call)</h3>
@@ -174,21 +174,27 @@ const OtherInfo = () =>
                            <span className='font-semibold'>8am - 8pm</span>
                         </div>
                      </div>
-                  </div>
+                  </div> */}
                </>}
-               {/* <div className="flex flex-col gap-2">
+               <div className="flex flex-col gap-2">
                   <Divider className='m-0' orientation="center">
 
                      <h3 className='font-semibold text-base text-dark-blue-secondary'>Salary Range</h3>
                   </Divider>
                   <div className='flex flex-col px-3'>
-                     <Slider tooltip={{ formatter: null }} range={{ draggableTrack: true }} value={[90, 160]} min={50} max={200} />
+                     <Slider
+                        tooltip={{ formatter: null }}
+                        range={{ draggableTrack: true }}
+                        min={50}
+                        max={150}
+                        value={[75, 110]}
+                     />
                      <div className="flex justify-between items-center">
-                        <p>Min: 50k</p>
-                        <p>Max: 200k</p>
+                        <p>Min: $50k</p>
+                        <p>Max: $150k</p>
                      </div>
                   </div>
-               </div> */}
+               </div>
             </div>
          </div>
       </div>

@@ -78,7 +78,7 @@ const Projects = () =>
    const { width } = screenSize;
 
    return (
-      <div className="flex flex-col gap-8 p-7 pt-3 max-md:px-4">
+      <div className="flex flex-col gap-8 p-7 pt-3 min-h-screen max-md:px-4">
          <div className="flex flex-col px-5 neumorphism-1 rounded-lg max-md:px-3">
             <div className="flex flex-col py-2 gap-2">
                <h2 className='font-bold text-lg text-dark-blue-secondary'>SERVICES</h2>
@@ -108,7 +108,7 @@ const Projects = () =>
                      slidesPerView={1}
                      centeredSlides={true}
                      autoplay={{
-                        delay: 250000,
+                        delay: 2500,
                         disableOnInteraction: false,
                      }}
                      pagination={{
@@ -120,7 +120,7 @@ const Projects = () =>
 
                      {services.map( ( service, i ) =>
                      {
-                        return <SwiperSlide className='p-4 pb-8 '>
+                        return <SwiperSlide className='p-4 pb-8 ' key={i}>
                            <div className="flex flex-col h-auto neumorphism-2 rounded-lg bg-background-primary w-[48%] max-sm:w-full max-md:w-[75%] max-lg:w-[48%]" key={i}>
                               <div className="flex flex-col">
                                  <h3 className='font-semibold text-center p-2 text-base text-dark-blue-secondary'>{service.category}</h3>

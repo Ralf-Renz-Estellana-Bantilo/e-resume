@@ -14,7 +14,7 @@ const Personal = () =>
                <h2 className='font-bold text-lg text-dark-blue-secondary'>ABOUT</h2>
                <Divider className='m-0'></Divider>
             </div>
-            <div className='pb-6 text-dark-blue-secondary font-medium'>I am a  <b>skilled software programmer </b> with proficiency in <b>multiple programming languages</b> , databases, and development tools. I am a <b>strong team player</b> with effective communication skills, committed to maintaining <b> high software quality standards </b> . I am also a <b>quick learner</b> and <b>passionate</b>  about developing <b>innovative solutions</b> .</div>
+            <h4 className='pb-6 text-dark-blue-secondary font-medium'>I am a  <b>skilled software programmer </b> with proficiency in <b>multiple programming languages</b> , databases, and development tools. I am a <b>strong team player</b> with effective communication skills, committed to maintaining <b> high software quality standards </b> . I am also a <b>quick learner</b> and <b>passionate</b>  about developing <b>innovative solutions</b> .</h4>
          </div>
          <div className="flex flex-col px-5 gap-2 neumorphism-1 rounded-lg max-md:px-3">
             <div className="flex flex-col py-2 gap-2">
@@ -152,7 +152,7 @@ const Personal = () =>
                               <div className="flex flex-col px-3">
                                  <div className="flex gap-3 text-dark-blue-secondary font-medium">
                                     <div>•</div>
-                                    <p>Capstone Project: JOB SEARCH SYSTEM in Catarman, Northern Samar (Using MERN Stack)</p>
+                                    <p>Capstone Project: JOB SEARCH SYSTEM (Using MERN Stack)</p>
                                  </div>
                                  <div className="flex gap-3 text-dark-blue-secondary font-medium">
                                     <div>•</div>
