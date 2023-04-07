@@ -79,7 +79,7 @@ const Projects = () =>
 
    return (
       <div className="flex flex-col gap-8 p-7 pt-3 min-h-screen max-md:px-4">
-         <div className="flex flex-col px-5 neumorphism-1 rounded-lg max-md:px-3">
+         <div className="flex flex-col px-5 gap-2 neumorphism-1 rounded-lg max-md:px-3">
             <div className="flex flex-col py-2 gap-2">
                <h2 className='font-bold text-lg text-dark-blue-secondary'>SERVICES</h2>
                <Divider className='m-0'></Divider>
@@ -97,7 +97,7 @@ const Projects = () =>
                         {
                            return <div className="flex items-center gap-2" key={o}>
                               <CheckOutlined />
-                              <p className='text-dark-blue-secondary font-medium'>{item}</p>
+                              <p className='text-dark-blue-secondary'>{item}</p>
                            </div>
                         } )}
 
@@ -147,7 +147,7 @@ const Projects = () =>
             </div>
          </div>
 
-         <div className="flex flex-col px-5 neumorphism-1 rounded-lg max-md:px-3">
+         <div className="flex flex-col px-5 gap-2 neumorphism-1 rounded-lg max-md:px-3">
             <div className="flex flex-col py-2 gap-2">
                <h2 className='font-bold text-lg text-dark-blue-secondary'>PROJECTS</h2>
                <Divider className='m-0'></Divider>

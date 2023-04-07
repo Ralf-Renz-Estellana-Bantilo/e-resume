@@ -98,7 +98,7 @@ const DesktopView = () =>
       },
       {
          icon: 'nodejs',
-         description: 'Node JS (Express)',
+         description: 'Node JS',
          category: 'Backend',
          proficiency: 'Intermediate',
       },
@@ -182,14 +182,15 @@ const DesktopView = () =>
    const renderTabBar: TabsProps['renderTabBar'] = ( props, DefaultTabBar ) => (
       <StickyBox
          offsetTop={0}
-         offsetBottom={20}
+         offsetBottom={80}
          style={{
-            zIndex: 1,
+            zIndex: 110,
          }}
       >
          <DefaultTabBar
             {...props}
             style={{
+               zIndex: 110,
                background: '#E7F1F3',
                position: 'sticky',
                top: '0px',
@@ -339,7 +340,7 @@ const DesktopView = () =>
                <div className="flex justify-center border-2 border-transparent border-b-gray-600 p-2">
                   <h4 className='text-center'>Technical Skills</h4>
                </div>
-               <div className="flex flex-col p-2 gap-2 max-h-[89vh] overflow-auto mr-1 max-lg:max-h-full">
+               <div className="flex flex-col p-2 gap-2 max-h-[87vh] overflow-auto mr-1 max-lg:max-h-full">
                   {skills.map( ( skill, i ) =>
                   {
                      return <div className="flex items-center gap-2 p-1" key={i}>

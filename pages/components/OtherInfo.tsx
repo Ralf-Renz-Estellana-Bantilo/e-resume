@@ -1,4 +1,4 @@
-import { Checkbox, Divider, Slider } from 'antd'
+import { Checkbox, Divider, Slider, Timeline, Space, Tag } from 'antd'
 import React, { useEffect, useState } from 'react'
 import { Quicksand } from 'next/font/google'
 
@@ -13,6 +13,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination } from "swiper";
+import { ClockCircleOutlined } from '@ant-design/icons';
 
 const quicksand = Quicksand( { subsets: ['latin'] } )
 
@@ -23,11 +24,17 @@ const OtherInfo = () =>
    const workSetupOptions = ['On-site', 'Remote', 'Hybrid'];
    const jobTitleOptions1 = ['Junior Software Engineer', 'Frontend Software Engineer', 'Fullstack Developer (React/Node)'];
    const jobTitleOptions2 = ['React Developer', ' Junior Programmer', 'Web Developer'];
+   const techStack1 = ['MySQL, ExpressJS, ReactJS, NodeJS', 'ReactJS, NextJS, TypeScript, NodeJS', 'JavaScript, PHP'];
+   const techStack2 = ['MySQL, ExpressJS, VueJS, NodeJS', 'VueJS, MySQL, PHP',];
 
    const [screenSize, setScreenSize] = useState( {
       width: window.innerWidth,
       height: window.innerHeight
    } );
+
+   const [timeline, setTimeline] = useState( [
+
+   ] )
 
    const MOBILE = 600
 
@@ -96,6 +103,15 @@ const OtherInfo = () =>
                         <Checkbox.Group className={`${quicksand.className} w-full`} options={jobTitleOptions2} value={jobTitleOptions2} />
                      </div>
                   </div>
+                  <div className="flex flex-col gap-2">
+                     <Divider className='m-0' orientation="center">
+                        <h3 className='font-semibold text-base text-dark-blue-secondary'>Tech Stack</h3>
+                     </Divider>
+                     <div className='flex flex-col items-start px-3 gap-2'>
+                        <Checkbox.Group className={`${quicksand.className} w-full`} options={techStack1} value={['MySQL, ExpressJS, ReactJS, NodeJS', 'ReactJS, NextJS, TypeScript, NodeJS']} />
+                        <Checkbox.Group className={`${quicksand.className} w-full`} options={techStack2} value={['MySQL, ExpressJS, VueJS, NodeJS']} />
+                     </div>
+                  </div>
                   {/* <div className="flex flex-col gap-2">
                      <Divider className='m-0' orientation="center">
 
@@ -152,7 +168,7 @@ const OtherInfo = () =>
 
                         <h3 className='font-semibold text-base text-dark-blue-secondary'>Title</h3>
                      </Divider>
-                     <div className='px-3 space-y-3'>
+                     <div className='px-3'>
                         {[...jobTitleOptions1, ...jobTitleOptions2].map( ( title, i ) =>
                         {
                            return <Checkbox.Group className={`${quicksand.className} w-full`} options={[title]} value={[title]} key={i} />
@@ -175,8 +191,19 @@ const OtherInfo = () =>
                         </div>
                      </div>
                   </div> */}
+                  <div className="flex flex-col gap-2">
+                     <Divider className='m-0' orientation="center">
+                        <h3 className='font-semibold text-base text-dark-blue-secondary'>Tech Stack</h3>
+                     </Divider>
+                     <div className='flex flex-col items-start px-3'>
+                        {[...techStack1, ...techStack2].map( ( title, i ) =>
+                        {
+                           return <Checkbox.Group className={`${quicksand.className} w-full`} options={[title]} value={['MySQL, ExpressJS, ReactJS, NodeJS', 'ReactJS, NextJS, TypeScript, NodeJS', 'MySQL, ExpressJS, VueJS, NodeJS']} key={i} />
+                        } )}
+                     </div>
+                  </div>
                </>}
-               <div className="flex flex-col gap-2">
+               {/* <div className="flex flex-col gap-2">
                   <Divider className='m-0' orientation="center">
 
                      <h3 className='font-semibold text-base text-dark-blue-secondary'>Salary Range</h3>
@@ -194,7 +221,80 @@ const OtherInfo = () =>
                         <p>Max: $150k</p>
                      </div>
                   </div>
-               </div>
+               </div> */}
+            </div>
+         </div>
+         <div className="flex flex-col px-5 neumorphism-1 rounded-lg max-md:px-3">
+            <div className="flex flex-col py-2 gap-2">
+               <h2 className='font-bold text-lg text-dark-blue-secondary'>TIMELINE</h2>
+               <Divider className='m-0'></Divider>
+            </div>
+            <div className="flex flex-col p-3 max-md:gap-5" >
+               <Timeline
+                  mode={'alternate'}
+                  items={[
+                     {
+                        label: '2022 - Present',
+                        children: (
+                           <>
+                              <Space wrap>
+                                 <Tag className='rounded-full' color={'lime'}>VueJS</Tag>
+                                 <Tag className='rounded-full' color={'geekblue'}>Vuetify</Tag>
+                                 <Tag className='rounded-full' color={'cyan'}>ReactJS</Tag>
+                                 <Tag className='rounded-full' color={'blue'}>TailwindCSS</Tag>
+                                 <Tag className='rounded-full' color={'magenta'}>NextJS</Tag>
+                                 <Tag className='rounded-full' color={'blue'}>TypeScript</Tag>
+                                 <Tag className='rounded-full' color={'yellow'}>ExpressJS</Tag>
+                                 <Tag className='rounded-full' color={'blue'}>NodeJS</Tag>
+                                 <Tag className='rounded-full' color={'orange'}>Figma</Tag>
+                              </Space>
+                           </>
+                        ),
+                     },
+                     {
+                        label: '2021 - 2022',
+                        children: (
+                           <>
+                              <Space wrap>
+                                 <Tag className='rounded-full' color={'orange'}>MySQL</Tag>
+                                 <Tag className='rounded-full' color={'yellow'}>ExpressJS</Tag>
+                                 <Tag className='rounded-full' color={'cyan'}>ReactJS</Tag>
+                                 <Tag className='rounded-full' color={'blue'}>NodeJS</Tag>
+                                 <Tag className='rounded-full' color={'cyan'}>React Native</Tag>
+                                 <Tag className='rounded-full' color={'blue'}>TailwindCSS</Tag>
+                                 <Tag className='rounded-full' color={'orange'}>Git</Tag>
+                              </Space>
+                           </>
+                        ),
+                     },
+                     {
+                        label: '2020 - 2021',
+                        children: (
+                           <>
+                              <Space wrap>
+                                 <Tag className='rounded-full' color={'orange'}>MySQL</Tag>
+                                 <Tag className='rounded-full' color={'yellow'}>ExpressJS</Tag>
+                                 <Tag className='rounded-full' color={'cyan'}>ReactJS</Tag>
+                                 <Tag className='rounded-full' color={'blue'}>NodeJS</Tag>
+                                 <Tag className='rounded-full' color={'orange'}>Git</Tag>
+                              </Space>
+                           </>
+                        ),
+                     },
+                     {
+                        label: '2018 - 2020',
+                        children: (
+                           <>
+                              <Space wrap>
+                                 <Tag className='rounded-full' color={'orange'}>MySQL</Tag>
+                                 <Tag className='rounded-full' color={'volcano'}>Java</Tag>
+                                 <Tag className='rounded-full' color={'geekblue'}>Photoshop</Tag>
+                              </Space>
+                           </>
+                        ),
+                     },
+                  ]}
+               />
             </div>
          </div>
       </div>
