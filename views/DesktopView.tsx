@@ -7,18 +7,19 @@ import StickyBox from 'react-sticky-box'
 import { Quicksand } from 'next/font/google'
 
 import dynamic from 'next/dynamic';
+import { LinksInterface, PanelsInterface, PersonalInformationInterface, ScreenSizeInterface, SkillsInterface } from '@/interfaces'
 
-const Personal = dynamic( () => import( '@/pages/components/Personal' ), {
+const Personal = dynamic<{}>( () => import( '@/pages/components/Personal' ), {
    ssr: false
 } );
-const Projects = dynamic( () => import( '@/pages/components/Projects' ), {
+const Projects = dynamic<{}>( () => import( '@/pages/components/Projects' ), {
    ssr: false
 } );
-const OtherInfo = dynamic( () => import( '@/pages/components/OtherInfo' ), {
+const OtherInfo = dynamic<{}>( () => import( '@/pages/components/OtherInfo' ), {
    ssr: false
 } );
 
-const MobileView = dynamic( () => import( './MobileView' ), {
+const MobileView = dynamic<{}>( () => import( './MobileView' ), {
    ssr: false
 } );
 
@@ -26,7 +27,7 @@ const quicksand = Quicksand( { subsets: ['latin'] } )
 
 const DesktopView = () =>
 {
-   const [personalInformation, setPersonalInformation] = useState( [
+   const [personalInformation, setPersonalInformation] = useState<PersonalInformationInterface[]> ( [
       {
          icon: 'gmail',
          label: 'ralfrenzbantilo@gmail.com'
@@ -41,7 +42,7 @@ const DesktopView = () =>
       },
    ] )
 
-   const [skills, setSkills] = useState( [
+   const [skills, setSkills] = useState<SkillsInterface[]>( [
       {
          icon: 'html',
          description: 'HTML',
@@ -134,7 +135,7 @@ const DesktopView = () =>
       },
 
    ] )
-   const [panels, setPanels] = useState( [
+   const [panels, setPanels] = useState<PanelsInterface[]>( [
       {
          label: `Personal`,
          key: `${Math.floor( Math.random() * 100 ) + 1}`,
@@ -151,7 +152,7 @@ const DesktopView = () =>
          children: <OtherInfo />,
       },
    ] )
-   const [links, setLinks] = useState( [
+   const [links, setLinks] = useState<LinksInterface[]>( [
       {
          icon: 'linkedin',
          path: 'https://linkedin.com/in/ralfrenzbantilo',
@@ -170,19 +171,19 @@ const DesktopView = () =>
       },
    ] )
 
-   const [loader, setToggleLoader] = useState( !false )
+   const [loader, setToggleLoader] = useState<boolean>( !false )
 
-   const [screenSize, setScreenSize] = useState( {
+   const [screenSize, setScreenSize] = useState<ScreenSizeInterface>( {
       width: typeof window !== 'undefined' ? window.innerWidth : 0,
       height: typeof window !== 'undefined' ? window.innerHeight : 0
     } );
 
-   const MOBILE = 600
+   const MOBILE:number = 600
 
    const renderTabBar: TabsProps['renderTabBar'] = ( props, DefaultTabBar ) => (
       <StickyBox
          offsetTop={0}
-         offsetBottom={80}
+         offsetBottom={20}
          style={{
             zIndex: 110,
          }}
@@ -192,8 +193,6 @@ const DesktopView = () =>
             style={{
                zIndex: 110,
                background: '#E7F1F3',
-               position: 'sticky',
-               top: '0px',
             }}
          />
       </StickyBox>
@@ -227,7 +226,7 @@ const DesktopView = () =>
          setToggleLoader( false )
       }, 1000 );
 
-      const handleResize = () =>
+      const handleResize = ():void =>
       {
          setScreenSize( {
             width: window.innerWidth,
@@ -320,8 +319,8 @@ const DesktopView = () =>
             </>
                : <>
                   {
-                     width > MOBILE ? <Tabs
-                        style={{ position: 'sticky', top: '100px', zIndex: 11 }}
+                     width > MOBILE ? 
+                     <Tabs
                         defaultActiveKey="1"
                         centered
                         animated={{ inkBar: true }}

@@ -1,5 +1,5 @@
 import { CheckOutlined } from '@ant-design/icons'
-import { Divider } from 'antd'
+import { Divider, Spin } from 'antd'
 import React, { useEffect, useState } from 'react'
 import Card from './Card'
 
@@ -12,10 +12,11 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination, Autoplay } from "swiper";
+import { ScreenSizeInterface, ServicesInterface } from '@/interfaces';
 
 const Projects = () =>
 {
-   const [services, setServices] = useState( [
+   const [services, setServices] = useState<ServicesInterface[]>( [
       {
          category: 'FRONTEND',
          items: [
@@ -50,16 +51,18 @@ const Projects = () =>
       },
    ] )
 
-   const [screenSize, setScreenSize] = useState( {
+   const [screenSize, setScreenSize] = useState<ScreenSizeInterface>( {
       width: typeof window !== 'undefined' ? window.innerWidth : 0,
       height: typeof window !== 'undefined' ? window.innerHeight : 0
     } );
 
-   const MOBILE = 600
+    const [isVisible, setIsVisible] = useState<boolean>(false)
+
+   const MOBILE:number = 600
 
    useEffect( () =>
    {
-      const handleResize = () =>
+      const handleResize = ():void =>
       {
          setScreenSize( {
             width: window.innerWidth,
@@ -68,6 +71,10 @@ const Projects = () =>
       };
 
       window.addEventListener( 'resize', handleResize );
+
+      setTimeout(() => {
+         setIsVisible( true );
+      }, 200);
 
       return () =>
       {
@@ -79,7 +86,7 @@ const Projects = () =>
 
    return (
       <div className="flex flex-col gap-8 p-7 pt-3 min-h-screen max-md:px-4">
-         <div className="flex flex-col px-5 gap-2 neumorphism-1 rounded-lg max-md:px-3">
+         {isVisible ? <><div className="flex flex-col px-5 gap-2 neumorphism-1 rounded-lg max-md:px-3">
             <div className="flex flex-col py-2 gap-2">
                <h2 className='font-bold text-lg text-dark-blue-secondary'>SERVICES</h2>
                <Divider className='m-0'></Divider>
@@ -156,7 +163,10 @@ const Projects = () =>
             <div className='flex flex-wrap justify-evenly pb-6 gap-5 max-md:pb-1'>
                <Card />
             </div>
-         </div>
+         </div></> : <div className='h-[90vh] flex items-center justify-center'>
+                  <Spin size="large" />
+               </div>}
+         
       </div>
    )
 }

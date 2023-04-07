@@ -11,21 +11,15 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination, Autoplay } from "swiper";
+import { ProjectsInterface, ScreenSizeInterface, TagListsInterface } from '@/interfaces';
 
-const contentStyle: React.CSSProperties = {
-   height: '100%',
-   color: '#fff',
-   lineHeight: '180px',
-   textAlign: 'center',
-   background: '#364d79',
-};
 
 const Card = () =>
 {
 
-   const mernStack = [4, 10, 1, 3]
+   const mernStack:number[] = [4, 10, 1, 3]
 
-   const [projects, setProjects] = useState( [
+   const [projects, setProjects] = useState<ProjectsInterface[]>( [
       {
          title: 'E-Resume',
          description: 'A personal website designed to help me showcase my work and achievements in a professional manner online.',
@@ -123,7 +117,7 @@ const Card = () =>
          ]
       },
    ] )
-   const [tagList, setTaglist] = useState( [
+   const [tagList, setTaglist] = useState<TagListsInterface[]>( [
       {
          ID: 1,
          label: 'React JS',
@@ -196,16 +190,16 @@ const Card = () =>
       },
    ] )
 
-   const [screenSize, setScreenSize] = useState( {
+   const [screenSize, setScreenSize] = useState<ScreenSizeInterface>( {
       width: typeof window !== 'undefined' ? window.innerWidth : 0,
       height: typeof window !== 'undefined' ? window.innerHeight : 0
     } );
 
-   const MOBILE = 600
+   const MOBILE:number = 600
 
    useEffect( () =>
    {
-      const handleResize = () =>
+      const handleResize = ():void =>
       {
          setScreenSize( {
             width: window.innerWidth,
@@ -233,7 +227,7 @@ const Card = () =>
          {width > MOBILE ? <>{projects.map( ( { coverURLs, title, description, tagIDs }, i ) =>
          {
             return <div className='flex flex-col w-[48%] h-auto neumorphism-2 rounded-xl overflow-hidden max-sm:w-full max-md:w-[75%] max-lg:w-[48%] max-xl:w-[70%]' key={i}>
-               <div className='w-full h-44 overflow-clip bg-gray-400'>
+               <div className='w-full h-44 overflow-clip gradient-background'>
 
                   <Carousel autoplay effect='fade'>
 

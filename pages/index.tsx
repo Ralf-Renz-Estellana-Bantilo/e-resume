@@ -1,11 +1,10 @@
 import Head from 'next/head'
-import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 
-const MobileView = dynamic( () => import( '@/views/MobileView' ), {
+const MobileView = dynamic<{}>( () => import( '@/views/MobileView' ), {
   ssr: false
 } );
-const DesktopView = dynamic( () => import( '@/views/DesktopView' ), {
+const DesktopView = dynamic<{}>( () => import( '@/views/DesktopView' ), {
   ssr: false
 } );
 
