@@ -28,9 +28,9 @@ const OtherInfo = () =>
    const techStack2 = ['MySQL, ExpressJS, VueJS, NodeJS', 'VueJS, MySQL, PHP',];
 
    const [screenSize, setScreenSize] = useState( {
-      width: window.innerWidth,
-      height: window.innerHeight
-   } );
+      width: typeof window !== 'undefined' ? window.innerWidth : 0,
+      height: typeof window !== 'undefined' ? window.innerHeight : 0
+    } );
 
    const [timeline, setTimeline] = useState( [
 

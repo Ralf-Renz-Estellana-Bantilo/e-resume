@@ -11,31 +11,7 @@ const DesktopView = dynamic( () => import( '@/views/DesktopView' ), {
 
 export default function Home ()
 {
-  const [screenSize, setScreenSize] = useState( {
-    width: typeof window !== 'undefined' ? window.innerWidth : 0,
-    height: typeof window !== 'undefined' ? window.innerHeight : 0
-  } );
-
-  const MOBILE = 600
-
-  useEffect( () =>
-  {
-    const handleResize = (): void =>
-    {
-      setScreenSize( {
-        width: window.innerWidth,
-        height: window.innerHeight
-      } );
-    };
-
-    window.addEventListener( 'resize', handleResize );
-
-    return () =>
-    {
-      window.removeEventListener( 'resize', handleResize );
-    };
-  }, [] );
-
+  
   return (
     <>
       <Head>

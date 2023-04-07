@@ -197,9 +197,9 @@ const Card = () =>
    ] )
 
    const [screenSize, setScreenSize] = useState( {
-      width: window.innerWidth,
-      height: window.innerHeight
-   } );
+      width: typeof window !== 'undefined' ? window.innerWidth : 0,
+      height: typeof window !== 'undefined' ? window.innerHeight : 0
+    } );
 
    const MOBILE = 600
 
