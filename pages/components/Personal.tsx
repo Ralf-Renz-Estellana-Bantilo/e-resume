@@ -34,7 +34,7 @@ const Personal = () =>
                                     <h4 className='text-dark-blue-secondary font-semibold'>SL Agritech Corporation</h4>
                                  </div>
                                  <div className="flex items-center">
-                                    <p className='font-medium text-dark-blue-secondary'>August 2022 - Present</p>
+                                    <p className='font-medium text-dark-blue-secondary text-right'>August 2022 - Present</p>
                                  </div>
                               </div>
                               <div className="flex flex-col px-3">
@@ -73,7 +73,7 @@ const Personal = () =>
                                     <h4 className='text-dark-blue-secondary font-semibold'>Sterling Insurance Company Inc.</h4>
                                  </div>
                                  <div className="flex items-center">
-                                    <p className='font-medium text-dark-blue-secondary'>April - July 2022</p>
+                                    <p className='font-medium text-dark-blue-secondary text-right'>April - July 2022</p>
                                  </div>
                               </div>
                               <div className="flex flex-col px-3">
@@ -112,7 +112,7 @@ const Personal = () =>
                                     <h4 className='text-dark-blue-secondary font-semibold'>Comelec</h4>
                                  </div>
                                  <div className="flex items-center">
-                                    <p className='font-medium text-dark-blue-secondary'>February - May 2022</p>
+                                    <p className='font-medium text-dark-blue-secondary text-right'>February - May 2022</p>
                                  </div>
                               </div>
                               <div className="flex flex-col px-3">
@@ -146,7 +146,7 @@ const Personal = () =>
                                     <h4 className='text-dark-blue-secondary font-semibold'>University of Eastern Philippines</h4>
                                  </div>
                                  <div className="flex items-center">
-                                    <p className='font-medium text-dark-blue-secondary'>August 2018 - June 2022</p>
+                                    <p className='font-medium text-dark-blue-secondary text-right'>August 2018 - June 2022</p>
                                  </div>
                               </div>
                               <div className="flex flex-col px-3">

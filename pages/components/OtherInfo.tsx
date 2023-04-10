@@ -252,6 +252,24 @@ const OtherInfo = () =>
                                     <Tag className='rounded-full' color={'green'}>NodeJS</Tag>
                                     <Tag className='rounded-full' color={'orange'}>Figma</Tag>
                                  </Space>
+                                 <div className="flex flex-col p-3">
+                                    <div className="flex items-center gap-3 text-dark-blue-secondary">
+                                       <div>•</div>
+                                       <p className='text-xs text-left'>Applicant Tracking & Onboarding System</p>
+                                    </div>
+                                    <div className="flex items-center gap-3 text-dark-blue-secondary">
+                                       <div>•</div>
+                                       <p className='text-xs text-left'>E-Resume</p>
+                                    </div>
+                                    <div className="flex items-center gap-3 text-dark-blue-secondary">
+                                       <div>•</div>
+                                       <p className='text-xs text-left'>Employee Portal</p>
+                                    </div>
+                                    <div className="flex items-center gap-3 text-dark-blue-secondary">
+                                       <div>•</div>
+                                       <p className='text-xs text-left'>Personal Expenses Tracker</p>
+                                    </div>
+                                 </div>
                               </>
                            ),
                         },
@@ -268,6 +286,12 @@ const OtherInfo = () =>
                                     <Tag className='rounded-full' color={'blue'}>TailwindCSS</Tag>
                                     <Tag className='rounded-full' color={'orange'}>Git</Tag>
                                  </Space>
+                                 <div className="flex flex-col p-3">
+                                    <div className="flex items-center gap-3 text-dark-blue-secondary">
+                                       <div>•</div>
+                                       <p className='text-xs text-left'>Payroll System</p>
+                                    </div>
+                                 </div>
                               </>
                            ),
                         },
@@ -282,6 +306,24 @@ const OtherInfo = () =>
                                     <Tag className='rounded-full' color={'green'}>NodeJS</Tag>
                                     <Tag className='rounded-full' color={'orange'}>Git</Tag>
                                  </Space>
+                                 <div className="flex flex-col p-3">
+                                    <div className="flex items-center gap-3 text-dark-blue-secondary">
+                                       <div>•</div>
+                                       <p className='text-xs text-left'>Job Search System</p>
+                                    </div>
+                                    <div className="flex items-center gap-3 text-dark-blue-secondary">
+                                       <div>•</div>
+                                       <p className='text-xs text-left'>GWA Calculator</p>
+                                    </div>
+                                    <div className="flex items-center gap-3 text-dark-blue-secondary">
+                                       <div>•</div>
+                                       <p className='text-xs text-left'>Telemedicine System</p>
+                                    </div>
+                                    <div className="flex items-center gap-3 text-dark-blue-secondary">
+                                       <div>•</div>
+                                       <p className='text-xs text-left'>Dictionary Portal</p>
+                                    </div>
+                                 </div>
                               </>
                            ),
                         },
@@ -294,6 +336,20 @@ const OtherInfo = () =>
                                     <Tag className='rounded-full' color={'volcano'}>Java</Tag>
                                     <Tag className='rounded-full' color={'geekblue'}>Photoshop</Tag>
                                  </Space>
+                                 <div className="flex flex-col p-3">
+                                    <div className="flex items-center gap-3 text-dark-blue-secondary">
+                                       <div>•</div>
+                                       <p className='text-xs text-left'>Random Student Picker Program</p>
+                                    </div>
+                                    <div className="flex items-center gap-3 text-dark-blue-secondary">
+                                       <div>•</div>
+                                       <p className='text-xs text-left'>Basketball Statistics Program</p>
+                                    </div>
+                                    <div className="flex items-center gap-3 text-dark-blue-secondary">
+                                       <div>•</div>
+                                       <p className='text-xs text-left'>Test Simulator Program</p>
+                                    </div>
+                                 </div>
                               </>
                            ),
                         },
