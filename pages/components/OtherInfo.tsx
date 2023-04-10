@@ -249,7 +249,7 @@ const OtherInfo = () =>
                                     <Tag className='rounded-full' color={'magenta'}>NextJS</Tag>
                                     <Tag className='rounded-full' color={'blue'}>TypeScript</Tag>
                                     <Tag className='rounded-full' color={'yellow'}>ExpressJS</Tag>
-                                    <Tag className='rounded-full' color={'blue'}>NodeJS</Tag>
+                                    <Tag className='rounded-full' color={'green'}>NodeJS</Tag>
                                     <Tag className='rounded-full' color={'orange'}>Figma</Tag>
                                  </Space>
                               </>
@@ -263,7 +263,7 @@ const OtherInfo = () =>
                                     <Tag className='rounded-full' color={'orange'}>MySQL</Tag>
                                     <Tag className='rounded-full' color={'yellow'}>ExpressJS</Tag>
                                     <Tag className='rounded-full' color={'cyan'}>ReactJS</Tag>
-                                    <Tag className='rounded-full' color={'blue'}>NodeJS</Tag>
+                                    <Tag className='rounded-full' color={'green'}>NodeJS</Tag>
                                     <Tag className='rounded-full' color={'cyan'}>React Native</Tag>
                                     <Tag className='rounded-full' color={'blue'}>TailwindCSS</Tag>
                                     <Tag className='rounded-full' color={'orange'}>Git</Tag>
@@ -279,7 +279,7 @@ const OtherInfo = () =>
                                     <Tag className='rounded-full' color={'orange'}>MySQL</Tag>
                                     <Tag className='rounded-full' color={'yellow'}>ExpressJS</Tag>
                                     <Tag className='rounded-full' color={'cyan'}>ReactJS</Tag>
-                                    <Tag className='rounded-full' color={'blue'}>NodeJS</Tag>
+                                    <Tag className='rounded-full' color={'green'}>NodeJS</Tag>
                                     <Tag className='rounded-full' color={'orange'}>Git</Tag>
                                  </Space>
                               </>
