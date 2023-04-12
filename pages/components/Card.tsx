@@ -34,11 +34,12 @@ const Card = () =>
          description: ' A software application designed to manage the recruitment process and streamline the onboarding of new hires.',
          tagIDs: [2, 4, 6, 7, 11, 9],
          coverURLs: [
-            'cover6.jpg',
-            'cover7.jpg',
-            'cover8.jpg',
-            'cover9.jpg',
-            'cover10.jpg',
+            'Onboarding System/pic1.png',
+            'Onboarding System/pic2.png',
+            'Onboarding System/pic3.png',
+            'Onboarding System/pic4.png',
+            'Onboarding System/pic5.png',
+            'Onboarding System/code.png',
          ]
       },
       {
