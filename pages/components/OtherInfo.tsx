@@ -255,11 +255,11 @@ const OtherInfo = () =>
                                  <div className="flex flex-col p-3">
                                     <div className="flex items-center gap-3 text-dark-blue-secondary">
                                        <div>•</div>
-                                       <p className='text-xs text-left'>Applicant Tracking & Onboarding System</p>
+                                       <p className='text-xs text-left'>E-Resume</p>
                                     </div>
                                     <div className="flex items-center gap-3 text-dark-blue-secondary">
                                        <div>•</div>
-                                       <p className='text-xs text-left'>E-Resume</p>
+                                       <p className='text-xs text-left'>Applicant Tracking & Onboarding System</p>
                                     </div>
                                     <div className="flex items-center gap-3 text-dark-blue-secondary">
                                        <div>•</div>
