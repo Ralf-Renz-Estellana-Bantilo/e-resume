@@ -25,7 +25,7 @@ const OtherInfo = () =>
    const jobTitleOptions1 = ['Junior Software Engineer', 'Frontend Software Engineer', 'Fullstack Developer (React/Node)'];
    const jobTitleOptions2 = ['React Developer', ' Junior Programmer', 'Web Developer'];
    const techStack1 = ['MySQL, ExpressJS, ReactJS, NodeJS', 'ReactJS, NextJS, TypeScript, NodeJS', 'JavaScript, PHP'];
-   const techStack2 = ['MySQL, ExpressJS, VueJS, NodeJS', 'VueJS, MySQL, PHP',];
+   const techStack2 = ['MySQL, ExpressJS, VueJS, NodeJS', 'VueJS, MySQL, PHP', 'Java, MySQL'];
 
    const [screenSize, setScreenSize] = useState( {
       width: typeof window !== 'undefined' ? window.innerWidth : 0,
