@@ -19,7 +19,7 @@ const quicksand = Quicksand( { subsets: ['latin'] } )
 
 const OtherInfo = () =>
 {
-   const experienceLevelOptions = ['Entry-Level', 'Junior Level', 'Mid-Senior Level', 'Manager'];
+   const experienceLevelOptions = ['Junior Level', 'Mid-Level', 'Senior Level', 'Managerial'];
    const jobTypeOptions = ['Full-time', 'Part-time', 'Contract', 'Temporary'];
    const workSetupOptions = ['On-site', 'Remote', 'Hybrid'];
    const jobTitleOptions1 = ['Junior Software Engineer', 'Frontend Software Engineer', 'Fullstack Developer (React/Node)'];

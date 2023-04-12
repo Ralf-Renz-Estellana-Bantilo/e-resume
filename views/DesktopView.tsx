@@ -89,19 +89,19 @@ const DesktopView = () =>
          icon: 'tailwindcss',
          description: 'TailwindCSS',
          category: 'Frontend',
-         proficiency: 'Intermediate',
+         proficiency: 'Advanced',
       },
       {
          icon: 'vuetify',
          description: 'Vuetify',
          category: 'Frontend',
-         proficiency: 'Intermediate',
+         proficiency: 'Advanced',
       },
       {
          icon: 'nodejs',
          description: 'Node JS',
          category: 'Backend',
-         proficiency: 'Intermediate',
+         proficiency: 'Advanced',
       },
       {
          icon: 'java',
@@ -117,9 +117,9 @@ const DesktopView = () =>
       },
       {
          icon: 'photoshop',
-         description: 'Adobe Photoshop',
+         description: 'Photoshop',
          category: 'Design',
-         proficiency: 'Intermediate',
+         proficiency: 'Advanced',
       },
       {
          icon: 'figma',
