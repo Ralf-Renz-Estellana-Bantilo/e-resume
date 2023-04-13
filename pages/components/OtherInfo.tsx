@@ -163,7 +163,7 @@ const OtherInfo = () =>
                         <div className='px-3'>
                            {workSetupOptions.map( ( workSetup, i ) =>
                            {
-                              return <Checkbox.Group className={`${quicksand.className} w-full`} options={[workSetup]} value={workSetupOptions} key={i} />
+                              return <Checkbox.Group className={`${quicksand.className} w-full`} options={[workSetup]} value={['Remote']} key={i} />
                            } )}
                         </div>
                      </div>
