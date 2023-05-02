@@ -14,7 +14,7 @@ const Personal = () =>
                <h2 className='font-bold text-lg text-dark-blue-secondary'>ABOUT</h2>
                <Divider className='m-0'></Divider>
             </div>
-            <h4 className='pb-6 text-dark-blue-secondary'>I am a  <b>skilled software programmer </b> with proficiency in <b>multiple Frontend Frameworks</b>, databases, and development tools. I am a <b>strong team player</b> with effective communication skills, committed to maintaining <b> high software quality standards </b> . I am also a <b>quick learner</b> and <b>passionate</b>  about developing <b>innovative solutions</b> .</h4>
+            <h4 className='pb-6 text-dark-blue-secondary'>I am a  <b>skilled software programmer </b> with proficiency in <b>multiple Frontend Frameworks</b>, databases, and development tools. I am a <b>strong team player</b> with effective communication skills, committed to maintaining <b> high software quality standards </b> . I am also a <b>quick learner</b> and <b>passionate</b>  about developing <b>innovative solutions</b>.</h4>
          </div>
          <div className="flex flex-col px-5 gap-2 neumorphism-1 rounded-lg max-md:px-3">
             <div className="flex flex-col py-2 gap-2" >
@@ -40,23 +40,19 @@ const Personal = () =>
                               <div className="flex flex-col px-3">
                                  <div className="flex gap-3 text-dark-blue-secondary">
                                     <div>•</div>
-                                    <p>Codes, tests, and troubleshoots internal programs. </p>
+                                    <p>Introduced the modern UI design to the team that helped them create a more user-friendly web applications.</p>
                                  </div>
                                  <div className="flex gap-3 text-dark-blue-secondary">
                                     <div>•</div>
-                                    <p>Maintains and modifies programs, make approved changes by amending flowcharts, develop detailed programming logic, and coding changes.</p>
+                                    <p>Fixed bugs from existing systems and implemented enhancements that significantly improved its functionality and performance.</p>
                                  </div>
                                  <div className="flex gap-3 text-dark-blue-secondary">
                                     <div>•</div>
-                                    <p>Writes new program code using prescribed specifications.</p>
+                                    <p>Designed and lead the development of a web application that helps HR personnel to track the applications of the applicants.</p>
                                  </div>
                                  <div className="flex gap-3 text-dark-blue-secondary">
                                     <div>•</div>
-                                    <p>Confers with users to gain understanding of needed changes or modifications of existing programs.</p>
-                                 </div>
-                                 <div className="flex gap-3 text-dark-blue-secondary">
-                                    <div>•</div>
-                                    <p>Analyzes performance of programs and take action to correct deficiencies based on consultation with users and approval of supervisor.</p>
+                                    <p>Collaborated with end-users to gain understanding of needed changes or modifications of existing programs.</p>
                                  </div>
                               </div>
                            </div>
