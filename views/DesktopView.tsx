@@ -27,7 +27,7 @@ const quicksand = Quicksand( { subsets: ['latin'] } )
 
 const DesktopView = () =>
 {
-   const [personalInformation, setPersonalInformation] = useState<PersonalInformationInterface[]> ( [
+   const [personalInformation, setPersonalInformation] = useState<PersonalInformationInterface[]>( [
       {
          icon: 'gmail',
          label: 'ralfrenzbantilo@gmail.com'
@@ -176,9 +176,9 @@ const DesktopView = () =>
    const [screenSize, setScreenSize] = useState<ScreenSizeInterface>( {
       width: typeof window !== 'undefined' ? window.innerWidth : 0,
       height: typeof window !== 'undefined' ? window.innerHeight : 0
-    } );
+   } );
 
-   const MOBILE:number = 600
+   const MOBILE: number = 600
 
    const renderTabBar: TabsProps['renderTabBar'] = ( props, DefaultTabBar ) => (
       <StickyBox
@@ -226,7 +226,7 @@ const DesktopView = () =>
          setToggleLoader( false )
       }, 1000 );
 
-      const handleResize = ():void =>
+      const handleResize = (): void =>
       {
          setScreenSize( {
             width: window.innerWidth,
@@ -319,15 +319,15 @@ const DesktopView = () =>
             </>
                : <>
                   {
-                     width > MOBILE ? 
-                     <Tabs
-                        defaultActiveKey="1"
-                        centered
-                        animated={{ inkBar: true }}
-                        className={quicksand.className}
-                        renderTabBar={renderTabBar}
-                        items={panels}
-                     /> : <MobileView />
+                     width > MOBILE ?
+                        <Tabs
+                           defaultActiveKey="1"
+                           centered
+                           animated={{ inkBar: true }}
+                           className={quicksand.className}
+                           renderTabBar={renderTabBar}
+                           items={panels}
+                        /> : <MobileView />
                   }
                </>
             }
