@@ -31,7 +31,7 @@ const Personal = () =>
                               <div className="flex items-center justify-between">
                                  <div className="flex flex-col">
                                     <h3 className='text-dark-blue-secondary font-semibold text-base'>JUNIOR PROGRAMMER</h3>
-                                    <h4 className='text-dark-blue-secondary font-semibold'>SL Agritech Corporation</h4>
+                                    <h4 className='text-dark-blue-secondary font-semibold'>SL Agritech Corporation | Makati City, PH</h4>
                                  </div>
                                  <div className="flex items-center">
                                     <p className='font-medium text-dark-blue-secondary text-right'>August 2022 - Present</p>
@@ -66,7 +66,10 @@ const Personal = () =>
                               <div className="flex items-center justify-between">
                                  <div className="flex flex-col">
                                     <h3 className='text-dark-blue-secondary font-semibold text-base'>BACKEND DEVELOPER (INTERN)</h3>
-                                    <h4 className='text-dark-blue-secondary font-semibold'>Sterling Insurance Company Inc.</h4>
+                                    <div className="flex items-center justify-start gap-1">
+                                       <h4 className='text-dark-blue-secondary font-semibold'>Sterling Insurance Company Inc.</h4>
+                                       <span>(Remote)</span>
+                                    </div>
                                  </div>
                                  <div className="flex items-center">
                                     <p className='font-medium text-dark-blue-secondary text-right'>April - July 2022</p>
@@ -105,7 +108,10 @@ const Personal = () =>
                               <div className="flex items-center justify-between">
                                  <div className="flex flex-col">
                                     <h3 className='text-dark-blue-secondary font-semibold text-base'>TECHNICAL SUPPORT STAFF</h3>
-                                    <h4 className='text-dark-blue-secondary font-semibold'>Comelec</h4>
+                                    <div className="flex items-center justify-start gap-1">
+                                       <h4 className='text-dark-blue-secondary font-semibold'>Comelec</h4>
+                                       <span>(Part-Time)</span>
+                                    </div>
                                  </div>
                                  <div className="flex items-center">
                                     <p className='font-medium text-dark-blue-secondary text-right'>February - May 2022</p>
