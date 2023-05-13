@@ -77,7 +77,7 @@ const OtherInfo = () =>
                               <h3 className='font-semibold text-base text-dark-blue-secondary'>Experience Level</h3>
                            </Divider>
                            <div className='px-3'>
-                              <Checkbox.Group className={`${quicksand.className} w-full`} options={experienceLevelOptions} value={['Junior Level']} />
+                              <Checkbox.Group className={`${quicksand.className} w-full`} options={experienceLevelOptions} value={['Junior Level', 'Mid-Level']} />
                            </div>
                         </div>
                         <div className="flex flex-col gap-2">
@@ -95,7 +95,7 @@ const OtherInfo = () =>
                               <h3 className='font-semibold text-base text-dark-blue-secondary'>Work Setup</h3>
                            </Divider>
                            <div className='px-3'>
-                              <Checkbox.Group className={`${quicksand.className} w-full`} options={workSetupOptions} value={['Remote']} />
+                              <Checkbox.Group className={`${quicksand.className} w-full`} options={workSetupOptions} value={workSetupOptions} />
                            </div>
                         </div>
                         <div className="flex flex-col gap-2">
@@ -143,7 +143,7 @@ const OtherInfo = () =>
                                  <Checkbox.Group
                                     className={`${quicksand.className} w-full`}
                                     options={[exp]}
-                                    value={['Junior Level']}
+                                    value={['Junior Level', 'Mid-Level']}
                                     key={i}
                                  />
                               ) )}
@@ -173,7 +173,7 @@ const OtherInfo = () =>
                                  <Checkbox.Group
                                     className={`${quicksand.className} w-full`}
                                     options={[workSetup]}
-                                    value={['Remote']}
+                                    value={workSetupOptions}
                                     key={i}
                                  />
                               ) )}

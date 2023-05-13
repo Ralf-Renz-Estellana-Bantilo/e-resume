@@ -10,7 +10,7 @@ const DesktopView = dynamic<{}>( () => import( '@/views/DesktopView' ), {
 
 export default function Home ()
 {
-  
+
   return (
     <>
       <Head>
@@ -20,7 +20,6 @@ export default function Home ()
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        {/* {screenSize.width > MOBILE ? <><DesktopView /></> : <><MobileView /></>} */}
         <DesktopView />
       </main>
     </>
