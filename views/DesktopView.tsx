@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import profileIMG from '@/assets/Images/Ralf Renz Bantilo.png'
-import { Button, Tabs, Spin, TabsProps, Divider } from 'antd'
+import { Button, Tabs, Spin, TabsProps, Divider, Tag } from 'antd'
 import { DownloadOutlined } from '@ant-design/icons/lib/icons'
 import StickyBox from 'react-sticky-box'
 import { Quicksand } from 'next/font/google'

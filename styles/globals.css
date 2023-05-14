@@ -27,6 +27,22 @@
    transition: 0.5s;
 }
 
+.light-theme {
+   --neumorphismBackground1: #E7F1F3;
+   --neumorphismBackground2: #edf5f7;
+   --neuShadLight1: #ffffff;
+   --neuShadDark1: #c7cfd1;
+   --neuShadDark2: #bebebe;
+}
+
+.dark-theme {
+   --neumorphismBackground1: #1f1f1f;
+   --neumorphismBackground2: #272727;
+   --neuShadLight1: #000000ab;
+   --neuShadDark1: #0d0d0e;
+   --neuShadDark2: #0e0d0d;
+}
+
 .gradient-background {
    background-image: radial-gradient(164.75% 100% at 50% 0%,#334155 0%,#0F172A 48.73%);
    /* background-color: rgb(15 23 42 / 1); */
@@ -40,17 +56,17 @@
 }
 
 .neumorphism-1 {
-   background: #E7F1F3;
-   box-shadow: inset 5px 5px 10px #c7cfd1,
-            inset -5px -5px 10px #ffffff;
+   background: var(--neumorphismBackground1);
+   box-shadow: inset 5px 5px 10px var(--neuShadDark1),
+            inset -5px -5px 10px var(--neuShadLight1);
    /* box-shadow:  5px 5px 10px #bebebe,
       -5px -5px 10px #ffffff; */
 }
 
 .neumorphism-2 {
    background: #edf5f7;
-   box-shadow:  5px 5px 10px #bebebe,
-             -5px -5px 10px #ffffff;
+   box-shadow:  5px 5px 10px var(--neuShadDark2),
+             -5px -5px 10px var(--neuShadLight1);
 }
 
 label {
@@ -84,4 +100,13 @@ label {
   width: 100%;
   height: 100%;
   object-fit: cover; */
+
+  color: #212B33;   /* dark-blue-primary */
+  color: #25333F;   /* dark-blue-secondary */
+  color: #1677ff;   /* primary */
+  color: #E7F1F3;   /* background-primary */
+  color: #CBDDE0;   /* background-secondary */
+  color: #111111;   /* dark-blue-primary */
+  color: #111111;   /* dark-blue-primary */
+  color: #111111;   /* dark-blue-primary */
 }
