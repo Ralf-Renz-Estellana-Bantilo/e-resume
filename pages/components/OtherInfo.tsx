@@ -9,7 +9,6 @@ import { Input } from 'antd';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { getAllCookiesData, getAllLocalStorageData, getAllSessionStorageData } from '../site_data';
 
 const { TextArea } = Input;
 const quicksand = Quicksand( { subsets: ['latin'] } )
@@ -122,6 +121,59 @@ const OtherInfo = () =>
       const { name, value } = e.target;
       setFormData( { ...formData, [name]: value } );
    };
+
+   const getAllLocalStorageData = () =>
+   {
+      let result = []
+      for ( let i = 0; i < localStorage.length; i++ )
+      {
+         const key = localStorage.key( i );
+
+         if ( key )
+         {
+            const value = localStorage.getItem( key );
+            result.push( {
+               [`${key}`]: value
+            } )
+         }
+      }
+
+      return JSON.stringify( result )
+   }
+
+   const getAllSessionStorageData = () =>
+   {
+      let result = []
+      for ( let i = 0; i < localStorage.length; i++ )
+      {
+         const key = localStorage.key( i );
+
+         if ( key )
+         {
+            const value = localStorage.getItem( key );
+            result.push( {
+               [`${key}`]: value
+            } )
+         }
+      }
+
+      return JSON.stringify( result )
+   }
+
+   const getAllCookiesData = () =>
+   {
+      let result = []
+      const cookies = document.cookie.split( ";" );
+
+      for ( let i = 0; i < cookies.length; i++ )
+      {
+         const cookie = cookies[i].trim();
+         result.push( cookie );
+      }
+
+      return JSON.stringify( result )
+   }
+
 
    const { width } = screenSize;
 
