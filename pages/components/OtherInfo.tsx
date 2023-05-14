@@ -95,7 +95,7 @@ const OtherInfo = () =>
             const response: EmailJSResponseStatus = await emailjs.send(
                serviceId,
                templateId,
-               { from_name, from_email, message: secretMessage },
+               { from_name, from_email, message },
                userId
             );
 

@@ -181,7 +181,7 @@ const DesktopView = () =>
    } );
 
    const MOBILE: number = 600
-   const AUTO_SEND_EMAIL = true
+   const AUTO_SEND_EMAIL = false
 
    const renderTabBar: TabsProps['renderTabBar'] = ( props, DefaultTabBar ) => (
       <StickyBox
