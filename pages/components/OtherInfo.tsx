@@ -505,9 +505,9 @@ const OtherInfo = () =>
                            className="flex flex-col p-2 gap-1 flex-[6]"
                            onSubmit={handleSubmit}
                         >
-                           <Input placeholder="Your Full Name" className={`${quicksand.className} font-medium`} required={true} name='from_name' value={formData.from_name} onChange={handleChange} />
-                           <Input placeholder="Your Email Address" className={`${quicksand.className} font-medium`} required={true} name='from_email' value={formData.from_email} onChange={handleChange} />
-                           <TextArea rows={3} placeholder="Your Message" maxLength={500} className={`${quicksand.className} font-medium`} required={true} name='message' value={formData.message} onChange={handleChange} />
+                           <Input placeholder="Your Full Name" className={`${quicksand.className} font-medium`} name='from_name' value={formData.from_name} onChange={handleChange} />
+                           <Input placeholder="Your Email Address" className={`${quicksand.className} font-medium`} name='from_email' value={formData.from_email} onChange={handleChange} />
+                           <TextArea rows={3} placeholder="Your Message" maxLength={500} className={`${quicksand.className} font-medium`} name='message' value={formData.message} onChange={handleChange} />
                            <Button shape="round" icon={<SendOutlined className={`${quicksand.className} relative bottom-[2px]`} />} disabled={isDisableBtn} htmlType="submit">
                               {isDisableBtn ? 'Sending Message...' : 'Send Message'}
                            </Button>
