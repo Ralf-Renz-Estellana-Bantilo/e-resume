@@ -17,7 +17,7 @@ import { ProjectsInterface, ScreenSizeInterface, TagListsInterface } from '@/int
 const Card = () =>
 {
 
-   const mernStack:number[] = [4, 10, 1, 3]
+   const mernStack: number[] = [4, 10, 1, 3]
 
    const [projects, setProjects] = useState<ProjectsInterface[]>( [
       {
@@ -194,13 +194,13 @@ const Card = () =>
    const [screenSize, setScreenSize] = useState<ScreenSizeInterface>( {
       width: typeof window !== 'undefined' ? window.innerWidth : 0,
       height: typeof window !== 'undefined' ? window.innerHeight : 0
-    } );
+   } );
 
-   const MOBILE:number = 600
+   const MOBILE: number = 600
 
    useEffect( () =>
    {
-      const handleResize = ():void =>
+      const handleResize = (): void =>
       {
          setScreenSize( {
             width: window.innerWidth,
@@ -245,8 +245,8 @@ const Card = () =>
                </div>
                <div className="flex flex-col gap-2 p-2">
                   <div className='flex flex-col justify-center'>
-                     <h3 className='text-lg font-semibold text-dark-blue-secondary text-center py-2'>{title}</h3>
-                     <p className='text-dark-blue-secondary text-xs text-justify'>{description}</p>
+                     <h3 className='text-lg font-semibold text-accent-secondary text-center py-2'>{title}</h3>
+                     <p className='text-accent-secondary text-xs text-justify'>{description}</p>
                   </div>
                   <Divider className='m-0'></Divider>
                   <div>
@@ -294,8 +294,8 @@ const Card = () =>
                         </div>
                         <div className="flex flex-col gap-2 p-2">
                            <div className='flex flex-col justify-center'>
-                              <h3 className='text-lg font-semibold text-dark-blue-secondary text-center py-2'>{title}</h3>
-                              <p className='text-dark-blue-secondary text-sm text-justify'>{description}</p>
+                              <h3 className='text-lg font-semibold text-accent-secondary text-center py-2'>{title}</h3>
+                              <p className='text-accent-secondary text-sm text-justify'>{description}</p>
                            </div>
                            <Divider className='m-0'></Divider>
                            <div>

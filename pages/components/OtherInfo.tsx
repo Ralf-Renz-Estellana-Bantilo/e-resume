@@ -1,24 +1,25 @@
-import { Checkbox, Divider, Slider, Timeline, Space, Tag, Spin } from 'antd'
-import React, { useEffect, useState } from 'react'
+import { Checkbox, Divider, Slider, Timeline, Space, Tag, Spin, Button } from 'antd'
+import React, { useEffect, useRef, useState } from 'react'
 import { Quicksand } from 'next/font/google'
 
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import Image from 'next/image';
+import { SendOutlined } from '@ant-design/icons';
+import { Input } from 'antd';
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
+import emailjs from 'emailjs-com'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-// import "../../styles/globals.css";
 
-// import required modules
-import { Pagination } from "swiper";
-import { ClockCircleOutlined } from '@ant-design/icons';
+const { TextArea } = Input;
 
 const quicksand = Quicksand( { subsets: ['latin'] } )
 
 const OtherInfo = () =>
 {
+
+   const formRef = useRef<HTMLFormElement>( null )
+
    const experienceLevelOptions: string[] = ['Junior Level', 'Mid-Level', 'Senior Level', 'Managerial'];
    const jobTypeOptions: string[] = ['Full-time', 'Part-time', 'Contract', 'Temporary'];
    const workSetupOptions: string[] = ['On-site', 'Remote', 'Hybrid'];
@@ -59,22 +60,81 @@ const OtherInfo = () =>
       };
    }, [] );
 
+   const successNotification = ( message: string ) => toast.success( message );
+   const errorNotification = ( message: string ) => toast.error( message );
+   const warningNotification = ( message: string ) => toast.warning( message );
+
+   const [name, setName] = useState( '' )
+   const [email, setEmail] = useState( '' )
+   const [message, setMessage] = useState( '' )
+
+   const [isDisableBtn, setDisableBtn] = useState( false )
+
+
+   const sendEmail = ( e: React.FormEvent<HTMLFormElement> ): void =>
+   {
+      e.preventDefault()
+      setDisableBtn( true )
+
+      const isValid = name !== '' && email !== '' && message !== ''
+
+      if ( isValid )
+      {
+         try
+         {
+            emailjs
+               .sendForm(
+                  "gmail",
+                  "template_0kdw8xu",
+                  formRef.current,
+                  "user_d4MCLJciZKPbKaM472IEi"
+               )
+               .then(
+                  ( result ) =>
+                  {
+                     successNotification( 'Successfully sent an email to Ralf!' )
+                     setName( '' )
+                     setEmail( '' )
+                     setMessage( '' )
+                     setDisableBtn( false )
+                  },
+                  ( error ) =>
+                  {
+                     errorNotification( 'Error sending an email to Ralf!' )
+                     setDisableBtn( false )
+                  }
+               );
+         } catch ( error )
+         {
+            errorNotification( 'Error sending an email to Ralf!' )
+            setDisableBtn( false )
+         }
+      } else
+      {
+         warningNotification( 'You have to fill in all the fields!' )
+         setDisableBtn( false )
+      }
+
+   };
+
    const { width } = screenSize;
 
    return (
       <div className="flex flex-col gap-8 p-7 pt-3 max-md:px-4">
+         <ToastContainer position='bottom-right' />
          {isVisible ?
             <>
+               {/* PREFERENCES */}
                <div className="flex flex-col px-5 neumorphism-1 rounded-lg max-md:px-3">
                   <div className="flex flex-col py-2 gap-2">
-                     <h2 className='font-bold text-lg text-dark-blue-secondary'>PREFERENCES</h2>
+                     <h2 className='font-bold text-lg text-accent-secondary'>PREFERENCES</h2>
                      <Divider className='m-0'></Divider>
                   </div>
                   <div className="flex flex-col p-3 pb-6 gap-11 max-md:gap-5" >
                      {width > MOBILE ? <>
                         <div className="flex flex-col gap-2">
                            <Divider className='m-0' orientation="center">
-                              <h3 className='font-semibold text-base text-dark-blue-secondary'>Experience Level</h3>
+                              <h3 className='font-semibold text-base text-accent-secondary'>Experience Level</h3>
                            </Divider>
                            <div className='px-3'>
                               <Checkbox.Group className={`${quicksand.className} w-full`} options={experienceLevelOptions} value={['Junior Level', 'Mid-Level']} />
@@ -83,7 +143,7 @@ const OtherInfo = () =>
                         <div className="flex flex-col gap-2">
                            <Divider className='m-0' orientation="center">
 
-                              <h3 className='font-semibold text-base text-dark-blue-secondary'>Job Type</h3>
+                              <h3 className='font-semibold text-base text-accent-secondary'>Job Type</h3>
                            </Divider>
                            <div className='px-3'>
                               <Checkbox.Group className={`${quicksand.className} w-full`} options={jobTypeOptions} value={['Full-time']} />
@@ -92,7 +152,7 @@ const OtherInfo = () =>
                         <div className="flex flex-col gap-2">
                            <Divider className='m-0' orientation="center">
 
-                              <h3 className='font-semibold text-base text-dark-blue-secondary'>Work Setup</h3>
+                              <h3 className='font-semibold text-base text-accent-secondary'>Work Setup</h3>
                            </Divider>
                            <div className='px-3'>
                               <Checkbox.Group className={`${quicksand.className} w-full`} options={workSetupOptions} value={workSetupOptions} />
@@ -101,7 +161,7 @@ const OtherInfo = () =>
                         <div className="flex flex-col gap-2">
                            <Divider className='m-0' orientation="center">
 
-                              <h3 className='font-semibold text-base text-dark-blue-secondary'>Title</h3>
+                              <h3 className='font-semibold text-base text-accent-secondary'>Title</h3>
                            </Divider>
                            <div className='px-3 space-y-3'>
                               <Checkbox.Group className={`${quicksand.className} w-full`} options={jobTitleOptions1} value={jobTitleOptions1} />
@@ -110,7 +170,7 @@ const OtherInfo = () =>
                         </div>
                         <div className="flex flex-col gap-2">
                            <Divider className='m-0' orientation="center">
-                              <h3 className='font-semibold text-base text-dark-blue-secondary'>Tech Stack</h3>
+                              <h3 className='font-semibold text-base text-accent-secondary'>Tech Stack</h3>
                            </Divider>
                            <div className='flex flex-col items-start px-3 gap-2'>
                               <Checkbox.Group className={`${quicksand.className} w-full`} options={techStack1} value={['MySQL, ExpressJS, ReactJS, NodeJS', 'ReactJS, NextJS, TypeScript, NodeJS']} />
@@ -118,25 +178,25 @@ const OtherInfo = () =>
                            </div>
                         </div>
                         {/* <div className="flex flex-col gap-2">
-                        <Divider className='m-0' orientation="center">
+                           <Divider className='m-0' orientation="center">
 
-                           <h3 className='font-semibold text-base text-dark-blue-secondary'>Availability (Phone call)</h3>
-                        </Divider>
-                        <div className='flex items-center px-3 gap-2'>
-                           <div className="flex gap-2 items-center flex-1">
-                              <p>Weekdays:</p>
-                              <span className='font-semibold'>6pm - 8pm</span>
+                              <h3 className='font-semibold text-base text-accent-secondary'>Availability (Phone call)</h3>
+                           </Divider>
+                           <div className='flex items-center justify-around px-3 gap-2'>
+                              <div className="flex gap-2 items-center">
+                                 <p>Weekdays:</p>
+                                 <span className='font-semibold'>11:30 AM - 12:30 PM</span>
+                              </div>
+                              <div className="flex gap-2 items-center">
+                                 <p>Weekends:</p>
+                                 <span className='font-semibold'>9:00 AM - 4:00 PM</span>
+                              </div>
                            </div>
-                           <div className="flex gap-2 items-center flex-1">
-                              <p>Weekends:</p>
-                              <span className='font-semibold'>8am - 8pm</span>
-                           </div>
-                        </div>
-                     </div> */}
+                        </div> */}
                      </> : <>
                         <div className="flex flex-col gap-2">
                            <Divider className='m-0' orientation="center">
-                              <h3 className='font-semibold text-base text-dark-blue-secondary'>Experience Level</h3>
+                              <h3 className='font-semibold text-base text-accent-secondary'>Experience Level</h3>
                            </Divider>
                            <div className='px-3'>
                               {experienceLevelOptions.map( ( exp, i ) => (
@@ -151,7 +211,7 @@ const OtherInfo = () =>
                         </div>
                         <div className="flex flex-col gap-2">
                            <Divider className='m-0' orientation="center">
-                              <h3 className='font-semibold text-base text-dark-blue-secondary'>Job Type</h3>
+                              <h3 className='font-semibold text-base text-accent-secondary'>Job Type</h3>
                            </Divider>
                            <div className='px-3'>
                               {jobTypeOptions.map( ( jobType, i ) => (
@@ -166,7 +226,7 @@ const OtherInfo = () =>
                         </div>
                         <div className="flex flex-col gap-2">
                            <Divider className='m-0' orientation="center">
-                              <h3 className='font-semibold text-base text-dark-blue-secondary'>Work Setup</h3>
+                              <h3 className='font-semibold text-base text-accent-secondary'>Work Setup</h3>
                            </Divider>
                            <div className='px-3'>
                               {workSetupOptions.map( ( workSetup, i ) => (
@@ -182,7 +242,7 @@ const OtherInfo = () =>
                         <div className="flex flex-col gap-2">
                            <Divider className='m-0' orientation="center">
 
-                              <h3 className='font-semibold text-base text-dark-blue-secondary'>Title</h3>
+                              <h3 className='font-semibold text-base text-accent-secondary'>Title</h3>
                            </Divider>
                            <div className='px-3'>
                               {[...jobTitleOptions1, ...jobTitleOptions2].map( ( title, i ) =>
@@ -192,24 +252,24 @@ const OtherInfo = () =>
                            </div>
                         </div>
                         {/* <div className="flex flex-col gap-2">
-                        <Divider className='m-0' orientation="center">
+                           <Divider className='m-0' orientation="center">
 
-                           <h3 className='font-semibold text-base text-dark-blue-secondary'>Availability (Phone call)</h3>
-                        </Divider>
-                        <div className='flex flex-col items-start px-3 gap-2'>
-                           <div className="flex gap-2 items-center flex-1">
-                              <p>Weekdays:</p>
-                              <span className='font-semibold'>6pm - 8pm</span>
+                              <h3 className='font-semibold text-base text-accent-secondary'>Availability (Phone call)</h3>
+                           </Divider>
+                           <div className='flex flex-col items-start px-3 gap-2'>
+                              <div className="flex gap-2 items-center flex-1">
+                                 <p>Weekdays:</p>
+                                 <span className='font-semibold'>6pm - 8pm</span>
+                              </div>
+                              <div className="flex gap-2 items-center flex-1">
+                                 <p>Weekends:</p>
+                                 <span className='font-semibold'>8am - 8pm</span>
+                              </div>
                            </div>
-                           <div className="flex gap-2 items-center flex-1">
-                              <p>Weekends:</p>
-                              <span className='font-semibold'>8am - 8pm</span>
-                           </div>
-                        </div>
-                     </div> */}
+                        </div> */}
                         <div className="flex flex-col gap-2">
                            <Divider className='m-0' orientation="center">
-                              <h3 className='font-semibold text-base text-dark-blue-secondary'>Tech Stack</h3>
+                              <h3 className='font-semibold text-base text-accent-secondary'>Tech Stack</h3>
                            </Divider>
                            <div className='flex flex-col items-start px-3'>
                               {[...techStack1, ...techStack2].map( ( title, i ) =>
@@ -220,29 +280,31 @@ const OtherInfo = () =>
                         </div>
                      </>}
                      {/* <div className="flex flex-col gap-2">
-                     <Divider className='m-0' orientation="center">
+                        <Divider className='m-0' orientation="center">
 
-                        <h3 className='font-semibold text-base text-dark-blue-secondary'>Salary Range</h3>
-                     </Divider>
-                     <div className='flex flex-col px-3'>
-                        <Slider
-                           tooltip={{ formatter: null }}
-                           range={{ draggableTrack: true }}
-                           min={50}
-                           max={150}
-                           value={[75, 110]}
-                        />
-                        <div className="flex justify-between items-center">
-                           <p>Min: $50k</p>
-                           <p>Max: $150k</p>
+                           <h3 className='font-semibold text-base text-accent-secondary'>Salary Range</h3>
+                        </Divider>
+                        <div className='flex flex-col px-3'>
+                           <Slider
+                              tooltip={{ formatter: null }}
+                              range={{ draggableTrack: true }}
+                              min={50}
+                              max={150}
+                              value={[75, 110]}
+                           />
+                           <div className="flex justify-between items-center">
+                              <p>Min: $50k</p>
+                              <p>Max: $150k</p>
+                           </div>
                         </div>
-                     </div>
-                  </div> */}
+                     </div> */}
                   </div>
                </div>
+
+               {/* TIMELINE */}
                <div className="flex flex-col px-5 neumorphism-1 rounded-lg max-md:px-3">
                   <div className="flex flex-col py-2 gap-2">
-                     <h2 className='font-bold text-lg text-dark-blue-secondary'>TIMELINE</h2>
+                     <h2 className='font-bold text-lg text-accent-secondary'>TIMELINE</h2>
                      <Divider className='m-0'></Divider>
                   </div>
                   <div className="flex flex-col p-3 max-md:gap-5" >
@@ -265,19 +327,19 @@ const OtherInfo = () =>
                                        <Tag className='rounded-full' color={'orange'}>Figma</Tag>
                                     </Space>
                                     <div className="flex flex-col p-3">
-                                       <div className="flex items-center gap-3 text-dark-blue-secondary">
+                                       <div className="flex items-center gap-3 text-accent-secondary">
                                           <div>•</div>
                                           <p className='text-xs text-left'>E-Resume</p>
                                        </div>
-                                       <div className="flex items-center gap-3 text-dark-blue-secondary">
+                                       <div className="flex items-center gap-3 text-accent-secondary">
                                           <div>•</div>
                                           <p className='text-xs text-left'>Applicant Tracking & Onboarding System</p>
                                        </div>
-                                       <div className="flex items-center gap-3 text-dark-blue-secondary">
+                                       {/* <div className="flex items-center gap-3 text-accent-secondary">
                                           <div>•</div>
                                           <p className='text-xs text-left'>Employee Portal</p>
-                                       </div>
-                                       <div className="flex items-center gap-3 text-dark-blue-secondary">
+                                       </div> */}
+                                       <div className="flex items-center gap-3 text-accent-secondary">
                                           <div>•</div>
                                           <p className='text-xs text-left'>Personal Expenses Tracker</p>
                                        </div>
@@ -299,7 +361,7 @@ const OtherInfo = () =>
                                        <Tag className='rounded-full' color={'orange'}>Git</Tag>
                                     </Space>
                                     <div className="flex flex-col p-3">
-                                       <div className="flex items-center gap-3 text-dark-blue-secondary">
+                                       <div className="flex items-center gap-3 text-accent-secondary">
                                           <div>•</div>
                                           <p className='text-xs text-left'>Payroll System</p>
                                        </div>
@@ -319,19 +381,19 @@ const OtherInfo = () =>
                                        <Tag className='rounded-full' color={'orange'}>Git</Tag>
                                     </Space>
                                     <div className="flex flex-col p-3">
-                                       <div className="flex items-center gap-3 text-dark-blue-secondary">
+                                       <div className="flex items-center gap-3 text-accent-secondary">
                                           <div>•</div>
                                           <p className='text-xs text-left'>Job Search System</p>
                                        </div>
-                                       <div className="flex items-center gap-3 text-dark-blue-secondary">
+                                       <div className="flex items-center gap-3 text-accent-secondary">
                                           <div>•</div>
                                           <p className='text-xs text-left'>GWA Calculator</p>
                                        </div>
-                                       <div className="flex items-center gap-3 text-dark-blue-secondary">
+                                       <div className="flex items-center gap-3 text-accent-secondary">
                                           <div>•</div>
                                           <p className='text-xs text-left'>Telemedicine System</p>
                                        </div>
-                                       <div className="flex items-center gap-3 text-dark-blue-secondary">
+                                       <div className="flex items-center gap-3 text-accent-secondary">
                                           <div>•</div>
                                           <p className='text-xs text-left'>Dictionary Portal</p>
                                        </div>
@@ -349,15 +411,15 @@ const OtherInfo = () =>
                                        <Tag className='rounded-full' color={'geekblue'}>Photoshop</Tag>
                                     </Space>
                                     <div className="flex flex-col p-3">
-                                       <div className="flex items-center gap-3 text-dark-blue-secondary">
+                                       <div className="flex items-center gap-3 text-accent-secondary">
                                           <div>•</div>
                                           <p className='text-xs text-left'>Random Student Picker Program</p>
                                        </div>
-                                       <div className="flex items-center gap-3 text-dark-blue-secondary">
+                                       <div className="flex items-center gap-3 text-accent-secondary">
                                           <div>•</div>
                                           <p className='text-xs text-left'>Basketball Statistics Program</p>
                                        </div>
-                                       <div className="flex items-center gap-3 text-dark-blue-secondary">
+                                       <div className="flex items-center gap-3 text-accent-secondary">
                                           <div>•</div>
                                           <p className='text-xs text-left'>Test Simulator Program</p>
                                        </div>
@@ -367,6 +429,34 @@ const OtherInfo = () =>
                            },
                         ]}
                      />
+                  </div>
+               </div>
+
+               {/* CONTACT ME */}
+               <div className="flex flex-col px-5 neumorphism-1 rounded-lg max-md:px-3">
+                  <div className="flex flex-col py-2 gap-2">
+                     <h2 className='font-bold text-lg text-accent-secondary'>CONTACT ME</h2>
+                     <Divider className='m-0'></Divider>
+                  </div>
+                  <div className="flex flex-col justify-center items-center p-3 gap-2" >
+                     <div className="flex p-2 gap-2 w-full max-md:flex-col">
+                        <div className="flex items-center justify-center flex-[5]">
+                           <Image src={require( '@/assets/Icons/3d.png' ).default} alt='illustration' width={200} height={200} />
+                        </div>
+                        <form
+                           className="flex flex-col p-2 gap-1 flex-[6]"
+                           ref={formRef}
+                           onSubmit={( e ) => sendEmail( e )}
+                        >
+                           <Input placeholder="Your Full Name" className={`${quicksand.className} font-medium`} required={true} name='from_name' value={name} onChange={( e ) => setName( e.target.value )} />
+                           <Input placeholder="Your Email Address" className={`${quicksand.className} font-medium`} required={true} name='from_email' value={email} onChange={( e ) => setEmail( e.target.value )} />
+                           <TextArea rows={3} placeholder="Your Message" maxLength={500} className={`${quicksand.className} font-medium`} required={true} name='message' value={message} onChange={( e ) => setMessage( e.target.value )} />
+                           <Button shape="round" icon={<SendOutlined className={`${quicksand.className} relative bottom-[2px]`} />} onClick={( e ) => sendEmail( e )} disabled={isDisableBtn}>
+                              {isDisableBtn ? 'Sending Message...' : 'Send Message'}
+                           </Button>
+                        </form>
+                     </div>
+                     <small className='text-center text-dark-blue-secondary'>Your potential best hire awaits!</small>
                   </div>
                </div>
             </> :

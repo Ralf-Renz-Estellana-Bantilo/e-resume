@@ -13,6 +13,7 @@ import "swiper/css/pagination";
 // import required modules
 import { Pagination, Autoplay } from "swiper";
 import { ScreenSizeInterface, ServicesInterface } from '@/interfaces';
+import Image from 'next/image';
 
 const Projects = () =>
 {
@@ -54,15 +55,15 @@ const Projects = () =>
    const [screenSize, setScreenSize] = useState<ScreenSizeInterface>( {
       width: typeof window !== 'undefined' ? window.innerWidth : 0,
       height: typeof window !== 'undefined' ? window.innerHeight : 0
-    } );
+   } );
 
-    const [isVisible, setIsVisible] = useState<boolean>(false)
+   const [isVisible, setIsVisible] = useState<boolean>( false )
 
-   const MOBILE:number = 600
+   const MOBILE: number = 600
 
    useEffect( () =>
    {
-      const handleResize = ():void =>
+      const handleResize = (): void =>
       {
          setScreenSize( {
             width: window.innerWidth,
@@ -72,9 +73,10 @@ const Projects = () =>
 
       window.addEventListener( 'resize', handleResize );
 
-      setTimeout(() => {
+      setTimeout( () =>
+      {
          setIsVisible( true );
-      }, 200);
+      }, 200 );
 
       return () =>
       {
@@ -88,7 +90,7 @@ const Projects = () =>
       <div className="flex flex-col gap-8 p-7 pt-3 min-h-screen max-md:px-4">
          {isVisible ? <><div className="flex flex-col px-5 gap-2 neumorphism-1 rounded-lg max-md:px-3">
             <div className="flex flex-col py-2 gap-2">
-               <h2 className='font-bold text-lg text-dark-blue-secondary'>SERVICES</h2>
+               <h2 className='font-bold text-lg text-accent-secondary'>SERVICES</h2>
                <Divider className='m-0'></Divider>
             </div>
             <div className="flex flex-wrap justify-evenly pb-6 gap-5 max-md:pb-1">
@@ -96,15 +98,16 @@ const Projects = () =>
                {
                   return <div className="flex flex-col h-auto neumorphism-2 rounded-lg bg-background-primary w-[48%] max-sm:w-full max-md:w-[75%] max-lg:w-[48%]" key={i}>
                      <div className="flex flex-col">
-                        <h3 className='font-semibold text-center p-2 text-base text-dark-blue-secondary'>{service.category}</h3>
+                        <h3 className='font-semibold text-center p-2 text-base text-accent-secondary'>{service.category}</h3>
                         <Divider className='m-0'></Divider>
                      </div>
                      <div className="flex flex-col p-2 gap-1">
                         {service.items.map( ( item, o ) =>
                         {
                            return <div className="flex items-center gap-2" key={o}>
-                              <CheckOutlined />
-                              <p className='text-dark-blue-secondary'>{item}</p>
+                              {/* <CheckOutlined /> */}
+                              <Image src={require( '../../assets/Icons/check.png' ).default} alt='check icon' width={18} height={18} />
+                              <p className='text-accent-secondary'>{item}</p>
                            </div>
                         } )}
 
@@ -130,7 +133,7 @@ const Projects = () =>
                         return <SwiperSlide className='p-4 pb-8 ' key={i}>
                            <div className="flex flex-col h-auto neumorphism-2 rounded-lg bg-background-primary w-[48%] max-sm:w-full max-md:w-[75%] max-lg:w-[48%]" key={i}>
                               <div className="flex flex-col">
-                                 <h3 className='font-semibold text-center p-2 text-base text-dark-blue-secondary'>{service.category}</h3>
+                                 <h3 className='font-semibold text-center p-2 text-base text-accent-secondary'>{service.category}</h3>
                                  <Divider className='m-0'></Divider>
                               </div>
                               <div className="flex flex-col p-2 gap-1">
@@ -138,7 +141,7 @@ const Projects = () =>
                                  {
                                     return <div className="flex items-center gap-2" key={o}>
                                        <CheckOutlined />
-                                       <p className='text-dark-blue-secondary font-medium text-base'>{item}</p>
+                                       <p className='text-accent-secondary font-medium text-base'>{item}</p>
                                     </div>
                                  } )}
 
@@ -154,19 +157,19 @@ const Projects = () =>
             </div>
          </div>
 
-         <div className="flex flex-col px-5 gap-2 neumorphism-1 rounded-lg max-md:px-3">
-            <div className="flex flex-col py-2 gap-2">
-               <h2 className='font-bold text-lg text-dark-blue-secondary'>PROJECTS</h2>
-               <Divider className='m-0'></Divider>
-            </div>
+            <div className="flex flex-col px-5 gap-2 neumorphism-1 rounded-lg max-md:px-3">
+               <div className="flex flex-col py-2 gap-2">
+                  <h2 className='font-bold text-lg text-accent-secondary'>PROJECTS</h2>
+                  <Divider className='m-0'></Divider>
+               </div>
 
-            <div className='flex flex-wrap justify-evenly pb-6 gap-5 max-md:pb-1'>
-               <Card />
-            </div>
-         </div></> : <div className='h-[90vh] flex items-center justify-center'>
-                  <Spin size="large" />
-               </div>}
-         
+               <div className='flex flex-wrap justify-evenly pb-6 gap-5 max-md:pb-1'>
+                  <Card />
+               </div>
+            </div></> : <div className='h-[90vh] flex items-center justify-center'>
+            <Spin size="large" />
+         </div>}
+
       </div>
    )
 }
