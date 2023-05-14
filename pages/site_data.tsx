@@ -48,7 +48,6 @@ export const getAllCookiesData = () =>
    for ( let i = 0; i < cookies.length; i++ )
    {
       const cookie = cookies[i].trim();
-      console.log( cookie );
       result.push( cookie );
    }
 

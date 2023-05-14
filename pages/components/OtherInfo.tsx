@@ -75,7 +75,7 @@ const OtherInfo = () =>
 
    const [isDisableBtn, setDisableBtn] = useState( false )
 
-   const handleSubmit = async ( e: React.FormEvent<HTMLFormElement> ) =>
+   const handleSubmit = async ( e: React.FormEvent<HTMLFormElement | string | null> ) =>
    {
       setDisableBtn( true )
       e.preventDefault();
@@ -101,8 +101,8 @@ const OtherInfo = () =>
             );
 
             successNotification( 'Successfully sent an email to Ralf!' )
-            setDisableBtn( false )
             setFormData( { from_name: '', from_email: '', message: '' } );
+            setDisableBtn( false )
          } catch ( error )
          {
             errorNotification( 'Error sending an email to Ralf!' )
