@@ -1,15 +1,13 @@
 export const getAllLocalStorageData = () =>
 {
-   let result: {
-      [x: string]: string | null;
-   }[] = []
+   let result = []
    for ( let i = 0; i < localStorage.length; i++ )
    {
-      const key: string | null = localStorage.key( i );
+      const key = localStorage.key( i );
 
       if ( key )
       {
-         const value: string | null = localStorage.getItem( key );
+         const value = localStorage.getItem( key );
          result.push( {
             [`${key}`]: value
          } )
@@ -21,16 +19,14 @@ export const getAllLocalStorageData = () =>
 
 export const getAllSessionStorageData = () =>
 {
-   let result: {
-      [x: string]: string | null;
-   }[] = []
+   let result = []
    for ( let i = 0; i < localStorage.length; i++ )
    {
-      const key: string | null = localStorage.key( i );
+      const key = localStorage.key( i );
 
       if ( key )
       {
-         const value: string | null = localStorage.getItem( key );
+         const value = localStorage.getItem( key );
          result.push( {
             [`${key}`]: value
          } )
