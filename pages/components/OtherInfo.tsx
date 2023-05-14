@@ -6,19 +6,23 @@ import Image from 'next/image';
 import { SendOutlined } from '@ant-design/icons';
 import { Input } from 'antd';
 
-import emailjs from 'emailjs-com'
+import emailjs, { EmailJSResponseStatus } from 'emailjs-com'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 const { TextArea } = Input;
-
 const quicksand = Quicksand( { subsets: ['latin'] } )
+
+type ContactFormData = {
+   from_name: string;
+   from_email: string;
+   message: string;
+};
 
 const OtherInfo = () =>
 {
 
-   const formRef = useRef<HTMLFormElement>( null )
+   const formRef = useRef<string | HTMLFormElement>( null )
 
    const experienceLevelOptions: string[] = ['Junior Level', 'Mid-Level', 'Senior Level', 'Managerial'];
    const jobTypeOptions: string[] = ['Full-time', 'Part-time', 'Contract', 'Temporary'];
@@ -68,47 +72,87 @@ const OtherInfo = () =>
    const [email, setEmail] = useState( '' )
    const [message, setMessage] = useState( '' )
 
+   const [formData, setFormData] = useState<ContactFormData>( {
+      from_name: '',
+      from_email: '',
+      message: '',
+   } );
+
+
    const [isDisableBtn, setDisableBtn] = useState( false )
 
 
-   const sendEmail = ( e: React.FormEvent<HTMLFormElement> ): void =>
-   {
-      e.preventDefault()
-      setDisableBtn( true )
+   // const sendEmail = ( e: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLAnchorElement, MouseEvent> ): void =>
+   // {
+   //    e.preventDefault()
+   //    setDisableBtn( true )
 
-      const isValid = name !== '' && email !== '' && message !== ''
+   //    const isValid = name !== '' && email !== '' && message !== ''
+
+   //    if ( isValid )
+   //    {
+   //       emailjs
+   //          .sendForm(
+   //             "gmail",
+   //             "template_0kdw8xu",
+   //             formRef.current,
+   //             "user_d4MCLJciZKPbKaM472IEi"
+   //          )
+   //          .then(
+   //             ( result ) =>
+   //             {
+   //                successNotification( 'Successfully sent an email to Ralf!' )
+   //                setName( '' )
+   //                setEmail( '' )
+   //                setMessage( '' )
+   //                setDisableBtn( false )
+   //             },
+   //             ( error ) =>
+   //             {
+   //                errorNotification( 'Error sending an email to Ralf!' )
+   //                setDisableBtn( false )
+   //             }
+   //          );
+   //    } else
+   //    {
+   //       warningNotification( 'You have to fill in all the fields!' )
+   //       setDisableBtn( false )
+   //    }
+
+   // };
+
+   const handleSubmit = async ( e: React.FormEvent<HTMLFormElement> ) =>
+   {
+      setDisableBtn( true )
+      e.preventDefault();
+
+      const { from_name, from_email, message } = formData;
+      const isValid = from_name !== '' && from_email !== '' && message !== ''
+
+      const serviceId = 'gmail'; // Replace with your emailjs service ID
+      const templateId = 'template_0kdw8xu'; // Replace with your emailjs template ID
+      const userId = 'user_d4MCLJciZKPbKaM472IEi'; // Replace with your emailjs user ID
 
       if ( isValid )
       {
          try
          {
-            emailjs
-               .sendForm(
-                  "gmail",
-                  "template_0kdw8xu",
-                  formRef.current,
-                  "user_d4MCLJciZKPbKaM472IEi"
-               )
-               .then(
-                  ( result ) =>
-                  {
-                     successNotification( 'Successfully sent an email to Ralf!' )
-                     setName( '' )
-                     setEmail( '' )
-                     setMessage( '' )
-                     setDisableBtn( false )
-                  },
-                  ( error ) =>
-                  {
-                     errorNotification( 'Error sending an email to Ralf!' )
-                     setDisableBtn( false )
-                  }
-               );
+            const response: EmailJSResponseStatus = await emailjs.send(
+               serviceId,
+               templateId,
+               { from_name, from_email, message },
+               userId
+            );
+
+            successNotification( 'Successfully sent an email to Ralf!' )
+            setDisableBtn( false )
+            setFormData( { from_name: '', from_email: '', message: '' } );
          } catch ( error )
          {
             errorNotification( 'Error sending an email to Ralf!' )
             setDisableBtn( false )
          }
+
       } else
       {
          warningNotification( 'You have to fill in all the fields!' )
@@ -116,6 +160,13 @@ const OtherInfo = () =>
       }
 
    };
+
+   const handleChange = ( e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> ) =>
+   {
+      const { name, value } = e.target;
+      setFormData( { ...formData, [name]: value } );
+   };
+
 
    const { width } = screenSize;
 
@@ -445,13 +496,12 @@ const OtherInfo = () =>
                         </div>
                         <form
                            className="flex flex-col p-2 gap-1 flex-[6]"
-                           ref={formRef}
-                           onSubmit={( e ) => sendEmail( e )}
+                           onSubmit={handleSubmit}
                         >
-                           <Input placeholder="Your Full Name" className={`${quicksand.className} font-medium`} required={true} name='from_name' value={name} onChange={( e ) => setName( e.target.value )} />
-                           <Input placeholder="Your Email Address" className={`${quicksand.className} font-medium`} required={true} name='from_email' value={email} onChange={( e ) => setEmail( e.target.value )} />
-                           <TextArea rows={3} placeholder="Your Message" maxLength={500} className={`${quicksand.className} font-medium`} required={true} name='message' value={message} onChange={( e ) => setMessage( e.target.value )} />
-                           <Button shape="round" icon={<SendOutlined className={`${quicksand.className} relative bottom-[2px]`} />} onClick={( e ) => sendEmail( e )} disabled={isDisableBtn}>
+                           <Input placeholder="Your Full Name" className={`${quicksand.className} font-medium`} required={true} name='from_name' value={formData.from_name} onChange={handleChange} />
+                           <Input placeholder="Your Email Address" className={`${quicksand.className} font-medium`} required={true} name='from_email' value={formData.from_email} onChange={handleChange} />
+                           <TextArea rows={3} placeholder="Your Message" maxLength={500} className={`${quicksand.className} font-medium`} required={true} name='message' value={formData.message} onChange={handleChange} />
+                           <Button shape="round" icon={<SendOutlined className={`${quicksand.className} relative bottom-[2px]`} />} disabled={isDisableBtn} htmlType="submit">
                               {isDisableBtn ? 'Sending Message...' : 'Send Message'}
                            </Button>
                         </form>
