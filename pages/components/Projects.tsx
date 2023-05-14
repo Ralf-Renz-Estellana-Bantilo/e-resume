@@ -140,7 +140,8 @@ const Projects = () =>
                                  {service.items.map( ( item, o ) =>
                                  {
                                     return <div className="flex items-center gap-2" key={o}>
-                                       <CheckOutlined />
+                                       {/* <CheckOutlined /> */}
+                                       <Image src={require( '../../assets/Icons/check.png' ).default} alt='check icon' width={18} height={18} />
                                        <p className='text-accent-secondary font-medium text-base'>{item}</p>
                                     </div>
                                  } )}
