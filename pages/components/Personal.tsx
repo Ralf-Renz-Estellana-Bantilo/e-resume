@@ -1,6 +1,7 @@
 import { Divider, Timeline } from 'antd'
 import React, { useState } from 'react'
 import { Quicksand } from 'next/font/google'
+import Image from 'next/image'
 
 const quicksand = Quicksand( { subsets: ['latin'] } )
 
@@ -13,6 +14,13 @@ type ExperienceType = {
       pointer: string;
    }[];
    type?: string;
+}
+
+type KeyPointsType = {
+   title: string;
+   description: string;
+   path: string;
+   align?: string;
 }
 
 const Personal = () =>
@@ -77,15 +85,27 @@ const Personal = () =>
       },
    ] )
 
+   const [keyPoints] = useState<KeyPointsType[]>( [
+      {
+         title: 'Immersive Learning Journey',
+         description: 'I have dedicated myself to mastering the MERN Stack for over 3 years now, immersing myself in self-study, online courses, and personal projects. This accelerated learning has provided me with a deep understanding about Software Engineering and its complexities.',
+         path: 'illustration1.png',
+      },
+      {
+         title: 'Real-World Application',
+         description: 'In addition to my professional work, I have actively sought out opportunities to apply my MERN Stack knowledge outside of traditional job roles. Like helping my friends with their errors, making websites for/with them. These hands-on opportunities have broadened my skill set and exposed me to diverse projects and collaborations.',
+         path: 'illustration2.png',
+         align: 'right',
+      },
+      {
+         title: 'Demonstrated Results',
+         description: 'Despite limited professional experience, I have successfully developed and deployed impactful web applications using the MERN Stack. Positive user feedback and demonstrated results validate my ability to deliver high-quality solutions within given timelines.',
+         path: 'illustration3.png',
+      },
+   ] )
+
    return (
       <div className='flex flex-col gap-8 p-7 pt-3 max-md:px-4'>
-         <div className="flex flex-col px-5 neumorphism-1 rounded-lg max-md:px-3">
-            <div className="flex flex-col py-2 gap-2">
-               <h2 className='font-bold text-lg text-accent-secondary'>ABOUT</h2>
-               <Divider className='m-0'></Divider>
-            </div>
-            <h4 className='pb-6 text-accent-secondary text-justify'>I am a  <b>skilled software programmer </b> with proficiency in <b>multiple Frontend Frameworks</b>, databases, and development tools. I am a <b>strong team player</b> with effective communication skills, committed to maintaining <b> high software quality standards</b>. I've been developing web applications since 2020 using <b>MERN Stack</b>.</h4>
-         </div>
          <div className="flex flex-col px-5 gap-2 neumorphism-1 rounded-lg max-md:px-3">
             <div className="flex flex-col py-2 gap-2" >
                <h2 className='font-bold text-lg text-accent-secondary'>EXPERIENCE</h2>
@@ -221,6 +241,41 @@ const Personal = () =>
                   },
                ]}
             />
+         </div>
+         <div className="flex flex-col px-5 neumorphism-1 rounded-lg max-md:px-3">
+            <div className="flex flex-col py-2 gap-2">
+               <h2 className='font-bold text-lg text-accent-secondary'>ABOUT ME</h2>
+               <Divider className='m-0'></Divider>
+            </div>
+            <div className="flex flex-col gap-3">
+
+               <h4 className='text-accent-secondary text-justify'>While my official work experience spans <strong>9 months</strong>, I want to emphasize that my proficiency and expertise with the <strong>MERN Stack Development</strong> extend far beyond that, equating to over <strong>3 years of practical knowledge</strong>.</h4>
+               <p>Here are three key points to consider:</p>
+               <div className="flex flex-col gap-7 my-5">
+                  <>
+                     {keyPoints.map( ( keypoint, index ) =>
+                     {
+                        return <div className={`flex items-center gap-5 px-5 ${keypoint?.align && 'flex-row-reverse'}`} key={index}>
+                           <div className="flex justify-center items-center flex-1">
+                              <Image
+                                 className="object-contain h-44"
+                                 src={require( `../../assets/Illustrations/${keypoint.path}` )}
+                                 alt={keypoint.title}
+                                 width={200}
+                                 height={200}
+                              />
+                           </div>
+                           <div className="flex flex-col flex-1 gap-2">
+                              <h2 className='font-bold text-lg text-accent-secondary text-left'>{keypoint.title}</h2>
+                              <p className='text-justify'>{keypoint.description}</p>
+                           </div>
+                        </div>
+                     } )}
+                  </>
+
+               </div>
+
+            </div>
          </div>
       </div>
    )
