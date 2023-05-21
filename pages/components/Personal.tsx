@@ -104,6 +104,40 @@ const Personal = () =>
       },
    ] )
 
+   const setTimestamp = ( mm: number, yyyy: number ): string =>
+   {
+      let result: string = ''
+      let stampNumber: number = 0
+      let currentMonth: number = new Date().getMonth() + 1
+      let currentYear: number = new Date().getFullYear()
+
+      let stampString: string = ''
+
+      if ( ( yyyy > currentYear && mm > currentMonth ) || ( yyyy === currentYear && mm > currentMonth ) || ( yyyy > currentYear && mm === currentMonth ) )
+      {
+         return `Invalid TimeStamp!`
+      }
+
+      if ( currentYear > yyyy && currentMonth < mm )
+      {
+         stampNumber = ( currentMonth + 12 ) - mm
+         stampString = stampNumber > 1 ? 'Months' : 'Month'
+      } else if ( currentYear >= yyyy && currentMonth >= mm )
+      {
+         if ( currentYear > yyyy )
+         {
+            stampNumber = currentYear - yyyy
+            stampString = stampNumber > 1 ? 'Years' : 'Year'
+            return `${stampNumber} ${stampString}`
+         }
+         stampNumber = currentMonth - mm
+         stampString = stampNumber > 1 ? 'Months' : 'Month'
+      }
+
+      result = `${stampNumber} ${stampString}`
+      return result
+   }
+
    return (
       <div className='flex flex-col gap-8 p-7 pt-3 max-md:px-4'>
          <div className="flex flex-col px-5 gap-2 neumorphism-1 rounded-lg max-md:px-3">
@@ -249,7 +283,7 @@ const Personal = () =>
             </div>
             <div className="flex flex-col gap-3">
 
-               <h4 className='text-accent-secondary text-justify'>While my official work experience spans <strong>9 months</strong>, I want to emphasize that my proficiency and expertise with the <strong>MERN Stack Development</strong> extend far beyond that, equating to over <strong>3 years of practical knowledge</strong>.</h4>
+               <h4 className='text-accent-secondary text-justify'>While my official work experience spans <strong>{setTimestamp( 8, 2022 )}</strong>, I want to emphasize that my proficiency and expertise with the <strong>MERN Stack Development</strong> extend far beyond that, equating to over <strong>{setTimestamp( 4, 2020 )} of practical knowledge</strong>.</h4>
                <p>Here are three key points to consider:</p>
                <div className="flex flex-col gap-7 my-5">
                   <>
