@@ -93,7 +93,7 @@ const Personal = () =>
       },
       {
          title: 'Real-World Application',
-         description: 'In addition to my professional work, I have actively sought out opportunities to apply my MERN Stack knowledge outside of traditional job roles. Like helping my friends with their errors, making websites for/with them. These hands-on opportunities have broadened my skill set and exposed me to diverse projects and collaborations.',
+         description: 'In addition to my professional work, I have actively sought out opportunities to apply my MERN Stack knowledge outside of traditional job roles. Like helping my friends with their errors, making websites for/with them. These hands-on opportunities have broadened my skill-set and exposed me to diverse projects and collaborations.',
          path: 'illustration2.png',
          align: 'right',
       },
