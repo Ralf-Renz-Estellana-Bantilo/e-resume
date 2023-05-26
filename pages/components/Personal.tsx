@@ -283,7 +283,7 @@ const Personal = () =>
             </div>
             <div className="flex flex-col gap-3">
 
-               <h4 className='text-accent-secondary text-justify'>While my official work experience spans <strong>{setTimestamp( 8, 2022 )}</strong>, I want to emphasize that my proficiency and expertise with the <strong>MERN Stack Development</strong> extend far beyond that, equating to over <strong>{setTimestamp( 4, 2020 )} of practical knowledge</strong>.</h4>
+               <h4 className='text-accent-secondary text-justify'>While my official work experience spans <strong>{setTimestamp( 8, 2022 )}</strong>, I want to emphasize that my proficiency and expertise with the <strong>MERN (MySQL, ExpressJS, ReactJS, NodeJS) Stack</strong> extend far beyond that, equating to over <strong>{setTimestamp( 4, 2020 )} of practical knowledge</strong>.</h4>
                <p>Here are three key points to consider:</p>
                <div className="flex flex-col gap-7 my-5">
                   <>
