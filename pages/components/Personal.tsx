@@ -34,16 +34,28 @@ const Personal = () =>
          duration: 'August 2022 - Present',
          description: [
             {
-               pointer: 'Introduced the modern UI design to the team that helped them create a more user-friendly web applications.'
+               pointer: 'Spearheaded the implementation of modern UI design concepts within the team, resulting in the creation of highly user-friendly web applications that enhanced the overall user experience.'
             },
             {
-               pointer: 'Fixed bugs from existing systems and implemented enhancements that significantly improved its functionality and performance.'
+               pointer: 'Demonstrated strong problem-solving skills by identifying and fixing bugs in existing systems, and implementing enhancements that significantly improved functionality and performance.'
             },
             {
-               pointer: 'Designed and lead the development of a web application that helps HR personnel to track the applications of the applicants.'
+               pointer: 'Led the design and development of a web application aimed at streamlining HR processes, enabling HR personnel to efficiently track and manage applicant applications.'
             },
             {
-               pointer: 'Collaborated with end-users to gain understanding of needed changes or modifications of existing programs.'
+               pointer: 'Actively collaborated with end-users to gather insights and understand their requirements for changes or modifications to existing programs, ensuring that user needs were met effectively.'
+            },
+            {
+               pointer: 'Applied a user-centered approach, conducting usability tests and incorporating user feedback to continuously improve and refine web applications.'
+            },
+            {
+               pointer: 'Employed agile methodologies to manage project timelines and deliverables, ensuring successful completion of development projects.'
+            },
+            {
+               pointer: 'Worked closely with cross-functional teams, including designers and developers, to ensure seamless integration of design elements and optimal functionality of web applications.'
+            },
+            {
+               pointer: 'Demonstrated effective communication skills in presenting and explaining technical concepts to both technical and non-technical stakeholders.'
             },
          ]
       },
@@ -55,19 +67,31 @@ const Personal = () =>
          type: 'Remote',
          description: [
             {
-               pointer: 'Extracted and processed data from an Excel file.'
+               pointer: 'Conducted data extraction and processing from Excel files, ensuring accuracy and data integrity.'
             },
             {
-               pointer: 'Developed all server-side logic, maintenance, and ensured high-performance and responsiveness to requests from the frontend.'
+               pointer: 'Developed robust server-side logic and performed regular maintenance to ensure high performance and responsiveness to frontend requests.'
             },
             {
-               pointer: 'Created a dynamic APIs..'
+               pointer: 'Created dynamic APIs to facilitate seamless data exchange and integration with frontend elements.'
             },
             {
-               pointer: 'Collaborated with frontend devs on the integration of elements.'
+               pointer: 'Collaborated closely with frontend developers to ensure smooth integration of components and optimize overall system functionality.'
             },
             {
-               pointer: 'Ran diagnostics tests, repaired bugs, and provided technical supports.'
+               pointer: 'Conducted diagnostics tests to identify and resolve bugs, ensuring the reliability and stability of the system.'
+            },
+            {
+               pointer: 'Provided prompt and effective technical support to users, troubleshooting issues and offering solutions to minimize downtime.'
+            },
+            {
+               pointer: 'Actively participated in code reviews and implemented best practices to improve code quality, maintainability, and scalability.'
+            },
+            {
+               pointer: 'Stayed updated with the latest industry trends and technologies, incorporating them into development processes to enhance efficiency and innovation.'
+            },
+            {
+               pointer: 'Acted as a proactive team member, contributing ideas and suggestions for process improvement and optimization.'
             },
          ]
       },
@@ -79,7 +103,16 @@ const Personal = () =>
          type: 'Part-Time',
          description: [
             {
-               pointer: 'Provided level 1 support, handled troubleshooting and maintenance, as well as monitoring and deployment of IT equipments.'
+               pointer: 'Delivered exemplary Level 1 support, swiftly addressing technical issues, troubleshooting problems, and ensuring timely resolutions to maintain uninterrupted operations.'
+            },
+            {
+               pointer: 'Demonstrated expertise in equipment maintenance, performing regular checks, repairs, and upgrades to optimize system performance and reliability.'
+            },
+            {
+               pointer: 'Proactively monitored IT equipment, promptly identifying and mitigating potential issues to minimize downtime and enhance overall system efficiency.'
+            },
+            {
+               pointer: `Played a pivotal role in the seamless deployment of IT equipment, ensuring proper setup, configuration, and integration within the organization's infrastructure.`
             },
          ]
       },
