@@ -423,6 +423,14 @@ const OtherInfo = () =>
                                           <div>•</div>
                                           <p className='text-xs text-left'>Payroll System</p>
                                        </div>
+                                       <div className="flex items-center gap-3 text-accent-secondary">
+                                          <div>•</div>
+                                          <p className='text-xs text-left'>Telemedicine System</p>
+                                       </div>
+                                       <div className="flex items-center gap-3 text-accent-secondary">
+                                          <div>•</div>
+                                          <p className='text-xs text-left'>Dictionary Portal</p>
+                                       </div>
                                     </div>
                                  </>
                               ),
@@ -446,14 +454,6 @@ const OtherInfo = () =>
                                        <div className="flex items-center gap-3 text-accent-secondary">
                                           <div>•</div>
                                           <p className='text-xs text-left'>GWA Calculator</p>
-                                       </div>
-                                       <div className="flex items-center gap-3 text-accent-secondary">
-                                          <div>•</div>
-                                          <p className='text-xs text-left'>Telemedicine System</p>
-                                       </div>
-                                       <div className="flex items-center gap-3 text-accent-secondary">
-                                          <div>•</div>
-                                          <p className='text-xs text-left'>Dictionary Portal</p>
                                        </div>
                                     </div>
                                  </>
