@@ -23,30 +23,30 @@ const Projects = () =>
          items: [
             'DOM Manipulation',
             'Reusable Components',
-            'Dynamic User Interface',
+            'Server-side Rendering',
          ],
       },
       {
          category: 'BACKEND',
          items: [
+            'Database Management',
             'Dynamic RESTful APIs',
-            'Database Views',
-            'Data Consistency',
+            'NoSQL & Relational Databases',
          ],
       },
       {
          category: 'FULLSTACK',
          items: [
-            'Unit Test',
-            'Code Review',
-            'System Maintenance',
+            'System Deployment',
+            'Architectural Design',
+            'Object-Oriented Programming',
          ],
       },
       {
          category: 'DESIGN',
          items: [
             'UI/UX Design',
-            'Design Tools',
+            'Prototyping Tool',
             'Photo Manipulation',
          ],
       },
@@ -107,7 +107,7 @@ const Projects = () =>
                            return <div className="flex items-center gap-2" key={o}>
                               {/* <CheckOutlined /> */}
                               <Image src={require( '../../assets/Icons/check.png' ).default} alt='check icon' width={18} height={18} />
-                              <p className='text-accent-secondary'>{item}</p>
+                              <p className='text-accent-secondary font-medium'>{item}</p>
                            </div>
                         } )}
 

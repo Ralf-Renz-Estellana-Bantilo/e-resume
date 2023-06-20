@@ -189,12 +189,12 @@ const Personal = () =>
                                  <div className="flex flex-col">
                                     <h3 className='text-accent-secondary font-semibold text-base'>{experiences[0].position}</h3>
                                     <div className="flex items-center justify-start gap-1">
-                                       <h4 className='text-accent-secondary  font-semibold'>{experiences[0].company}</h4>
+                                       <h4 className='text-accent-secondary font-semibold'>{experiences[0].company}</h4>
                                        {experiences[0]?.type && <span>({experiences[0]?.type})</span>}
                                     </div>
                                  </div>
                                  <div className="flex items-center">
-                                    <p className='font-medium text-accent-secondary text-right'>{experiences[0].duration}</p>
+                                    <p className='font-semibold text-accent-secondary text-right'>{experiences[0].duration}</p>
                                  </div>
                               </div>
                               <div className="flex flex-col px-3">
@@ -202,7 +202,7 @@ const Personal = () =>
                                  {
                                     return <div className="flex gap-3 text-accent-secondary" key={i}>
                                        <div>•</div>
-                                       <p className='text-justify'>{pointer}</p>
+                                       <p className='text-justify font-medium'>{pointer}</p>
                                     </div>
                                  } )}
                               </div>
@@ -223,7 +223,7 @@ const Personal = () =>
                                     </div>
                                  </div>
                                  <div className="flex items-center">
-                                    <p className='font-medium text-accent-secondary text-right'>{experiences[1].duration}</p>
+                                    <p className='font-semibold text-accent-secondary text-right'>{experiences[1].duration}</p>
                                  </div>
                               </div>
                               <div className="flex flex-col px-3">
@@ -231,7 +231,7 @@ const Personal = () =>
                                  {
                                     return <div className="flex gap-3 text-accent-secondary" key={i}>
                                        <div>•</div>
-                                       <p className='text-justify'>{pointer}</p>
+                                       <p className='text-justify font-medium'>{pointer}</p>
                                     </div>
                                  } )}
                               </div>
@@ -252,7 +252,7 @@ const Personal = () =>
                                     </div>
                                  </div>
                                  <div className="flex items-center">
-                                    <p className='font-medium text-accent-secondary text-right'>{experiences[2].duration}</p>
+                                    <p className='font-semibold text-accent-secondary text-right'>{experiences[2].duration}</p>
                                  </div>
                               </div>
                               <div className="flex flex-col px-3">
@@ -260,7 +260,7 @@ const Personal = () =>
                                  {
                                     return <div className="flex gap-3 text-accent-secondary" key={i}>
                                        <div>•</div>
-                                       <p className='text-justify'>{pointer}</p>
+                                       <p className='text-justify font-medium'>{pointer}</p>
                                     </div>
                                  } )}
                               </div>
@@ -289,17 +289,17 @@ const Personal = () =>
                                     <h4 className='text-accent-secondary font-semibold'>University of Eastern Philippines</h4>
                                  </div>
                                  <div className="flex items-center">
-                                    <p className='font-medium text-accent-secondary text-right'>August 2018 - June 2022</p>
+                                    <p className='font-semibold text-accent-secondary text-right'>August 2018 - June 2022</p>
                                  </div>
                               </div>
                               <div className="flex flex-col px-3">
                                  <div className="flex gap-3 text-accent-secondary">
                                     <div>•</div>
-                                    <p>Capstone Project: JOB SEARCH SYSTEM (Using MERN Stack)</p>
+                                    <p className='text-justify font-medium'>Capstone Project: JOB SEARCH SYSTEM (Using MERN Stack)</p>
                                  </div>
                                  <div className="flex gap-3 text-accent-secondary">
                                     <div>•</div>
-                                    <p>Cum laude | GWA: 1.55</p>
+                                    <p className='text-justify font-medium'>Cum laude | GWA: 1.55</p>
                                  </div>
                               </div>
                            </div>
@@ -316,8 +316,8 @@ const Personal = () =>
             </div>
             <div className="flex flex-col gap-3">
 
-               <h4 className='text-accent-secondary text-justify'>While my official work experience spans <strong>{setTimestamp( 8, 2022 )}</strong>, I want to emphasize that my proficiency and expertise with the <strong>MERN (MySQL, ExpressJS, ReactJS, NodeJS) Stack</strong> extend far beyond that, equating to over <strong>{setTimestamp( 4, 2020 )} of practical knowledge</strong>.</h4>
-               <p>Here are three key points to consider:</p>
+               <h4 className='text-accent-secondary text-justify font-medium'>While my official work experience spans <strong>{setTimestamp( 8, 2022 )}</strong>, I want to emphasize that my proficiency and expertise with the <strong>MERN (MySQL, ExpressJS, ReactJS, NodeJS) Stack</strong> extend far beyond that, equating to over <strong>{setTimestamp( 4, 2020 )} of practical knowledge</strong>.</h4>
+               <p className='font-medium'>Here are three key points to consider:</p>
                <div className="flex flex-col gap-7 my-5">
                   <>
                      {keyPoints.map( ( keypoint, index ) =>
@@ -334,7 +334,7 @@ const Personal = () =>
                            </div>
                            <div className="flex flex-col flex-1 gap-2">
                               <h2 className='font-bold text-lg text-accent-secondary text-left'>{keypoint.title}</h2>
-                              <p className='text-justify'>{keypoint.description}</p>
+                              <p className='text-justify font-medium'>{keypoint.description}</p>
                            </div>
                         </div>
                      } )}

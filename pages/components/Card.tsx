@@ -35,7 +35,7 @@ const Card = () =>
          tagIDs: [2, 4, 6, 7, 11, 9],
          coverURLs: [
             'Onboarding System/pic1.png',
-            'Onboarding System/pic2.png',
+            // 'Onboarding System/pic2.png',
             'Onboarding System/pic3.png',
             'Onboarding System/pic4.png',
             'Onboarding System/pic5.png',
@@ -246,7 +246,7 @@ const Card = () =>
                <div className="flex flex-col gap-2 p-2">
                   <div className='flex flex-col justify-center'>
                      <h3 className='text-lg font-semibold text-accent-secondary text-center py-2'>{title}</h3>
-                     <p className='text-accent-secondary text-xs text-justify'>{description}</p>
+                     <p className='text-accent-secondary text-xs text-justify font-medium'>{description}</p>
                   </div>
                   <Divider className='m-0'></Divider>
                   <div>
