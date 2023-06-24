@@ -266,7 +266,7 @@ const DesktopView = () =>
                   </div>
                   <div className="flex flex-col justify-center">
                      <h3 className='text-center text-background-primary text-2xl font-bold tiktok-effect'>RALF RENZ BANTILO</h3>
-                     <p className='text-center text-background-secondary'>{`< Junior Programmer />`}</p>
+                     <p className='text-center text-background-secondary'>{`< Programmer />`}</p>
                   </div>
                </div>
                <Divider className='m-0 bg-gray-500'></Divider>
