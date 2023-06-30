@@ -215,7 +215,7 @@ const DesktopView = () =>
       const element = document.createElement( "a" );
       const fileUrl = `${host}/Documents/Resume.pdf`;
       element.href = fileUrl;
-      element.download = "Ralf Renz Bantilo - Junior Programmer Resume";
+      element.download = "Ralf Renz Bantilo - Software Engineer Resume";
       document.body.appendChild( element );
       element.click();
       document.body.removeChild( element );

@@ -425,11 +425,11 @@ const OtherInfo = () =>
                                        </div>
                                        <div className="flex items-center gap-3 text-accent-secondary">
                                           <div>•</div>
-                                          <p className='text-xs text-left'>Telemedicine System</p>
+                                          <p className='text-xs text-left'>TeleConsultation Video Chat App</p>
                                        </div>
                                        <div className="flex items-center gap-3 text-accent-secondary">
                                           <div>•</div>
-                                          <p className='text-xs text-left'>Dictionary Portal</p>
+                                          <p className='text-xs text-left'>Local Dictionary Portal</p>
                                        </div>
                                     </div>
                                  </>

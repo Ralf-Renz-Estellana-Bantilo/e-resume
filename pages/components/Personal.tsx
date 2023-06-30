@@ -29,7 +29,7 @@ const Personal = () =>
    const [experiences] = useState<ExperienceType[]>( [
       {
          id: Math.floor( Math.random() * 100 ) + 1,
-         position: 'JUNIOR PROGRAMMER',
+         position: 'PROGRAMMER',
          company: 'SL Agritech Corporation | Makati City, PH',
          duration: 'August 2022 - Present',
          description: [
@@ -322,7 +322,7 @@ const Personal = () =>
                   <>
                      {keyPoints.map( ( keypoint, index ) =>
                      {
-                        return <div className={`flex items-center gap-5 px-5 ${keypoint?.align && 'flex-row-reverse'}`} key={index}>
+                        return <div className={`flex items-center gap-5 px-5 max-lg:flex-col ${keypoint?.align && 'flex-row-reverse'}`} key={index}>
                            <div className="flex justify-center items-center flex-1">
                               <Image
                                  className="object-contain h-44"
@@ -333,7 +333,7 @@ const Personal = () =>
                               />
                            </div>
                            <div className="flex flex-col flex-1 gap-2">
-                              <h2 className='font-bold text-lg text-accent-secondary text-left'>{keypoint.title}</h2>
+                              <h2 className='font-bold text-lg text-accent-secondary text-left max-lg:text-center'>{keypoint.title}</h2>
                               <p className='text-justify font-medium'>{keypoint.description}</p>
                            </div>
                         </div>
