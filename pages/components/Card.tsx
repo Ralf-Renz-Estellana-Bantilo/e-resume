@@ -13,6 +13,8 @@ import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper";
 import { ProjectsInterface, ScreenSizeInterface, TagListsInterface } from '@/interfaces';
 
+import { Variants, motion } from "framer-motion";
+
 
 const Card = () =>
 {
@@ -223,11 +225,42 @@ const Card = () =>
       return tagList.filter( ( list ) => list.ID == tagID )[0]
    }
 
+   const item = {
+      hidden: { y: 20, opacity: 0 },
+      visible: {
+         y: 0,
+         opacity: 1
+      }
+   };
+
+   const cardVariants: Variants = {
+      offscreen: {
+         y: 100,
+         opacity: 0
+      },
+      onscreen: {
+         y: 0,
+         opacity: 1,
+         transition: {
+            type: "spring",
+            bounce: 0.3,
+            duration: 1
+         },
+      }
+   };
+
    return (
       <>
          {width > MOBILE ? <>{projects.map( ( { coverURLs, title, description, tagIDs }, i ) =>
          {
-            return <div className='flex flex-col w-[48%] h-auto neumorphism-2 rounded-xl overflow-hidden max-sm:w-full max-md:w-[75%] max-lg:w-[48%] max-xl:w-[70%]' key={i}>
+            return <motion.div
+               className='flex flex-col w-[48%] h-auto neumorphism-2 rounded-xl overflow-hidden max-sm:w-full max-md:w-[75%] max-lg:w-[48%] max-xl:w-[70%]'
+               key={i}
+               variants={cardVariants}
+               initial="offscreen"
+               whileInView="onscreen"
+               viewport={{ once: true, amount: 0 }}
+            >
                <div className='w-full h-44 overflow-clip gradient-background'>
 
                   <Carousel autoplay effect='fade'>
@@ -258,7 +291,7 @@ const Card = () =>
                      </Space>
                   </div>
                </div>
-            </div>
+            </motion.div>
          } )}</> : <>
             <Swiper
                slidesPerView={1}
@@ -311,8 +344,8 @@ const Card = () =>
                   </SwiperSlide>
                } )}
 
-            </Swiper></>}
-
+            </Swiper></>
+         }
       </>
    )
 }

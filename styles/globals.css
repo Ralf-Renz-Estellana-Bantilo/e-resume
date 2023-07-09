@@ -15,6 +15,10 @@
    font-family: "Quicksand";
 }
 
+html {
+   scroll-behavior: smooth;
+}
+
 /* Custom CSS */
 ::-webkit-scrollbar {
    width: 3px;
@@ -109,4 +113,14 @@ label {
   color: #111111;   /* dark-blue-primary */
   color: #111111;   /* dark-blue-primary */
   color: #111111;   /* dark-blue-primary */
+}
+
+::selection {
+   background-color: #25333F;
+   color: white;
+}
+
+::-moz-selection {
+   background-color: #25333F;
+   color: white;
 }

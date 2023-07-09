@@ -9,6 +9,7 @@ import { Input } from 'antd';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Variants, motion } from "framer-motion";
 
 const { TextArea } = Input;
 const quicksand = Quicksand( { subsets: ['latin'] } )
@@ -174,6 +175,21 @@ const OtherInfo = () =>
       return JSON.stringify( result )
    }
 
+   const cardVariants: Variants = {
+      offscreen: {
+         y: 100,
+         opacity: 0
+      },
+      onscreen: {
+         y: 0,
+         opacity: 1,
+         transition: {
+            type: "spring",
+            bounce: 0.3,
+            duration: 1
+         }
+      }
+   };
 
    const { width } = screenSize;
 
@@ -190,15 +206,15 @@ const OtherInfo = () =>
                   </div>
                   <div className="flex flex-col p-3 pb-6 gap-11 max-md:gap-5" >
                      {width > MOBILE ? <>
-                        <div className="flex flex-col gap-2">
+                        <motion.div className="flex flex-col gap-2" variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0 }}>
                            <Divider className='m-0' orientation="center">
                               <h3 className='font-semibold text-base text-accent-secondary'>Experience Level</h3>
                            </Divider>
                            <div className='px-3'>
                               <Checkbox.Group className={`${quicksand.className} w-full`} options={experienceLevelOptions} value={['Junior Level', 'Mid-Level']} />
                            </div>
-                        </div>
-                        <div className="flex flex-col gap-2">
+                        </motion.div>
+                        <motion.div className="flex flex-col gap-2" variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0 }}>
                            <Divider className='m-0' orientation="center">
 
                               <h3 className='font-semibold text-base text-accent-secondary'>Job Type</h3>
@@ -206,8 +222,8 @@ const OtherInfo = () =>
                            <div className='px-3'>
                               <Checkbox.Group className={`${quicksand.className} w-full`} options={jobTypeOptions} value={['Full-time']} />
                            </div>
-                        </div>
-                        <div className="flex flex-col gap-2">
+                        </motion.div>
+                        <motion.div className="flex flex-col gap-2" variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0 }}>
                            <Divider className='m-0' orientation="center">
 
                               <h3 className='font-semibold text-base text-accent-secondary'>Work Setup</h3>
@@ -215,8 +231,8 @@ const OtherInfo = () =>
                            <div className='px-3'>
                               <Checkbox.Group className={`${quicksand.className} w-full`} options={workSetupOptions} value={workSetupOptions} />
                            </div>
-                        </div>
-                        <div className="flex flex-col gap-2">
+                        </motion.div>
+                        <motion.div className="flex flex-col gap-2" variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0 }}>
                            <Divider className='m-0' orientation="center">
 
                               <h3 className='font-semibold text-base text-accent-secondary'>Title</h3>
@@ -225,8 +241,8 @@ const OtherInfo = () =>
                               <Checkbox.Group className={`${quicksand.className} w-full`} options={jobTitleOptions1} value={jobTitleOptions1} />
                               <Checkbox.Group className={`${quicksand.className} w-full`} options={jobTitleOptions2} value={jobTitleOptions2} />
                            </div>
-                        </div>
-                        <div className="flex flex-col gap-2">
+                        </motion.div>
+                        <motion.div className="flex flex-col gap-2" variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0 }}>
                            <Divider className='m-0' orientation="center">
                               <h3 className='font-semibold text-base text-accent-secondary'>Tech Stack</h3>
                            </Divider>
@@ -234,7 +250,7 @@ const OtherInfo = () =>
                               <Checkbox.Group className={`${quicksand.className} w-full`} options={techStack1} value={['MySQL, ExpressJS, ReactJS, NodeJS', 'ReactJS, NextJS, TypeScript, NodeJS']} />
                               <Checkbox.Group className={`${quicksand.className} w-full`} options={techStack2} value={['MySQL, ExpressJS, VueJS, NodeJS']} />
                            </div>
-                        </div>
+                        </motion.div>
                         {/* <div className="flex flex-col gap-2">
                            <Divider className='m-0' orientation="center">
 
@@ -372,7 +388,7 @@ const OtherInfo = () =>
                            {
                               label: '2022 - Present',
                               children: (
-                                 <>
+                                 <motion.div variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0 }}>
                                     <Space wrap>
                                        <Tag className='rounded-full' color={'lime'}>VueJS</Tag>
                                        <Tag className='rounded-full' color={'geekblue'}>Vuetify</Tag>
@@ -402,13 +418,13 @@ const OtherInfo = () =>
                                           <p className='text-xs text-left'>Personal Expenses Tracker</p>
                                        </div>
                                     </div>
-                                 </>
+                                 </motion.div>
                               ),
                            },
                            {
                               label: '2021 - 2022',
                               children: (
-                                 <>
+                                 <motion.div variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0 }}>
                                     <Space wrap>
                                        <Tag className='rounded-full' color={'orange'}>MySQL</Tag>
                                        <Tag className='rounded-full' color={'yellow'}>ExpressJS</Tag>
@@ -432,13 +448,13 @@ const OtherInfo = () =>
                                           <p className='text-xs text-left'>Local Dictionary Portal</p>
                                        </div>
                                     </div>
-                                 </>
+                                 </motion.div>
                               ),
                            },
                            {
                               label: '2020 - 2021',
                               children: (
-                                 <>
+                                 <motion.div variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0 }}>
                                     <Space wrap>
                                        <Tag className='rounded-full' color={'orange'}>MySQL</Tag>
                                        <Tag className='rounded-full' color={'yellow'}>ExpressJS</Tag>
@@ -456,13 +472,13 @@ const OtherInfo = () =>
                                           <p className='text-xs text-left'>GWA Calculator</p>
                                        </div>
                                     </div>
-                                 </>
+                                 </motion.div>
                               ),
                            },
                            {
                               label: '2018 - 2020',
                               children: (
-                                 <>
+                                 <motion.div variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0 }}>
                                     <Space wrap>
                                        <Tag className='rounded-full' color={'orange'}>MySQL</Tag>
                                        <Tag className='rounded-full' color={'volcano'}>Java</Tag>
@@ -482,7 +498,7 @@ const OtherInfo = () =>
                                           <p className='text-xs text-left'>Test Simulator Program</p>
                                        </div>
                                     </div>
-                                 </>
+                                 </motion.div>
                               ),
                            },
                         ]}
@@ -497,7 +513,7 @@ const OtherInfo = () =>
                      <Divider className='m-0'></Divider>
                   </div>
                   <div className="flex flex-col justify-center items-center p-3 gap-2" >
-                     <div className="flex p-2 gap-2 w-full max-md:flex-col">
+                     <motion.div className="flex p-2 gap-2 w-full max-md:flex-col" variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0 }}>
                         <div className="flex items-center justify-center flex-[5]">
                            <Image src={require( '@/assets/Icons/3d.png' ).default} alt='illustration' width={200} height={200} />
                         </div>
@@ -512,8 +528,8 @@ const OtherInfo = () =>
                               {isDisableBtn ? 'Sending Message...' : 'Send Message'}
                            </Button>
                         </form>
-                     </div>
-                     <small className='text-center text-dark-blue-secondary'>Your potential best hire awaits!</small>
+                     </motion.div>
+                     <motion.small className='text-center text-dark-blue-secondary' variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0 }}>Your potential best hire awaits!</motion.small>
                   </div>
                </div>
             </> :

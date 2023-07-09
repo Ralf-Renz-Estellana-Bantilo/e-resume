@@ -9,7 +9,7 @@ import { Quicksand } from 'next/font/google'
 import dynamic from 'next/dynamic';
 import { LinksInterface, PanelsInterface, PersonalInformationInterface, ScreenSizeInterface, SkillsInterface } from '@/interfaces'
 import 'react-toastify/dist/ReactToastify.css';
-import emailjs, { EmailJSResponseStatus } from 'emailjs-com'
+import { Variants, motion } from "framer-motion";
 
 const Personal = dynamic<{}>( () => import( '@/pages/components/Personal' ), {
    ssr: false
@@ -181,7 +181,6 @@ const DesktopView = () =>
    } );
 
    const MOBILE: number = 600
-   const AUTO_SEND_EMAIL = false
 
    const renderTabBar: TabsProps['renderTabBar'] = ( props, DefaultTabBar ) => (
       <StickyBox
@@ -245,6 +244,26 @@ const DesktopView = () =>
       };
    }, [] )
 
+   const container = {
+      hidden: { opacity: 1, scale: 0 },
+      visible: {
+         opacity: 1,
+         scale: 1,
+         transition: {
+            delayChildren: 0.3,
+            staggerChildren: 0.2
+         }
+      }
+   };
+
+   const item = {
+      hidden: { y: 20, opacity: 0 },
+      visible: {
+         y: 0,
+         opacity: 1
+      }
+   };
+
    const { width } = screenSize;
 
    return (
@@ -253,46 +272,48 @@ const DesktopView = () =>
          {/* LEFT PANEL */}
          <div className='flex flex-col justify-between py-5 px-4 gradient-background max-lg:min-h-[100vh] max-lg:justify-evenly max-lg:gap-3' style={{ flex: 2 }}>
             <div className="flex flex-col gap-3 ">
-               <div className="flex flex-col items-center gap-2">
-                  <div className="flex items-center justify-center">
-                     <div className="w-40 h-40 bg-gray-300 border-2 border-dark-blue-secondary rounded-full">
+               <motion.div className="flex flex-col items-center gap-2" variants={container} initial="hidden" animate="visible">
+                  <motion.div className="flex items-center justify-center" variants={item}>
+                     <motion.div className="w-40 h-40 bg-gray-300 border-2 border-dark-blue-secondary rounded-full">
                         <Image
                            className="object-cover w-full h-full mx-auto rounded-full"
                            src={profileIMG}
                            alt="Ralf Renz Bantilo"
                            priority
                         />
-                     </div>
-                  </div>
-                  <div className="flex flex-col justify-center">
-                     <h3 className='text-center text-background-primary text-2xl font-bold tiktok-effect'>RALF RENZ BANTILO</h3>
-                     <p className='text-center text-background-secondary'>{`< Programmer />`}</p>
-                  </div>
-               </div>
+                     </motion.div>
+                  </motion.div>
+                  <motion.div className="flex flex-col justify-center" variants={container} initial="hidden" animate="visible">
+                     <motion.h3 className='text-center text-background-primary text-2xl font-bold tiktok-effect' variants={item}>RALF RENZ BANTILO</motion.h3>
+                     <motion.p className='text-center text-background-secondary' variants={item}>{`< Programmer />`}</motion.p>
+                  </motion.div>
+               </motion.div>
                <Divider className='m-0 bg-gray-500'></Divider>
 
-               <div className="flex items-center justify-around text-background-primary">
+               <motion.div className="flex items-center justify-around text-background-primary" variants={container} initial="hidden" animate="visible">
                   {links.map( ( link, i ) =>
                   {
-                     return <Button type="primary" shape="circle" key={i} icon={<Image
-                        className="object-cover w-full rounded-full relative bottom-[6px]"
-                        src={require( `@/assets/Icons/${link.icon}.png` ).default}
-                        alt="image"
-                        width={50}
-                        onClick={() => visitPage( link.path )}
-                     />} size={'large'} />
+                     return <motion.div variants={item}>
+                        <Button type="primary" shape="circle" key={i} icon={<Image
+                           className="object-cover w-full rounded-full relative bottom-[6px]"
+                           src={require( `@/assets/Icons/${link.icon}.png` ).default}
+                           alt="image"
+                           width={50}
+                           onClick={() => visitPage( link.path )}
+                        />} size={'large'} />
+                     </motion.div>
                   } )}
-               </div>
+               </motion.div>
 
                <Divider className='m-0 bg-gray-500'></Divider>
-               <div className="flex flex-col rounded-lg border-2 border-gray-600 text-background-primary">
+               <motion.div className="flex flex-col rounded-lg border-2 border-gray-600 text-background-primary" variants={container} initial="hidden" animate="visible">
                   <div className="flex justify-center border-2 border-transparent border-b-gray-600 p-2">
                      <h4 className='text-center'>Information</h4>
                   </div>
                   <div className="flex flex-col p-2 gap-2">
                      {personalInformation.map( ( info, i ) =>
                      {
-                        return <div className="flex items-center gap-2 p-1" key={i}>
+                        return <motion.div className="flex items-center gap-2 p-1" key={i} variants={item}>
 
                            <div className="w-8 h-8 rounded-full flex items-center justify-center"><Image
                               className="object-cover w-full h-full mx-auto rounded-full"
@@ -301,16 +322,16 @@ const DesktopView = () =>
                               width={50}
                            /></div>
                            <p style={{ flex: 1 }} className='text-background-primary text-sm font-semibold'>{info.label}</p>
-                        </div>
+                        </motion.div>
                      } )}
                   </div>
-               </div>
+               </motion.div>
             </div>
-            <div className="flex">
+            <motion.div className="flex" variants={item}>
                <Button type="primary" shape="round" icon={<DownloadOutlined className={`${quicksand.className} relative bottom-1`} />} style={{ flex: 1 }} size='large' onClick={handleDownload}>
                   Download Resume
                </Button>
-            </div>
+            </motion.div>
          </div>
 
          {/* CONTENT PANEL */}
@@ -342,10 +363,14 @@ const DesktopView = () =>
                <div className="flex justify-center border-2 border-transparent border-b-gray-600 p-2">
                   <h4 className='text-center'>Technical Skills</h4>
                </div>
-               <div className="flex flex-col p-2 gap-2 max-h-[87vh] overflow-auto mr-1 max-lg:max-h-full">
+               <motion.div
+                  className="flex flex-col p-2 gap-2 max-h-[87vh] overflow-auto mr-1 max-lg:max-h-full"
+                  variants={container} initial="hidden" animate="visible"
+               >
                   {skills.map( ( skill, i ) =>
                   {
-                     return <div className="flex items-center gap-2 p-1" key={i}>
+                     return <motion.div className="flex items-center gap-2 p-1" key={i}
+                        variants={item}>
                         <div className="w-8 h-8 rounded-full">
                            <Image
                               className="object-cover w-full h-full mx-auto rounded-full"
@@ -360,9 +385,9 @@ const DesktopView = () =>
                            </div>
                            <span className='text-background-primary text-xs'>{skill.proficiency}</span>
                         </div>
-                     </div>
+                     </motion.div>
                   } )}
-               </div>
+               </motion.div>
             </div>
          </div>
       </div>

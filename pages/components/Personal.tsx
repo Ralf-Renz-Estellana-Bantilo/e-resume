@@ -2,6 +2,7 @@ import { Divider, Timeline } from 'antd'
 import React, { useState } from 'react'
 import { Quicksand } from 'next/font/google'
 import Image from 'next/image'
+import { Variants, motion } from "framer-motion";
 
 const quicksand = Quicksand( { subsets: ['latin'] } )
 
@@ -171,8 +172,64 @@ const Personal = () =>
       return result
    }
 
+   const cardVariants: Variants = {
+      offscreen: {
+         y: 100,
+         opacity: 0
+      },
+      onscreen: {
+         y: 0,
+         opacity: 1,
+         transition: {
+            type: "spring",
+            bounce: 0.3,
+            duration: 1
+         }
+      }
+   };
+
+   const experienceTimelineItems = ( experiences: ExperienceType ) =>
+   {
+      return {
+         children: (
+            <>
+               <motion.div
+                  className='flex flex-col gap-2'
+                  variants={cardVariants}
+                  initial="offscreen"
+                  whileInView="onscreen"
+                  viewport={{ once: true, amount: 0 }}
+               >
+                  <div className="flex items-center justify-between">
+                     <div className="flex flex-col">
+                        <h3 className='text-accent-secondary font-semibold text-base'>{experiences.position}</h3>
+                        <div className="flex items-center justify-start gap-1">
+                           <h4 className='text-accent-secondary font-semibold'>{experiences.company}</h4>
+                           {experiences?.type && <span>({experiences?.type})</span>}
+                        </div>
+                     </div>
+                     <div className="flex items-center">
+                        <p className='font-semibold text-accent-secondary text-right'>{experiences.duration}</p>
+                     </div>
+                  </div>
+                  <div className="flex flex-col px-3">
+                     {experiences.description.map( ( { pointer }, i ) =>
+                     {
+                        return <div className="flex gap-3 text-accent-secondary" key={i}>
+                           <div>•</div>
+                           <p className='text-justify font-medium'>{pointer}</p>
+                        </div>
+                     } )}
+                  </div>
+               </motion.div>
+            </>
+         ),
+      }
+   }
+
    return (
       <div className='flex flex-col gap-8 p-7 pt-3 max-md:px-4'>
+         {/* EXPERIENCE */}
          <div className="flex flex-col px-5 gap-2 neumorphism-1 rounded-lg max-md:px-3">
             <div className="flex flex-col py-2 gap-2" >
                <h2 className='font-bold text-lg text-accent-secondary'>EXPERIENCE</h2>
@@ -180,97 +237,14 @@ const Personal = () =>
             </div>
             <Timeline
                className={quicksand.className}
-               items={[
-                  {
-                     children: (
-                        <>
-                           <div className='flex flex-col gap-2'>
-                              <div className="flex items-center justify-between">
-                                 <div className="flex flex-col">
-                                    <h3 className='text-accent-secondary font-semibold text-base'>{experiences[0].position}</h3>
-                                    <div className="flex items-center justify-start gap-1">
-                                       <h4 className='text-accent-secondary font-semibold'>{experiences[0].company}</h4>
-                                       {experiences[0]?.type && <span>({experiences[0]?.type})</span>}
-                                    </div>
-                                 </div>
-                                 <div className="flex items-center">
-                                    <p className='font-semibold text-accent-secondary text-right'>{experiences[0].duration}</p>
-                                 </div>
-                              </div>
-                              <div className="flex flex-col px-3">
-                                 {experiences[0].description.map( ( { pointer }, i ) =>
-                                 {
-                                    return <div className="flex gap-3 text-accent-secondary" key={i}>
-                                       <div>•</div>
-                                       <p className='text-justify font-medium'>{pointer}</p>
-                                    </div>
-                                 } )}
-                              </div>
-                           </div>
-                        </>
-                     ),
-                  },
-                  {
-                     children: (
-                        <>
-                           <div className='flex flex-col gap-2'>
-                              <div className="flex items-center justify-between">
-                                 <div className="flex flex-col">
-                                    <h3 className='text-accent-secondary font-semibold text-base'>{experiences[1].position}</h3>
-                                    <div className="flex items-center justify-start gap-1">
-                                       <h4 className='text-accent-secondary  font-semibold'>{experiences[1].company}</h4>
-                                       {experiences[1]?.type && <span>({experiences[1]?.type})</span>}
-                                    </div>
-                                 </div>
-                                 <div className="flex items-center">
-                                    <p className='font-semibold text-accent-secondary text-right'>{experiences[1].duration}</p>
-                                 </div>
-                              </div>
-                              <div className="flex flex-col px-3">
-                                 {experiences[1].description.map( ( { pointer }, i ) =>
-                                 {
-                                    return <div className="flex gap-3 text-accent-secondary" key={i}>
-                                       <div>•</div>
-                                       <p className='text-justify font-medium'>{pointer}</p>
-                                    </div>
-                                 } )}
-                              </div>
-                           </div>
-                        </>
-                     ),
-                  },
-                  {
-                     children: (
-                        <>
-                           <div className='flex flex-col gap-2'>
-                              <div className="flex items-center justify-between">
-                                 <div className="flex flex-col">
-                                    <h3 className='text-accent-secondary font-semibold text-base'>{experiences[2].position}</h3>
-                                    <div className="flex items-center justify-start gap-1">
-                                       <h4 className='text-accent-secondary  font-semibold'>{experiences[2].company}</h4>
-                                       {experiences[2]?.type && <span>({experiences[2]?.type})</span>}
-                                    </div>
-                                 </div>
-                                 <div className="flex items-center">
-                                    <p className='font-semibold text-accent-secondary text-right'>{experiences[2].duration}</p>
-                                 </div>
-                              </div>
-                              <div className="flex flex-col px-3">
-                                 {experiences[2].description.map( ( { pointer }, i ) =>
-                                 {
-                                    return <div className="flex gap-3 text-accent-secondary" key={i}>
-                                       <div>•</div>
-                                       <p className='text-justify font-medium'>{pointer}</p>
-                                    </div>
-                                 } )}
-                              </div>
-                           </div>
-                        </>
-                     ),
-                  },
-               ]}
+               items={experiences.map( ( experience ) =>
+               {
+                  return experienceTimelineItems( experience )
+               } )}
             />
          </div>
+
+         {/* EDUCATION */}
          <div className="flex flex-col px-5 gap-2 neumorphism-1 rounded-lg max-md:px-3">
             <div className="flex flex-col py-2 gap-2">
                <h2 className='font-bold text-lg text-accent-secondary'>EDUCATION</h2>
@@ -282,7 +256,13 @@ const Personal = () =>
                   {
                      children: (
                         <>
-                           <div className='flex flex-col gap-2'>
+                           <motion.div
+                              className='flex flex-col gap-2'
+                              variants={cardVariants}
+                              initial="offscreen"
+                              whileInView="onscreen"
+                              viewport={{ once: true, amount: 0 }}
+                           >
                               <div className="flex items-center justify-between">
                                  <div className="flex flex-col">
                                     <h3 className='text-accent-secondary font-semibold text-base'>BS INFORMATION TECHNOLOGY</h3>
@@ -302,13 +282,15 @@ const Personal = () =>
                                     <p className='text-justify font-medium'>Cum laude | GWA: 1.55</p>
                                  </div>
                               </div>
-                           </div>
+                           </motion.div>
                         </>
                      ),
                   },
                ]}
             />
          </div>
+
+         {/* ABOUT ME */}
          <div className="flex flex-col px-5 neumorphism-1 rounded-lg max-md:px-3">
             <div className="flex flex-col py-2 gap-2">
                <h2 className='font-bold text-lg text-accent-secondary'>ABOUT ME</h2>
@@ -316,13 +298,32 @@ const Personal = () =>
             </div>
             <div className="flex flex-col gap-3">
 
-               <h4 className='text-accent-secondary text-justify font-medium'>While my official work experience spans <strong>{setTimestamp( 8, 2022 )}</strong>, I want to emphasize that my proficiency and expertise with the <strong>MERN (MySQL, ExpressJS, ReactJS, NodeJS) Stack</strong> extend far beyond that, equating to over <strong>{setTimestamp( 4, 2020 )} of practical knowledge</strong>.</h4>
-               <p className='font-medium'>Here are three key points to consider:</p>
+               <motion.h4
+                  className='text-accent-secondary text-justify font-medium'
+                  variants={cardVariants}
+                  initial="offscreen"
+                  whileInView="onscreen"
+                  viewport={{ once: true, amount: 0 }}
+               >While my official work experience spans <strong>{setTimestamp( 8, 2022 )}</strong>, I want to emphasize that my proficiency and expertise with the <strong>MERN (MySQL, ExpressJS, ReactJS, NodeJS) Stack</strong> extend far beyond that, equating to over <strong>{setTimestamp( 4, 2020 )} of practical knowledge</strong>.</motion.h4>
+               <motion.p
+                  className='font-medium'
+                  variants={cardVariants}
+                  initial="offscreen"
+                  whileInView="onscreen"
+                  viewport={{ once: true, amount: 0 }}
+               >Here are three key points to consider:</motion.p>
                <div className="flex flex-col gap-7 my-5">
                   <>
                      {keyPoints.map( ( keypoint, index ) =>
                      {
-                        return <div className={`flex items-center gap-5 px-5 max-lg:flex-col ${keypoint?.align && 'flex-row-reverse'}`} key={index}>
+                        return <motion.div
+                           className={`flex items-center gap-5 px-5 max-lg:flex-col ${keypoint?.align && 'flex-row-reverse'}`}
+                           key={index}
+                           variants={cardVariants}
+                           initial="offscreen"
+                           whileInView="onscreen"
+                           viewport={{ once: true, amount: 0 }}
+                        >
                            <div className="flex justify-center items-center flex-1">
                               <Image
                                  className="object-contain h-44"
@@ -336,7 +337,7 @@ const Personal = () =>
                               <h2 className='font-bold text-lg text-accent-secondary text-left max-lg:text-center'>{keypoint.title}</h2>
                               <p className='text-justify font-medium'>{keypoint.description}</p>
                            </div>
-                        </div>
+                        </motion.div>
                      } )}
                   </>
 
