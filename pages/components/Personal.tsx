@@ -52,9 +52,9 @@ const Personal = () =>
             {
                pointer: 'Employed agile methodologies to manage project timelines and deliverables, ensuring successful completion of development projects.'
             },
-            {
-               pointer: 'Worked closely with cross-functional teams, including designers and developers, to ensure seamless integration of design elements and optimal functionality of web applications.'
-            },
+            // {
+            //    pointer: 'Worked closely with cross-functional teams, including designers and developers, to ensure seamless integration of design elements and optimal functionality of web applications.'
+            // },
             {
                pointer: 'Demonstrated effective communication skills in presenting and explaining technical concepts to both technical and non-technical stakeholders.'
             },
