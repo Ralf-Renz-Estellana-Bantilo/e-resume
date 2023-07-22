@@ -84,7 +84,7 @@ const Projects = () =>
       setTimeout( () =>
       {
          setIsCardVisible( true );
-      }, 1000 );
+      }, 1450 );
 
       return () =>
       {
