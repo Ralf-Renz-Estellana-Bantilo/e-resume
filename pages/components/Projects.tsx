@@ -159,7 +159,7 @@ const Projects = () =>
                      {services.map( ( service, i ) =>
                      {
                         return <SwiperSlide className='p-4 pb-8 ' key={i}>
-                           <div className="flex flex-col h-auto neumorphism-2 rounded-lg bg-background-primary w-[48%] max-sm:w-full max-md:w-[75%] max-lg:w-[48%]" key={i}>
+                           <div className="flex flex-col h-auto neumorphism-2 rounded-lg bg-background-primary w-[48%] max-sm:w-full max-md:w-[75%] max-lg:w-[48%]">
                               <div className="flex flex-col">
                                  <h3 className='font-semibold text-center p-2 text-base text-accent-secondary'>{service.category}</h3>
                                  <Divider className='m-0'></Divider>

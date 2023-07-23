@@ -293,8 +293,8 @@ const DesktopView = () =>
                <motion.div className="flex items-center justify-around text-background-primary" variants={container} initial="hidden" animate="visible">
                   {links.map( ( link, i ) =>
                   {
-                     return <motion.div variants={item}>
-                        <Button type="primary" shape="circle" key={i} icon={<Image
+                     return <motion.div variants={item} key={i}>
+                        <Button type="primary" shape="circle" icon={<Image
                            className="object-cover w-full rounded-full relative bottom-[6px]"
                            src={require( `@/assets/Icons/${link.icon}.png` ).default}
                            alt="image"
