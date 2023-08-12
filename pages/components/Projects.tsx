@@ -26,6 +26,7 @@ const Projects = () =>
             'DOM Manipulation',
             'Reusable Components',
             'Server-side Rendering',
+            // 'Progresive Web Application (PWA)',
          ],
       },
       {
@@ -135,7 +136,7 @@ const Projects = () =>
                            return <div className="flex items-center gap-2" key={o}>
                               {/* <CheckOutlined /> */}
                               <Image src={require( '../../assets/Icons/check.png' ).default} alt='check icon' width={18} height={18} />
-                              <p className='text-accent-secondary font-medium'>{item}</p>
+                              <p className='text-accent-secondary font-medium text-left'>{item}</p>
                            </div>
                         } )}
 
@@ -170,7 +171,7 @@ const Projects = () =>
                                     return <div className="flex items-center gap-2" key={o}>
                                        {/* <CheckOutlined /> */}
                                        <Image src={require( '../../assets/Icons/check.png' ).default} alt='check icon' width={18} height={18} />
-                                       <p className='text-accent-secondary font-medium text-base'>{item}</p>
+                                       <p className='text-accent-secondary font-medium text-base text-left'>{item}</p>
                                     </div>
                                  } )}
 

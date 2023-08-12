@@ -304,7 +304,7 @@ const Personal = () =>
                   initial="offscreen"
                   whileInView="onscreen"
                   viewport={{ once: true, amount: 0 }}
-               >While my official work experience spans <strong>{setTimestamp( 8, 2022 )}</strong>, I want to emphasize that my proficiency and expertise with the <strong>MERN (MySQL, ExpressJS, ReactJS, NodeJS) Stack</strong> extend far beyond that, equating to over <strong>{setTimestamp( 4, 2020 )} of practical knowledge</strong>.</motion.h4>
+               >While my official work experience spans <strong>{setTimestamp( 8, 2022 )}</strong>, I want to emphasize that my proficiency and expertise with the <strong>Software Development</strong> extend far beyond that, equating to over <strong>{setTimestamp( 8, 2018 )} of practical knowledge</strong>. I spent my first couple of years doing <strong>Desktop Development</strong> using <strong>Java</strong>, and on 2020 I decided to switch over to <strong>Web Application Development</strong> using mainly <strong>MERN (MySQL, ExpressJS, ReactJS, NodeJS) Stack</strong>, and learned a bunch of web-related technologies and frameworks ever since.</motion.h4>
                <motion.p
                   className='font-medium'
                   variants={cardVariants}

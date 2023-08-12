@@ -24,10 +24,10 @@ const OtherInfo = () =>
 {
 
    const experienceLevelOptions: string[] = ['Junior Level', 'Mid-Level', 'Senior Level', 'Managerial'];
-   const jobTypeOptions: string[] = ['Full-time', 'Part-time', 'Contract', 'Temporary'];
+   const jobTypeOptions: string[] = ['Full-time', 'Part-time', 'Contract', 'Freelance'];
    const workSetupOptions: string[] = ['On-site', 'Remote', 'Hybrid'];
-   const jobTitleOptions1: string[] = ['Junior Software Engineer', 'Frontend Software Engineer', 'Fullstack Developer (React/Node)'];
-   const jobTitleOptions2: string[] = ['React Developer', ' Junior Programmer', 'Web Developer'];
+   const jobTitleOptions1: string[] = ['Software Engineer', 'Frontend Software Engineer', 'Fullstack Developer (React/Node)'];
+   const jobTitleOptions2: string[] = ['React Developer', ' Programmer', 'Web Developer'];
    const techStack1: string[] = ['MySQL, ExpressJS, ReactJS, NodeJS', 'ReactJS, NextJS, TypeScript, NodeJS', 'JavaScript, PHP'];
    const techStack2: string[] = ['MySQL, ExpressJS, VueJS, NodeJS', 'VueJS, MySQL, PHP', 'Java, MySQL'];
 
