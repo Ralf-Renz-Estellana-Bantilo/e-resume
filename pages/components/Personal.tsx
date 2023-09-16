@@ -122,18 +122,18 @@ const Personal = () =>
    const [keyPoints] = useState<KeyPointsType[]>( [
       {
          title: 'Immersive Learning Journey',
-         description: 'I have dedicated myself to mastering the MERN Stack for over 3 years now, immersing myself in self-study, online courses, and personal projects. This accelerated learning has provided me with a deep understanding about Software Engineering and its complexities.',
+         description: 'I have dedicated myself to mastering Web Development for over 3 years now, immersing myself in self-study, online courses, and personal projects. This accelerated learning has provided me with a deep understanding about Software Engineering and its complexities.',
          path: 'illustration1.png',
       },
       {
          title: 'Real-World Application',
-         description: 'In addition to my professional work, I have actively sought out opportunities to apply my MERN Stack knowledge outside of traditional job roles. Like helping my friends with their errors, making websites for/with them. These hands-on opportunities have broadened my skill-set and exposed me to diverse projects and collaborations.',
+         description: 'In addition to my professional work, I have actively sought out opportunities to apply my Web Development knowledge outside of traditional job  my frieroles. Like helpingnds with their errors, making websites for/with them. These hands-on opportunities have broadened my skill-set and exposed me to diverse projects and collaborations.',
          path: 'illustration2.png',
          align: 'right',
       },
       {
          title: 'Demonstrated Results',
-         description: 'Despite limited professional experience, I have successfully developed and deployed impactful web applications using the MERN Stack. Positive user feedback and demonstrated results validate my ability to deliver high-quality solutions within given timelines.',
+         description: 'Despite limited professional experience, I have successfully developed and deployed impactful web applications using MERN Stack. Positive user feedback and demonstrated results validate my ability to deliver high-quality solutions within given timelines.',
          path: 'illustration3.png',
       },
    ] )
@@ -304,7 +304,7 @@ const Personal = () =>
                   initial="offscreen"
                   whileInView="onscreen"
                   viewport={{ once: true, amount: 0 }}
-               >While my official work experience spans <strong>{setTimestamp( 8, 2022 )}</strong>, I want to emphasize that my proficiency and expertise with the <strong>Software Development</strong> extend far beyond that, equating to over <strong>{setTimestamp( 8, 2018 )} of practical knowledge</strong>. I spent my first couple of years doing <strong>Desktop Development</strong> using <strong>Java</strong>, and on 2020 I decided to switch over to <strong>Web Application Development</strong> using mainly <strong>MERN (MySQL, ExpressJS, ReactJS, NodeJS) Stack</strong>, and learned a bunch of web-related technologies and frameworks ever since.</motion.h4>
+               >While my official work experience spans over <strong>{setTimestamp( 8, 2022 )}</strong>, I want to emphasize that my proficiency and expertise with the <strong>Software Development</strong> extend far beyond that, equating to over <strong>{setTimestamp( 8, 2018 )} of practical knowledge</strong>. I spent my first couple of years doing <strong>Desktop Development</strong> using <strong>Java</strong>, and on 2020 I decided to switch over to <strong>Web Application Development</strong> using mainly <strong>MERN (MySQL, ExpressJS, ReactJS, NodeJS) Stack</strong>, and learned a bunch of web-related technologies and frameworks ever since.</motion.h4>
                <motion.p
                   className='font-medium'
                   variants={cardVariants}

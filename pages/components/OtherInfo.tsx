@@ -409,10 +409,14 @@ const OtherInfo = () =>
                                           <div>•</div>
                                           <p className='text-xs text-left'>Applicant Tracking & Onboarding System</p>
                                        </div>
-                                       {/* <div className="flex items-center gap-3 text-accent-secondary">
+                                       <div className="flex items-center gap-3 text-accent-secondary">
                                           <div>•</div>
                                           <p className='text-xs text-left'>Employee Portal</p>
-                                       </div> */}
+                                       </div>
+                                       <div className="flex items-center gap-3 text-accent-secondary">
+                                          <div>•</div>
+                                          <p className='text-xs text-left'>Organizational Chart</p>
+                                       </div>
                                        <div className="flex items-center gap-3 text-accent-secondary">
                                           <div>•</div>
                                           <p className='text-xs text-left'>Personal Expenses Tracker</p>
