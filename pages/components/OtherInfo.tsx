@@ -617,7 +617,7 @@ const OtherInfo = () =>
                      <div className="flex flex-col flex-1 gap-3">
                         {qualifications.map( ( qualification ) =>
                         {
-                           return <div className='px-3' key={qualification.ID}>
+                           return <motion.div className='px-3' key={qualification.ID} variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0 }}>
                               <Checkbox className={`${quicksand.className} w-full`} checked><strong className='uppercase text-accent-primary'>{qualification.title}</strong></Checkbox>
                               <div className="flex flex-col">
                                  {qualification.description.map( ( pointer, index ) =>
@@ -628,7 +628,7 @@ const OtherInfo = () =>
                                     </div>
                                  } )}
                               </div>
-                           </div>
+                           </motion.div>
                         } )}
                      </div>
                   </div>
