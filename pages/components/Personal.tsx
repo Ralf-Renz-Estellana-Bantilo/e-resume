@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import { Quicksand } from 'next/font/google'
 import Image from 'next/image'
 import { Variants, motion } from "framer-motion";
+import { setTimestamp } from '../utils/Resources';
+import Container from './Container';
 
 const quicksand = Quicksand( { subsets: ['latin'] } )
 
@@ -138,40 +140,6 @@ const Personal = () =>
       },
    ] )
 
-   const setTimestamp = ( mm: number, yyyy: number ): string =>
-   {
-      let result: string = ''
-      let stampNumber: number = 0
-      let currentMonth: number = new Date().getMonth() + 1
-      let currentYear: number = new Date().getFullYear()
-
-      let stampString: string = ''
-
-      if ( ( yyyy > currentYear && mm > currentMonth ) || ( yyyy === currentYear && mm > currentMonth ) || ( yyyy > currentYear && mm === currentMonth ) )
-      {
-         return `Invalid TimeStamp!`
-      }
-
-      if ( currentYear > yyyy && currentMonth < mm )
-      {
-         stampNumber = ( currentMonth + 12 ) - mm
-         stampString = stampNumber > 1 ? 'Months' : 'Month'
-      } else if ( currentYear >= yyyy && currentMonth >= mm )
-      {
-         if ( currentYear > yyyy )
-         {
-            stampNumber = currentYear - yyyy
-            stampString = stampNumber > 1 ? 'Years' : 'Year'
-            return `${stampNumber} ${stampString}`
-         }
-         stampNumber = currentMonth - mm
-         stampString = stampNumber > 1 ? 'Months' : 'Month'
-      }
-
-      result = `${stampNumber} ${stampString}`
-      return result
-   }
-
    const cardVariants: Variants = {
       offscreen: {
          y: 100,
@@ -230,11 +198,7 @@ const Personal = () =>
    return (
       <div className='flex flex-col gap-8 p-7 pt-3 max-md:px-4'>
          {/* EXPERIENCE */}
-         <div className="flex flex-col px-5 gap-2 neumorphism-1 rounded-lg max-md:px-3">
-            <div className="flex flex-col py-2 gap-2" >
-               <h2 className='font-bold text-lg text-accent-secondary'>EXPERIENCE</h2>
-               <Divider className='m-0'></Divider>
-            </div>
+         <Container title='EXPERIENCE'>
             <Timeline
                className={quicksand.className}
                items={experiences.map( ( experience ) =>
@@ -242,14 +206,10 @@ const Personal = () =>
                   return experienceTimelineItems( experience )
                } )}
             />
-         </div>
+         </Container>
 
          {/* EDUCATION */}
-         <div className="flex flex-col px-5 gap-2 neumorphism-1 rounded-lg max-md:px-3">
-            <div className="flex flex-col py-2 gap-2">
-               <h2 className='font-bold text-lg text-accent-secondary'>EDUCATION</h2>
-               <Divider className='m-0'></Divider>
-            </div>
+         <Container title='EDUCATION'>
             <Timeline
                className={quicksand.className}
                items={[
@@ -273,10 +233,10 @@ const Personal = () =>
                                  </div>
                               </div>
                               <div className="flex flex-col px-3">
-                                 <div className="flex gap-3 text-accent-secondary">
+                                 {/* <div className="flex gap-3 text-accent-secondary">
                                     <div>•</div>
                                     <p className='text-justify font-medium'>Capstone Project: JOB SEARCH SYSTEM (Using MERN Stack)</p>
-                                 </div>
+                                 </div> */}
                                  <div className="flex gap-3 text-accent-secondary">
                                     <div>•</div>
                                     <p className='text-justify font-medium'>Cum laude | GWA: 1.55</p>
@@ -288,14 +248,10 @@ const Personal = () =>
                   },
                ]}
             />
-         </div>
+         </Container>
 
          {/* ABOUT ME */}
-         <div className="flex flex-col px-5 neumorphism-1 rounded-lg max-md:px-3">
-            <div className="flex flex-col py-2 gap-2">
-               <h2 className='font-bold text-lg text-accent-secondary'>ABOUT ME</h2>
-               <Divider className='m-0'></Divider>
-            </div>
+         <Container title='ABOUT ME'>
             <div className="flex flex-col gap-3">
 
                <motion.h4
@@ -344,7 +300,7 @@ const Personal = () =>
                </div>
 
             </div>
-         </div>
+         </Container>
       </div>
    )
 }

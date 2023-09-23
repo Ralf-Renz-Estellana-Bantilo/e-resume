@@ -16,6 +16,7 @@ import { ScreenSizeInterface, ServicesInterface } from '@/interfaces';
 import Image from 'next/image';
 
 import { motion } from "framer-motion";
+import Container from './Container';
 
 const Projects = () =>
 {
@@ -117,92 +118,86 @@ const Projects = () =>
 
    return (
       <div className="flex flex-col gap-8 p-7 pt-3 min-h-screen max-md:px-4">
-         {isVisible ? <><div className="flex flex-col px-5 gap-2 neumorphism-1 rounded-lg max-md:px-3">
-            <div className="flex flex-col py-2 gap-2">
-               <h2 className='font-bold text-lg text-accent-secondary'>SERVICES</h2>
-               <Divider className='m-0'></Divider>
-            </div>
-            <motion.div className="flex flex-wrap justify-evenly pb-6 gap-5 max-md:pb-1" variants={container} initial="hidden" animate="visible">
-               {width > MOBILE ? <> {services.map( ( service, i ) =>
-               {
-                  return <motion.div className="flex flex-col h-auto neumorphism-2 rounded-lg bg-background-primary w-[48%] max-sm:w-full max-md:w-[75%] max-lg:w-[48%]" key={i} variants={item}>
-                     <div className="flex flex-col">
-                        <h3 className='font-semibold text-center p-2 text-base text-accent-secondary'>{service.category}</h3>
-                        <Divider className='m-0'></Divider>
-                     </div>
-                     <div className="flex flex-col p-2 gap-1">
-                        {service.items.map( ( item, o ) =>
-                        {
-                           return <div className="flex items-center gap-2" key={o}>
-                              {/* <CheckOutlined /> */}
-                              <Image src={require( '../../assets/Icons/check.png' ).default} alt='check icon' width={18} height={18} />
-                              <p className='text-accent-secondary font-medium text-left'>{item}</p>
-                           </div>
-                        } )}
-
-                     </div>
-                  </motion.div>
-               } )}</> : <>
-                  <Swiper
-                     slidesPerView={1}
-                     centeredSlides={true}
-                     autoplay={{
-                        delay: 2500,
-                        disableOnInteraction: false,
-                     }}
-                     pagination={{
-                        clickable: true,
-                     }}
-                     modules={[Pagination, Autoplay]}
-                     className="mySwiper bg-background-primary"
-                  >
-
-                     {services.map( ( service, i ) =>
+         {isVisible ?
+            <>
+               <Container title='SERVICES'>
+                  <motion.div className="flex flex-wrap justify-evenly pb-6 gap-5 max-md:pb-1" variants={container} initial="hidden" animate="visible">
+                     {width > MOBILE ? <> {services.map( ( service, i ) =>
                      {
-                        return <SwiperSlide className='p-4 pb-8 ' key={i}>
-                           <div className="flex flex-col h-auto neumorphism-2 rounded-lg bg-background-primary w-[48%] max-sm:w-full max-md:w-[75%] max-lg:w-[48%]">
-                              <div className="flex flex-col">
-                                 <h3 className='font-semibold text-center p-2 text-base text-accent-secondary'>{service.category}</h3>
-                                 <Divider className='m-0'></Divider>
-                              </div>
-                              <div className="flex flex-col p-2 gap-1">
-                                 {service.items.map( ( item, o ) =>
-                                 {
-                                    return <div className="flex items-center gap-2" key={o}>
-                                       {/* <CheckOutlined /> */}
-                                       <Image src={require( '../../assets/Icons/check.png' ).default} alt='check icon' width={18} height={18} />
-                                       <p className='text-accent-secondary font-medium text-base text-left'>{item}</p>
-                                    </div>
-                                 } )}
-
-                              </div>
+                        return <motion.div className="flex flex-col h-auto neumorphism-2 rounded-lg bg-background-primary w-[48%] max-sm:w-full max-md:w-[75%] max-lg:w-[48%]" key={i} variants={item}>
+                           <div className="flex flex-col">
+                              <h3 className='font-semibold text-center p-2 text-base text-accent-secondary'>{service.category}</h3>
+                              <Divider className='m-0'></Divider>
                            </div>
-                        </SwiperSlide>
-                     } )}
+                           <div className="flex flex-col p-2 gap-1">
+                              {service.items.map( ( item, o ) =>
+                              {
+                                 return <div className="flex items-center gap-2" key={o}>
+                                    {/* <CheckOutlined /> */}
+                                    <Image src={require( '../../assets/Icons/check.png' ).default} alt='check icon' width={18} height={18} />
+                                    <p className='text-accent-secondary font-medium text-left'>{item}</p>
+                                 </div>
+                              } )}
 
-                  </Swiper>
-               </>}
-            </motion.div>
-         </div>
+                           </div>
+                        </motion.div>
+                     } )}</> : <>
+                        <Swiper
+                           slidesPerView={1}
+                           centeredSlides={true}
+                           autoplay={{
+                              delay: 2500,
+                              disableOnInteraction: false,
+                           }}
+                           pagination={{
+                              clickable: true,
+                           }}
+                           modules={[Pagination, Autoplay]}
+                           className="mySwiper bg-background-primary"
+                        >
 
-            <div className="flex flex-col px-5 gap-2 neumorphism-1 rounded-lg max-md:px-3">
-               <div className="flex flex-col py-2 gap-2">
-                  <h2 className='font-bold text-lg text-accent-secondary'>PROJECTS</h2>
-                  <Divider className='m-0'></Divider>
-               </div>
+                           {services.map( ( service, i ) =>
+                           {
+                              return <SwiperSlide className='p-4 pb-8 ' key={i}>
+                                 <div className="flex flex-col h-auto neumorphism-2 rounded-lg bg-background-primary w-[48%] max-sm:w-full max-md:w-[75%] max-lg:w-[48%]">
+                                    <div className="flex flex-col">
+                                       <h3 className='font-semibold text-center p-2 text-base text-accent-secondary'>{service.category}</h3>
+                                       <Divider className='m-0'></Divider>
+                                    </div>
+                                    <div className="flex flex-col p-2 gap-1">
+                                       {service.items.map( ( item, o ) =>
+                                       {
+                                          return <div className="flex items-center gap-2" key={o}>
+                                             {/* <CheckOutlined /> */}
+                                             <Image src={require( '../../assets/Icons/check.png' ).default} alt='check icon' width={18} height={18} />
+                                             <p className='text-accent-secondary font-medium text-base text-left'>{item}</p>
+                                          </div>
+                                       } )}
 
-               <motion.div
-                  className='flex flex-wrap justify-evenly pb-6 gap-5 min-h-[500px] max-md:pb-1'
-                  variants={container}
-                  initial="hidden"
-                  animate="visible"
-               >
-                  {isCardVisible && <Card />}
+                                    </div>
+                                 </div>
+                              </SwiperSlide>
+                           } )}
 
-               </motion.div>
-            </div></> : <div className='h-[90vh] flex items-center justify-center'>
-            <Spin size="large" />
-         </div>}
+                        </Swiper>
+                     </>}
+                  </motion.div>
+               </Container>
+
+               <Container title='PROJECTS'>
+                  <motion.div
+                     className='flex flex-wrap justify-evenly pb-6 gap-5 min-h-[500px] max-md:pb-1'
+                     variants={container}
+                     initial="hidden"
+                     animate="visible"
+                  >
+                     {isCardVisible && <Card />}
+
+                  </motion.div>
+               </Container>
+            </> : <div className='h-[90vh] flex items-center justify-center'>
+               <Spin size="large" />
+            </div>}
 
       </div>
    )
