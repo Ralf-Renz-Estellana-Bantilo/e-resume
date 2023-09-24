@@ -11,7 +11,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination, Autoplay } from "swiper";
-import { ProjectsInterface, ScreenSizeInterface, TagListsInterface } from '@/interfaces';
+import { ProjectsInterface, ScreenSizeInterface, TagListsInterface, viewportType } from '@/interfaces';
 
 import { Variants, motion } from "framer-motion";
 
@@ -249,6 +249,11 @@ const Card = () =>
       }
    };
 
+   const viewportVariant: viewportType = {
+      once: true,
+      amount: 0
+   }
+
    return (
       <>
          {width > MOBILE ? <>{projects.map( ( { coverURLs, title, description, tagIDs }, i ) =>
@@ -259,7 +264,7 @@ const Card = () =>
                variants={cardVariants}
                initial="offscreen"
                whileInView="onscreen"
-               viewport={{ once: true, amount: 0 }}
+               viewport={viewportVariant}
             >
                <div className='w-full h-44 overflow-clip gradient-background'>
 

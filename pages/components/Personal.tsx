@@ -4,6 +4,7 @@ import { Quicksand } from 'next/font/google'
 import Image from 'next/image'
 import { Variants, motion } from "framer-motion";
 import Container from './Container';
+import { viewportType } from '@/interfaces';
 
 const quicksand = Quicksand( { subsets: ['latin'] } )
 
@@ -155,6 +156,11 @@ const Personal = () =>
       }
    };
 
+   const viewportVariant: viewportType = {
+      once: true,
+      amount: 0
+   }
+
    const experienceTimelineItems = ( experiences: ExperienceType ) =>
    {
       return {
@@ -165,7 +171,7 @@ const Personal = () =>
                   variants={cardVariants}
                   initial="offscreen"
                   whileInView="onscreen"
-                  viewport={{ once: true, amount: 0 }}
+                  viewport={viewportVariant}
                >
                   <div className="flex items-center justify-between">
                      <div className="flex flex-col">
@@ -230,6 +236,58 @@ const Personal = () =>
 
    return (
       <div className='flex flex-col gap-8 p-7 pt-3 max-md:px-4'>
+         {/* ABOUT ME */}
+         <Container title='ABOUT ME'>
+            <div className="flex flex-col gap-3">
+
+               <motion.h4
+                  className='text-accent-secondary text-justify font-medium'
+                  variants={cardVariants}
+                  initial="offscreen"
+                  whileInView="onscreen"
+                  viewport={viewportVariant}
+               >While my official work experience spans over <strong>{setTimestamp( 8, 2022 )}</strong>, I want to emphasize that my proficiency and expertise with the <strong>Software Development</strong> extend far beyond that, equating to over <strong>{setTimestamp( 8, 2018 )} of practical knowledge</strong>. I spent my first couple of years doing <strong>Desktop Development</strong> using <strong>Java</strong>, and on 2020 I decided to switch over to <strong>Web Application Development</strong> using mainly <strong>MERN (MySQL, ExpressJS, ReactJS, NodeJS) Stack</strong>, and learned a bunch of web-related technologies and frameworks ever since.</motion.h4>
+               <motion.p
+                  className='font-medium'
+                  variants={cardVariants}
+                  initial="offscreen"
+                  whileInView="onscreen"
+                  viewport={viewportVariant}
+               >Here are three key points to consider:</motion.p>
+               <div className="flex flex-col gap-7 my-5">
+                  <>
+                     {keyPoints.map( ( keypoint, index ) =>
+                     {
+                        return <motion.div
+                           className={`flex items-center gap-5 px-5 max-lg:flex-col ${keypoint?.align && 'flex-row-reverse'}`}
+                           key={index}
+                           variants={cardVariants}
+                           initial="offscreen"
+                           whileInView="onscreen"
+                           viewport={viewportVariant}
+                        >
+                           <div className="flex justify-center items-center flex-1">
+                              <Image
+                                 className="object-contain h-44"
+                                 src={require( `../../assets/Illustrations/${keypoint.path}` )}
+                                 alt={keypoint.title}
+                                 width={200}
+                                 height={200}
+                              />
+                           </div>
+                           <div className="flex flex-col flex-1 gap-2">
+                              <h2 className='font-bold text-lg text-accent-secondary text-left max-lg:text-center'>{keypoint.title}</h2>
+                              <p className='text-justify font-medium'>{keypoint.description}</p>
+                           </div>
+                        </motion.div>
+                     } )}
+                  </>
+
+               </div>
+
+            </div>
+         </Container>
+
          {/* EXPERIENCE */}
          <Container title='EXPERIENCE'>
             <Timeline
@@ -254,7 +312,7 @@ const Personal = () =>
                               variants={cardVariants}
                               initial="offscreen"
                               whileInView="onscreen"
-                              viewport={{ once: true, amount: 0 }}
+                              viewport={viewportVariant}
                            >
                               <div className="flex items-center justify-between">
                                  <div className="flex flex-col">
@@ -281,58 +339,6 @@ const Personal = () =>
                   },
                ]}
             />
-         </Container>
-
-         {/* ABOUT ME */}
-         <Container title='ABOUT ME'>
-            <div className="flex flex-col gap-3">
-
-               <motion.h4
-                  className='text-accent-secondary text-justify font-medium'
-                  variants={cardVariants}
-                  initial="offscreen"
-                  whileInView="onscreen"
-                  viewport={{ once: true, amount: 0 }}
-               >While my official work experience spans over <strong>{setTimestamp( 8, 2022 )}</strong>, I want to emphasize that my proficiency and expertise with the <strong>Software Development</strong> extend far beyond that, equating to over <strong>{setTimestamp( 8, 2018 )} of practical knowledge</strong>. I spent my first couple of years doing <strong>Desktop Development</strong> using <strong>Java</strong>, and on 2020 I decided to switch over to <strong>Web Application Development</strong> using mainly <strong>MERN (MySQL, ExpressJS, ReactJS, NodeJS) Stack</strong>, and learned a bunch of web-related technologies and frameworks ever since.</motion.h4>
-               <motion.p
-                  className='font-medium'
-                  variants={cardVariants}
-                  initial="offscreen"
-                  whileInView="onscreen"
-                  viewport={{ once: true, amount: 0 }}
-               >Here are three key points to consider:</motion.p>
-               <div className="flex flex-col gap-7 my-5">
-                  <>
-                     {keyPoints.map( ( keypoint, index ) =>
-                     {
-                        return <motion.div
-                           className={`flex items-center gap-5 px-5 max-lg:flex-col ${keypoint?.align && 'flex-row-reverse'}`}
-                           key={index}
-                           variants={cardVariants}
-                           initial="offscreen"
-                           whileInView="onscreen"
-                           viewport={{ once: true, amount: 0 }}
-                        >
-                           <div className="flex justify-center items-center flex-1">
-                              <Image
-                                 className="object-contain h-44"
-                                 src={require( `../../assets/Illustrations/${keypoint.path}` )}
-                                 alt={keypoint.title}
-                                 width={200}
-                                 height={200}
-                              />
-                           </div>
-                           <div className="flex flex-col flex-1 gap-2">
-                              <h2 className='font-bold text-lg text-accent-secondary text-left max-lg:text-center'>{keypoint.title}</h2>
-                              <p className='text-justify font-medium'>{keypoint.description}</p>
-                           </div>
-                        </motion.div>
-                     } )}
-                  </>
-
-               </div>
-
-            </div>
          </Container>
       </div>
    )

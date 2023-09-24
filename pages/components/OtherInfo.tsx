@@ -11,7 +11,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Variants, motion } from "framer-motion";
 import Container from './Container';
-import { QualificationInterface } from '@/interfaces';
+import { QualificationInterface, viewportType } from '@/interfaces';
 
 const { TextArea } = Input;
 const quicksand = Quicksand( { subsets: ['latin'] } )
@@ -39,8 +39,8 @@ const OtherInfo = () =>
          title: 'Strong Programming Skills',
          description: [
             'Proficiency in more than one programming languages/frameworks such as JavaScript, ReactJS, VueJS, TypeScript, NextJS, NodeJS, TailwindCSS, Java, and MySQL.',
-            'Familiarity of technologies like React Native, Flutter, Spring Boot, Python, NoSQL, Heroku, Vercel, Netlify, Cloudinary, AWS (S3 Bucket), PHP, Redux, Material UI, Bootstrap, and many more.',
-            'Ability to write clean, efficient, and maintainable code.',
+            'Familiarity with technologies & frameworks like React Native, Flutter, Spring Boot, Python, ElectronJS, Qwik, SolidJS, NestJS, NoSQL, Heroku, Vercel, Netlify, Cloudinary, AWS (S3 Bucket), PHP, Redux, Material UI, Bootstrap, and many more.',
+            'Ability to write clean, efficient, reusable, dynamic, and maintainable code.',
          ]
       },
       {
@@ -64,7 +64,9 @@ const OtherInfo = () =>
          ID: Math.floor( Math.random() * 100000 ),
          title: 'Debugging and Troubleshooting',
          description: [
+            'Excellent debugging skills',
             'Proficiency in debugging techniques and tools to identify and resolve issues efficiently.',
+            'Ability to debug codebase that I did not even wrote.',
          ]
       },
       // {
@@ -81,6 +83,7 @@ const OtherInfo = () =>
          description: [
             'A commitment to staying up-to-date with industry trends and emerging technologies.',
             'Willingness to learn new languages, frameworks, and tools as needed.',
+            '',
          ]
       },
       // {
@@ -300,6 +303,11 @@ const OtherInfo = () =>
       }
    };
 
+   const viewportVariant: viewportType = {
+      once: true,
+      amount: 0
+   }
+
    const { width } = screenSize;
 
    return (
@@ -311,7 +319,7 @@ const OtherInfo = () =>
                <Container title='PREFERENCES'>
                   <div className="flex flex-col p-3 pb-6 gap-11 max-md:gap-5" >
                      {width > MOBILE ? <>
-                        <motion.div className="flex flex-col gap-2" variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0 }}>
+                        <motion.div className="flex flex-col gap-2" variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={viewportVariant}>
                            <Divider className='m-0' orientation="center">
                               <h3 className='font-semibold text-base text-accent-secondary'>Experience Level</h3>
                            </Divider>
@@ -319,7 +327,7 @@ const OtherInfo = () =>
                               <Checkbox.Group className={`${quicksand.className} w-full`} options={experienceLevelOptions} value={['Junior Level', 'Mid-Level']} />
                            </div>
                         </motion.div>
-                        <motion.div className="flex flex-col gap-2" variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0 }}>
+                        <motion.div className="flex flex-col gap-2" variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={viewportVariant}>
                            <Divider className='m-0' orientation="center">
 
                               <h3 className='font-semibold text-base text-accent-secondary'>Job Type</h3>
@@ -328,7 +336,7 @@ const OtherInfo = () =>
                               <Checkbox.Group className={`${quicksand.className} w-full`} options={jobTypeOptions} value={['Full-time']} />
                            </div>
                         </motion.div>
-                        <motion.div className="flex flex-col gap-2" variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0 }}>
+                        <motion.div className="flex flex-col gap-2" variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={viewportVariant}>
                            <Divider className='m-0' orientation="center">
 
                               <h3 className='font-semibold text-base text-accent-secondary'>Work Setup</h3>
@@ -337,7 +345,7 @@ const OtherInfo = () =>
                               <Checkbox.Group className={`${quicksand.className} w-full`} options={workSetupOptions} value={workSetupOptions} />
                            </div>
                         </motion.div>
-                        <motion.div className="flex flex-col gap-2" variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0 }}>
+                        <motion.div className="flex flex-col gap-2" variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={viewportVariant}>
                            <Divider className='m-0' orientation="center">
 
                               <h3 className='font-semibold text-base text-accent-secondary'>Title</h3>
@@ -347,7 +355,7 @@ const OtherInfo = () =>
                               <Checkbox.Group className={`${quicksand.className} w-full`} options={jobTitleOptions2} value={jobTitleOptions2} />
                            </div>
                         </motion.div>
-                        <motion.div className="flex flex-col gap-2" variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0 }}>
+                        <motion.div className="flex flex-col gap-2" variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={viewportVariant}>
                            <Divider className='m-0' orientation="center">
                               <h3 className='font-semibold text-base text-accent-secondary'>Tech Stack</h3>
                            </Divider>
@@ -489,7 +497,7 @@ const OtherInfo = () =>
                            {
                               label: '2022 - Present',
                               children: (
-                                 <motion.div variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0 }}>
+                                 <motion.div variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={viewportVariant}>
                                     <Space wrap>
                                        <Tag className='rounded-full' color={'lime'}>VueJS</Tag>
                                        <Tag className='rounded-full' color={'geekblue'}>Vuetify</Tag>
@@ -529,7 +537,7 @@ const OtherInfo = () =>
                            {
                               label: '2021 - 2022',
                               children: (
-                                 <motion.div variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0 }}>
+                                 <motion.div variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={viewportVariant}>
                                     <Space wrap>
                                        <Tag className='rounded-full' color={'orange'}>MySQL</Tag>
                                        <Tag className='rounded-full' color={'yellow'}>ExpressJS</Tag>
@@ -559,7 +567,7 @@ const OtherInfo = () =>
                            {
                               label: '2020 - 2021',
                               children: (
-                                 <motion.div variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0 }}>
+                                 <motion.div variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={viewportVariant}>
                                     <Space wrap>
                                        <Tag className='rounded-full' color={'orange'}>MySQL</Tag>
                                        <Tag className='rounded-full' color={'yellow'}>ExpressJS</Tag>
@@ -583,7 +591,7 @@ const OtherInfo = () =>
                            {
                               label: '2018 - 2020',
                               children: (
-                                 <motion.div variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0 }}>
+                                 <motion.div variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={viewportVariant}>
                                     <Space wrap>
                                        <Tag className='rounded-full' color={'orange'}>MySQL</Tag>
                                        <Tag className='rounded-full' color={'volcano'}>Java</Tag>
@@ -617,7 +625,7 @@ const OtherInfo = () =>
                      <div className="flex flex-col flex-1 gap-3">
                         {qualifications.map( ( qualification ) =>
                         {
-                           return <motion.div className='px-3' key={qualification.ID} variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0 }}>
+                           return <motion.div className='px-3' key={qualification.ID} variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={viewportVariant}>
                               <Checkbox className={`${quicksand.className} w-full`} checked><strong className='uppercase text-accent-primary'>{qualification.title}</strong></Checkbox>
                               <div className="flex flex-col">
                                  {qualification.description.map( ( pointer, index ) =>
@@ -637,7 +645,7 @@ const OtherInfo = () =>
                {/* CONTACT ME */}
                <Container title='CONTACT ME'>
                   <div className="flex flex-col justify-center items-center p-3 gap-2" >
-                     <motion.div className="flex p-2 gap-2 w-full max-md:flex-col" variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0 }}>
+                     <motion.div className="flex p-2 gap-2 w-full max-md:flex-col" variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={viewportVariant}>
                         <div className="flex items-center justify-center flex-[5]">
                            <Image src={require( '@/assets/Icons/3d.png' ).default} alt='illustration' width={200} height={200} />
                         </div>
@@ -653,7 +661,7 @@ const OtherInfo = () =>
                            </Button>
                         </form>
                      </motion.div>
-                     <motion.small className='text-center text-dark-blue-secondary' variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0 }}>Your potential best hire awaits!</motion.small>
+                     <motion.small className='text-center text-dark-blue-secondary' variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={viewportVariant}>Your potential best hire awaits!</motion.small>
                   </div>
                </Container>
             </> :
