@@ -60,3 +60,13 @@ export interface QualificationInterface
    title: string;
    description: string[];
 }
+
+export type viewportType = {
+   once: boolean,
+   amount: number,
+}
+
+export type ContextValueType = {
+   screenSize: ScreenSizeInterface,
+   isMobileView: boolean,
+}

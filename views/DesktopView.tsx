@@ -9,7 +9,7 @@ import { Quicksand } from 'next/font/google'
 import dynamic from 'next/dynamic';
 import { LinksInterface, PanelsInterface, PersonalInformationInterface, ScreenSizeInterface, SkillsInterface } from '@/interfaces'
 import 'react-toastify/dist/ReactToastify.css';
-import { Variants, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Personal = dynamic<{}>( () => import( '@/pages/components/Personal' ), {
    ssr: false
@@ -29,7 +29,7 @@ const quicksand = Quicksand( { subsets: ['latin'] } )
 
 const DesktopView = () =>
 {
-   const [personalInformation, setPersonalInformation] = useState<PersonalInformationInterface[]>( [
+   const [personalInformation] = useState<PersonalInformationInterface[]>( [
       {
          icon: 'gmail',
          label: 'ralfrenzbantilo@gmail.com'
@@ -44,7 +44,7 @@ const DesktopView = () =>
       },
    ] )
 
-   const [skills, setSkills] = useState<SkillsInterface[]>( [
+   const [skills] = useState<SkillsInterface[]>( [
       {
          icon: 'html',
          description: 'HTML',
@@ -137,7 +137,7 @@ const DesktopView = () =>
       },
 
    ] )
-   const [panels, setPanels] = useState<PanelsInterface[]>( [
+   const [panels] = useState<PanelsInterface[]>( [
       {
          label: `Personal`,
          key: `${Math.floor( Math.random() * 100 ) + 1}`,
@@ -154,7 +154,7 @@ const DesktopView = () =>
          children: <OtherInfo />,
       },
    ] )
-   const [links, setLinks] = useState<LinksInterface[]>( [
+   const [links] = useState<LinksInterface[]>( [
       {
          icon: 'linkedin',
          path: 'https://linkedin.com/in/ralfrenzbantilo',
@@ -180,7 +180,7 @@ const DesktopView = () =>
       height: typeof window !== 'undefined' ? window.innerHeight : 0
    } );
 
-   const MOBILE: number = 600
+   const MOBILE: number = 1024
 
    const renderTabBar: TabsProps['renderTabBar'] = ( props, DefaultTabBar ) => (
       <StickyBox
@@ -273,8 +273,8 @@ const DesktopView = () =>
          <div className='flex flex-col justify-between py-5 px-4 gradient-background max-lg:min-h-[100vh] max-lg:justify-evenly max-lg:gap-3' style={{ flex: 2 }}>
             <div className="flex flex-col gap-3 ">
                <motion.div className="flex flex-col items-center gap-2" variants={container} initial="hidden" animate="visible">
-                  <motion.div className="flex items-center justify-center" variants={item}>
-                     <motion.div className="w-40 h-40 bg-gray-300 border-2 border-dark-blue-secondary rounded-full">
+                  <motion.div className="flex items-center justify-center border-2 border-gray-500 rounded-full hover:border-gray-400 transition-colors ease-in-out" variants={item}>
+                     <motion.div className="w-40 h-40 bg-transparent p-[5px] rounded-full">
                         <Image
                            className="object-cover w-full h-full mx-auto rounded-full"
                            src={profileIMG}
@@ -293,7 +293,7 @@ const DesktopView = () =>
                <motion.div className="flex items-center justify-around text-background-primary" variants={container} initial="hidden" animate="visible">
                   {links.map( ( link, i ) =>
                   {
-                     return <motion.div variants={item} key={i}>
+                     return <motion.div className='flex items-center justify-center' variants={item} key={i}>
                         <Button type="primary" shape="circle" icon={<Image
                            className="object-cover w-full rounded-full relative bottom-[6px]"
                            src={require( `@/assets/Icons/${link.icon}.png` ).default}
@@ -313,7 +313,7 @@ const DesktopView = () =>
                   <div className="flex flex-col p-2 gap-2">
                      {personalInformation.map( ( info, i ) =>
                      {
-                        return <motion.div className="flex items-center gap-2 p-1" key={i} variants={item}>
+                        return <motion.div className="flex items-center gap-2 p-1 transition-colors ease-in-out border border-transparent hover:bg-slate-400 rounded-md hover:rounded-md hover:backdrop-filter hover:backdrop-blur-sm hover:bg-opacity-10" key={i} variants={item}>
 
                            <div className="w-8 h-8 rounded-full flex items-center justify-center"><Image
                               className="object-cover w-full h-full mx-auto rounded-full"
@@ -364,12 +364,12 @@ const DesktopView = () =>
                   <h4 className='text-center'>Technical Skills</h4>
                </div>
                <motion.div
-                  className="flex flex-col p-2 gap-2 max-h-[87vh] overflow-auto mr-1 max-lg:max-h-full"
+                  className="flex flex-col p-2 gap-2 max-h-[86vh] overflow-auto mr-1 max-lg:max-h-full"
                   variants={container} initial="hidden" animate="visible"
                >
                   {skills.map( ( skill, i ) =>
                   {
-                     return <motion.div className="flex items-center gap-2 p-1" key={i}
+                     return <motion.div className="flex items-center gap-2 py-1 px-2 transition-colors ease-in-out border border-transparent hover:bg-slate-400 rounded-md hover:rounded-md hover:backdrop-filter hover:backdrop-blur-sm hover:bg-opacity-10" key={i}
                         variants={item}>
                         <div className="w-8 h-8 rounded-full">
                            <Image

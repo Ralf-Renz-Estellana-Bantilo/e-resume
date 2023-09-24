@@ -1,6 +1,6 @@
 import { Carousel, Divider, Space, Tag } from 'antd'
 import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -198,7 +198,7 @@ const Card = () =>
       height: typeof window !== 'undefined' ? window.innerHeight : 0
    } );
 
-   const MOBILE: number = 600
+   const MOBILE: number = 1024
 
    useEffect( () =>
    {
@@ -224,14 +224,6 @@ const Card = () =>
    {
       return tagList.filter( ( list ) => list.ID == tagID )[0]
    }
-
-   const item = {
-      hidden: { y: 20, opacity: 0 },
-      visible: {
-         y: 0,
-         opacity: 1
-      }
-   };
 
    const cardVariants: Variants = {
       offscreen: {

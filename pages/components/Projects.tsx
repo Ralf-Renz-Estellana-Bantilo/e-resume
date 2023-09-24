@@ -64,7 +64,7 @@ const Projects = () =>
    const [isVisible, setIsVisible] = useState<boolean>( false )
    const [isCardVisible, setIsCardVisible] = useState<boolean>( false )
 
-   const MOBILE: number = 600
+   const MOBILE: number = 1024
 
    useEffect( () =>
    {
