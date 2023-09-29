@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, SetStateAction } from "react";
 
 export interface LinksInterface
 {
@@ -66,7 +66,9 @@ export type viewportType = {
    amount: number,
 }
 
+export type ThemeType = 'dark' | 'light'
+
 export type ContextValueType = {
-   screenSize: ScreenSizeInterface,
-   isMobileView: boolean,
+   theme: ThemeType,
+   toggleTheme: () => void,
 }

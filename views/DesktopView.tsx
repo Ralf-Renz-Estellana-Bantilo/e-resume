@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import profileIMG from '@/assets/Images/Ralf Renz Bantilo.png'
 import { Button, Tabs, Spin, TabsProps, Divider, Tag } from 'antd'
 import { DownloadOutlined } from '@ant-design/icons/lib/icons'
@@ -7,9 +7,10 @@ import StickyBox from 'react-sticky-box'
 import { Quicksand } from 'next/font/google'
 
 import dynamic from 'next/dynamic';
-import { LinksInterface, PanelsInterface, PersonalInformationInterface, ScreenSizeInterface, SkillsInterface } from '@/interfaces'
+import { ContextValueType, LinksInterface, PanelsInterface, PersonalInformationInterface, ScreenSizeInterface, SkillsInterface } from '@/interfaces'
 import 'react-toastify/dist/ReactToastify.css';
 import { motion } from "framer-motion";
+import { ComponentContext } from '@/context/context'
 
 const Personal = dynamic<{}>( () => import( '@/pages/components/Personal' ), {
    ssr: false
@@ -264,6 +265,8 @@ const DesktopView = () =>
       }
    };
 
+   const context = useContext<ContextValueType | null>( ComponentContext )
+
    const { width } = screenSize;
 
    return (
@@ -273,7 +276,7 @@ const DesktopView = () =>
          <div className='flex flex-col justify-between py-5 px-4 gradient-background max-lg:min-h-[100vh] max-lg:justify-evenly max-lg:gap-3' style={{ flex: 2 }}>
             <div className="flex flex-col gap-3 ">
                <motion.div className="flex flex-col items-center gap-2" variants={container} initial="hidden" animate="visible">
-                  <motion.div className="flex items-center justify-center border-2 border-gray-500 rounded-full hover:border-gray-400 transition-colors ease-in-out" variants={item}>
+                  <motion.div className="flex items-center justify-center border-2 border-gray-500 rounded-full hover:border-gray-400 transition-colors ease-in-out" variants={item} onClick={context?.toggleTheme}>
                      <motion.div className="w-40 h-40 bg-transparent p-[5px] rounded-full">
                         <Image
                            className="object-cover w-full h-full mx-auto rounded-full"
