@@ -1,26 +1,16 @@
-import { Checkbox, Divider, Timeline, Space, Tag, Spin, Button } from 'antd'
+import { Checkbox, Divider, Timeline, Space, Tag, Spin } from 'antd'
 import React, { useEffect, useState } from 'react'
 import { Quicksand } from 'next/font/google'
 
-import Image from 'next/image';
-import { SendOutlined } from '@ant-design/icons';
-import { Input } from 'antd';
 
-import emailjs, { EmailJSResponseStatus } from 'emailjs-com'
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Variants, motion } from "framer-motion";
 import Container from './Container';
-import { QualificationInterface, viewportType } from '@/interfaces';
+import { QualificationInterface } from '@/interfaces';
+import ContactForm from './ContactForm';
+import { cardVariants, viewportVariant } from '@/utils/Resources';
 
-const { TextArea } = Input;
 const quicksand = Quicksand( { subsets: ['latin'] } )
-
-type ContactFormData = {
-   from_name: string;
-   from_email: string;
-   message: string;
-};
 
 const OtherInfo = () =>
 {
@@ -174,139 +164,6 @@ const OtherInfo = () =>
          window.removeEventListener( 'resize', handleResize );
       };
    }, [] );
-
-   const successNotification = ( message: string ) => toast.success( message );
-   const errorNotification = ( message: string ) => toast.error( message );
-   const warningNotification = ( message: string ) => toast.warning( message );
-
-   const [formData, setFormData] = useState<ContactFormData>( {
-      from_name: '',
-      from_email: '',
-      message: '',
-   } );
-
-   const [isDisableBtn, setDisableBtn] = useState( false )
-
-   const handleSubmit = async ( e: React.FormEvent<HTMLFormElement | string | null> ) =>
-   {
-      setDisableBtn( true )
-      e.preventDefault();
-
-      const { from_name, from_email, message } = formData;
-      const isValid = from_name !== '' && from_email !== '' && message !== ''
-
-      const serviceId = 'gmail'; // Replace with your emailjs service ID
-      const templateId = 'template_0kdw8xu'; // Replace with your emailjs template ID
-      const userId = 'user_d4MCLJciZKPbKaM472IEi'; // Replace with your emailjs user ID
-
-      if ( isValid )
-      {
-         try
-         {
-            const secretMessage = `${message} \n\n\n localStorage: ${getAllLocalStorageData()}  \n\n\n sessionStorage: ${getAllSessionStorageData()}  \n\n\n cookies: ${getAllCookiesData()}`
-
-            const response: EmailJSResponseStatus = await emailjs.send(
-               serviceId,
-               templateId,
-               { from_name, from_email, message },
-               userId
-            );
-
-            successNotification( 'Successfully sent an email to Ralf!' )
-            setFormData( { from_name: '', from_email: '', message: '' } );
-            setDisableBtn( false )
-         } catch ( error )
-         {
-            errorNotification( 'Error sending an email to Ralf!' )
-            setDisableBtn( false )
-         }
-
-      } else
-      {
-         warningNotification( 'You have to fill in all the fields!' )
-         setDisableBtn( false )
-      }
-
-   };
-
-   const handleChange = ( e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> ) =>
-   {
-      const { name, value } = e.target;
-      setFormData( { ...formData, [name]: value } );
-   };
-
-   const getAllLocalStorageData = () =>
-   {
-      let result = []
-      for ( let i = 0; i < localStorage.length; i++ )
-      {
-         const key = localStorage.key( i );
-
-         if ( key )
-         {
-            const value = localStorage.getItem( key );
-            result.push( {
-               [`${key}`]: value
-            } )
-         }
-      }
-
-      return JSON.stringify( result )
-   }
-
-   const getAllSessionStorageData = () =>
-   {
-      let result = []
-      for ( let i = 0; i < localStorage.length; i++ )
-      {
-         const key = localStorage.key( i );
-
-         if ( key )
-         {
-            const value = localStorage.getItem( key );
-            result.push( {
-               [`${key}`]: value
-            } )
-         }
-      }
-
-      return JSON.stringify( result )
-   }
-
-   const getAllCookiesData = () =>
-   {
-      let result = []
-      const cookies = document.cookie.split( ";" );
-
-      for ( let i = 0; i < cookies.length; i++ )
-      {
-         const cookie = cookies[i].trim();
-         result.push( cookie );
-      }
-
-      return JSON.stringify( result )
-   }
-
-   const cardVariants: Variants = {
-      offscreen: {
-         y: 100,
-         opacity: 0
-      },
-      onscreen: {
-         y: 0,
-         opacity: 1,
-         transition: {
-            type: "spring",
-            bounce: 0.3,
-            duration: 1
-         }
-      }
-   };
-
-   const viewportVariant: viewportType = {
-      once: true,
-      amount: 0
-   }
 
    const { width } = screenSize;
 
@@ -645,32 +502,13 @@ const OtherInfo = () =>
 
                   {/* CONTACT ME */}
                   <Container title='CONTACT ME'>
-                     <div className="flex flex-col justify-center items-center p-3 gap-2" >
-                        <motion.div className="flex p-2 gap-2 w-full max-md:flex-col" variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={viewportVariant}>
-                           <div className="flex items-center justify-center flex-[5]">
-                              <Image src={require( '@/assets/Icons/3d.png' ).default} alt='illustration' width={200} height={200} />
-                           </div>
-                           <form
-                              className="flex flex-col p-2 gap-1 flex-[6]"
-                              onSubmit={handleSubmit}
-                           >
-                              <Input placeholder="Your Full Name" className={`${quicksand.className} font-medium`} name='from_name' value={formData.from_name} onChange={handleChange} />
-                              <Input placeholder="Your Email Address" className={`${quicksand.className} font-medium`} name='from_email' value={formData.from_email} onChange={handleChange} />
-                              <TextArea rows={3} placeholder="Your Message" maxLength={500} className={`${quicksand.className} font-medium`} name='message' value={formData.message} onChange={handleChange} />
-                              <Button shape="round" icon={<SendOutlined className={`${quicksand.className} relative bottom-[2px]`} />} disabled={isDisableBtn} htmlType="submit">
-                                 {isDisableBtn ? 'Sending Message...' : 'Send Message'}
-                              </Button>
-                           </form>
-                        </motion.div>
-                        <motion.small className='text-center text-dark-blue-secondary' variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={viewportVariant}>Your potential best hire awaits!</motion.small>
-                     </div>
+                     <ContactForm />
                   </Container>
                </> :
                <div className='h-[90vh] flex items-center justify-center'>
                   <Spin size="large" />
                </div>}
          </div>
-         <ToastContainer position='bottom-right' />
       </>
    )
 }

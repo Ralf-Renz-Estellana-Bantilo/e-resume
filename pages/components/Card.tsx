@@ -14,6 +14,7 @@ import { Pagination, Autoplay } from "swiper";
 import { ProjectsInterface, ScreenSizeInterface, TagListsInterface, viewportType } from '@/interfaces';
 
 import { Variants, motion } from "framer-motion";
+import { cardVariants, viewportVariant } from '@/utils/Resources';
 
 
 const Card = () =>
@@ -223,27 +224,6 @@ const Card = () =>
    const findTagByID = ( tagID: Number ) =>
    {
       return tagList.filter( ( list ) => list.ID == tagID )[0]
-   }
-
-   const cardVariants: Variants = {
-      offscreen: {
-         y: 100,
-         opacity: 0
-      },
-      onscreen: {
-         y: 0,
-         opacity: 1,
-         transition: {
-            type: "spring",
-            bounce: 0.3,
-            duration: 1
-         },
-      }
-   };
-
-   const viewportVariant: viewportType = {
-      once: true,
-      amount: 0
    }
 
    return (

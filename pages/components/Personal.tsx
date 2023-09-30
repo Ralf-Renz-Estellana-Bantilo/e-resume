@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { Variants, motion } from "framer-motion";
 import Container from './Container';
 import { viewportType } from '@/interfaces';
+import { cardVariants, viewportVariant } from '@/utils/Resources';
 
 const quicksand = Quicksand( { subsets: ['latin'] } )
 
@@ -139,27 +140,6 @@ const Personal = () =>
          path: 'illustration3.png',
       },
    ] )
-
-   const cardVariants: Variants = {
-      offscreen: {
-         y: 100,
-         opacity: 0
-      },
-      onscreen: {
-         y: 0,
-         opacity: 1,
-         transition: {
-            type: "spring",
-            bounce: 0.3,
-            duration: 1
-         }
-      }
-   };
-
-   const viewportVariant: viewportType = {
-      once: true,
-      amount: 0
-   }
 
    const experienceTimelineItems = ( experiences: ExperienceType ) =>
    {

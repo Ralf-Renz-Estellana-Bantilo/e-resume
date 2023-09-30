@@ -72,3 +72,9 @@ export type ContextValueType = {
    theme: ThemeType,
    toggleTheme: () => void,
 }
+
+export type ContactFormDataType = {
+   from_name: string;
+   from_email: string;
+   message: string;
+};
