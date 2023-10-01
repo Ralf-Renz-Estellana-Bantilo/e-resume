@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import ComponentContextProvider from '@/context/context';
 
 const DesktopView = dynamic<{}>( () => import( '@/views/DesktopView' ), {
-  ssr: false
+  ssr: true
 } );
 
 export default function Home ()

@@ -92,14 +92,17 @@ const ContactForm = () =>
                   onSubmit={handleSubmit}
                >
                   <Input placeholder="Your Full Name" className={`${quicksand.className} font-medium`} name='from_name' value={formData.from_name} onChange={handleChange} />
+
                   <Input placeholder="Your Email Address" className={`${quicksand.className} font-medium`} name='from_email' value={formData.from_email} onChange={handleChange} />
-                  <TextArea rows={3} placeholder="Your Message" maxLength={500} className={`${quicksand.className} font-medium`} name='message' value={formData.message} onChange={handleChange} />
+
+                  <TextArea rows={3} placeholder="Your Message" maxLength={500} className={`${quicksand.className} font-medium `} name='message' value={formData.message} onChange={handleChange} />
+
                   <Button shape="round" icon={<SendOutlined className={`${quicksand.className} relative bottom-[2px]`} />} disabled={isDisableBtn} htmlType="submit">
                      {isDisableBtn ? 'Sending Message...' : 'Send Message'}
                   </Button>
                </form>
             </motion.div>
-            <motion.small className='text-center text-dark-blue-secondary' variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={viewportVariant}>Your potential best hire awaits!</motion.small>
+            <motion.small className='text-center text-dark-blue-secondary  ' variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={viewportVariant}>Your potential best hire awaits!</motion.small>
          </div>
          <ToastContainer position='bottom-right' />
       </>

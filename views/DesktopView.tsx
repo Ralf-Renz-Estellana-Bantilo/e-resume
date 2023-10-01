@@ -1,16 +1,17 @@
 import Image from 'next/image'
 import { useContext, useEffect, useState } from 'react'
 import profileIMG from '@/assets/Images/Ralf Renz Bantilo.png'
-import { Button, Tabs, Spin, TabsProps, Divider, Tag } from 'antd'
+import { Button, Tabs, Spin, TabsProps, Divider } from 'antd'
 import { DownloadOutlined } from '@ant-design/icons/lib/icons'
 import StickyBox from 'react-sticky-box'
 import { Quicksand } from 'next/font/google'
-
 import dynamic from 'next/dynamic';
-import { ContextValueType, LinksInterface, PanelsInterface, PersonalInformationInterface, ScreenSizeInterface, SkillsInterface } from '@/interfaces'
+import { ContextValueType, LinksInterface, PanelsInterface, PersonalInformationInterface } from '@/interfaces'
 import 'react-toastify/dist/ReactToastify.css';
 import { motion } from "framer-motion";
 import { ComponentContext } from '@/context/context'
+import TechSkills from '@/pages/components/TechSkills'
+import { container, item } from '@/utils/Resources'
 
 const Personal = dynamic<{}>( () => import( '@/pages/components/Personal' ), {
    ssr: false
@@ -30,6 +31,8 @@ const quicksand = Quicksand( { subsets: ['latin'] } )
 
 const DesktopView = () =>
 {
+   const context = useContext<ContextValueType | null>( ComponentContext )
+
    const [personalInformation] = useState<PersonalInformationInterface[]>( [
       {
          icon: 'gmail',
@@ -43,100 +46,6 @@ const DesktopView = () =>
          icon: 'location',
          label: 'Makati City, Philippines'
       },
-   ] )
-
-   const [skills] = useState<SkillsInterface[]>( [
-      {
-         icon: 'html',
-         description: 'HTML',
-         category: 'Frontend',
-         proficiency: 'Advanced',
-      },
-      {
-         icon: 'css',
-         description: 'CSS',
-         category: 'Frontend',
-         proficiency: 'Advanced',
-      },
-      {
-         icon: 'javascript',
-         description: 'JavaScript',
-         category: 'Frontend',
-         proficiency: 'Advanced',
-      },
-      {
-         icon: 'react',
-         description: 'React JS',
-         category: 'Frontend',
-         proficiency: 'Advanced',
-      },
-      {
-         icon: 'nextjs',
-         description: 'Next JS',
-         category: 'Frontend',
-         proficiency: 'Intermediate',
-      },
-      {
-         icon: 'typescript',
-         description: 'TypeScript',
-         category: 'Frontend',
-         proficiency: 'Intermediate',
-      },
-      {
-         icon: 'vuejs',
-         description: 'Vue JS',
-         category: 'Frontend',
-         proficiency: 'Advanced',
-      },
-      {
-         icon: 'tailwindcss',
-         description: 'TailwindCSS',
-         category: 'Frontend',
-         proficiency: 'Advanced',
-      },
-      {
-         icon: 'vuetify',
-         description: 'Vuetify',
-         category: 'Frontend',
-         proficiency: 'Advanced',
-      },
-      {
-         icon: 'nodejs',
-         description: 'Node JS',
-         category: 'Backend',
-         proficiency: 'Advanced',
-      },
-      {
-         icon: 'java',
-         description: 'Java',
-         category: 'Desktop App',
-         proficiency: 'Intermediate',
-      },
-      {
-         icon: 'mysql',
-         description: 'MySQL',
-         category: 'Database',
-         proficiency: 'Intermediate',
-      },
-      {
-         icon: 'photoshop',
-         description: 'Photoshop',
-         category: 'Design',
-         proficiency: 'Advanced',
-      },
-      {
-         icon: 'figma',
-         description: 'Figma',
-         category: 'Design',
-         proficiency: 'Intermediate',
-      },
-      {
-         icon: 'git',
-         description: 'Git',
-         category: 'Version Control',
-         proficiency: 'Intermediate',
-      },
-
    ] )
    const [panels] = useState<PanelsInterface[]>( [
       {
@@ -173,15 +82,8 @@ const DesktopView = () =>
          path: 'https://m.me/rr.bantilo2000',
       },
    ] )
-
    const [loader, setToggleLoader] = useState<boolean>( !false )
 
-   const [screenSize, setScreenSize] = useState<ScreenSizeInterface>( {
-      width: typeof window !== 'undefined' ? window.innerWidth : 0,
-      height: typeof window !== 'undefined' ? window.innerHeight : 0
-   } );
-
-   const MOBILE: number = 1024
 
    const renderTabBar: TabsProps['renderTabBar'] = ( props, DefaultTabBar ) => (
       <StickyBox
@@ -195,7 +97,7 @@ const DesktopView = () =>
             {...props}
             style={{
                zIndex: 110,
-               background: '#E7F1F3',
+               background: `#E7F1F3`,
             }}
          />
       </StickyBox>
@@ -228,49 +130,10 @@ const DesktopView = () =>
       {
          setToggleLoader( false )
       }, 1000 );
-
-      const handleResize = (): void =>
-      {
-         setScreenSize( {
-            width: window.innerWidth,
-            height: window.innerHeight
-         } );
-      };
-
-      window.addEventListener( 'resize', handleResize );
-
-      return () =>
-      {
-         window.removeEventListener( 'resize', handleResize );
-      };
    }, [] )
 
-   const container = {
-      hidden: { opacity: 1, scale: 0 },
-      visible: {
-         opacity: 1,
-         scale: 1,
-         transition: {
-            delayChildren: 0.3,
-            staggerChildren: 0.2
-         }
-      }
-   };
-
-   const item = {
-      hidden: { y: 20, opacity: 0 },
-      visible: {
-         y: 0,
-         opacity: 1
-      }
-   };
-
-   const context = useContext<ContextValueType | null>( ComponentContext )
-
-   const { width } = screenSize;
-
    return (
-      <div className={`${quicksand.className} bg-background-primary relative flex min-h-screen max-lg:flex max-lg:flex-col`}>
+      <div className={`${quicksand.className} bg-background-primary    relative flex min-h-screen max-lg:flex max-lg:flex-col`}>
 
          {/* LEFT PANEL */}
          <div className='flex flex-col justify-between py-5 px-4 gradient-background max-lg:min-h-[100vh] max-lg:justify-evenly max-lg:gap-3' style={{ flex: 2 }}>
@@ -291,7 +154,7 @@ const DesktopView = () =>
                      <motion.p className='text-center text-background-secondary' variants={item}>{`< Programmer />`}</motion.p>
                   </motion.div>
                </motion.div>
-               <Divider className='m-0 bg-gray-500'></Divider>
+               <Divider className='m-0  '></Divider>
 
                <motion.div className="flex items-center justify-around text-background-primary" variants={container} initial="hidden" animate="visible">
                   {links.map( ( link, i ) =>
@@ -308,7 +171,7 @@ const DesktopView = () =>
                   } )}
                </motion.div>
 
-               <Divider className='m-0 bg-gray-500'></Divider>
+               <Divider className='m-0  '></Divider>
                <motion.div className="flex flex-col rounded-lg border-2 border-gray-600 text-background-primary" variants={container} initial="hidden" animate="visible">
                   <div className="flex justify-center border-2 border-transparent border-b-gray-600 p-2">
                      <h4 className='text-center'>Information</h4>
@@ -338,7 +201,7 @@ const DesktopView = () =>
          </div>
 
          {/* CONTENT PANEL */}
-         <div className={width > MOBILE ? 'h-screen overflow-y-scroll' : 'h-screen'} style={{ flex: 5 }}>
+         <div className={`${!context?.isMobile ? 'h-screen overflow-y-scroll' : 'h-screen'}`} style={{ flex: 5 }}>
             {loader ? <>
                <div className='h-screen flex items-center justify-center'>
                   <Spin size="large" />
@@ -346,15 +209,16 @@ const DesktopView = () =>
             </>
                : <>
                   {
-                     width > MOBILE ?
-                        <Tabs
+                     context?.isMobile ?
+                        <MobileView />
+                        : <Tabs
                            defaultActiveKey="1"
                            centered
                            animated={{ inkBar: true }}
-                           className={quicksand.className}
+                           className={`${quicksand.className}`}
                            renderTabBar={renderTabBar}
                            items={panels}
-                        /> : <MobileView />
+                        />
                   }
                </>
             }
@@ -362,36 +226,7 @@ const DesktopView = () =>
 
          {/* RIGHT PANEL */}
          <div className='gradient-background py-5 px-4 h-screen max-lg:min-h-[100vh]' style={{ flex: 1.8 }}>
-            <div className="flex flex-col rounded-lg border-2 border-gray-600 text-background-primary">
-               <div className="flex justify-center border-2 border-transparent border-b-gray-600 p-2">
-                  <h4 className='text-center'>Technical Skills</h4>
-               </div>
-               <motion.div
-                  className="flex flex-col p-2 gap-2 max-h-[86vh] overflow-auto mr-1 max-lg:max-h-full"
-                  variants={container} initial="hidden" animate="visible"
-               >
-                  {skills.map( ( skill, i ) =>
-                  {
-                     return <motion.div className="flex items-center gap-2 py-1 px-2 transition-colors ease-in-out border border-transparent hover:bg-slate-400 rounded-md hover:rounded-md hover:backdrop-filter hover:backdrop-blur-sm hover:bg-opacity-10" key={i}
-                        variants={item}>
-                        <div className="w-8 h-8 rounded-full">
-                           <Image
-                              className="object-cover w-full h-full mx-auto rounded-full"
-                              src={require( `@/assets/Icons/${skill.icon}.png` ).default}
-                              alt="image"
-                           />
-                        </div>
-                        <div style={{ flex: 1 }} className='flex items-center justify-between'>
-                           <div className="flex flex-col">
-                              <h4 className='text-background-primary font-semibold text-sm'>{skill.description}</h4>
-                              <p className='text-background-secondary text-xs'>{skill.category}</p>
-                           </div>
-                           <span className='text-background-primary text-xs'>{skill.proficiency}</span>
-                        </div>
-                     </motion.div>
-                  } )}
-               </motion.div>
-            </div>
+            <TechSkills />
          </div>
       </div>
    )

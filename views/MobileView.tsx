@@ -16,27 +16,27 @@ const MobileView = () =>
    return (
       <div className='min-h-screen flex flex-col'>
          <div className="flex flex-col">
-            <div className="flex flex-col items-center justify-between bg-background-primary" style={{ position: 'sticky', top: 0, zIndex: 11 }}>
+            <div className="flex flex-col items-center justify-between bg-background-primary   " style={{ position: 'sticky', top: 0, zIndex: 11 }}>
                <h2 className='font-bold text-lg text-primary p-2'>Personal</h2>
-               <Divider className='m-0' />
+               <Divider className='m-0  ' />
             </div>
             <div>
                <Personal />
             </div>
          </div>
          <div className="flex flex-col">
-            <div className="flex flex-col items-center justify-between bg-background-primary" style={{ position: 'sticky', top: 0, zIndex: 11 }}>
+            <div className="flex flex-col items-center justify-between bg-background-primary   " style={{ position: 'sticky', top: 0, zIndex: 11 }}>
                <h2 className='font-bold text-lg text-primary p-2'>Projects</h2>
-               <Divider className='m-0' />
+               <Divider className='m-0  ' />
             </div>
             <div>
                <Projects />
             </div>
          </div>
          <div className="flex flex-col">
-            <div className="flex flex-col items-center justify-between bg-background-primary" style={{ position: 'sticky', top: 0, zIndex: 11 }}>
+            <div className="flex flex-col items-center justify-between bg-background-primary   " style={{ position: 'sticky', top: 0, zIndex: 11 }}>
                <h2 className='font-bold text-lg text-primary p-2'>Others</h2>
-               <Divider className='m-0' />
+               <Divider className='m-0  ' />
             </div>
             <div>
                <OtherInfo />

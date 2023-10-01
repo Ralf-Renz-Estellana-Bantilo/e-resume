@@ -51,7 +51,8 @@ export interface ProjectsInterface
 export interface ContainerPropsInterface
 {
    title: string;
-   children: ReactNode
+   className?: string,
+   children: ReactNode,
 }
 
 export interface QualificationInterface
@@ -71,6 +72,7 @@ export type ThemeType = 'dark' | 'light'
 export type ContextValueType = {
    theme: ThemeType,
    toggleTheme: () => void,
+   isMobile: boolean
 }
 
 export type ContactFormDataType = {
@@ -78,3 +80,10 @@ export type ContactFormDataType = {
    from_email: string;
    message: string;
 };
+
+export type KeyPointsType = {
+   title: string;
+   description: string;
+   path: string;
+   align?: string;
+}

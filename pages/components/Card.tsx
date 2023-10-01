@@ -255,10 +255,10 @@ const Card = () =>
                </div>
                <div className="flex flex-col gap-2 p-2">
                   <div className='flex flex-col justify-center'>
-                     <h3 className='text-lg font-semibold text-accent-secondary text-center py-2'>{title}</h3>
-                     <p className='text-accent-secondary text-xs text-justify font-medium'>{description}</p>
+                     <h3 className='text-lg font-semibold text-accent-secondary   text-center py-2'>{title}</h3>
+                     <p className='text-accent-secondary   text-xs text-justify font-medium'>{description}</p>
                   </div>
-                  <Divider className='m-0'></Divider>
+                  <Divider className='m-0  '></Divider>
                   <div>
                      <Space size={[0, tagIDs.length]} wrap>
                         {tagIDs.map( ( tagID, i ) =>
@@ -307,7 +307,7 @@ const Card = () =>
                               <h3 className='text-lg font-semibold text-accent-secondary text-center py-2'>{title}</h3>
                               <p className='text-accent-secondary text-sm text-justify'>{description}</p>
                            </div>
-                           <Divider className='m-0'></Divider>
+                           <Divider className='m-0  '></Divider>
                            <div>
                               <Space size={[0, tagIDs.length]} wrap>
                                  {tagIDs.map( ( tagID, i ) =>

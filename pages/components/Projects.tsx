@@ -126,8 +126,8 @@ const Projects = () =>
                      {
                         return <motion.div className="flex flex-col h-auto neumorphism-2 rounded-lg bg-background-primary w-[48%] max-sm:w-full max-md:w-[75%] max-lg:w-[48%]" key={i} variants={item}>
                            <div className="flex flex-col">
-                              <h3 className='font-semibold text-center p-2 text-base text-accent-secondary'>{service.category}</h3>
-                              <Divider className='m-0'></Divider>
+                              <h3 className='font-semibold text-center p-2 text-base text-accent-secondary  '>{service.category}</h3>
+                              <Divider className='m-0  '></Divider>
                            </div>
                            <div className="flex flex-col p-2 gap-1">
                               {service.items.map( ( item, o ) =>
@@ -135,7 +135,7 @@ const Projects = () =>
                                  return <div className="flex items-center gap-2" key={o}>
                                     {/* <CheckOutlined /> */}
                                     <Image src={require( '../../assets/Icons/check.png' ).default} alt='check icon' width={18} height={18} />
-                                    <p className='text-accent-secondary font-medium text-left'>{item}</p>
+                                    <p className='text-accent-secondary   font-medium text-left'>{item}</p>
                                  </div>
                               } )}
 
@@ -153,16 +153,16 @@ const Projects = () =>
                               clickable: true,
                            }}
                            modules={[Pagination, Autoplay]}
-                           className="mySwiper bg-background-primary"
+                           className="mySwiper bg-background-primary "
                         >
 
                            {services.map( ( service, i ) =>
                            {
-                              return <SwiperSlide className='p-4 pb-8 ' key={i}>
-                                 <div className="flex flex-col h-auto neumorphism-2 rounded-lg bg-background-primary w-[48%] max-sm:w-full max-md:w-[75%] max-lg:w-[48%]">
+                              return <SwiperSlide className='p-4 pb-8' key={i}>
+                                 <div className="flex flex-col h-auto m-auto neumorphism-2 rounded-lg bg-background-primary w-[48%] max-sm:w-full max-md:w-[75%] max-lg:w-[48%]">
                                     <div className="flex flex-col">
-                                       <h3 className='font-semibold text-center p-2 text-base text-accent-secondary'>{service.category}</h3>
-                                       <Divider className='m-0'></Divider>
+                                       <h3 className='font-semibold text-center p-2 text-base text-accent-secondary  '>{service.category}</h3>
+                                       <Divider className='m-0  '></Divider>
                                     </div>
                                     <div className="flex flex-col p-2 gap-1">
                                        {service.items.map( ( item, o ) =>
@@ -170,7 +170,7 @@ const Projects = () =>
                                           return <div className="flex items-center gap-2" key={o}>
                                              {/* <CheckOutlined /> */}
                                              <Image src={require( '../../assets/Icons/check.png' ).default} alt='check icon' width={18} height={18} />
-                                             <p className='text-accent-secondary font-medium text-base text-left'>{item}</p>
+                                             <p className='text-accent-secondary   font-medium text-base text-left'>{item}</p>
                                           </div>
                                        } )}
 

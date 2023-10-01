@@ -1,11 +1,12 @@
 import { Timeline } from 'antd'
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Quicksand } from 'next/font/google'
 import Image from 'next/image'
-import { Variants, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Container from './Container';
-import { viewportType } from '@/interfaces';
 import { cardVariants, viewportVariant } from '@/utils/Resources';
+import { ComponentContext } from '@/context/context';
+import { ContextValueType, KeyPointsType } from '@/interfaces';
 
 const quicksand = Quicksand( { subsets: ['latin'] } )
 
@@ -20,15 +21,10 @@ type ExperienceType = {
    type?: string;
 }
 
-type KeyPointsType = {
-   title: string;
-   description: string;
-   path: string;
-   align?: string;
-}
 
 const Personal = () =>
 {
+   const context = useContext<ContextValueType | null>( ComponentContext )
 
    const [experiences] = useState<ExperienceType[]>( [
       {
@@ -155,20 +151,20 @@ const Personal = () =>
                >
                   <div className="flex items-center justify-between">
                      <div className="flex flex-col">
-                        <h3 className='text-accent-secondary font-semibold text-base'>{experiences.position}</h3>
+                        <h3 className='text-accent-primary   font-bold text-base'>{experiences.position}</h3>
                         <div className="flex items-center justify-start gap-1">
-                           <h4 className='text-accent-secondary font-semibold'>{experiences.company}</h4>
-                           {experiences?.type && <span>({experiences?.type})</span>}
+                           <h4 className='text-accent-secondary   font-semibold'>{experiences.company}</h4>
+                           {experiences?.type && <span className='text-accent-secondary  '>({experiences?.type})</span>}
                         </div>
                      </div>
                      <div className="flex items-center">
-                        <p className='font-semibold text-accent-secondary text-right'>{experiences.duration}</p>
+                        <p className='font-semibold text-accent-secondary   text-right'>{experiences.duration}</p>
                      </div>
                   </div>
                   <div className="flex flex-col px-3">
                      {experiences.description.map( ( { pointer }, i ) =>
                      {
-                        return <div className="flex gap-3 text-accent-secondary" key={i}>
+                        return <div className="flex gap-3 text-accent-secondary  " key={i}>
                            <div>•</div>
                            <p className='text-justify font-medium'>{pointer}</p>
                         </div>
@@ -221,14 +217,14 @@ const Personal = () =>
             <div className="flex flex-col gap-3">
 
                <motion.h4
-                  className='text-accent-secondary text-justify font-medium'
+                  className='text-accent-secondary   text-justify font-medium'
                   variants={cardVariants}
                   initial="offscreen"
                   whileInView="onscreen"
                   viewport={viewportVariant}
                >While my official work experience spans over <strong>{setTimestamp( 8, 2022 )}</strong>, I want to emphasize that my proficiency and expertise with the <strong>Software Development</strong> extend far beyond that, equating to over <strong>{setTimestamp( 8, 2018 )} of practical knowledge</strong>. I spent my first couple of years doing <strong>Desktop Development</strong> using <strong>Java</strong>, and on 2020 I decided to switch over to <strong>Web Application Development</strong> using mainly <strong>MERN (MySQL, ExpressJS, ReactJS, NodeJS) Stack</strong>, and learned a bunch of web-related technologies and frameworks ever since.</motion.h4>
                <motion.p
-                  className='font-medium'
+                  className='text-accent-primary   font-medium'
                   variants={cardVariants}
                   initial="offscreen"
                   whileInView="onscreen"
@@ -256,8 +252,8 @@ const Personal = () =>
                               />
                            </div>
                            <div className="flex flex-col flex-1 gap-2">
-                              <h2 className='font-bold text-lg text-accent-secondary text-left max-lg:text-center'>{keypoint.title}</h2>
-                              <p className='text-justify font-medium'>{keypoint.description}</p>
+                              <h2 className='font-bold text-lg text-accent-primary   text-left max-lg:text-center'>{keypoint.title}</h2>
+                              <p className='text-justify font-medium text-accent-secondary  '>{keypoint.description}</p>
                            </div>
                         </motion.div>
                      } )}
@@ -296,19 +292,19 @@ const Personal = () =>
                            >
                               <div className="flex items-center justify-between">
                                  <div className="flex flex-col">
-                                    <h3 className='text-accent-secondary font-semibold text-base'>BS INFORMATION TECHNOLOGY</h3>
-                                    <h4 className='text-accent-secondary font-semibold'>University of Eastern Philippines</h4>
+                                    <h3 className='text-accent-primary   font-semibold text-base'>BS INFORMATION TECHNOLOGY</h3>
+                                    <h4 className='text-accent-secondary   font-semibold'>University of Eastern Philippines</h4>
                                  </div>
                                  <div className="flex items-center">
-                                    <p className='font-semibold text-accent-secondary text-right'>August 2018 - June 2022</p>
+                                    <p className='font-semibold text-accent-secondary   text-right'>August 2018 - June 2022</p>
                                  </div>
                               </div>
                               <div className="flex flex-col px-3">
-                                 {/* <div className="flex gap-3 text-accent-secondary">
+                                 {/* <div className="flex gap-3 text-accent-secondary  ">
                                     <div>•</div>
                                     <p className='text-justify font-medium'>Capstone Project: JOB SEARCH SYSTEM (Using MERN Stack)</p>
                                  </div> */}
-                                 <div className="flex gap-3 text-accent-secondary">
+                                 <div className="flex gap-3 text-accent-secondary  ">
                                     <div>•</div>
                                     <p className='text-justify font-medium'>Cum laude | GWA: 1.55</p>
                                  </div>

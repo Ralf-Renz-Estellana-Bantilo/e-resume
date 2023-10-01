@@ -13,15 +13,13 @@ module.exports = {
       colors: {
         'accent-primary': '#212B33',
         'accent-secondary': '#25333F',
-        'dark-blue-primary': '#212B33',
+        'border-color': '#2f425a',
         'dark-blue-secondary': '#25333F',
         'primary': '#1677ff',
         'background-primary': '#E7F1F3',
         'background-secondary': '#CBDDE0',
-        'background-primary-dark': '#111111',
-        'background-secondary-dark': '#1f1f1f',
-        'accent-primary-dark': '#E7F1F3',
-        'accent-secondary-dark': '#CBDDE0',
+        'accent-primary-dark': '#ffffff',
+        'accent-secondary-dark': '#edf2f3',
       },
       fontFamily: {
         sans: ['var(--font-inter)'],
@@ -42,4 +40,5 @@ module.exports = {
     },
   },
   plugins: [],
+  darkMode: 'class',
 }

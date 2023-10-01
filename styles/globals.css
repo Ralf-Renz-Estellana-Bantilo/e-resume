@@ -32,16 +32,16 @@ html {
 }
 
 :root {
+   --light-violet: #334155;
+   --dark-violet: #0F172A;
    --neumorphismBackground1: #E7F1F3;
-   --neumorphismBackground2: #edf5f7;
    --neuShadLight1: #ffffff;
    --neuShadDark1: #c7cfd1;
-   --neuShadDark2: #bebebe;
+   --neuShadDark2: #4e4e4e80;
 }
 
-
 .gradient-background {
-   background-image: radial-gradient(164.75% 100% at 50% 0%,#334155 0%,#0F172A 48.73%);
+   background-image: radial-gradient(164.75% 100% at 50% 0%, var(--light-violet) 0%,var(--dark-violet) 48.73%);
    /* background-color: rgb(15 23 42 / 1); */
 }
 
@@ -56,12 +56,10 @@ html {
    background: var(--neumorphismBackground1);
    box-shadow: inset 5px 5px 10px var(--neuShadDark1),
             inset -5px -5px 10px var(--neuShadLight1);
-   /* box-shadow:  5px 5px 10px #bebebe,
-      -5px -5px 10px #ffffff; */
 }
 
 .neumorphism-2 {
-   background: #edf5f7;
+   background: var(--neumorphismBackground1);
    box-shadow:  5px 5px 10px var(--neuShadDark2),
              -5px -5px 10px var(--neuShadLight1);
 }
