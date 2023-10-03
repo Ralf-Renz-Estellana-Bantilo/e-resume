@@ -22,7 +22,6 @@ const Projects = dynamic<{}>( () => import( '@/pages/components/Projects' ), {
 const OtherInfo = dynamic<{}>( () => import( '@/pages/components/OtherInfo' ), {
    ssr: false
 } );
-
 const MobileView = dynamic<{}>( () => import( './MobileView' ), {
    ssr: false
 } );
@@ -133,7 +132,7 @@ const DesktopView = () =>
    }, [] )
 
    return (
-      <div className={`${quicksand.className} bg-background-primary    relative flex min-h-screen max-lg:flex max-lg:flex-col`}>
+      <div className={`${quicksand.className} bg-background-primary relative flex min-h-screen max-lg:flex max-lg:flex-col`}>
 
          {/* LEFT PANEL */}
          <div className='flex flex-col justify-between py-5 px-4 gradient-background max-lg:min-h-[100vh] max-lg:justify-evenly max-lg:gap-3' style={{ flex: 2 }}>
@@ -201,7 +200,7 @@ const DesktopView = () =>
          </div>
 
          {/* CONTENT PANEL */}
-         <div className={`${!context?.isMobile ? 'h-screen overflow-y-scroll' : 'h-screen'}`} style={{ flex: 5 }}>
+         <div className={`${context?.isMobile ? 'h-screen' : 'h-screen overflow-y-scroll'}`} style={{ flex: 5 }}>
             {loader ? <>
                <div className='h-screen flex items-center justify-center'>
                   <Spin size="large" />

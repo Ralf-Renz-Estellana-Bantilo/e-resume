@@ -1,5 +1,5 @@
 import { ContextValueType, ScreenSizeInterface, ThemeType } from "@/interfaces";
-import { ReactNode, createContext, useState, useEffect } from "react";
+import React, { ReactNode, createContext, useState, useEffect } from "react";
 
 export const ComponentContext = createContext<ContextValueType | null>( null )
 
