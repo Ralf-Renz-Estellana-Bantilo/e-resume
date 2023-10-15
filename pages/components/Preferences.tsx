@@ -112,7 +112,7 @@ const Preferences = () =>
                      <h3 className='font-semibold text-base text-accent-secondary  '>Experience Level</h3>
                   </Divider>
                   <div className='px-3'>
-                     <Checkbox.Group className={`${quicksand.className} w-full`} options={experienceLevelOptions} value={['Junior Level', 'Mid-Level']} />
+                     <Checkbox.Group className={`${quicksand.className} w-full`} options={experienceLevelOptions} value={['Mid-Level', 'Senior Level']} />
                   </div>
                </motion.div>
                <motion.div className="flex flex-col gap-2" variants={cardVariants} initial="offscreen" whileInView="onscreen" viewport={viewportVariant}>

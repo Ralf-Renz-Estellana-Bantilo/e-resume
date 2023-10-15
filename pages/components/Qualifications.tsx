@@ -13,7 +13,7 @@ const Qualifications = () =>
          title: 'Strong Programming Skills',
          description: [
             'Proficiency in more than one programming languages/frameworks such as JavaScript, ReactJS, VueJS, TypeScript, NextJS, NodeJS, TailwindCSS, Java, and MySQL.',
-            'Familiarity with technologies & frameworks like React Native, Remix, Flutter, Spring Boot, Python, ElectronJS, Qwik, SolidJS, NestJS, NoSQL, Heroku, Vercel, Netlify, Cloudinary, AWS (S3 Bucket), PHP, Redux, Material UI, Bootstrap, and many more.',
+            'Familiarity with technologies & frameworks such as React Native, Remix, Flutter, Spring Boot, Python, ElectronJS, Qwik, SolidJS, NestJS, NoSQL, Heroku, Vercel, Netlify, Cloudinary, AWS (S3 Bucket), PHP, Redux, Material UI, Bootstrap, and many more.',
             'Ability to write clean, efficient, reusable, dynamic, and maintainable code.',
          ]
       },
@@ -40,7 +40,7 @@ const Qualifications = () =>
          description: [
             'Excellent debugging skills',
             'Proficiency in debugging techniques and tools to identify and resolve issues efficiently.',
-            'Ability to debug codebase that I did not even wrote.',
+            'Ability to debug codebase that I did not even write.',
          ]
       },
       // {
