@@ -101,8 +101,8 @@ const TechSkills = () =>
    ] )
 
    return (
-      <div className="flex flex-col rounded-lg border-2 border-gray-600 text-background-primary">
-         <div className="flex justify-center border-2 border-transparent border-b-gray-600 p-2">
+      <div className="flex flex-col rounded-lg border-2 border-slate-600 text-background-primary">
+         <div className="flex justify-center border-2 border-transparent border-b-slate-600 p-2">
             <h4 className='text-center'>Technical Skills</h4>
          </div>
          <motion.div

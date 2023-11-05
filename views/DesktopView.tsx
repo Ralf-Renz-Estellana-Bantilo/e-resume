@@ -138,7 +138,7 @@ const DesktopView = () =>
          <div className='flex flex-col justify-between py-5 px-4 gradient-background max-lg:min-h-[100vh] max-lg:justify-evenly max-lg:gap-3' style={{ flex: 2 }}>
             <div className="flex flex-col gap-3 ">
                <motion.div className="flex flex-col items-center gap-2" variants={container} initial="hidden" animate="visible">
-                  <motion.div className="flex items-center justify-center border-2 border-gray-500 rounded-full hover:border-gray-400 transition-colors ease-in-out" variants={item} onClick={context?.toggleTheme}>
+                  <motion.div className="flex items-center justify-center border-2 border-slate-500 rounded-full hover:border-slate-400 transition-colors ease-in-out" variants={item} onClick={context?.toggleTheme}>
                      <motion.div className="w-40 h-40 bg-transparent p-[5px] rounded-full">
                         <Image
                            className="object-cover w-full h-full mx-auto rounded-full"
@@ -150,7 +150,7 @@ const DesktopView = () =>
                   </motion.div>
                   <motion.div className="flex flex-col justify-center" variants={container} initial="hidden" animate="visible">
                      <motion.h3 className='text-center text-background-primary text-2xl font-bold tiktok-effect' variants={item}>RALF RENZ BANTILO</motion.h3>
-                     <motion.p className='text-center text-background-secondary' variants={item}>{`< Programmer />`}</motion.p>
+                     <motion.p className='text-center text-background-secondary' variants={item}>{`< Mid-level Front-End Developer />`}</motion.p>
                   </motion.div>
                </motion.div>
                <Divider className='m-0  '></Divider>
@@ -171,8 +171,8 @@ const DesktopView = () =>
                </motion.div>
 
                <Divider className='m-0  '></Divider>
-               <motion.div className="flex flex-col rounded-lg border-2 border-gray-600 text-background-primary" variants={container} initial="hidden" animate="visible">
-                  <div className="flex justify-center border-2 border-transparent border-b-gray-600 p-2">
+               <motion.div className="flex flex-col rounded-lg border-2 border-slate-600 text-background-primary" variants={container} initial="hidden" animate="visible">
+                  <div className="flex justify-center border-2 border-transparent border-b-slate-600 p-2">
                      <h4 className='text-center'>Information</h4>
                   </div>
                   <div className="flex flex-col p-2 gap-2">

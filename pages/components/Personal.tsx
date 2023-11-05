@@ -31,7 +31,7 @@ const Personal = () =>
          id: Math.floor( Math.random() * 100 ) + 1,
          position: 'PROGRAMMER',
          company: 'SL Agritech Corporation | Makati City, PH',
-         duration: 'August 2022 - Present',
+         duration: 'August 2022 - November 2023',
          description: [
             {
                pointer: 'Spearheaded the implementation of modern UI design concepts within the team, resulting in the creation of highly user-friendly web applications that enhanced the overall user experience.'
@@ -121,7 +121,7 @@ const Personal = () =>
    const [keyPoints] = useState<KeyPointsType[]>( [
       {
          title: 'Immersive Learning Journey',
-         description: 'I have dedicated myself to mastering Web Development for over 3 years now, immersing myself in self-study, online courses, and personal projects. This accelerated learning has provided me with a deep understanding about Software Engineering and its complexities.',
+         description: `I have dedicated myself to mastering Web Development for over ${setTimestamp( 1, 2020 )} now, immersing myself in self-study, online courses, and personal projects. This accelerated learning has provided me with a deep understanding about Software Engineering and its complexities.`,
          path: 'illustration1.png',
       },
       {
@@ -176,7 +176,7 @@ const Personal = () =>
       }
    }
 
-   const setTimestamp = ( mm: number, yyyy: number ): string =>
+   function setTimestamp ( mm: number, yyyy: number ): string
    {
       let result: string = ''
       let stampNumber: number = 0
