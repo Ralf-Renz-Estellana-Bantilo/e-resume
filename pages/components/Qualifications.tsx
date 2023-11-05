@@ -57,7 +57,6 @@ const Qualifications = () =>
          description: [
             'A commitment to staying up-to-date with industry trends and emerging technologies.',
             'Willingness to learn new languages, frameworks, and tools as needed.',
-            '',
          ]
       },
       // {
