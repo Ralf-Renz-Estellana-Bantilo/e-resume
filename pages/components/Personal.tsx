@@ -121,12 +121,12 @@ const Personal = () =>
    const [keyPoints] = useState<KeyPointsType[]>( [
       {
          title: 'Immersive Learning Journey',
-         description: `I have dedicated myself to mastering Web Development for over ${setTimestamp( 1, 2020 )} now, immersing myself in self-study, online courses, and personal projects. This accelerated learning has provided me with a deep understanding about Software Engineering and its complexities.`,
+         description: `I have dedicated myself to mastering Software Development for over ${setTimestamp( 1, 2018 )} now, immersing myself in self-study, online courses, and personal projects. This accelerated learning has provided me with a deep understanding about Software Engineering and its complexities.`,
          path: 'illustration1.png',
       },
       {
          title: 'Real-World Application',
-         description: 'In addition to my professional work, I have actively sought out opportunities to apply my Web Development knowledge outside of traditional job  my frieroles. Like helpingnds with their errors, making websites for/with them. These hands-on opportunities have broadened my skill-set and exposed me to diverse projects and collaborations.',
+         description: 'In addition to my professional work, I have actively sought out opportunities to apply my Software Development knowledge outside of traditional job roles. Like helping my friends with their errors, making websites for/with them. These hands-on opportunities have broadened my skill-set and exposed me to diverse projects and collaborations.',
          path: 'illustration2.png',
          align: 'right',
       },
