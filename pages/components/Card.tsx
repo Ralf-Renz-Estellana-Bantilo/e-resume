@@ -22,7 +22,7 @@ const Card = () =>
 
    const mernStack: number[] = [4, 10, 1, 3]
 
-   const [projects, setProjects] = useState<ProjectsInterface[]>( [
+   const [projects] = useState<ProjectsInterface[]>( [
       {
          title: 'E-Resume',
          description: 'A personal website designed to help me showcase my work and achievements in a professional manner online.',
@@ -32,19 +32,19 @@ const Card = () =>
             'E-Resume/code.png',
          ]
       },
-      {
-         title: 'Applicant Tracking & Onboarding System',
-         description: ' A software application designed to manage the recruitment process and streamline the onboarding of new hires.',
-         tagIDs: [2, 4, 6, 7, 11, 9],
-         coverURLs: [
-            'Onboarding System/pic1.png',
-            // 'Onboarding System/pic2.png',
-            'Onboarding System/pic3.png',
-            'Onboarding System/pic4.png',
-            'Onboarding System/pic5.png',
-            'Onboarding System/code.png',
-         ]
-      },
+      // {
+      //    title: 'Applicant Tracking & Onboarding System',
+      //    description: ' A software application designed to manage the recruitment process and streamline the onboarding of new hires.',
+      //    tagIDs: [2, 4, 6, 7, 11, 9],
+      //    coverURLs: [
+      //       'Onboarding System/pic1.png',
+      //       // 'Onboarding System/pic2.png',
+      //       'Onboarding System/pic3.png',
+      //       'Onboarding System/pic4.png',
+      //       'Onboarding System/pic5.png',
+      //       'Onboarding System/code.png',
+      //    ]
+      // },
       {
          title: 'Payroll System',
          description: 'A software application designed to automate the process of calculating and managing employee salaries and wages.',
@@ -121,7 +121,7 @@ const Card = () =>
          ]
       },
    ] )
-   const [tagList, setTaglist] = useState<TagListsInterface[]>( [
+   const [tagList] = useState<TagListsInterface[]>( [
       {
          ID: 1,
          label: 'React JS',
