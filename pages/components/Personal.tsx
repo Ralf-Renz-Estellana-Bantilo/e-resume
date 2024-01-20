@@ -1,13 +1,11 @@
 import {Timeline} from 'antd';
-import React, {useState, useContext} from 'react';
+import React, {useState} from 'react';
 import {Quicksand} from 'next/font/google';
 import Image from 'next/image';
 import {motion} from 'framer-motion';
 import Container from './Container';
 import {cardVariants, viewportVariant} from '@/utils/Resources';
-import {ComponentContext} from '@/context/context';
-import {ContextValueType, KeyPointsType} from '@/interfaces';
-import moment from 'moment';
+import {KeyPointsType} from '@/interfaces';
 import {setTimestamp} from '@/utils/utils';
 
 const quicksand = Quicksand({subsets: ['latin']});
@@ -24,8 +22,6 @@ type ExperienceType = {
 };
 
 const Personal = () => {
-	const context = useContext<ContextValueType | null>(ComponentContext);
-
 	const [experiences] = useState<ExperienceType[]>([
 		{
 			id: Math.floor(Math.random() * 1000) + 1,
