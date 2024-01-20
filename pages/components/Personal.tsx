@@ -225,7 +225,9 @@ const Personal = () => {
 									<h3 className='text-accent-primary font-bold text-base'>
 										{experiences.position}
 									</h3>
-									<span>({experiences?.level})</span>
+									{experiences.level && (
+										<span>({experiences?.level})</span>
+									)}
 								</div>
 								<div className='flex items-center justify-start gap-1'>
 									<h4 className='text-accent-secondary   font-semibold'>
