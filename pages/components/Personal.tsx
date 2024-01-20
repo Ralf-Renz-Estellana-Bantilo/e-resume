@@ -19,6 +19,7 @@ type ExperienceType = {
 		pointer: string;
 	}[];
 	type?: string;
+	level?: 'Intern' | 'Junior' | 'Mid-level' | 'Senior';
 };
 
 const Personal = () => {
@@ -28,6 +29,7 @@ const Personal = () => {
 			position: 'FRONT-END DEVELOPER',
 			company: 'Bizbloqs Management Solutions | Makati City, PH',
 			duration: 'December 2023 - Present',
+			level: 'Mid-level',
 			description: [
 				{
 					pointer:
@@ -76,6 +78,7 @@ const Personal = () => {
 			position: 'PROGRAMMER',
 			company: 'SL Agritech Corporation | Makati City, PH',
 			duration: 'August 2022 - November 2023',
+			level: 'Junior',
 			description: [
 				{
 					pointer:
@@ -112,9 +115,10 @@ const Personal = () => {
 		},
 		{
 			id: Math.floor(Math.random() * 1000) + 1,
-			position: 'BACKEND DEVELOPER (INTERN)',
+			position: 'BACKEND DEVELOPER',
 			company: 'Sterling Insurance Company Inc.',
 			duration: 'April - July 2022',
+			level: 'Intern',
 			type: 'Remote',
 			description: [
 				{
@@ -217,9 +221,12 @@ const Personal = () => {
 						viewport={viewportVariant}>
 						<div className='flex items-center justify-between'>
 							<div className='flex flex-col'>
-								<h3 className='text-accent-primary   font-bold text-base'>
-									{experiences.position}
-								</h3>
+								<div className='flex items-center gap-2'>
+									<h3 className='text-accent-primary font-bold text-base'>
+										{experiences.position}
+									</h3>
+									<span>({experiences?.level})</span>
+								</div>
 								<div className='flex items-center justify-start gap-1'>
 									<h4 className='text-accent-secondary   font-semibold'>
 										{experiences.company}
