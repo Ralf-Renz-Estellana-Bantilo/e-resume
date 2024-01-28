@@ -27,9 +27,10 @@ const Personal = () => {
 		{
 			id: Math.floor(Math.random() * 1000) + 1,
 			position: 'FRONT-END DEVELOPER',
-			company: 'Bizbloqs Management Solutions | Makati City, PH',
+			company: 'Bizbloqs Management Solutions',
 			duration: 'December 2023 - Present',
 			level: 'Mid-level',
+			type: 'Hybrid',
 			description: [
 				{
 					pointer:
