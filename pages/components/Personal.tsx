@@ -27,7 +27,7 @@ const Personal = () => {
 		{
 			id: Math.floor(Math.random() * 1000) + 1,
 			position: 'FRONT-END DEVELOPER',
-			company: 'Bizbloqs Management Solutions',
+			company: 'Bizbloqs Management Solutions BV',
 			duration: 'December 2023 - Present',
 			level: 'Mid-level',
 			type: 'Hybrid',
@@ -190,7 +190,7 @@ const Personal = () => {
 		{
 			title: 'Immersive Learning Journey',
 			description: `I have dedicated myself to mastering Software Development for ${setTimestamp(
-				1,
+				8,
 				2018
 			)} now, immersing myself in self-study, online courses, and personal projects. This accelerated learning has provided me with a deep understanding about Software Engineering and its complexities.`,
 			path: 'illustration1.png',
