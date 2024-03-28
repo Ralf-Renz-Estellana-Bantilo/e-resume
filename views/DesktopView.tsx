@@ -137,7 +137,7 @@ const DesktopView = () => {
 			className={`${quicksand.className} bg-background-primary relative flex min-h-screen max-lg:flex max-lg:flex-col`}>
 			{/* LEFT PANEL */}
 			<div
-				className='flex flex-col justify-between py-5 px-4 gradient-background max-lg:min-h-[100vh] max-lg:justify-evenly max-lg:gap-3'
+				className='flex flex-col justify-between py-5 px-4 gradient-background h-screen overflow-auto max-lg:min-h-[100vh] max-lg:justify-evenly max-lg:gap-3'
 				style={{flex: 2}}>
 				<div className='flex flex-col gap-3 '>
 					<motion.div
@@ -217,7 +217,7 @@ const DesktopView = () => {
 						variants={container}
 						initial='hidden'
 						animate='visible'>
-						<div className='flex justify-center border-2 border-transparent border-b-slate-600 p-2'>
+						<div className='flex justify-center border-2 border-transparent border-b-slate-600 px-2 py-1'>
 							<h4 className='text-center'>Information</h4>
 						</div>
 						<div className='flex flex-col p-2 gap-2'>
