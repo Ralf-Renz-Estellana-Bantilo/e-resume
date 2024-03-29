@@ -48,7 +48,7 @@ const Preferences = () => {
 				<>
 					<div className='flex flex-col gap-2'>
 						<Divider className='m-0   ' orientation='center'>
-							<h3 className='font-semibold text-base text-accent-secondary  '>
+							<h3 className='font-semibold text-base text-accent-primary  '>
 								Experience Level
 							</h3>
 						</Divider>
@@ -65,7 +65,7 @@ const Preferences = () => {
 					</div>
 					<div className='flex flex-col gap-2'>
 						<Divider className='m-0   ' orientation='center'>
-							<h3 className='font-semibold text-base text-accent-secondary  '>
+							<h3 className='font-semibold text-base text-accent-primary  '>
 								Job Type
 							</h3>
 						</Divider>
@@ -74,7 +74,7 @@ const Preferences = () => {
 								<Checkbox.Group
 									className={`${quicksand.className} w-full`}
 									options={[jobType]}
-									value={['Full-time']}
+									value={['Full-time', 'Part-time']}
 									key={i}
 								/>
 							))}
@@ -82,7 +82,7 @@ const Preferences = () => {
 					</div>
 					<div className='flex flex-col gap-2'>
 						<Divider className='m-0   ' orientation='center'>
-							<h3 className='font-semibold text-base text-accent-secondary  '>
+							<h3 className='font-semibold text-base text-accent-primary  '>
 								Work Setup
 							</h3>
 						</Divider>
@@ -99,7 +99,7 @@ const Preferences = () => {
 					</div>
 					<div className='flex flex-col gap-2'>
 						<Divider className='m-0   ' orientation='center'>
-							<h3 className='font-semibold text-base text-accent-secondary  '>
+							<h3 className='font-semibold text-base text-accent-primary'>
 								Title
 							</h3>
 						</Divider>
@@ -136,7 +136,7 @@ const Preferences = () => {
                </div> */}
 					<div className='flex flex-col gap-2'>
 						<Divider className='m-0   ' orientation='center'>
-							<h3 className='font-semibold text-base text-accent-secondary  '>
+							<h3 className='font-semibold text-base text-accent-primary'>
 								Tech Stack
 							</h3>
 						</Divider>
@@ -167,7 +167,7 @@ const Preferences = () => {
 						whileInView='onscreen'
 						viewport={viewportVariant}>
 						<Divider className='m-0   ' orientation='center'>
-							<h3 className='font-semibold text-base text-accent-secondary  '>
+							<h3 className='font-semibold text-base text-accent-primary'>
 								Experience Level
 							</h3>
 						</Divider>
@@ -185,8 +185,8 @@ const Preferences = () => {
 						initial='offscreen'
 						whileInView='onscreen'
 						viewport={viewportVariant}>
-						<Divider className='m-0   ' orientation='center'>
-							<h3 className='font-semibold text-base text-accent-secondary  '>
+						<Divider className='m-0 ' orientation='center'>
+							<h3 className='font-semibold text-base text-accent-primary'>
 								Job Type
 							</h3>
 						</Divider>
@@ -194,7 +194,7 @@ const Preferences = () => {
 							<Checkbox.Group
 								className={`${quicksand.className} w-full`}
 								options={jobTypeOptions}
-								value={['Full-time']}
+								value={['Full-time', 'Part-time']}
 							/>
 						</div>
 					</motion.div>
@@ -205,7 +205,7 @@ const Preferences = () => {
 						whileInView='onscreen'
 						viewport={viewportVariant}>
 						<Divider className='m-0   ' orientation='center'>
-							<h3 className='font-semibold text-base text-accent-secondary  '>
+							<h3 className='font-semibold text-base text-accent-primary'>
 								Work Setup
 							</h3>
 						</Divider>
@@ -225,7 +225,7 @@ const Preferences = () => {
 						whileInView='onscreen'
 						viewport={viewportVariant}>
 						<Divider className='m-0   ' orientation='center'>
-							<h3 className='font-semibold text-base text-accent-secondary  '>
+							<h3 className='font-semibold text-base text-accent-primary'>
 								Title
 							</h3>
 						</Divider>
@@ -249,7 +249,7 @@ const Preferences = () => {
 						whileInView='onscreen'
 						viewport={viewportVariant}>
 						<Divider className='m-0   ' orientation='center'>
-							<h3 className='font-semibold text-base text-accent-secondary  '>
+							<h3 className='font-semibold text-base text-accent-primary'>
 								Tech Stack
 							</h3>
 						</Divider>
@@ -272,7 +272,7 @@ const Preferences = () => {
 					{/* <div className="flex flex-col gap-2">
                   <Divider className='m-0   ' orientation="center">
 
-                     <h3 className='font-semibold text-base text-accent-secondary  '>Availability (Phone call)</h3>
+                     <h3 className='font-semibold text-base text-accent-primary'>Availability (Phone call)</h3>
                   </Divider>
                   <div className='flex items-center justify-around px-3 gap-2'>
                      <div className="flex gap-2 items-center">
@@ -290,7 +290,7 @@ const Preferences = () => {
 			{/* <div className="flex flex-col gap-2">
             <Divider className='m-0   ' orientation="center">
 
-               <h3 className='font-semibold text-base text-accent-secondary  '>Salary Range</h3>
+               <h3 className='font-semibold text-base text-accent-primary'>Salary Range</h3>
             </Divider>
             <div className='flex flex-col px-3'>
                <Slider

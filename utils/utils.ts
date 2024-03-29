@@ -19,15 +19,19 @@ export function setTimestamp(mm: number, yyyy: number): string {
 			stampNumber = years;
 
 			if (years === 1) {
-				let concatenator =
-					remainingMonths > 0
-						? `and ${
-								remainingMonths > 1
-									? `${remainingMonths} months`
-									: 'month'
-						  }`
-						: '';
-				result = `${years} year ${concatenator}`;
+				if (remainingMonths >= 7) {
+					result = `almost ${years + 1} years`;
+				} else {
+					let concatenator =
+						remainingMonths > 0
+							? `and ${
+									remainingMonths > 1
+										? `${remainingMonths} months`
+										: 'month'
+							  }`
+							: '';
+					result = `${years} year ${concatenator}`;
+				}
 			} else {
 				result = `${years}+ years`;
 			}
