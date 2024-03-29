@@ -2,92 +2,100 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
 
 * {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-   font-family: "Quicksand";
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Quicksand';
+	color: #e0ecf3;
 }
 
 html {
-   scroll-behavior: smooth;
+	scroll-behavior: smooth;
+}
+
+:root {
+	--light-violet: #334155;
+	--dark-violet: #0f172a;
+	--light-blue: #17212c;
+	/* --light-blue: #181d22; */
+	--dark-blue: #101214;
+	--neumorphismBackground1: #e7f1f3;
+	--neuShadLight1: #ffffff;
+	--neuShadDark1: #c7cfd1;
+	--neuShadDark2: #4e4e4e80;
 }
 
 /* Custom CSS */
 ::-webkit-scrollbar {
-   width: 3px;
-   height: 5px;
+	width: 3px;
+	height: 5px;
 }
 ::-webkit-scrollbar-thumb {
-   background-color: #00aeff;
-   border-radius: 10px;
-   -webkit-transition: 0.5s;
-   transition: 0.5s;
-}
-
-:root {
-   --light-violet: #334155;
-   --dark-violet: #0F172A;
-   --neumorphismBackground1: #E7F1F3;
-   --neuShadLight1: #ffffff;
-   --neuShadDark1: #c7cfd1;
-   --neuShadDark2: #4e4e4e80;
+	background-color: #00aeff;
+	border-radius: 10px;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
 }
 
 .gradient-background {
-   background-image: radial-gradient(164.75% 100% at 50% 0%, var(--light-violet) 0%,var(--dark-violet) 48.73%);
-   /* background-color: rgb(15 23 42 / 1); */
+	background-image: radial-gradient(
+		164.75% 100% at 50% 0%,
+		var(--light-violet) 0%,
+		var(--dark-violet) 48.73%
+	);
+	/* background-color: rgb(15 23 42 / 1); */
 }
 
 .tiktok-effect {
-   transition: all .2s ease;
+	transition: all 0.2s ease;
 }
 .tiktok-effect:hover {
-   text-shadow: red -2px -1px, cyan 2px 1px;
+	text-shadow: red -2px -1px, cyan 2px 1px;
 }
 
 .neumorphism-1 {
-   background: var(--neumorphismBackground1);
-   box-shadow: inset 5px 5px 10px var(--neuShadDark1),
-            inset -5px -5px 10px var(--neuShadLight1);
+	background: var(--neumorphismBackground1);
+	box-shadow: inset 5px 5px 10px var(--neuShadDark1),
+		inset -5px -5px 10px var(--neuShadLight1);
 }
 
 .neumorphism-2 {
-   background: var(--neumorphismBackground1);
-   box-shadow:  5px 5px 10px var(--neuShadDark2),
-             -5px -5px 10px var(--neuShadLight1);
+	background: var(--neumorphismBackground1);
+	box-shadow: 5px 5px 10px var(--neuShadDark2),
+		-5px -5px 10px var(--neuShadLight1);
 }
 
 label {
-   flex: 1;
+	flex: 1;
 }
 
 .ant-divider-horizontal.ant-divider-with-text {
-   margin: 0;
+	margin: 0;
 }
 
 /* swiper js css */
 
 .swiper {
-  width: 100%;
-  /* height: 100%; */
+	width: 100%;
+	/* height: 100%; */
 }
 
 .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  /* background: #fff; */
+	text-align: center;
+	font-size: 18px;
+	/* background: #fff; */
 
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	/* Center slide text vertically */
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 /* ::selection {
@@ -99,3 +107,22 @@ label {
    background-color: #25333F;
    color: white;
 } */
+
+.gradient-background-2 {
+	background-image: radial-gradient(
+		164.75% 100%,
+		var(--light-blue) 0%,
+		var(--dark-blue) 48.73%
+	);
+}
+
+.scroll-shadow {
+	mask-image: linear-gradient(
+		#000,
+		#000,
+		transparent 0,
+		#000 40px,
+		#000 calc(100% - 40px),
+		transparent
+	);
+}

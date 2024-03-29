@@ -1,5 +1,5 @@
 import {Timeline} from 'antd';
-import React, {useState} from 'react';
+import React from 'react';
 import {Quicksand} from 'next/font/google';
 import Image from 'next/image';
 import {motion} from 'framer-motion';
@@ -23,10 +23,10 @@ type ExperienceType = {
 };
 
 const Personal = () => {
-	const [experiences] = useState<ExperienceType[]>([
+	const experiences: ExperienceType[] = [
 		{
 			id: Math.floor(Math.random() * 1000) + 1,
-			position: 'FRONT-END DEVELOPER',
+			position: 'FRONT-END DEVELOPER (TEAM LEAD)',
 			company: 'Bizbloqs Management Solutions (Philippines) Inc.',
 			duration: 'December 2023 - Present',
 			level: 'Mid-level',
@@ -184,9 +184,9 @@ const Personal = () => {
 				},
 			],
 		},
-	]);
+	];
 
-	const [keyPoints] = useState<KeyPointsType[]>([
+	const keyPoints: KeyPointsType[] = [
 		{
 			title: 'Immersive Learning Journey',
 			description: `I have dedicated myself to mastering Software Development for ${setTimestamp(
@@ -208,7 +208,7 @@ const Personal = () => {
 				'Despite limited professional experience, I have successfully developed and deployed impactful web applications using MERN Stack. Positive user feedback and demonstrated results validate my ability to deliver high-quality solutions within given timelines.',
 			path: 'illustration3.png',
 		},
-	]);
+	];
 
 	const experienceTimelineItems = (experiences: ExperienceType) => {
 		return {
@@ -242,7 +242,7 @@ const Personal = () => {
 								</div>
 							</div>
 							<div className='flex items-center'>
-								<p className='font-semibold text-accent-secondary   text-right'>
+								<p className='font-semibold text-accent-primary text-right'>
 									{experiences.duration}
 								</p>
 							</div>
@@ -250,11 +250,9 @@ const Personal = () => {
 						<div className='flex flex-col px-3'>
 							{experiences.description.map(({pointer}, i) => {
 								return (
-									<div
-										className='flex gap-3 text-accent-secondary  '
-										key={i}>
-										<div>•</div>
-										<p className='text-justify font-medium'>
+									<div className='flex gap-3' key={i}>
+										<div className='text-accent-secondary'>•</div>
+										<p className='text-justify font-medium text-accent-secondary'>
 											{pointer}
 										</p>
 									</div>
@@ -268,12 +266,12 @@ const Personal = () => {
 	};
 
 	return (
-		<div className='flex flex-col gap-8 p-7 pt-3 max-md:px-4'>
+		<div className='flex flex-col gap-8 pt-3 max-md:px-4'>
 			{/* ABOUT ME */}
 			<Container title='ABOUT ME'>
 				<div className='flex flex-col gap-3'>
 					<motion.h4
-						className='text-accent-secondary   text-justify font-medium'
+						className='text-accent-secondary text-justify font-medium'
 						variants={cardVariants}
 						initial='offscreen'
 						whileInView='onscreen'
@@ -297,7 +295,7 @@ const Personal = () => {
 						frameworks ever since.
 					</motion.h4>
 					<motion.p
-						className='text-accent-primary   font-medium'
+						className='text-accent-primary font-medium'
 						variants={cardVariants}
 						initial='offscreen'
 						whileInView='onscreen'
@@ -376,7 +374,7 @@ const Personal = () => {
 												</h4>
 											</div>
 											<div className='flex items-center'>
-												<p className='font-semibold text-accent-secondary   text-right'>
+												<p className='font-semibold text-accent-secondary text-right'>
 													August 2018 - June 2022
 												</p>
 											</div>
