@@ -16,7 +16,7 @@ import 'swiper/css/pagination';
 import {Pagination, Autoplay} from 'swiper';
 import {ScreenSizeInterface, ServicesInterface} from '@/interfaces';
 import Image from 'next/image';
-import Card from '../components/Card';
+import Card from './components/Card';
 
 const ProjectsPage = () => {
 	const services: ServicesInterface[] = [

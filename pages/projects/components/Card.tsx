@@ -1,6 +1,6 @@
+import React from 'react';
 import {Carousel, Divider, Space, Tag} from 'antd';
 import Image from 'next/image';
-import React, {useContext, useEffect, useState} from 'react';
 
 // Import Swiper React components
 import {Swiper, SwiperSlide} from 'swiper/react';
@@ -11,14 +11,9 @@ import 'swiper/css/pagination';
 
 // import required modules
 import {Pagination, Autoplay} from 'swiper';
-import {
-	ProjectsInterface,
-	ScreenSizeInterface,
-	TagListsInterface,
-	viewportType,
-} from '@/interfaces';
+import {ProjectsInterface, TagListsInterface} from '@/interfaces';
 
-import {Variants, motion} from 'framer-motion';
+import {motion} from 'framer-motion';
 import {cardVariants, viewportVariant} from '@/utils/Resources';
 
 const Card = () => {
@@ -194,37 +189,12 @@ const Card = () => {
 		},
 	];
 
-	const [screenSize, setScreenSize] = useState<ScreenSizeInterface>({
-		width: typeof window !== 'undefined' ? window.innerWidth : 0,
-		height: typeof window !== 'undefined' ? window.innerHeight : 0,
-	});
-
-	const MOBILE: number = 1024;
-
-	// useEffect(() => {
-	// 	const handleResize = (): void => {
-	// 		setScreenSize({
-	// 			width: window.innerWidth,
-	// 			height: window.innerHeight,
-	// 		});
-	// 	};
-
-	// 	window.addEventListener('resize', handleResize);
-
-	// 	return () => {
-	// 		window.removeEventListener('resize', handleResize);
-	// 	};
-	// }, []);
-
-	const {width} = screenSize;
-
 	const findTagByID = (tagID: Number) => {
 		return tagList.filter((list) => list.ID == tagID)[0];
 	};
 
 	return (
 		<>
-			{/* {width > MOBILE ? <> */}
 			{projects.map(({coverURLs, title, description, tagIDs}, i) => {
 				return (
 					<motion.div
@@ -240,7 +210,7 @@ const Card = () => {
 									return (
 										<Image
 											className='object-cover h-44'
-											src={require(`../../assets/Images/${url}`)}
+											src={require(`@/assets/Images/${url}`)}
 											alt={title}
 											key={o}
 										/>
@@ -276,60 +246,6 @@ const Card = () => {
 					</motion.div>
 				);
 			})}
-			{/* </> : <>
-            <Swiper
-               slidesPerView={1}
-               centeredSlides={true}
-               autoplay={{
-                  delay: 5000,
-                  disableOnInteraction: false,
-               }}
-               pagination={{
-                  clickable: true,
-               }}
-               modules={[Pagination, Autoplay]}
-               className="mySwiper bg-background-primary"
-            >
-
-               {projects.map( ( { coverURLs, title, description, tagIDs }, i ) =>
-               {
-                  return <SwiperSlide className='p-4 pb-8' key={i}>
-                     <div className='flex flex-col w-[48%] h-full neumorphism-2 rounded-xl overflow-hidden max-sm:w-full max-md:w-[75%] max-lg:w-[48%] max-xl:w-[70%]' key={i}>
-                        <div className='w-full h-44 overflow-clip bg-gray-400'>
-
-                           <Carousel autoplay effect='fade'>
-                              {coverURLs.map( ( url, o ) =>
-                              {
-                                 return <Image
-                                    className="object-cover h-44"
-                                    src={require( `../../assets/Images/${url}` )}
-                                    alt={title}
-                                    key={o}
-                                 />
-                              } )}
-                           </Carousel>
-                        </div>
-                        <div className="flex flex-col gap-2 p-2">
-                           <div className='flex flex-col justify-center'>
-                              <h3 className='text-lg font-semibold text-accent-secondary text-center py-2'>{title}</h3>
-                              <p className='text-accent-secondary text-sm text-justify'>{description}</p>
-                           </div>
-                           <Divider className='m-0  '></Divider>
-                           <div>
-                              <Space size={[0, tagIDs.length]} wrap>
-                                 {tagIDs.map( ( tagID, i ) =>
-                                 {
-                                    return <Tag className='rounded-full' color={findTagByID( tagID ).color} key={i}>{findTagByID( tagID ).label}</Tag>
-                                 } )}
-                              </Space>
-                           </div>
-                        </div>
-                     </div>
-                  </SwiperSlide>
-               } )}
-
-            </Swiper></> 
-         }*/}
 		</>
 	);
 };

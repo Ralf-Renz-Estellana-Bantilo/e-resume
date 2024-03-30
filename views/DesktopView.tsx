@@ -19,18 +19,18 @@ import {ComponentContext} from '@/context/context';
 import TechSkills from '@/pages/components/TechSkills';
 import {container, item} from '@/utils/Resources';
 
-const Personal = dynamic<{}>(() => import('@/pages/components/Personal'), {
-	ssr: false,
-});
-const Projects = dynamic<{}>(() => import('@/pages/components/Projects'), {
-	ssr: false,
-});
-const OtherInfo = dynamic<{}>(() => import('@/pages/components/OtherInfo'), {
-	ssr: false,
-});
-const MobileView = dynamic<{}>(() => import('./MobileView'), {
-	ssr: false,
-});
+// const Personal = dynamic<{}>(() => import('@/pages/components/Personal'), {
+// 	ssr: false,
+// });
+// const Projects = dynamic<{}>(() => import('@/pages/components/Projects'), {
+// 	ssr: false,
+// });
+// const OtherInfo = dynamic<{}>(() => import('@/pages/components/OtherInfo'), {
+// 	ssr: false,
+// });
+// const MobileView = dynamic<{}>(() => import('./MobileView'), {
+// 	ssr: false,
+// });
 
 const quicksand = Quicksand({subsets: ['latin']});
 
@@ -51,23 +51,23 @@ const DesktopView = () => {
 			label: 'Makati City, Philippines',
 		},
 	]);
-	const [panels] = useState<PanelsInterface[]>([
-		{
-			label: `Personal`,
-			key: `${Math.floor(Math.random() * 100) + 1}`,
-			children: <Personal />,
-		},
-		{
-			label: `Projects`,
-			key: `${Math.floor(Math.random() * 100) + 1}`,
-			children: <Projects />,
-		},
-		{
-			label: `Others`,
-			key: `${Math.floor(Math.random() * 100) + 1}`,
-			children: <OtherInfo />,
-		},
-	]);
+	// const [panels] = useState<PanelsInterface[]>([
+	// 	{
+	// 		label: `Personal`,
+	// 		key: `${Math.floor(Math.random() * 100) + 1}`,
+	// 		children: <Personal />,
+	// 	},
+	// 	{
+	// 		label: `Projects`,
+	// 		key: `${Math.floor(Math.random() * 100) + 1}`,
+	// 		children: <Projects />,
+	// 	},
+	// 	{
+	// 		label: `Others`,
+	// 		key: `${Math.floor(Math.random() * 100) + 1}`,
+	// 		children: <OtherInfo />,
+	// 	},
+	// ]);
 	const [links] = useState<LinksInterface[]>([
 		{
 			icon: 'linkedin',
@@ -267,7 +267,7 @@ const DesktopView = () => {
 			</div>
 
 			{/* CONTENT PANEL */}
-			<div
+			{/* <div
 				className={`${
 					context?.isMobile ? 'h-screen' : 'h-screen overflow-y-scroll'
 				}`}
@@ -294,7 +294,7 @@ const DesktopView = () => {
 						)}
 					</>
 				)}
-			</div>
+			</div> */}
 
 			{/* RIGHT PANEL */}
 			<div

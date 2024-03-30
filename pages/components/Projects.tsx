@@ -1,7 +1,7 @@
 import {CheckOutlined} from '@ant-design/icons';
 import {Divider, Spin} from 'antd';
 import React, {useEffect, useState} from 'react';
-import Card from './Card';
+import Card from '../projects/components/Card';
 
 // Import Swiper React components
 import {Swiper, SwiperSlide} from 'swiper/react';
