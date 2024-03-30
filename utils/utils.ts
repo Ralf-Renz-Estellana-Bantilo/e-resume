@@ -20,7 +20,7 @@ export function setTimestamp(mm: number, yyyy: number): string {
 
 			if (years === 1) {
 				if (remainingMonths >= 7) {
-					result = `almost ${years + 1} years`;
+					result = `nearly ${years + 1} years`;
 				} else {
 					let concatenator =
 						remainingMonths > 0

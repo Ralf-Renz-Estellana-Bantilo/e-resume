@@ -1,9 +1,9 @@
 import React from 'react';
 import Container from '../components/Container';
-import Preferences from '../components/Preferences';
-import Timelines from '../components/Timelines';
-import Qualifications from '../components/Qualifications';
-import ContactForm from '../components/ContactForm';
+import Preferences from './components/Preferences';
+import Timelines from './components/Timelines';
+import Qualifications from './components/Qualifications';
+import ContactForm from './components/ContactForm';
 
 const OthersPage = () => {
 	return (
