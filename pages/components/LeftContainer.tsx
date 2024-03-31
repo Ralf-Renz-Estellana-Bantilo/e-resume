@@ -84,6 +84,7 @@ const LeftContainer = (
 			{...props}
 			className={`h-screen overflow-auto flex flex-col justify-between py-3 ${props?.className}`}>
 			<div className='flex flex-col gap-3 '>
+				{/* Profile Image */}
 				<motion.div
 					className='flex flex-col items-center gap-2'
 					variants={container}
@@ -127,6 +128,7 @@ const LeftContainer = (
 				</motion.div>
 				<Divider className='m-0  '></Divider>
 
+				{/* Social Accounts */}
 				<motion.div
 					className='flex items-center justify-around text-background-primary'
 					variants={container}
@@ -166,6 +168,7 @@ const LeftContainer = (
 					})}
 				</motion.div>
 
+				{/* Basic Information */}
 				<Divider className='m-0'></Divider>
 				<motion.div
 					className='flex flex-col rounded-lg bg-opacity-10 p-2 border-1 border-border-color  w-11/12 mx-auto'
@@ -177,7 +180,7 @@ const LeftContainer = (
 							Information
 						</h4>
 					</div>
-					<div className='flex flex-col p-2 gap-2'>
+					<div className='flex flex-col pt-2 gap-2'>
 						{personalInformation.map((info, i) => {
 							return (
 								<motion.div

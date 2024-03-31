@@ -205,11 +205,11 @@ const HomePage = () => {
 									)}
 								</div>
 								<div className='flex items-center justify-start gap-1'>
-									<h4 className='text-accent-secondary   font-semibold'>
+									<h4 className='text-accent-secondary font-semibold'>
 										{experiences.company}
 									</h4>
 									{experiences?.type && (
-										<span className='text-accent-secondary  '>
+										<span className='text-accent-secondary'>
 											({experiences?.type})
 										</span>
 									)}
@@ -304,19 +304,17 @@ const HomePage = () => {
 												</h4>
 											</div>
 											<div className='flex items-center'>
-												<p className='font-semibold text-accent-secondary text-right'>
+												<p className='font-semibold text-accent-primary text-right'>
 													August 2018 - June 2022
 												</p>
 											</div>
 										</div>
 										<div className='flex flex-col px-3'>
-											{/* <div className="flex gap-3 text-accent-secondary  ">
-                                    <div>•</div>
-                                    <p className='text-justify font-medium'>Capstone Project: JOB SEARCH SYSTEM (Using MERN Stack)</p>
-                                 </div> */}
-											<div className='flex gap-3 text-accent-secondary  '>
-												<div>•</div>
-												<p className='text-justify font-medium'>
+											<div className='flex gap-3'>
+												<div className='text-accent-secondary'>
+													•
+												</div>
+												<p className='text-justify font-medium text-accent-secondary'>
 													Graduated Cum Laude
 												</p>
 											</div>
