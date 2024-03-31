@@ -119,7 +119,7 @@ const TechSkills = () => {
 				</h4>
 			</div>
 			<motion.div
-				className='scroll-shadow flex flex-col py-4 px-2 gap-2 max-h-[87vh] overflow-auto mr-1 max-lg:max-h-full'
+				className='flex flex-col p-2 gap-2 max-h-[87vh] overflow-auto mr-1 max-lg:max-h-full'
 				variants={container}
 				initial='hidden'
 				animate='visible'>
