@@ -5,6 +5,7 @@ import {motion} from 'framer-motion';
 import {setTimestamp} from '@/utils/utils';
 import {cardVariants, viewportVariant} from '@/utils/Resources';
 import Container from './components/Container';
+import 'react-toastify/dist/ReactToastify.css';
 
 const quicksand = Quicksand({subsets: ['latin']});
 
