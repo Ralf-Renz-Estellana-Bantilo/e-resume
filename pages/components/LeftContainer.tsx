@@ -1,5 +1,3 @@
-'use client';
-
 import React, {DetailedHTMLProps, HTMLAttributes} from 'react';
 import {Divider} from 'antd';
 import Profile from './Profile';
