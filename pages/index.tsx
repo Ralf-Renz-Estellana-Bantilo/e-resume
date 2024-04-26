@@ -25,11 +25,11 @@ const HomePage = () => {
 	const experiences: ExperienceType[] = [
 		{
 			id: Math.floor(Math.random() * 1000) + 1,
-			position: 'FRONT-END DEVELOPER (TEAM LEAD)',
+			position: 'SOFTWARE DEVELOPMENT TEAM LEAD',
 			company: 'Bizbloqs Management Solutions (Philippines) Inc.',
 			duration: 'December 2023 - Present',
-			level: 'Mid-level',
-			type: 'Hybrid',
+			// level: 'Mid-level',
+			// type: 'Hybrid',
 			description: [
 				{
 					pointer:
@@ -78,7 +78,7 @@ const HomePage = () => {
 			position: 'PROGRAMMER',
 			company: 'SL Agritech Corporation | Makati City, PH',
 			duration: 'August 2022 - November 2023',
-			level: 'Junior',
+			// level: 'Junior',
 			description: [
 				{
 					pointer:
