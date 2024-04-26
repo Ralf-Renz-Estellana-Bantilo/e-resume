@@ -43,7 +43,9 @@ const Profile = () => {
 				</motion.h3>
 				<motion.p
 					className='text-center text-accent-secondary'
-					variants={item}>{`< Mid-level Front-End Developer />`}</motion.p>
+					variants={
+						item
+					}>{`< Software Development Team Lead />`}</motion.p>
 			</motion.div>
 		</motion.div>
 	);
