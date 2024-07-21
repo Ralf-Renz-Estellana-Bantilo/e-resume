@@ -7,7 +7,7 @@ const RightContainer = (
 	return (
 		<div
 			{...props}
-			className={`h-screen overflow-auto py-3 ${props?.className}`}>
+			className={`h-screen overflow-auto py-3 ${props?.className} md-breakpoint:overflow-visible md-breakpoint:h-auto`}>
 			<TechSkills />
 		</div>
 	);

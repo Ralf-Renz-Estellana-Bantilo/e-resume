@@ -1,6 +1,6 @@
 'use client';
 
-import React, {ReactNode} from 'react';
+import React from 'react';
 import {Card, CardBody, Tab, Tabs} from '@nextui-org/react';
 import HomePage from '..';
 import OthersPage from '../others';

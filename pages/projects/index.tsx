@@ -82,11 +82,11 @@ const ProjectsPage = () => {
 					{services.map((service, i) => {
 						return (
 							<motion.div
-								className='flex flex-col h-auto  bg-opacity-10 p-2 border-1 border-border-color rounded-lg w-[48%]'
+								className='flex flex-col h-auto bg-opacity-10 p-2 border-1 border-border-color rounded-lg w-[48%] sm-breakpoint:w-[70%]'
 								key={i}
 								variants={item}>
 								<div className='flex flex-col'>
-									<h3 className='font-semibold text-center p-2 pt-0 text-base text-accent-primary  '>
+									<h3 className='font-semibold text-center p-2 pt-0 text-base text-accent-primary'>
 										{service.category}
 									</h3>
 									<Divider className='m-0  '></Divider>

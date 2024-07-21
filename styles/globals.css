@@ -23,9 +23,14 @@ html {
 :root {
 	--light-violet: #334155;
 	--dark-violet: #0f172a;
-	--light-blue: #17212c;
 	/* --light-blue: #181d22; */
-	--dark-blue: #101214;
+
+	/* --light-blue: #17212c;
+	--dark-blue: #101214; */
+
+	--light-blue: #1c2a38;
+	--dark-blue: #181d21;
+
 	--neumorphismBackground1: #e7f1f3;
 	--neuShadLight1: #ffffff;
 	--neuShadDark1: #c7cfd1;

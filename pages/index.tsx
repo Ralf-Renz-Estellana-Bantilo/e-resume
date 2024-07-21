@@ -1,11 +1,11 @@
 import {Timeline} from 'antd';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Quicksand} from 'next/font/google';
 import {motion} from 'framer-motion';
-import {setTimestamp} from '@/utils/utils';
 import {cardVariants, viewportVariant} from '@/utils/Resources';
 import Container from './components/Container';
 import 'react-toastify/dist/ReactToastify.css';
+import {setTimestamp} from '@/utils/utils';
 
 const quicksand = Quicksand({subsets: ['latin']});
 
@@ -117,7 +117,7 @@ const HomePage = () => {
 			id: Math.floor(Math.random() * 1000) + 1,
 			position: 'BACKEND DEVELOPER',
 			company: 'Sterling Insurance Company Inc.',
-			duration: 'April - July 2022',
+			duration: `April - July 2022`,
 			level: 'Intern',
 			type: 'Remote',
 			description: [
@@ -163,7 +163,7 @@ const HomePage = () => {
 			id: Math.floor(Math.random() * 1000) + 1,
 			position: 'TECHNICAL SUPPORT STAFF',
 			company: 'Comelec',
-			duration: 'February - May 2022',
+			duration: `February - May 2022`,
 			type: 'Part-Time',
 			description: [
 				{
@@ -188,57 +188,60 @@ const HomePage = () => {
 	const experienceTimelineItems = (experiences: ExperienceType) => {
 		return {
 			children: (
-				<>
-					<motion.div
-						className='flex flex-col gap-2'
-						variants={cardVariants}
-						initial='offscreen'
-						whileInView='onscreen'
-						viewport={viewportVariant}>
-						<div className='flex items-center justify-between'>
-							<div className='flex flex-col'>
-								<div className='flex items-center gap-2'>
-									<h3 className='text-accent-primary font-bold text-base'>
-										{experiences.position}
-									</h3>
-									{experiences.level && (
-										<span>({experiences?.level})</span>
-									)}
-								</div>
-								<div className='flex items-center justify-start gap-1'>
-									<h4 className='text-accent-secondary font-semibold'>
-										{experiences.company}
-									</h4>
-									{experiences?.type && (
-										<span className='text-accent-secondary'>
-											({experiences?.type})
-										</span>
-									)}
-								</div>
+				<motion.div
+					className='flex flex-col gap-2'
+					variants={cardVariants}
+					initial='offscreen'
+					whileInView='onscreen'
+					viewport={viewportVariant}>
+					<div className='flex items-center justify-between'>
+						<div className='flex flex-col'>
+							<div className='flex items-center gap-2'>
+								<h3 className='text-accent-primary font-bold text-base'>
+									{experiences.position}
+								</h3>
+								{experiences.level && (
+									<span>({experiences?.level})</span>
+								)}
 							</div>
-							<div className='flex items-center'>
-								<p className='font-semibold text-accent-primary text-right'>
-									{experiences.duration}
-								</p>
+							<div className='flex items-center justify-start gap-1'>
+								<h4 className='text-accent-secondary font-semibold'>
+									{experiences.company}
+								</h4>
+								{experiences?.type && (
+									<span className='text-accent-secondary'>
+										({experiences?.type})
+									</span>
+								)}
 							</div>
 						</div>
-						<div className='flex flex-col px-3'>
-							{experiences.description.map(({pointer}, i) => {
-								return (
-									<div className='flex gap-3' key={i}>
-										<div className='text-accent-secondary'>•</div>
-										<p className='text-justify font-medium text-accent-secondary'>
-											{pointer}
-										</p>
-									</div>
-								);
-							})}
+						<div className='flex items-center'>
+							<p className='font-semibold text-accent-primary text-right'>
+								{experiences.duration}
+							</p>
 						</div>
-					</motion.div>
-				</>
+					</div>
+					<div className='flex flex-col px-3'>
+						{experiences.description.map(({pointer}, i) => {
+							return (
+								<div className='flex gap-3' key={i}>
+									<div className='text-accent-secondary'>•</div>
+									<p className='text-justify font-medium text-accent-secondary'>
+										{pointer}
+									</p>
+								</div>
+							);
+						})}
+					</div>
+				</motion.div>
 			),
 		};
 	};
+
+	useEffect(() => {
+		return () => {};
+	}, []);
+
 	return (
 		<div className='flex flex-col gap-8 pt-3 max-md:px-4'>
 			{/* SUMMARY */}
@@ -288,40 +291,36 @@ const HomePage = () => {
 					items={[
 						{
 							children: (
-								<>
-									<motion.div
-										className='flex flex-col gap-2'
-										variants={cardVariants}
-										initial='offscreen'
-										whileInView='onscreen'
-										viewport={viewportVariant}>
-										<div className='flex items-center justify-between'>
-											<div className='flex flex-col'>
-												<h3 className='text-accent-primary   font-semibold text-base'>
-													BS INFORMATION TECHNOLOGY
-												</h3>
-												<h4 className='text-accent-secondary   font-semibold'>
-													University of Eastern Philippines
-												</h4>
-											</div>
-											<div className='flex items-center'>
-												<p className='font-semibold text-accent-primary text-right'>
-													August 2018 - June 2022
-												</p>
-											</div>
+								<motion.div
+									className='flex flex-col gap-2'
+									variants={cardVariants}
+									initial='offscreen'
+									whileInView='onscreen'
+									viewport={viewportVariant}>
+									<div className='flex items-center justify-between'>
+										<div className='flex flex-col'>
+											<h3 className='text-accent-primary   font-semibold text-base'>
+												BS INFORMATION TECHNOLOGY
+											</h3>
+											<h4 className='text-accent-secondary   font-semibold'>
+												University of Eastern Philippines
+											</h4>
 										</div>
-										<div className='flex flex-col px-3'>
-											<div className='flex gap-3'>
-												<div className='text-accent-secondary'>
-													•
-												</div>
-												<p className='text-justify font-medium text-accent-secondary'>
-													Graduated Cum Laude
-												</p>
-											</div>
+										<div className='flex items-center'>
+											<p className='font-semibold text-accent-primary text-right'>
+												{`August 2018 - June 2022`}
+											</p>
 										</div>
-									</motion.div>
-								</>
+									</div>
+									<div className='flex flex-col px-3'>
+										<div className='flex gap-3'>
+											<div className='text-accent-secondary'>•</div>
+											<p className='text-justify font-medium text-accent-secondary'>
+												Graduated Cum Laude
+											</p>
+										</div>
+									</div>
+								</motion.div>
 							),
 						},
 					]}
