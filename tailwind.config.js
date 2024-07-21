@@ -43,6 +43,22 @@ module.exports = {
 				// => @media (min-width: 1280px) { ... }
 			},
 		},
+		screens: {
+			'2xl-breakpoint': {max: '1535px'},
+			// => @media (max-width: 1535px) { ... }
+
+			'xl-breakpoint': {max: '1279px'},
+			// => @media (max-width: 1279px) { ... }
+
+			'lg-breakpoint': {max: '1023px'},
+			// => @media (max-width: 1023px) { ... }
+
+			'md-breakpoint': {max: '767px'},
+			// => @media (max-width: 767px) { ... }
+
+			'sm-breakpoint': {max: '639px'},
+			// => @media (max-width: 639px) { ... }
+		},
 	},
 	darkMode: 'class',
 	plugins: [nextui()],

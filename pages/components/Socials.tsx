@@ -47,29 +47,28 @@ const Socials = () => {
 						className='flex items-center justify-center'
 						variants={item}
 						key={i}>
-						<Tooltip
+						{/* <Tooltip
 							color='blue'
 							placement='bottom'
 							title={link.name}
-							arrow={true}>
-							<Button
-								type='primary'
-								shape='circle'
-								icon={
-									<Image
-										className='object-cover w-full rounded-full relative bottom-[6px]'
-										src={
-											require(`@/assets/Icons/${link.icon}.png`)
-												.default
-										}
-										alt='image'
-										width={50}
-										onClick={() => visitPage(link.path)}
-									/>
-								}
-								size={'large'}
-							/>
-						</Tooltip>
+							arrow={true}> */}
+						<Button
+							type='primary'
+							shape='circle'
+							icon={
+								<Image
+									className='object-cover w-full rounded-full relative bottom-[6px]'
+									src={
+										require(`@/assets/Icons/${link.icon}.png`).default
+									}
+									alt='image'
+									width={50}
+									onClick={() => visitPage(link.path)}
+								/>
+							}
+							size={'large'}
+						/>
+						{/* </Tooltip> */}
 					</motion.div>
 				);
 			})}

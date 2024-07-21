@@ -4,6 +4,7 @@ import React from 'react';
 import {motion} from 'framer-motion';
 import {container, item} from '@/utils/Resources';
 import Image from 'next/image';
+import {SkillsIcons} from '@/icons';
 
 const TechSkills = () => {
 	const skills = [
@@ -113,13 +114,16 @@ const TechSkills = () => {
 
 	return (
 		<div className='flex flex-col rounded-lg'>
-			<div className='flex justify-center border-transparent p-2'>
+			<div className='flex justify-center border-transparent p-2 sticky top-0 md-breakpoint:bg-slate-500 md-breakpoint:backdrop-filter md-breakpoint:backdrop-blur-sm md-breakpoint:bg-opacity-10 md-breakpoint:border-b-1 md-breakpoint:border-border-color md-breakpoint:z-50 md-breakpoint:gap-2'>
+				<div className='hidden md-breakpoint:block'>
+					<SkillsIcons />
+				</div>
 				<h4 className='text-center text-accent-primary font-semibold'>
 					Technical Skills
 				</h4>
 			</div>
 			<motion.div
-				className='flex flex-col p-2 gap-2 max-h-[87vh] overflow-auto mr-1 max-lg:max-h-full'
+				className='flex flex-col p-2 gap-2 h-[87vh] overflow-auto mr-1 md-breakpoint:h-full md-breakpoint:overflow-visible'
 				variants={container}
 				initial='hidden'
 				animate='visible'>
