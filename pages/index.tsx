@@ -27,7 +27,7 @@ const HomePage = () => {
 			id: Math.floor(Math.random() * 1000) + 1,
 			position: 'SOFTWARE DEVELOPMENT TEAM LEAD',
 			company: 'Bizbloqs Management Solutions (Philippines) Inc.',
-			duration: `December 2023 - Present`,
+			duration: 'December 2023 - Present',
 			// level: 'Mid-level',
 			// type: 'Hybrid',
 			description: [
@@ -77,7 +77,7 @@ const HomePage = () => {
 			id: Math.floor(Math.random() * 1000) + 1,
 			position: 'PROGRAMMER',
 			company: 'SL Agritech Corporation | Makati City, PH',
-			duration: `August 2022 - November 2023`,
+			duration: 'August 2022 - November 2023',
 			// level: 'Junior',
 			description: [
 				{
