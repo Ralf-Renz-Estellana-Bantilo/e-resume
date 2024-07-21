@@ -75,7 +75,7 @@ const ContactForm = () => {
 		<>
 			<div className='flex flex-col justify-center items-center p-3 gap-2'>
 				<motion.div
-					className='flex p-2 gap-2 w-full max-md:flex-col'
+					className='flex p-2 gap-2 w-full md-breakpoint:flex-col'
 					variants={cardVariants}
 					initial='offscreen'
 					whileInView='onscreen'

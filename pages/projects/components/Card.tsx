@@ -198,7 +198,7 @@ const Card = () => {
 			{projects.map(({coverURLs, title, description, tagIDs}, i) => {
 				return (
 					<motion.div
-						className='flex flex-col w-[335px] h-auto bg-opacity-10 p-2 border-1 border-border-color rounded-lg overflow-hidden'
+						className='flex flex-col w-[335px] h-auto bg-opacity-10 p-2 border-1 border-border-color rounded-lg overflow-hidden sm-breakpoint:w-[70%]'
 						key={i}
 						variants={cardVariants}
 						initial='offscreen'
