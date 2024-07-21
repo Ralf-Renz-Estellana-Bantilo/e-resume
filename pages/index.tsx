@@ -1,11 +1,11 @@
 import {Timeline} from 'antd';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Quicksand} from 'next/font/google';
 import {motion} from 'framer-motion';
-import {monthDescriptionShortener, setTimestamp} from '@/utils/utils';
 import {cardVariants, viewportVariant} from '@/utils/Resources';
 import Container from './components/Container';
 import 'react-toastify/dist/ReactToastify.css';
+import {setTimestamp} from '@/utils/utils';
 
 const quicksand = Quicksand({subsets: ['latin']});
 
@@ -27,7 +27,7 @@ const HomePage = () => {
 			id: Math.floor(Math.random() * 1000) + 1,
 			position: 'SOFTWARE DEVELOPMENT TEAM LEAD',
 			company: 'Bizbloqs Management Solutions (Philippines) Inc.',
-			duration: `${monthDescriptionShortener(12)} 2023 - Present`,
+			duration: `December 2023 - Present`,
 			// level: 'Mid-level',
 			// type: 'Hybrid',
 			description: [
@@ -77,9 +77,7 @@ const HomePage = () => {
 			id: Math.floor(Math.random() * 1000) + 1,
 			position: 'PROGRAMMER',
 			company: 'SL Agritech Corporation | Makati City, PH',
-			duration: `${monthDescriptionShortener(
-				8
-			)} 2022 - ${monthDescriptionShortener(11)} 2023`,
+			duration: `August 2022 - November 2023`,
 			// level: 'Junior',
 			description: [
 				{
@@ -119,9 +117,7 @@ const HomePage = () => {
 			id: Math.floor(Math.random() * 1000) + 1,
 			position: 'BACKEND DEVELOPER',
 			company: 'Sterling Insurance Company Inc.',
-			duration: `${monthDescriptionShortener(
-				4
-			)} - ${monthDescriptionShortener(7)} 2022`,
+			duration: `April - July 2022`,
 			level: 'Intern',
 			type: 'Remote',
 			description: [
@@ -167,9 +163,7 @@ const HomePage = () => {
 			id: Math.floor(Math.random() * 1000) + 1,
 			position: 'TECHNICAL SUPPORT STAFF',
 			company: 'Comelec',
-			duration: `${monthDescriptionShortener(
-				2
-			)} - ${monthDescriptionShortener(5)} 2022`,
+			duration: `February - May 2022`,
 			type: 'Part-Time',
 			description: [
 				{
@@ -243,6 +237,11 @@ const HomePage = () => {
 			),
 		};
 	};
+
+	useEffect(() => {
+		return () => {};
+	}, []);
+
 	return (
 		<div className='flex flex-col gap-8 pt-3 max-md:px-4'>
 			{/* SUMMARY */}
@@ -309,11 +308,7 @@ const HomePage = () => {
 										</div>
 										<div className='flex items-center'>
 											<p className='font-semibold text-accent-primary text-right'>
-												{`${monthDescriptionShortener(
-													8
-												)} 2018 - ${monthDescriptionShortener(
-													6
-												)} 2022`}
+												{`August 2018 - June 2022`}
 											</p>
 										</div>
 									</div>
