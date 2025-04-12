@@ -7,7 +7,7 @@ import {motion} from 'framer-motion';
 import Image from 'next/image';
 
 const TechSkills = () => {
-   const skills = [
+   const SKILLS = [
       {
          icon: 'html.png',
          description: 'HTML',
@@ -144,7 +144,7 @@ const TechSkills = () => {
             variants={container}
             initial='hidden'
             animate='visible'>
-            {skills.map((skill, i) => {
+            {SKILLS.map((skill, i) => {
                return (
                   <motion.div
                      className='flex items-center gap-2 px-2 py-1 transition-colors ease-in-out border border-transparent rounded-md hover:bg-slate-400 hover:rounded-md hover:backdrop-filter hover:backdrop-blur-sm hover:bg-opacity-10'

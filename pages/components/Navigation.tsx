@@ -32,7 +32,7 @@ const Navigation = () => {
    return (
       <div className='flex flex-col items-center w-full'>
          <Tabs
-            aria-title='Dynamic tabs'
+            aria-title='Dynamic Tabs'
             className='sticky top-0 z-50 p-3 bg-slate-500 backdrop-filter backdrop-blur-sm bg-opacity-10 border-b-1 border-slate-700'
             items={tabs}
             color='primary'

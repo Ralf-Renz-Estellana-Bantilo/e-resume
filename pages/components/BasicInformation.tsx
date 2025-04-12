@@ -46,6 +46,7 @@ const BasicInformation = () => {
                            width={50}
                         />
                      </div>
+
                      <p className='text-accent-secondary text-sm'>
                         {info.label}
                      </p>

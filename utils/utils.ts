@@ -85,28 +85,34 @@ export const experienceLevelOptions: string[] = [
    'Senior Level',
    'Managerial',
 ];
+
 export const jobTypeOptions: string[] = [
    'Full-time',
    'Part-time',
    'Contract',
    'Freelance',
 ];
+
 export const workSetupOptions: string[] = ['On-site', 'Remote', 'Hybrid'];
+
 export const jobTitleOptions1: string[] = [
    'Software Engineer',
    'Frontend Software Engineer',
    'Fullstack Developer (React/Node)',
 ];
+
 export const jobTitleOptions2: string[] = [
    'React Developer',
    ' Programmer',
    'Web Developer',
 ];
+
 export const techStackOptions1: string[] = [
    'MySQL, ExpressJS, ReactJS, NodeJS',
    'ReactJS, NextJS, TypeScript, NodeJS',
    'JavaScript, PHP',
 ];
+
 export const techStackOptions2: string[] = [
    'MySQL, ExpressJS, VueJS, NodeJS',
    'VueJS, MySQL, PHP',

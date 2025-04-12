@@ -19,7 +19,6 @@ const LeftContainer = (
             <Divider className='m-0'></Divider>
          </div>
          <BasicInformation />
-
          <DownloadButton />
       </div>
    );

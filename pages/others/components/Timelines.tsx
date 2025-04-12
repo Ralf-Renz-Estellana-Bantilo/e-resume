@@ -13,7 +13,7 @@ interface ITimeline {
 }
 
 const Timelines = () => {
-   const timelines: ITimeline[] = [
+   const TIMELINES: ITimeline[] = [
       {
          title: '2022 - Present',
          tags: [
@@ -162,7 +162,7 @@ const Timelines = () => {
          <Timeline
             mode={'alternate'}
             className='text-accent-secondary   '
-            items={timelines.map((timeline, index) => {
+            items={TIMELINES.map((timeline, index) => {
                return {
                   label: timeline.title,
                   children: (
