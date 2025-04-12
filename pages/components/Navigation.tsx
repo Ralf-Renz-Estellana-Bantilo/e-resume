@@ -43,7 +43,7 @@ const Navigation = () => {
                   title={
                      <div className='flex items-center space-x-2'>
                         {item.icon}
-                        <span className='font-bold'>{item.title}</span>
+                        <span>{item.title}</span>
                      </div>
                   }>
                   {item.content}
