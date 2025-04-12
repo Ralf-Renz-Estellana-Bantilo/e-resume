@@ -14,7 +14,7 @@ const LeftContainer = (
          className={`h-screen overflow-auto flex flex-col justify-between py-3 ${props?.className} md-breakpoint:justify-around`}>
          {/* Profile Image */}
          <Profile />
-         <div className='flex flex-col gap-3 w-11/12 mx-auto'>
+         <div className='flex flex-col gap-3 '>
             <Divider className='m-0'></Divider>
 
             {/* Social Accounts */}
