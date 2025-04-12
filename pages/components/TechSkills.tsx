@@ -132,10 +132,8 @@ const TechSkills = () => {
 
    return (
       <div className='flex flex-col rounded-lg'>
-         <div className='sticky top-0 flex justify-center p-2 border-transparent bg-slate-500 backdrop-filter backdrop-blur-sm bg-opacity-10 border-b-1 border-slate-700 md-breakpoint:bg-slate-500 md-breakpoint:backdrop-filter md-breakpoint:backdrop-blur-sm md-breakpoint:bg-opacity-10 md-breakpoint:border-b-1 md-breakpoint:border-border-color md-breakpoint:z-50 md-breakpoint:gap-2'>
-            <div className='hidden md-breakpoint:block'>
-               <SkillsIcons />
-            </div>
+         <div className='sticky top-0 flex justify-center items-center p-2 bg-slate-500 backdrop-filter backdrop-blur-sm bg-opacity-10 border-b-1 border-slate-700 z-10 h-[65px] gap-2 md-breakpoint:bg-slate-500 md-breakpoint:backdrop-filter md-breakpoint:backdrop-blur-sm md-breakpoint:bg-opacity-10 md-breakpoint:z-50 md-breakpoint:h-full'>
+            <SkillsIcons />
             <h4 className='font-semibold text-center text-accent-primary'>
                Technical Skills
             </h4>
@@ -158,9 +156,7 @@ const TechSkills = () => {
                            alt='image'
                         />
                      </div>
-                     <div
-                        style={{flex: 1}}
-                        className='flex items-center justify-between'>
+                     <div className='flex flex-1 items-center justify-between'>
                         <div className='flex flex-col'>
                            <h4 className='text-sm font-semibold text-accent-primary'>
                               {skill.description}
