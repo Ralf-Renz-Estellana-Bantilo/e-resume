@@ -47,11 +47,11 @@ const Socials = () => {
 						className='flex items-center justify-center'
 						variants={item}
 						key={i}>
-						{/* <Tooltip
+						<Tooltip
 							color='blue'
 							placement='bottom'
 							title={link.name}
-							arrow={true}> */}
+							arrow={true}>
 						<Button
 							type='primary'
 							shape='circle'
@@ -68,7 +68,7 @@ const Socials = () => {
 							}
 							size={'large'}
 						/>
-						{/* </Tooltip> */}
+						</Tooltip>
 					</motion.div>
 				);
 			})}
