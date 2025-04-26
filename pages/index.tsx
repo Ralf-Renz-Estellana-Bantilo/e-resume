@@ -10,7 +10,6 @@ import {setTimestamp} from '@/utils/utils';
 const quicksand = Quicksand({subsets: ['latin']});
 
 type ExperienceType = {
-   id: number;
    position: string;
    company: string;
    duration: string;
@@ -24,9 +23,8 @@ type ExperienceType = {
 const HomePage = () => {
    const experiences: ExperienceType[] = [
       {
-         id: Math.floor(Math.random() * 1000) + 1,
-         position: 'SOFTWARE DEVELOPMENT TEAM LEAD',
-         company: 'Bizbloqs Management Solutions (Philippines) Inc.',
+         position: 'SOFTWARE DEVELOPMENT TEAM LEADER',
+         company: 'Bizbloqs Management Solutions BV',
          duration: 'December 2023 - Present',
          // level: 'Mid-level',
          // type: 'Hybrid',
@@ -74,7 +72,6 @@ const HomePage = () => {
          ],
       },
       {
-         id: Math.floor(Math.random() * 1000) + 1,
          position: 'PROGRAMMER',
          company: 'SL Agritech Corporation | Makati City, PH',
          duration: 'August 2022 - November 2023',
@@ -114,7 +111,6 @@ const HomePage = () => {
          ],
       },
       {
-         id: Math.floor(Math.random() * 1000) + 1,
          position: 'BACKEND DEVELOPER',
          company: 'Sterling Insurance Company Inc.',
          duration: `April - July 2022`,
@@ -160,7 +156,6 @@ const HomePage = () => {
          ],
       },
       {
-         id: Math.floor(Math.random() * 1000) + 1,
          position: 'TECHNICAL SUPPORT STAFF',
          company: 'Comelec',
          duration: `February - May 2022`,
