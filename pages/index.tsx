@@ -1,13 +1,13 @@
-import {Timeline} from 'antd';
-import React, {useEffect} from 'react';
-import {Quicksand} from 'next/font/google';
-import {motion} from 'framer-motion';
-import {cardVariants, viewportVariant} from '@/utils/Resources';
+import { Timeline } from 'antd';
+import React, { useEffect } from 'react';
+import { Quicksand } from 'next/font/google';
+import { motion } from 'framer-motion';
+import { cardVariants, viewportVariant } from '@/utils/Resources';
 import Container from './components/Container';
 import 'react-toastify/dist/ReactToastify.css';
-import {setTimestamp} from '@/utils/utils';
+import { setTimestamp } from '@/utils/utils';
 
-const quicksand = Quicksand({subsets: ['latin']});
+const quicksand = Quicksand({ subsets: ['latin'] });
 
 type ExperienceType = {
    position: string;
@@ -24,7 +24,7 @@ const HomePage = () => {
    const experiences: ExperienceType[] = [
       {
          position: 'SOFTWARE DEVELOPMENT TEAM LEADER',
-         company: 'Bizbloqs Management Solutions BV',
+         company: 'BizBloqs Management Solutions BV',
          duration: 'December 2023 - Present',
          // level: 'Mid-level',
          // type: 'Hybrid',
@@ -217,7 +217,7 @@ const HomePage = () => {
                   </div>
                </div>
                <div className='flex flex-col px-3'>
-                  {experiences.description.map(({pointer}, i) => {
+                  {experiences.description.map(({ pointer }, i) => {
                      return (
                         <div className='flex gap-3' key={i}>
                            <div className='text-accent-secondary'>•</div>
