@@ -10,9 +10,9 @@ const DownloadButton = () => {
 			? 'http://localhost:3000'
 			: 'https://ralf-bantilo-e-resume.vercel.app';
 		const element = document.createElement('a');
-		const fileUrl = `${host}/Documents/Resume.pdf`;
+		const fileUrl = `${host}/Documents/Ralf Renz Bantilo - Software Development Team Leader Resume.pdf`;
 		element.href = fileUrl;
-		element.download = 'Ralf Renz Bantilo - Software Engineer Resume';
+		element.download = 'Ralf Renz Bantilo - Software Development Team Leader Resume';
 		document.body.appendChild(element);
 		element.click();
 		document.body.removeChild(element);
