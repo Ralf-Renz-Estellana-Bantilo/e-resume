@@ -22,7 +22,7 @@ export function setTimestamp(mm: number, yyyy: number): string {
 
          if (years === 1) {
             if (remainingMonths >= 7) {
-               result = `almost ${years + 1} years`;
+               result = `nearly ${years + 1} years`;
             } else {
                let concatenator =
                   remainingMonths > 0
@@ -36,7 +36,7 @@ export function setTimestamp(mm: number, yyyy: number): string {
             }
          } else {
             if (remainingMonths >= 7) {
-               result = `almost ${years + 1} years`;
+               result = `nearly ${years + 1} years`;
             } else {
                result = `${years}+ years`;
             }
@@ -85,28 +85,34 @@ export const experienceLevelOptions: string[] = [
    'Senior Level',
    'Managerial',
 ];
+
 export const jobTypeOptions: string[] = [
    'Full-time',
    'Part-time',
    'Contract',
    'Freelance',
 ];
+
 export const workSetupOptions: string[] = ['On-site', 'Remote', 'Hybrid'];
+
 export const jobTitleOptions1: string[] = [
    'Software Engineer',
    'Frontend Software Engineer',
    'Fullstack Developer (React/Node)',
 ];
+
 export const jobTitleOptions2: string[] = [
    'React Developer',
    ' Programmer',
    'Web Developer',
 ];
+
 export const techStackOptions1: string[] = [
    'MySQL, ExpressJS, ReactJS, NodeJS',
    'ReactJS, NextJS, TypeScript, NodeJS',
    'JavaScript, PHP',
 ];
+
 export const techStackOptions2: string[] = [
    'MySQL, ExpressJS, VueJS, NodeJS',
    'VueJS, MySQL, PHP',
