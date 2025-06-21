@@ -1,7 +1,7 @@
 import React from 'react';
-import {motion} from 'framer-motion';
-import {container, item} from '@/utils/Resources';
-import {Tooltip} from 'antd';
+import { motion } from 'framer-motion';
+import { container, item } from '@/utils/Resources';
+import { Tooltip } from 'antd';
 import Image from 'next/image';
 import profileIMG from '@/assets/Images/Ralf Pic.jpg';
 // import profileIMG from '@/assets/Images/Ralf Renz Bantilo.png'
