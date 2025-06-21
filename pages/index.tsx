@@ -23,7 +23,7 @@ type ExperienceType = {
 const HomePage = () => {
    const experiences: ExperienceType[] = [
       {
-         position: 'SOFTWARE DEVELOPMENT TEAM LEADER',
+         position: 'FRONT-END DEVELOPER',
          company: 'BizBloqs Management Solutions BV',
          duration: 'December 2023 - Present',
          // level: 'Mid-level',
@@ -31,11 +31,15 @@ const HomePage = () => {
          description: [
             {
                pointer:
-                  'Worked closely with the local Philippines office and foreign offices in the Netherlands and UK, fostering effective communication and collaboration.',
+                  'Collaborated with teams across the Philippines, Netherlands, and UK to ensure smooth communication and project alignment.',
             },
             {
                pointer:
-                  'Collaborated with a small team of front-end and back-end developers in designing and developing websites and web applications.',
+                  'Led a cross-functional team of front-end and back-end developers in building web solutions.',
+            },
+            {
+               pointer:
+                  'Modernized the UI and improved the UX, contributing to increased company revenue.',
             },
             {
                pointer:
@@ -43,11 +47,7 @@ const HomePage = () => {
             },
             {
                pointer:
-                  'Determined the structure and design of web pages, ensuring a seamless and intuitive user experience.',
-            },
-            {
-               pointer:
-                  'Built reusable code components for efficiency and consistency across projects.',
+                  'Developed reusable code components, boosting efficiency and consistency across project.',
             },
             {
                pointer:
@@ -55,19 +55,11 @@ const HomePage = () => {
             },
             {
                pointer:
-                  'Engaged actively in cross-functional teams, including developers, testers, project managers, and business stakeholders.',
-            },
-            {
-               pointer:
-                  'Participated in code reviews and provide constructive feedback to enhance code quality.',
+                  'Conducted code reviews, offering feedback to maintain high code quality.',
             },
             {
                pointer:
                   'Performed testing, debugging, and troubleshooting to ensure the reliability and functionality of software.',
-            },
-            {
-               pointer:
-                  'Performed any other duties assigned to contribute to the overall success of the team.',
             },
          ],
       },
@@ -95,15 +87,8 @@ const HomePage = () => {
             },
             {
                pointer:
-                  'Applied a user-centered approach, conducting usability tests and incorporating user feedback to continuously improve and refine web applications.',
-            },
-            {
-               pointer:
                   'Employed agile methodologies to manage project timelines and deliverables, ensuring successful completion of development projects.',
             },
-            // {
-            //    pointer: 'Worked closely with cross-functional teams, including designers and developers, to ensure seamless integration of design elements and optimal functionality of web applications.'
-            // },
             {
                pointer:
                   'Demonstrated effective communication skills in presenting and explaining technical concepts to both technical and non-technical stakeholders.',
@@ -131,27 +116,11 @@ const HomePage = () => {
             },
             {
                pointer:
-                  'Collaborated closely with frontend developers to ensure smooth integration of components and optimize overall system functionality.',
-            },
-            {
-               pointer:
                   'Conducted diagnostics tests to identify and resolve bugs, ensuring the reliability and stability of the system.',
             },
             {
                pointer:
                   'Provided prompt and effective technical support to users, troubleshooting issues and offering solutions to minimize downtime.',
-            },
-            {
-               pointer:
-                  'Actively participated in code reviews and implemented best practices to improve code quality, maintainability, and scalability.',
-            },
-            {
-               pointer:
-                  'Stayed updated with the latest industry trends and technologies, incorporating them into development processes to enhance efficiency and innovation.',
-            },
-            {
-               pointer:
-                  'Acted as a proactive team member, contributing ideas and suggestions for process improvement and optimization.',
             },
          ],
       },
@@ -303,7 +272,7 @@ const HomePage = () => {
                               </div>
                               <div className='flex items-center'>
                                  <p className='font-semibold text-right text-accent-primary'>
-                                    {`August 2018 - June 2022`}
+                                    Northern Samar, PH
                                  </p>
                               </div>
                            </div>
