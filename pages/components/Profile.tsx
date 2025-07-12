@@ -5,6 +5,8 @@ import { Tooltip } from 'antd';
 import Image from 'next/image';
 import profileIMG from '@/assets/Images/Ralf Pic.jpg';
 // import profileIMG from '@/assets/Images/Ralf Renz Bantilo.png'
+import profile1 from '@/assets/Images/Profile 1.jpg';
+import profile2 from '@/assets/Images/Profile 2.jpg';
 
 const Profile = () => {
    return (
@@ -23,8 +25,8 @@ const Profile = () => {
 						title='Open for Part-Time position'
 						arrow={true}> */}
                <Image
-                  className='object-cover w-full h-full mx-auto rounded-full'
-                  src={profileIMG}
+                  className='object-fill w-full h-full mx-auto rounded-full'
+                  src={profile2}
                   alt='Ralf Renz Bantilo'
                   priority
                />
@@ -41,11 +43,14 @@ const Profile = () => {
                variants={item}>
                RALF RENZ BANTILO
             </motion.h3>
-            <motion.p
-               className='text-center text-accent-secondary'
-               variants={
-                  item
-               }>{`< Software Development Team Lead />`}</motion.p>
+            <motion.div className='flex flex-col gap-0' variants={item}>
+               <span className='text-center text-accent-secondary'>
+                  Software Development Team Lead
+               </span>
+               <span className='text-center text-accent-secondary'>
+                  Front End Developer | UI/UX Designer
+               </span>
+            </motion.div>
          </motion.div>
       </motion.div>
    );
