@@ -13,13 +13,12 @@ const LeftContainer = (
          {...props}
          className={`h-screen overflow-auto flex flex-col justify-between py-3 ${props?.className} md-breakpoint:justify-around`}>
          <Profile />
-         <div className='flex flex-col gap-3 w-11/12 mx-auto'>
+         <div className='flex flex-col gap-3 '>
             <Divider className='m-0'></Divider>
             <Socials />
             <Divider className='m-0'></Divider>
          </div>
          <BasicInformation />
-
          <DownloadButton />
       </div>
    );

@@ -1,5 +1,6 @@
-import {container, item} from '@/utils/Resources';
+import React from 'react';
 import {motion} from 'framer-motion';
+import {container, item} from '@/utils/Resources';
 import Image from 'next/image';
 
 const BasicInformation = () => {
@@ -46,6 +47,7 @@ const BasicInformation = () => {
                            width={50}
                         />
                      </div>
+
                      <p className='text-accent-secondary text-sm'>
                         {info.label}
                      </p>
