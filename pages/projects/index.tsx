@@ -1,20 +1,15 @@
-import React from 'react';
-import Projects from '../components/Projects';
+import { Divider } from 'antd';
+import { motion } from 'framer-motion';
 import Container from '../components/Container';
-import {motion} from 'framer-motion';
-import {CheckOutlined} from '@ant-design/icons';
-import {Divider, Spin} from 'antd';
 
 // Import Swiper React components
-import {Swiper, SwiperSlide} from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 // import required modules
-import {Pagination, Autoplay} from 'swiper';
-import {ScreenSizeInterface, ServicesInterface} from '@/interfaces';
+import { ServicesInterface } from '@/interfaces';
 import Image from 'next/image';
 import Card from './components/Card';
 
@@ -47,12 +42,12 @@ const ProjectsPage = () => {
       },
       {
          category: 'DESIGN',
-         items: ['UI/UX Design', 'Prototyping Tool', 'Photo Manipulation'],
+         items: ['UI/UX Design', 'Prototyping Tool', 'Graphic Design'],
       },
    ];
 
    const container = {
-      hidden: {opacity: 1, scale: 0},
+      hidden: { opacity: 1, scale: 0 },
       visible: {
          opacity: 1,
          scale: 1,
@@ -64,7 +59,7 @@ const ProjectsPage = () => {
    };
 
    const item = {
-      hidden: {y: 20, opacity: 0},
+      hidden: { y: 20, opacity: 0 },
       visible: {
          y: 0,
          opacity: 1,
