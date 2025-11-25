@@ -1,8 +1,7 @@
-import {QualificationInterface} from '@/interfaces';
-import {cardVariants, quicksand, viewportVariant} from '@/utils/Resources';
-import {Checkbox} from 'antd';
-import {motion} from 'framer-motion';
-import React from 'react';
+import { QualificationInterface } from '@/interfaces';
+import { cardVariants, quicksand, viewportVariant } from '@/utils/Resources';
+import { Checkbox } from 'antd';
+import { motion } from 'framer-motion';
 
 const Qualifications = () => {
    const qualifications: QualificationInterface[] = [
@@ -12,6 +11,13 @@ const Qualifications = () => {
             'Proficiency in more than one programming languages/frameworks such as JavaScript, ReactJS, VueJS, TypeScript, NextJS, NodeJS, TailwindCSS, Java, and MySQL.',
             'Familiarity with technologies & frameworks such as React Native, Remix, Flutter, Spring Boot, Python, ElectronJS, Qwik, SolidJS, NestJS, NoSQL, Heroku, Vercel, Netlify, Cloudinary, AWS (S3 Bucket), PHP, Redux, Material UI, Bootstrap, and many more.',
             'Ability to write clean, efficient, reusable, dynamic, and maintainable code.',
+         ],
+      },
+      {
+         title: 'UI/UX Design Skills',
+         description: [
+            'The ability to easily create UI/UX design mockups using Figma.',
+            'Ability to translate business requirements into modern UI designs.',
          ],
       },
       {
@@ -116,7 +122,7 @@ const Qualifications = () => {
                      <Checkbox
                         className={`${quicksand.className} w-full`}
                         checked>
-                        <strong className='uppercase text-accent-primary  '>
+                        <strong className='uppercase text-accent-primary '>
                            {qualification.title}
                         </strong>
                      </Checkbox>
@@ -124,7 +130,7 @@ const Qualifications = () => {
                         {qualification.description.map((pointer, index) => {
                            return (
                               <div
-                                 className='flex gap-3 text-accent-secondary px-6'
+                                 className='flex gap-3 px-6 text-accent-secondary'
                                  key={index}>
                                  <div>•</div>
                                  <p className='text-justify text-accent-secondary'>
