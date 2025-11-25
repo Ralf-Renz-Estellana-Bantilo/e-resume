@@ -1,11 +1,11 @@
 'use client';
 
 import React from 'react';
-import {Card, CardBody, Tab, Tabs} from '@nextui-org/react';
+import { Card, CardBody, Tab, Tabs } from '@nextui-org/react';
 import HomePage from '..';
 import OthersPage from '../others';
 import ProjectsPage from '../projects';
-import {OthersIcon, PersonalIcon, ProjectlIcon} from '@/icons';
+import { OthersIcon, PersonalIcon, ProjectlIcon } from '@/icons';
 
 const Navigation = () => {
    const tabs = [
@@ -32,7 +32,6 @@ const Navigation = () => {
    return (
       <div className='flex flex-col items-center w-full'>
          <Tabs
-            aria-title='Dynamic Tabs'
             className='sticky top-0 z-50 p-3 bg-slate-500 backdrop-filter backdrop-blur-sm bg-opacity-10 border-b-1 border-slate-700'
             items={tabs}
             color='primary'

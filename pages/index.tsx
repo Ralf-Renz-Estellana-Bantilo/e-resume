@@ -223,9 +223,10 @@ const HomePage = () => {
                      {setTimestamp(8, 2018)} of practical knowledge
                   </strong>{' '}
                   in <strong>Software Development</strong>, I bring a wealth of
-                  knowledge to the table. My background initially focused on CLI
-                  apps and desktop development utilizing <strong>Java</strong>{' '}
-                  before transitioning to web application development in 2020.
+                  knowledge to the table. It was 2018 when I started coding, and
+                  my background initially focused on CLI apps and desktop
+                  development utilizing <strong>Java</strong> before
+                  transitioning to web application development in 2020.
                   Proficient in Web Technologies like{' '}
                   <strong>
                      JavaScript, TypeScript, ReactJS, NextJS, ExpressJS, MySQL
@@ -281,6 +282,14 @@ const HomePage = () => {
                                  <div className='text-accent-secondary'>•</div>
                                  <p className='font-medium text-justify text-accent-secondary'>
                                     Graduated Cum Laude
+                                 </p>
+                              </div>
+                              <div className='flex gap-3'>
+                                 <div className='text-accent-secondary'>•</div>
+                                 <p className='font-medium text-justify text-accent-secondary'>
+                                    Spent most of my college time building
+                                    software applications and doing graphic
+                                    designs.
                                  </p>
                               </div>
                            </div>
