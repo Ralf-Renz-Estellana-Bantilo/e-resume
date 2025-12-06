@@ -1,6 +1,6 @@
-import {cardVariants, viewportVariant} from '@/utils/Resources';
-import {Space, Tag, Timeline} from 'antd';
-import {motion} from 'framer-motion';
+import { cardVariants, viewportVariant } from '@/utils/Resources';
+import { Space, Tag, Timeline } from 'antd';
+import { motion } from 'framer-motion';
 import React from 'react';
 
 interface ITimeline {
@@ -65,6 +65,7 @@ const Timelines = () => {
             'Employee Portal',
             'Organizational Chart Library',
             'Personal Expenses Tracker',
+            'Quiz Maker',
             'OMS/WMS',
          ],
       },
@@ -161,7 +162,7 @@ const Timelines = () => {
       <div className='flex flex-col p-3 max-md:gap-5'>
          <Timeline
             mode={'alternate'}
-            className='text-accent-secondary   '
+            className='text-accent-secondary '
             items={TIMELINES.map((timeline, index) => {
                return {
                   label: timeline.title,
