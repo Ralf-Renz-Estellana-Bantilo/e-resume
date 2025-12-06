@@ -1,14 +1,8 @@
 import { Divider } from 'antd';
 import { motion } from 'framer-motion';
 import Container from '../components/Container';
-
-// Import Swiper React components
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-
-// import required modules
 import { ServicesInterface } from '@/interfaces';
 import Image from 'next/image';
 import Card from './components/Card';
@@ -18,10 +12,9 @@ const ProjectsPage = () => {
       {
          category: 'FRONTEND',
          items: [
-            'DOM Manipulation',
+            'In-house Libraries and Tools',
             'Reusable Components',
-            'Server-side Rendering',
-            // 'Progresive Web Application (PWA)',
+            'Progresive Web Application (PWA)',
          ],
       },
       {
@@ -77,7 +70,7 @@ const ProjectsPage = () => {
                {services.map((service, i) => {
                   return (
                      <motion.div
-                        className='flex flex-col h-auto bg-opacity-10 p-2 border-1 border-border-color rounded-lg w-[48%] sm-breakpoint:w-[90%]'
+                        className='flex flex-col h-auto bg-opacity-10 p-2 border-1 border-slate-700 bg-slate-500 rounded-lg w-[48%] sm-breakpoint:w-[90%]'
                         key={i}
                         variants={item}>
                         <div className='flex flex-col'>
