@@ -136,7 +136,6 @@ const Projects = () => {
                                              <div
                                                 className='flex items-center gap-2'
                                                 key={o}>
-                                                {/* <CheckOutlined /> */}
                                                 <Image
                                                    src={
                                                       require('../../assets/Icons/check.png')
@@ -187,7 +186,6 @@ const Projects = () => {
                                                    <div
                                                       className='flex items-center gap-2'
                                                       key={o}>
-                                                      {/* <CheckOutlined /> */}
                                                       <Image
                                                          src={
                                                             require('../../assets/Icons/check.png')

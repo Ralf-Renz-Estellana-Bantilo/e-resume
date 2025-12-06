@@ -1,9 +1,9 @@
-import React, {useContext} from 'react';
-import {cardVariants, quicksand, viewportVariant} from '@/utils/Resources';
-import {motion} from 'framer-motion';
-import {Checkbox, Divider} from 'antd';
-import {ContextValueType} from '@/interfaces';
-import {ComponentContext} from '@/context/context';
+import React, { useContext } from 'react';
+import { cardVariants, quicksand, viewportVariant } from '@/utils/Resources';
+import { motion } from 'framer-motion';
+import { Checkbox, Divider } from 'antd';
+import { ContextValueType } from '@/interfaces';
+import { ComponentContext } from '@/context/context';
 import {
    experienceLevelOptions,
    jobTitleOptions1,
@@ -19,7 +19,7 @@ const Preferences = () => {
 
    const experienceLevel: string[] = ['Mid-Level', 'Senior Level'];
    const jobType: string[] = ['Full-time'];
-   const workSetup: string[] = ['On-site', 'Remote', 'Hybrid'];
+   const workSetup: string[] = ['Remote', 'Hybrid'];
    const jobTitle1: string[] = [
       'Software Engineer',
       'Frontend Software Engineer',
@@ -203,7 +203,7 @@ const Preferences = () => {
                   </Divider>
                   <div className='px-3'>
                      <Checkbox.Group
-                        style={{color: 'green'}}
+                        style={{ color: 'green' }}
                         className={`${quicksand.className} w-full`}
                         options={workSetupOptions}
                         value={workSetup}

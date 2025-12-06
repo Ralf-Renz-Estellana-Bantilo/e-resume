@@ -1,25 +1,32 @@
 import React from 'react';
-import {Carousel, Divider, Space, Tag} from 'antd';
+import { Carousel, Divider, Space, Tag } from 'antd';
 import Image from 'next/image';
 
 // Import Swiper React components
-import {Swiper, SwiperSlide} from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 // import required modules
-import {Pagination, Autoplay} from 'swiper';
-import {ProjectsInterface, TagListsInterface} from '@/interfaces';
+import { Pagination, Autoplay } from 'swiper';
+import { ProjectsInterface, TagListsInterface } from '@/interfaces';
 
-import {motion} from 'framer-motion';
-import {cardVariants, viewportVariant} from '@/utils/Resources';
+import { motion } from 'framer-motion';
+import { cardVariants, viewportVariant } from '@/utils/Resources';
 
 const Card = () => {
    const mernStack: number[] = [4, 10, 1, 3];
 
    const projects: ProjectsInterface[] = [
+      {
+         title: 'Order Management System',
+         description:
+            'A full cloud-based Order Management System (OMS) for companies of any size. Manage orders, sales, purchasing, production and assembly from one cockpit.',
+         tagIDs: [1, 13, 14, 9],
+         coverURLs: [],
+      },
       {
          title: 'E-Portfolio',
          description:
@@ -27,19 +34,32 @@ const Card = () => {
          tagIDs: [1, 13, 5, 14, 9],
          coverURLs: ['E-Resume/pic1.png', 'E-Resume/code.png'],
       },
-      // {
-      //    title: 'Applicant Tracking & Onboarding System',
-      //    description: ' A software application designed to manage the recruitment process and streamline the onboarding of new hires.',
-      //    tagIDs: [2, 4, 6, 7, 11, 9],
-      //    coverURLs: [
-      //       'Onboarding System/pic1.png',
-      //       // 'Onboarding System/pic2.png',
-      //       'Onboarding System/pic3.png',
-      //       'Onboarding System/pic4.png',
-      //       'Onboarding System/pic5.png',
-      //       'Onboarding System/code.png',
-      //    ]
-      // },
+      {
+         title: 'Applicant Tracking & Onboarding System',
+         description:
+            ' A software application designed to manage the recruitment process and streamline the onboarding of new hires.',
+         tagIDs: [2, 4, 6, 7, 11, 9],
+         coverURLs: [
+            // 'Onboarding System/pic1.png',
+            // 'Onboarding System/pic2.png',
+            'Onboarding System/pic3.png',
+            'Onboarding System/pic4.png',
+            'Onboarding System/pic5.png',
+            'Onboarding System/code.png',
+         ],
+      },
+      {
+         title: 'Quiz Maker',
+         description:
+            'A software application designed to simulate and provide practice for various types of tests, such as standardized tests or certification exams.',
+         tagIDs: [...mernStack, 9, 13, 14, 5],
+         coverURLs: [
+            'Test Simulator/quiz-makeer-1.png',
+            'Test Simulator/quiz-makeer-2.png',
+            'Test Simulator/quiz-makeer-3.png',
+            'Test Simulator/quiz-makeer-4.png',
+         ],
+      },
       {
          title: 'Payroll System',
          description:
@@ -95,13 +115,6 @@ const Card = () => {
             'Game Statistics Program/pic4.jpg',
             'Game Statistics Program/code.jpg',
          ],
-      },
-      {
-         title: 'Examination Test Simulator Program',
-         description:
-            'A software application designed to simulate and provide practice for various types of tests, such as standardized tests or certification exams.',
-         tagIDs: [12, 4, 8],
-         coverURLs: ['Test Simulator/pic1.jpg', 'Test Simulator/code.jpg'],
       },
       {
          title: 'Random Student Picker Program',
@@ -195,10 +208,10 @@ const Card = () => {
 
    return (
       <>
-         {projects.map(({coverURLs, title, description, tagIDs}, i) => {
+         {projects.map(({ coverURLs, title, description, tagIDs }, i) => {
             return (
                <motion.div
-                  className='flex flex-col w-[335px] h-auto bg-opacity-10 p-2 border-1 border-border-color rounded-lg overflow-hidden sm-breakpoint:w-[90%]'
+                  className='flex flex-col w-[335px] h-auto bg-opacity-10 p-2 border-1 border-slate-700 bg-slate-500 rounded-lg overflow-hidden sm-breakpoint:w-[90%]'
                   key={i}
                   variants={cardVariants}
                   initial='offscreen'
