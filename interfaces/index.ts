@@ -1,4 +1,4 @@
-import {ReactNode, SetStateAction} from 'react';
+import { ReactNode, SetStateAction } from 'react';
 
 export interface LinksInterface {
    icon: string;
@@ -38,6 +38,7 @@ export interface ProjectsInterface {
    description: string;
    tagIDs: number[];
    coverURLs: string[];
+   duties?: string[];
 }
 
 export interface ContainerPropsInterface {

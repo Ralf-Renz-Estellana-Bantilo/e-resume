@@ -115,6 +115,14 @@ const ProjectsPage = () => {
                animate='visible'>
                <Card />
             </motion.div>
+            <motion.small
+               className='text-center text-accent-secondary '
+               variants={container}
+               initial='hidden'
+               animate='visible'>
+               Note: Some screenshots or images of the applications are not
+               included due to company confidentiality policies.
+            </motion.small>
          </Container>
       </>
    );
