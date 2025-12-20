@@ -8,16 +8,16 @@ import ContactForm from './components/ContactForm';
 const OthersPage = () => {
    return (
       <>
+         <Container title='QUALIFICATIONS'>
+            <Qualifications />
+         </Container>
+
          <Container title='PREFERENCES'>
             <Preferences />
          </Container>
 
          <Container title='TIMELINE'>
             <Timelines />
-         </Container>
-
-         <Container title='QUALIFICATIONS'>
-            <Qualifications />
          </Container>
 
          <Container title='CONTACT ME'>
