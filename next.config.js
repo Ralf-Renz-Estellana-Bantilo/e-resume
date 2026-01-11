@@ -1,17 +1,8 @@
 /** @type {import('next').NextConfig} */
 
-const node_env = process.env.NODE_ENV;
-const isDevEnv = node_env === 'development';
-
-const protocol = isDevEnv
-   ? process.env.NEXT_PUBLIC_CLOUDINARY_PROTOCOL
-   : process.env.CLOUDINARY_PROTOCOL;
-const hostname = isDevEnv
-   ? process.env.NEXT_PUBLIC_CLOUDINARY_HOSTNAME
-   : process.env.CLOUDINARY_HOSTNAME;
-const pathname = isDevEnv
-   ? process.env.NEXT_PUBLIC_CLOUDINARY_PATHNAME
-   : process.env.CLOUDINARY_PATHNAME;
+const protocol = 'https';
+const hostname = 'res.cloudinary.com';
+const pathname = 'doprewqnx/image/upload';
 
 const nextConfig = {
    reactStrictMode: true,

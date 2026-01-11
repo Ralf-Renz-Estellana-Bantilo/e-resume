@@ -3,17 +3,14 @@ import { motion } from 'framer-motion';
 import { item } from '@/utils/Resources';
 import { Button } from '@nextui-org/react';
 import { DownloadOutlined } from '@ant-design/icons';
-import useEnv from '../hooks/useEnv';
 
 const DownloadButton = () => {
-   const env = useEnv();
-
    const handleDownload = (): void => {
       try {
-         const protocol = env.CLOUDINARY_PROTOCOL;
-         const hostname = env.CLOUDINARY_HOSTNAME;
-         const pathname = env.CLOUDINARY_PATHNAME;
-         const folderName = env.CLOUDINARY_FOLDERNAME;
+         const protocol = 'https';
+         const hostname = 'res.cloudinary.com';
+         const pathname = 'doprewqnx/image/upload';
+         const folderName = 'v1768009949';
 
          const fileUrl = `${protocol}://${hostname}/${pathname}/${folderName}/PDFs/Ralf Renz Bantilo - Software Engineer Resume.pdf`;
 

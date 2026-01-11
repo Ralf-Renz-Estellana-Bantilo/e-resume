@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-
 interface ENVIRONMENTS {
    CLOUDINARY_PROTOCOL: string;
    CLOUDINARY_HOSTNAME: string;
@@ -7,8 +5,10 @@ interface ENVIRONMENTS {
    CLOUDINARY_FOLDERNAME: string;
 }
 
-const useEnv = (): ENVIRONMENTS => {
-   const nodeEnviroment = process.env.NODE_ENV;
+const useEnv = (
+   node_env?: 'development' | 'production' | 'test'
+): ENVIRONMENTS => {
+   const nodeEnviroment = node_env ?? process.env.NODE_ENV;
    const isDevEnv = nodeEnviroment === 'development';
 
    const getVariable = (value: keyof ENVIRONMENTS) => {
