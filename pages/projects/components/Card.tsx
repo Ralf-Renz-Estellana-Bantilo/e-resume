@@ -92,7 +92,12 @@ const Card = () => {
          description:
             'A full cloud-based Order Management System (OMS) for companies of any size. Manage orders, sales, purchasing, production and assembly from one cockpit.',
          tagIDs: [1, 13, 14, 9],
-         coverURLs: [],
+         coverURLs: [
+            'Order Management System/pic1.png',
+            'Order Management System/pic2.png',
+            'Order Management System/pic3.png',
+            'Order Management System/pic4.png',
+         ],
          duties: [
             'Software Development Team Leader',
             'Front End Developer',
@@ -163,10 +168,10 @@ const Card = () => {
             'A software application designed to simulate and provide practice for various types of tests, such as standardized tests or certification exams.',
          tagIDs: [...mernStack, 9, 13, 14, 5],
          coverURLs: [
-            'Test Simulator/quiz-makeer-1.png',
-            'Test Simulator/quiz-makeer-2.png',
-            'Test Simulator/quiz-makeer-3.png',
-            'Test Simulator/quiz-makeer-4.png',
+            'Quiz Maker/quiz-maker-1.png',
+            'Quiz Maker/quiz-maker-2.png',
+            'Quiz Maker/quiz-maker-3.png',
+            'Quiz Maker/quiz-maker-4.png',
          ],
       },
       {
@@ -175,8 +180,9 @@ const Card = () => {
             'A personal application designed to help me keep track of my expenses and manage my finances effectively.',
          tagIDs: [...mernStack, 2, 5, 9],
          coverURLs: [
-            'Expenses Tracker/pic1.jpg',
-            'Expenses Tracker/pic2.jpg',
+            'Expenses Tracker/pic3.png',
+            'Expenses Tracker/pic4.png',
+            'Expenses Tracker/pic5.png',
             'Expenses Tracker/code.jpg',
          ],
       },
@@ -232,7 +238,7 @@ const Card = () => {
             ({ coverURLs, title, description, tagIDs, duties }, i) => {
                return (
                   <motion.div
-                     className='flex flex-col w-[335px] h-auto bg-opacity-10 p-2 border-1 border-slate-700 bg-slate-500 rounded-lg overflow-hidden sm-breakpoint:w-[90%]'
+                     className='flex flex-col w-[375px] h-auto bg-opacity-10 p-2 border-1 border-slate-700 bg-slate-500 rounded-lg overflow-hidden sm-breakpoint:w-[90%]'
                      key={i}
                      variants={cardVariants}
                      initial='offscreen'
@@ -243,7 +249,7 @@ const Card = () => {
                            {coverURLs.map((url, o) => {
                               return (
                                  <Image
-                                    className='object-cover h-44'
+                                    className='object-fit h-44'
                                     src={require(`@/assets/Images/${url}`)}
                                     alt={title}
                                     key={o}

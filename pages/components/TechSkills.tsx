@@ -1,9 +1,9 @@
 'use client';
 
-import {SkillsIcons} from '@/icons';
-import {container, item} from '@/utils/Resources';
-import {Tag} from 'antd';
-import {motion} from 'framer-motion';
+import { SkillsIcons } from '@/icons';
+import { container, item } from '@/utils/Resources';
+import { Tag } from 'antd';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const TechSkills = () => {
@@ -57,6 +57,12 @@ const TechSkills = () => {
          proficiency: 'Advance',
       },
       {
+         icon: 'styled-components.png',
+         description: 'Styled-components',
+         category: 'Frontend',
+         proficiency: 'Advance',
+      },
+      {
          icon: 'vuetify.png',
          description: 'Vuetify',
          category: 'Frontend',
@@ -71,7 +77,7 @@ const TechSkills = () => {
       {
          icon: 'java.png',
          description: 'Java',
-         category: 'Desktop App',
+         category: 'Desktop App / Backend',
          proficiency: 'Advance',
       },
       {
@@ -90,31 +96,31 @@ const TechSkills = () => {
          icon: 'figma.png',
          description: 'Figma',
          category: 'Design',
-         proficiency: 'Intermediate',
+         proficiency: 'Advance',
       },
       {
          icon: 'git.png',
          description: 'Git',
          category: 'Version Control',
-         proficiency: 'Intermediate',
+         proficiency: 'Advance',
       },
       {
          icon: 'azure.png',
          description: 'Azure',
          category: 'Cloud Platform',
-         proficiency: 'Intermediate',
+         proficiency: 'Advance',
       },
       {
          icon: 'jest.png',
          description: 'Jest',
          category: 'Unit Testing',
-         proficiency: 'Intermediate',
+         proficiency: 'Advance',
       },
       {
          icon: 'playwright.svg',
          description: 'Playwright',
          category: 'End-to-End Testing',
-         proficiency: 'Intermediate',
+         proficiency: 'Advance',
       },
    ];
 
@@ -158,7 +164,7 @@ const TechSkills = () => {
                         />
                      </div>
                      <div
-                        style={{flex: 1}}
+                        style={{ flex: 1 }}
                         className='flex items-center justify-between'>
                         <div className='flex flex-col'>
                            <h4 className='text-sm font-semibold text-accent-primary'>
