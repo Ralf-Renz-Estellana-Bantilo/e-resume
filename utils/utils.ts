@@ -105,14 +105,14 @@ export const workSetupOptions: string[] = ['On-site', 'Remote', 'Hybrid'];
 
 export const jobTitleOptions1: string[] = [
    'Software Engineer',
-   'Frontend Software Engineer',
-   'Fullstack Developer (React/Node)',
+   'Frontend Developer',
+   'Fullstack Developer',
 ];
 
 export const jobTitleOptions2: string[] = [
-   'React Developer',
-   ' Programmer',
-   'Web Developer',
+   'Senior Software Engineer',
+   'Senior Front End Developer',
+   'Senior Fullstack Developer',
 ];
 
 export const techStackOptions1: string[] = [

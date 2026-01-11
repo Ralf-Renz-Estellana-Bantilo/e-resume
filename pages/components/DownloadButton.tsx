@@ -3,19 +3,33 @@ import { motion } from 'framer-motion';
 import { item } from '@/utils/Resources';
 import { Button } from '@nextui-org/react';
 import { DownloadOutlined } from '@ant-design/icons';
+import useEnv from '../hooks/useEnv';
 
 const DownloadButton = () => {
+   const env = useEnv();
+
    const handleDownload = (): void => {
-      const host = `${window.location.href}`.includes('localhost')
-         ? 'http://localhost:3000'
-         : 'https://ralf-bantilo-e-resume.vercel.app';
-      const element = document.createElement('a');
-      const fileUrl = `${host}/Documents/Ralf Renz Bantilo - Software Engineer Resume.pdf`;
-      element.href = fileUrl;
-      element.download = 'Ralf Renz Bantilo - Software Engineer Resume';
-      document.body.appendChild(element);
-      element.click();
-      document.body.removeChild(element);
+      try {
+         const protocol = env.CLOUDINARY_PROTOCOL;
+         const hostname = env.CLOUDINARY_HOSTNAME;
+         const pathname = env.CLOUDINARY_PATHNAME;
+         const folderName = env.CLOUDINARY_FOLDERNAME;
+
+         const fileUrl = `${protocol}://${hostname}/${pathname}/${folderName}/PDFs/Ralf Renz Bantilo - Software Engineer Resume.pdf`;
+
+         window.open(fileUrl, '_blank');
+      } catch (error) {
+         const host = `${window.location.href}`.includes('localhost')
+            ? 'http://localhost:3000'
+            : 'https://ralf-bantilo-e-resume.vercel.app';
+         const element = document.createElement('a');
+         const fileUrl = `${host}/Documents/Ralf Renz Bantilo - Software Engineer Resume.pdf`;
+         element.href = fileUrl;
+         element.download = 'Ralf Renz Bantilo - Software Engineer Resume';
+         document.body.appendChild(element);
+         element.click();
+         document.body.removeChild(element);
+      }
    };
 
    return (
