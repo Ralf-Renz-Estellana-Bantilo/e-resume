@@ -17,19 +17,11 @@ import {
 const Preferences = () => {
    const context = useContext<ContextValueType | null>(ComponentContext);
 
-   const experienceLevel: string[] = ['Mid-Level', 'Senior Level'];
+   const experienceLevel: string[] = ['Senior Level'];
    const jobType: string[] = ['Full-time'];
    const workSetup: string[] = ['Remote', 'Hybrid'];
-   const jobTitle1: string[] = [
-      'Software Engineer',
-      'Frontend Software Engineer',
-      'Fullstack Developer (React/Node)',
-   ];
-   const jobTitle2: string[] = [
-      'React Developer',
-      ' Programmer',
-      'Web Developer',
-   ];
+   const jobTitle1: string[] = [...jobTitleOptions1];
+   const jobTitle2: string[] = [...jobTitleOptions2];
    const techStack1: string[] = [
       'MySQL, ExpressJS, ReactJS, NodeJS',
       'ReactJS, NextJS, TypeScript, NodeJS',
