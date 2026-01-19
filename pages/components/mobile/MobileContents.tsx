@@ -1,7 +1,7 @@
-import {OthersIcon, PersonalIcon, ProjectlIcon} from '@/icons';
-import HomePage from '@/pages';
-import OthersPage from '@/pages/others';
-import ProjectsPage from '@/pages/projects';
+import { OthersIcon, PersonalIcon, ProjectlIcon } from '@/icons';
+import OthersTab from '@/pages/tabs/others';
+import PersonalTab from '@/pages/tabs/personal';
+import ProjectsTab from '@/pages/tabs/projects';
 import React from 'react';
 
 const MobileContents = () => {
@@ -14,7 +14,7 @@ const MobileContents = () => {
                   Personal
                </h4>
             </div>
-            <HomePage />
+            <PersonalTab />
          </div>
          <div className='h-full'>
             <div className='sticky top-0 z-50 flex items-center justify-center gap-2 p-2 bg-slate-500 backdrop-filter backdrop-blur-sm bg-opacity-10 border-b-1 border-slate-700'>
@@ -23,7 +23,7 @@ const MobileContents = () => {
                   Projects
                </h4>
             </div>
-            <ProjectsPage />
+            <ProjectsTab />
          </div>
          <div className='h-full'>
             <div className='sticky top-0 z-50 flex items-center justify-center gap-2 p-2 bg-slate-500 backdrop-filter backdrop-blur-sm bg-opacity-10 border-b-1 border-slate-700'>
@@ -32,7 +32,7 @@ const MobileContents = () => {
                   Others
                </h4>
             </div>
-            <OthersPage />
+            <OthersTab />
          </div>
       </main>
    );

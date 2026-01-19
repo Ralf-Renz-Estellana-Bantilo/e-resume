@@ -1,6 +1,5 @@
 import { Divider, Spin } from 'antd';
 import { useEffect, useState } from 'react';
-import Card from '../projects/components/Card';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -16,6 +15,7 @@ import { Autoplay, Pagination } from 'swiper';
 
 import { motion } from 'framer-motion';
 import Container from './Container';
+import Card from '../tabs/projects/components/Card';
 
 const Projects = () => {
    const [services, setServices] = useState<ServicesInterface[]>([

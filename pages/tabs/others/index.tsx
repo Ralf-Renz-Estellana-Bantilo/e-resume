@@ -1,11 +1,11 @@
 import React from 'react';
-import Container from '../components/Container';
 import Preferences from './components/Preferences';
 import Timelines from './components/Timelines';
 import Qualifications from './components/Qualifications';
 import ContactForm from './components/ContactForm';
+import Container from '@/pages/components/Container';
 
-const OthersPage = () => {
+const OthersTab = () => {
    return (
       <>
          <Container title='QUALIFICATIONS'>
@@ -27,4 +27,4 @@ const OthersPage = () => {
    );
 };
 
-export default OthersPage;
+export default OthersTab;

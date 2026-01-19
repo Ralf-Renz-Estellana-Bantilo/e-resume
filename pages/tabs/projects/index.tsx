@@ -1,13 +1,13 @@
 import { Divider } from 'antd';
 import { motion } from 'framer-motion';
-import Container from '../components/Container';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { ServicesInterface } from '@/interfaces';
 import Image from 'next/image';
 import Card from './components/Card';
+import Container from '@/pages/components/Container';
 
-const ProjectsPage = () => {
+const ProjectsTab = () => {
    const services: ServicesInterface[] = [
       {
          category: 'FRONTEND',
@@ -87,7 +87,7 @@ const ProjectsPage = () => {
                                     key={o}>
                                     <Image
                                        src={
-                                          require('../../assets/Icons/check.png')
+                                          require('../../../assets/Icons/check.png')
                                              .default
                                        }
                                        alt='check icon'
@@ -128,4 +128,4 @@ const ProjectsPage = () => {
    );
 };
 
-export default ProjectsPage;
+export default ProjectsTab;

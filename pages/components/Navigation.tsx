@@ -1,30 +1,30 @@
 'use client';
 
 import React from 'react';
-import { Card, CardBody, Tab, Tabs } from '@nextui-org/react';
-import HomePage from '..';
-import OthersPage from '../others';
-import ProjectsPage from '../projects';
+import { Tab, Tabs } from '@nextui-org/react';
 import { OthersIcon, PersonalIcon, ProjectlIcon } from '@/icons';
+import PersonalTab from '../tabs/personal';
+import ProjectsTab from '../tabs/projects';
+import OthersTab from '../tabs/others';
 
 const Navigation = () => {
    const tabs = [
       {
          key: '/',
          title: 'Personal',
-         content: <HomePage />,
+         content: <PersonalTab />,
          icon: <PersonalIcon />,
       },
       {
          key: '/projects',
          title: 'Projects',
-         content: <ProjectsPage />,
+         content: <ProjectsTab />,
          icon: <ProjectlIcon />,
       },
       {
          key: '/others',
          title: 'Others',
-         content: <OthersPage />,
+         content: <OthersTab />,
          icon: <OthersIcon />,
       },
    ];
