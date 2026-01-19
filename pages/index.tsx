@@ -31,31 +31,31 @@ const HomePage = () => {
          description: [
             {
                pointer:
-                  'Collaborated with teams across the Philippines, Netherlands, and UK to ensure smooth communication and project alignment.',
+                  'Led a cross-functional team of frontend and backend engineers to deliver multiple internal and client-facing web platforms, improving delivery predictability and code quality.',
             },
             {
                pointer:
-                  'Led a cross-functional team of front-end and back-end developers in building web solutions.',
+                  'Owned the frontend architecture and UI/UX implementation for core products, defining reusable patterns, component libraries, and best practices adopted across projects.',
             },
             {
                pointer:
-                  'Modernized the UI and improved the UX, contributing to increased company revenue.',
+                  'Redesigned and modernized legacy UIs, improving usability and visual consistency, which contributed to higher user adoption and measurable revenue growth.',
             },
             {
                pointer:
-                  'Utilized TypeScript, React, Node.js, and Next.js to create new user-facing features and enhance existing functionality.',
+                  'Built reusable internal libraries and shared components, reducing duplicated effort and accelerating feature development across teams.',
             },
             {
                pointer:
-                  'Developed reusable code components, boosting efficiency and consistency across project.',
+                  'Collaborated with distributed teams across the Philippines, Ukraine, the Netherlands, and the UK, ensuring alignment on technical decisions, timelines, and product requirements.',
             },
             {
                pointer:
-                  'Optimized page loading times for improved performance.',
+                  'Conducted in-depth code reviews and technical mentoring, raising overall code quality and helping junior engineers, testers, and UI designers ramp up faster.',
             },
             {
                pointer:
-                  'Conducted code reviews, offering feedback to maintain high code quality.',
+                  'Acted as a technical bridge between product, design, and engineering, translating business goals into scalable frontend solutions.',
             },
             {
                pointer:
@@ -71,27 +71,23 @@ const HomePage = () => {
          description: [
             {
                pointer:
-                  'Spearheaded the implementation of modern UI design concepts within the team, resulting in the creation of highly user-friendly web applications that enhanced the overall user experience.',
+                  'Led the design and development of an internal HR web application, streamlining applicant tracking and onboarding workflows and significantly improving recruitment efficiency.',
             },
             {
                pointer:
-                  'Demonstrated strong problem-solving skills by identifying and fixing bugs in existing systems, and implementing enhancements that significantly improved functionality and performance.',
+                  'Improved UI/UX across multiple internal systems, increasing usability and reducing friction for non-technical users.',
             },
             {
                pointer:
-                  'Led the design and development of a web application aimed at streamlining HR processes, enabling HR personnel to efficiently track and manage applicant applications.',
+                  'Resolved critical production bugs and performance issues, improving system reliability and reducing operational disruptions.',
             },
             {
                pointer:
-                  'Actively collaborated with end-users to gather insights and understand their requirements for changes or modifications to existing programs, ensuring that user needs were met effectively.',
+                  'Delivered enhancements that improved application performance and responsiveness, contributing to higher internal adoption.',
             },
             {
                pointer:
-                  'Employed agile methodologies to manage project timelines and deliverables, ensuring successful completion of development projects.',
-            },
-            {
-               pointer:
-                  'Demonstrated effective communication skills in presenting and explaining technical concepts to both technical and non-technical stakeholders.',
+                  'Regularly communicated technical concepts to non-technical stakeholders, enabling faster decision-making and clearer prioritization.',
             },
          ],
       },
@@ -231,10 +227,10 @@ const HomePage = () => {
                   <strong>
                      JavaScript, TypeScript, ReactJS, NextJS, ExpressJS, MySQL
                   </strong>
-                  , and many more, I've continuously expanded my skill set by
-                  mastering various web-related technologies and frameworks. My
-                  dedication to staying updated with the latest industry trends
-                  ensures that I can deliver innovative solutions effectively.
+                  , and many more. Trusted by leadership and{' '}
+                  <strong>mentored directly by a CTO</strong>, with strong
+                  judgment in balancing engineering quality, product goals, and
+                  delivery speed.
                </motion.h4>
             </div>
          </Container>

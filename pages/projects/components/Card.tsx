@@ -100,7 +100,7 @@ const Card = () => {
          ],
          duties: [
             'Software Development Team Leader',
-            'Front End Developer',
+            'Lead Front End Developer',
             'UI/UX Designer',
          ],
       },
