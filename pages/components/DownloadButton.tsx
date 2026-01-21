@@ -6,13 +6,14 @@ import { DownloadOutlined } from '@ant-design/icons';
 
 const DownloadButton = () => {
    const handleDownload = (): void => {
+      const filename = 'Ralf Renz Bantilo - Software Engineer Resume';
       try {
          const protocol = 'https';
          const hostname = 'res.cloudinary.com';
          const pathname = 'doprewqnx/image/upload';
-         const folderName = 'v1768009949';
+         const folderName = 'v1768009949/PDFs';
 
-         const fileUrl = `${protocol}://${hostname}/${pathname}/${folderName}/PDFs/Ralf Renz Bantilo - Software Engineer Resume.pdf`;
+         const fileUrl = `${protocol}://${hostname}/${pathname}/${folderName}/${filename}.pdf`;
 
          window.open(fileUrl, '_blank');
       } catch (error) {
@@ -20,9 +21,9 @@ const DownloadButton = () => {
             ? 'http://localhost:3000'
             : 'https://ralf-bantilo-e-resume.vercel.app';
          const element = document.createElement('a');
-         const fileUrl = `${host}/Documents/Ralf Renz Bantilo - Software Engineer Resume.pdf`;
+         const fileUrl = `${host}/Documents/${filename}.pdf`;
          element.href = fileUrl;
-         element.download = 'Ralf Renz Bantilo - Software Engineer Resume';
+         element.download = filename;
          document.body.appendChild(element);
          element.click();
          document.body.removeChild(element);
