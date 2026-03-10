@@ -53,6 +53,7 @@ const Navigation = () => {
                                 <span>{tab.title}</span>
                             </div>
                         }
+                        className="w-full"
                     >
                         {tab.content}
                     </Tab>

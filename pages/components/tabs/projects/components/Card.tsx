@@ -99,7 +99,7 @@ const Card = ({ project: dynamicData }: { project: IProjects }) => {
 
     return (
         <motion.div
-            className="flex flex-col w-[375px] h-auto bg-opacity-10 p-2 border-1 border-slate-700 bg-slate-500 rounded-lg overflow-hidden sm-breakpoint:w-[90%]"
+            className="flex flex-col w-[49%] h-auto bg-opacity-10 p-2 border-1 border-slate-700 bg-slate-500 rounded-lg overflow-hidden sm-breakpoint:w-[90%] lg-breakpoint:w-[90%]"
             variants={cardVariants}
             initial="offscreen"
             whileInView="onscreen"

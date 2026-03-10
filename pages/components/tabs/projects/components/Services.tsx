@@ -30,7 +30,7 @@ const Services = () => {
     return (
         <Container title="SERVICES">
             <motion.div
-                className="flex flex-wrap gap-5 justify-evenly"
+                className="flex flex-wrap justify-center gap-3"
                 variants={container}
                 initial="hidden"
                 animate="visible"
@@ -38,7 +38,7 @@ const Services = () => {
                 {services.map((service, i) => {
                     return (
                         <motion.div
-                            className="flex flex-col h-auto bg-opacity-10 p-2 border-1 border-slate-700 bg-slate-500 rounded-lg w-[48%] sm-breakpoint:w-[90%]"
+                            className="flex flex-col h-auto bg-opacity-10 p-2 border-1 border-slate-700 bg-slate-500 rounded-lg w-[49%] sm-breakpoint:w-[90%] lg-breakpoint:w-[90%]"
                             key={i}
                             variants={item}
                         >
