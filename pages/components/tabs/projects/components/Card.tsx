@@ -86,7 +86,17 @@ export const findTagByID = (tagID: Number) => {
     return tagList.filter((list) => list.ID == tagID)[0];
 };
 
-const Card = ({ project }: { project: IProjects }) => {
+const Card = ({ project: dynamicData }: { project: IProjects }) => {
+    const localData: IProjects = {
+        title: '',
+        description: '',
+        tagIDs: [],
+        coverURLs: [],
+        duties: [],
+    };
+
+    const project = dynamicData ?? localData;
+
     return (
         <motion.div
             className="flex flex-col w-[49%] h-auto bg-opacity-10 p-2 border-1 border-slate-700 bg-slate-500 rounded-lg overflow-hidden sm-breakpoint:w-[90%] lg-breakpoint:w-[90%]"
