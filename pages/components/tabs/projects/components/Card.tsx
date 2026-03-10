@@ -105,7 +105,7 @@ const Card = ({ project: dynamicData }: { project: IProjects }) => {
             whileInView="onscreen"
             viewport={viewportVariant}
         >
-            <div className="w-full h-44 overflow-clip gradient-background">
+            <div className="w-full rounded-lg h-44 overflow-clip gradient-background">
                 <Carousel autoplay effect="fade">
                     {project.coverURLs.map((url, o) => {
                         return (

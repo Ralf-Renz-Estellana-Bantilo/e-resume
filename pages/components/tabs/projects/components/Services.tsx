@@ -30,7 +30,7 @@ const Services = () => {
     return (
         <Container title="SERVICES">
             <motion.div
-                className="flex flex-wrap gap-5 pb-6 justify-evenly"
+                className="flex flex-wrap gap-5 justify-evenly"
                 variants={container}
                 initial="hidden"
                 animate="visible"
