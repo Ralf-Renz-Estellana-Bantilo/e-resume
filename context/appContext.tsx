@@ -13,6 +13,8 @@ import { IQualification } from '@/pages/api/others/qualifications';
 import { ITimeline } from '@/pages/api/others/timeline';
 import { ISkills } from '@/pages/api/skills';
 import { getQualifications } from '@/controller/others/qualifications';
+import { getCertifications } from '@/controller/projects/certifications';
+import { ICertifications } from '@/pages/api/projects/certifications';
 
 interface ContextValue {
     education: IEducation;
@@ -22,6 +24,7 @@ interface ContextValue {
     qualifications: IQualification[];
     timeline: ITimeline[];
     skills: ISkills[];
+    certifications: ICertifications[];
 }
 
 const DEFAULT_VALUE: ContextValue = {
@@ -37,6 +40,7 @@ const DEFAULT_VALUE: ContextValue = {
     qualifications: [],
     timeline: [],
     skills: [],
+    certifications: [],
 };
 
 export const AppContext = createContext<ContextValue>(DEFAULT_VALUE);
@@ -53,6 +57,7 @@ const AppContextProvider = ({ children }: { children: React.ReactNode }) => {
             qualifications,
             timeline,
             skills,
+            certifications,
         ] = await Promise.all([
             getEducation(),
             getExperiences(),
@@ -61,6 +66,7 @@ const AppContextProvider = ({ children }: { children: React.ReactNode }) => {
             getQualifications(),
             getTimeline(),
             getSkills(),
+            getCertifications(),
         ]);
 
         setValue({
@@ -71,6 +77,7 @@ const AppContextProvider = ({ children }: { children: React.ReactNode }) => {
             qualifications,
             timeline,
             skills,
+            certifications,
         });
     };
 
