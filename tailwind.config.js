@@ -1,65 +1,65 @@
-const {nextui} = require('@nextui-org/react');
+const { nextui } = require('@nextui-org/react');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: [
-		'./app/**/*.{js,ts,jsx,tsx}',
-		'./pages/**/*.{js,ts,jsx,tsx}',
-		'./components/**/*.{js,ts,jsx,tsx}',
+    content: [
+        './app/**/*.{js,ts,jsx,tsx}',
+        './pages/**/*.{js,ts,jsx,tsx}',
+        './components/**/*.{js,ts,jsx,tsx}',
 
-		// Or if using `src` directory:
-		'./views/**/*.{js,ts,jsx,tsx}',
-		'./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
-	],
-	theme: {
-		extend: {
-			colors: {
-				'accent-primary': '#e0ecf3',
-				'accent-secondary': '#bac5cb',
-				// 'accent-primary': '#212B33',
-				// 'accent-secondary': '#25333F',
-				'border-color': '#25313f',
-				'dark-blue-secondary': '#25333F',
-				primary: '#1677ff',
-				'background-primary': '#E7F1F3',
-				'background-secondary': '#CBDDE0',
-				'accent-primary-dark': '#ffffff',
-				'accent-secondary-dark': '#edf2f3',
-			},
-			fontFamily: {
-				sans: ['var(--font-inter)'],
-			},
-			screens: {
-				mobile: '320px',
-				// => @media (min-width: 320px) { ... }
+        // Or if using `src` directory:
+        './views/**/*.{js,ts,jsx,tsx}',
+        './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
+    ],
+    theme: {
+        extend: {
+            colors: {
+                'accent-primary': '#e0ecf3',
+                'accent-secondary': '#bac5cb',
+                // 'accent-primary': '#212B33',
+                // 'accent-secondary': '#25333F',
+                'border-color': '#25313f',
+                'dark-blue-secondary': '#25333F',
+                primary: '#1677ff',
+                'background-primary': '#E7F1F3',
+                'background-secondary': '#CBDDE0',
+                'accent-primary-dark': '#ffffff',
+                'accent-secondary-dark': '#edf2f3',
+            },
+            fontFamily: {
+                sans: ['var(--font-inter)'],
+            },
+            screens: {
+                mobile: '320px',
+                // => @media (min-width: 320px) { ... }
 
-				tablet: '640px',
-				// => @media (min-width: 640px) { ... }
+                tablet: '640px',
+                // => @media (min-width: 640px) { ... }
 
-				laptop: '1024px',
-				// => @media (min-width: 1024px) { ... }
+                laptop: '1024px',
+                // => @media (min-width: 1024px) { ... }
 
-				desktop: '1280px',
-				// => @media (min-width: 1280px) { ... }
-			},
-		},
-		screens: {
-			'2xl-breakpoint': {max: '1535px'},
-			// => @media (max-width: 1535px) { ... }
+                desktop: '1280px',
+                // => @media (min-width: 1280px) { ... }
+            },
+        },
+        screens: {
+            '2xl-breakpoint': { max: '1535px' },
+            // => @media (max-width: 1535px) { ... }
 
-			'xl-breakpoint': {max: '1279px'},
-			// => @media (max-width: 1279px) { ... }
+            'xl-breakpoint': { max: '1279px' },
+            // => @media (max-width: 1279px) { ... }
 
-			'lg-breakpoint': {max: '1023px'},
-			// => @media (max-width: 1023px) { ... }
+            'lg-breakpoint': { max: '1023px' },
+            // => @media (max-width: 1023px) { ... }
 
-			'md-breakpoint': {max: '767px'},
-			// => @media (max-width: 767px) { ... }
+            'md-breakpoint': { max: '767px' },
+            // => @media (max-width: 767px) { ... }
 
-			'sm-breakpoint': {max: '639px'},
-			// => @media (max-width: 639px) { ... }
-		},
-	},
-	darkMode: 'class',
-	plugins: [nextui()],
+            'sm-breakpoint': { max: '639px' },
+            // => @media (max-width: 639px) { ... }
+        },
+    },
+    darkMode: 'class',
+    plugins: [nextui()],
 };
