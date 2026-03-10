@@ -23,7 +23,7 @@ const Projects = () => {
     return (
         <Container title="PROJECTS">
             <motion.div
-                className="flex flex-wrap justify-evenly pb-6 gap-5 min-h-[500px]"
+                className="flex flex-wrap justify-center gap-3 w-full min-h-[500px]"
                 variants={container}
                 initial="hidden"
                 animate="visible"
