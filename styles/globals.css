@@ -50,11 +50,14 @@ html {
 }
 
 .gradient-background {
-    background-image: radial-gradient(
+    /* background-image: radial-gradient(
         164.75% 100% at 50% 0%,
         var(--light-violet) 0%,
         var(--dark-violet) 48.73%
-    );
+    ); */
+    background-image:
+        linear-gradient(var(--light-violet) 1px, transparent 1px),
+        linear-gradient(90deg, var(--dark-violet) 1px, transparent 1px);
     /* background-color: rgb(15 23 42 / 1); */
 }
 
