@@ -4,8 +4,15 @@ import { container, item } from '@/utils/Resources';
 import { Button, Tooltip } from 'antd';
 import Image from 'next/image';
 
+interface SocialLink {
+    icon: string;
+    name: string;
+    path: string;
+    disable?: boolean;
+}
+
 const Socials = () => {
-    const links = [
+    const links: SocialLink[] = [
         {
             icon: 'linkedin',
             name: 'LinkedIn',
@@ -20,18 +27,22 @@ const Socials = () => {
             icon: 'facebook',
             name: 'Facebook',
             path: 'https://www.facebook.com/rr.bantilo2000',
+            disable: true,
         },
         {
             icon: 'messenger',
             name: 'Messenger',
             path: 'https://m.me/rr.bantilo2000',
+            disable: true,
         },
     ];
 
-    const visitPage = (link: string): void => {
+    const visitPage = (link: SocialLink): void => {
+        if (link.disable) return;
+
         const regex = /^https?:\/\/[^\/]+/;
         const baseUrl = regex.exec(window.location.href)?.[0] ?? '';
-        const newLink = link.replace(baseUrl, '');
+        const newLink = link.path.replace(baseUrl, '');
         window.open(newLink, '_blank');
     };
 
@@ -70,10 +81,11 @@ const Socials = () => {
                                         }
                                         alt={link.name}
                                         width={150}
-                                        onClick={() => visitPage(link.path)}
+                                        onClick={() => visitPage(link)}
                                     />
                                 }
                                 size={'large'}
+                                disabled={link.disable}
                             />
                         </Tooltip>
                     </motion.div>
