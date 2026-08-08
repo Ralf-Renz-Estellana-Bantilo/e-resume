@@ -30,8 +30,11 @@ const Education = () => {
                                             {education.university}
                                         </h4>
                                     </div>
-                                    <div className="flex items-center">
+                                    <div className="flex flex-col justify-center">
                                         <p className="font-semibold text-right text-accent-primary">
+                                            {education.duration}
+                                        </p>
+                                        <p className="font-semibold text-right text-accent-secondary">
                                             {education.location}
                                         </p>
                                     </div>

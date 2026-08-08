@@ -8,7 +8,8 @@
         "serve": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "check": "tsc --noEmit && eslint ."
     },
     "dependencies": {
         "@ant-design/icons": "^5.0.1",
@@ -27,7 +28,6 @@
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.22.3",
-        "react-sticky-box": "^2.0.0",
         "react-toastify": "^9.1.2",
         "swiper": "^9.2.0"
     },
