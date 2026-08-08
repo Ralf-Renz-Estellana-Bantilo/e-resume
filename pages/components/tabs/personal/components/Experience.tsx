@@ -66,7 +66,7 @@ const Experience = () => {
     };
 
     return (
-        <Container title="EXPERIENCE">
+        <Container title="EXPERIENCES">
             <Timeline
                 className={quicksand.className}
                 items={experiences.map((experience) => {

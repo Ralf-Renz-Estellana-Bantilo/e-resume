@@ -1,5 +1,3 @@
-import useScreenWidth from '@/hooks/useScreenWidth';
-
 export function setTimestamp(mm: number, yyyy: number): string {
     let result: string = '';
     let stampNumber: number = 0;
@@ -78,14 +76,6 @@ export const MONTHLIST = [
     'November',
     'December',
 ];
-
-export const monthDescriptionShortener = (monthIndex: number) => {
-    const screenWidth = useScreenWidth();
-
-    return screenWidth <= SM_BREAKPOINT
-        ? MONTHLIST[monthIndex - 1].slice(0, 3)
-        : MONTHLIST[monthIndex - 1];
-};
 
 export const experienceLevelOptions: string[] = [
     'Junior Level',

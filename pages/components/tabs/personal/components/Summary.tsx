@@ -26,7 +26,7 @@ const Summary = () => {
                         {setTimestamp(8, 2022)} of professional experience{' '}
                     </strong>{' '}
                     building user-centric, maintainable web applications.
-                    Trusted by leadership and . Trusted by leadership and{' '}
+                    Trusted by leadership and{' '}
                     <strong>mentored directly by a CTO</strong>, with strong
                     judgment in balancing engineering quality, product goals,
                     and delivery speed.

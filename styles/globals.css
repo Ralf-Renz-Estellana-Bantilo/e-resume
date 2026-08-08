@@ -23,10 +23,6 @@ html {
 :root {
     --light-violet: #334155;
     --dark-violet: #0f172a;
-    /* --light-blue: #181d22; */
-
-    /* --light-blue: #17212c;
-	--dark-blue: #101214; */
 
     --light-blue: #1c2a38;
     --dark-blue: #181d21;
@@ -50,15 +46,9 @@ html {
 }
 
 .gradient-background {
-    /* background-image: radial-gradient(
-        164.75% 100% at 50% 0%,
-        var(--light-violet) 0%,
-        var(--dark-violet) 48.73%
-    ); */
     background-image:
         linear-gradient(var(--light-violet) 1px, transparent 1px),
         linear-gradient(90deg, var(--dark-violet) 1px, transparent 1px);
-    /* background-color: rgb(15 23 42 / 1); */
 }
 
 .tiktok-effect {
@@ -92,33 +82,17 @@ label {
     margin: 0;
 }
 
-/* swiper js css */
-
 .swiper {
     width: 100%;
-    /* height: 100%; */
 }
 
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    /* background: #fff; */
-
-    /* Center slide text vertically */
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-/* ::selection {
-   background-color: #25333F;
-   color: white;
-}
-
-::-moz-selection {
-   background-color: #25333F;
-   color: white;
-} */
 
 .gradient-background-2 {
     background-image: radial-gradient(
@@ -129,6 +103,14 @@ label {
 }
 
 .scroll-shadow {
+    -webkit-mask-image: linear-gradient(
+        #000,
+        #000,
+        transparent 0,
+        #000 40px,
+        #000 calc(100% - 40px),
+        transparent
+    );
     mask-image: linear-gradient(
         #000,
         #000,
@@ -137,4 +119,19 @@ label {
         #000 calc(100% - 40px),
         transparent
     );
+}
+
+.dot-pattern {
+    background-image: radial-gradient(
+        rgba(203, 221, 224, 0.15) 1px,
+        transparent 0
+    );
+    background-size: 20px 20px;
+    background-position: 0 0;
+    -webkit-mask-image: radial-gradient(
+        ellipse at center,
+        #000 0,
+        transparent 70%
+    );
+    mask-image: radial-gradient(ellipse at center, #000 0, transparent 70%);
 }
