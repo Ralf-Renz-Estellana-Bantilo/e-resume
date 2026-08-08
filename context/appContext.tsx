@@ -32,6 +32,7 @@ const DEFAULT_VALUE: ContextValue = {
         course: '',
         university: '',
         location: '',
+        duration: '',
         pointers: [],
     },
     experiences: [],

@@ -13,7 +13,7 @@ const experiences: IExperience[] = [
     {
         position: 'FRONT-END DEVELOPER',
         company: 'BizBloqs Management Solutions BV',
-        duration: 'December 2023 - Present',
+        duration: 'December 2023 - September 2026',
         // level: 'Mid-level',
         // type: 'Hybrid',
         description: [
